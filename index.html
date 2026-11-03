@@ -1,1 +1,2398 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dana Alpaiji — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
+  <style>
+    /* ==========================================================================
+       1. CSS VARIABLES — STUDIO GHIBLI FORMAL GLASSMORPHISM (PURE LIGHT MODE)
+    ========================================================================== */
+    :root {
+      /* Studio Ghibli Inspired Nature Palette */
+      --ghibli-sage: #4A6B53;         /* Hutan / Meadow Green */
+      --ghibli-sage-dark: #2F4837;    /* Deep Forest */
+      --ghibli-sage-soft: rgba(74, 107, 83, 0.12);
+      --ghibli-sky: #7BA7BC;          /* Langit Musim Panas */
+      --ghibli-terracotta: #C87D55;   /* Sunset / Warm Autumn */
+      --ghibli-sun: #E6B86A;          /* Golden Hour Glow */
+      
+      /* Pure Light Warm Paper & Frosted Glass */
+      --bg-primary: #FAF7F0;
+      --bg-secondary: rgba(238, 233, 221, 0.45);
+      --bg-glass-nav: rgba(252, 250, 245, 0.72);
+      --bg-card: rgba(255, 255, 255, 0.65);
+      --bg-card-hover: rgba(255, 255, 255, 0.88);
+      
+      --text-primary: #232B25;
+      --text-secondary: #4A544C;
+      --text-muted: #768078;
+      
+      /* Glassmorphism Borders & Shadows */
+      --glass-border: 1.5px solid rgba(255, 255, 255, 0.9);
+      --glass-border-subtle: 1px solid rgba(74, 107, 83, 0.18);
+      --glass-blur: blur(20px) saturate(160%);
+      
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 26px;
+      
+      --glass-shadow: 
+        0 12px 32px -8px rgba(47, 72, 55, 0.08),
+        0 4px 12px -2px rgba(74, 107, 83, 0.04),
+        inset 0 1px 2px rgba(255, 255, 255, 0.95);
+      --glass-shadow-hover: 
+        0 18px 40px -8px rgba(74, 107, 83, 0.16),
+        0 6px 18px -4px rgba(200, 125, 85, 0.1),
+        inset 0 1px 2px rgba(255, 255, 255, 1);
+        
+      --font-main: 'Poppins', sans-serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 14.8px;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      position: relative;
+      /* Subtle Warm Watercolor Texture */
+      background-image: 
+        radial-gradient(rgba(74, 107, 83, 0.045) 1px, transparent 1px),
+        radial-gradient(rgba(200, 125, 85, 0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      background-position: 0 0, 14px 14px;
+    }
+
+    /* Ambient Ghibli Watercolor Orbs (Sky, Meadow, Sunlight) */
+    .ambient-glass-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .glass-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.48;
+      animation: floatOrb 16s ease-in-out infinite alternate;
+    }
+    .glass-orb.orb-meadow {
+      width: 450px; height: 450px;
+      background: radial-gradient(circle, #95B89C, transparent 70%);
+      top: -90px; right: -80px;
+    }
+    .glass-orb.orb-sky {
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, #A3C9DC, transparent 70%);
+      top: 35%; left: -140px;
+      animation-delay: -5s;
+    }
+    .glass-orb.orb-sun {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, #F3D092, transparent 70%);
+      bottom: 5%; right: 12%;
+      opacity: 0.4;
+      animation-delay: -9s;
+    }
+    .glass-orb.orb-peach {
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, #E5A98B, transparent 70%);
+      bottom: -80px; left: 22%;
+      opacity: 0.32;
+      animation-delay: -3s;
+    }
+
+    @keyframes floatOrb {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -25px) scale(1.06); }
+      100% { transform: translate(-20px, 20px) scale(0.96); }
+    }
+
+    ::selection {
+      background: var(--ghibli-sage);
+      color: #FFFFFF;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #F2EFE6; }
+    ::-webkit-scrollbar-thumb {
+      background: var(--ghibli-sage);
+      border-radius: 99px;
+    }
+    ::-webkit-scrollbar-thumb:hover { background: var(--ghibli-terracotta); }
+
+    /* ==========================================================================
+       2. BOTANICAL CORNER SKETCHES & INTERACTIVE BREEZE CANVAS
+    ========================================================================== */
+    .bg-botanical-tl {
+      position: fixed;
+      top: -20px;
+      left: -20px;
+      width: 280px;
+      height: 280px;
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
+      animation: swayBranch 7s ease-in-out infinite alternate;
+      transform-origin: top left;
+    }
+
+    .bg-botanical-br {
+      position: fixed;
+      bottom: -20px;
+      right: -20px;
+      width: 300px;
+      height: 300px;
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
+      transform: rotate(180deg);
+    }
+
+    @keyframes swayBranch {
+      0% { transform: rotate(0deg) scale(1); }
+      100% { transform: rotate(3deg) scale(1.03); }
+    }
+
+    #breeze-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9992;
+    }
+
+    /* ==========================================================================
+       3. SCROLL PROGRESS BAR
+    ========================================================================== */
+    #scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3.5px;
+      background: linear-gradient(90deg, var(--ghibli-sage), var(--ghibli-sky), var(--ghibli-terracotta));
+      z-index: 9998;
+      width: 0%;
+      transition: width 0.05s linear;
+    }
+
+    /* ==========================================================================
+       4. STUDIO GHIBLI MORNING SKY PRELOADER (LEFT TO RIGHT BREEZE)
+    ========================================================================== */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(160deg, #EBF3F5 0%, #F7F3E8 55%, #F5E6D3 100%);
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    /* Soft Drifting Clouds & Wind Lines Left to Right */
+    .wind-lines {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .wind-line {
+      position: absolute;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(74, 107, 83, 0.35), rgba(200, 125, 85, 0.4), transparent);
+      border-radius: 99px;
+      opacity: 0;
+      animation: breezeShoot 1.6s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+    }
+    .wind-line:nth-child(1) { top: 20%; width: 40vw; animation-delay: 0.1s; }
+    .wind-line:nth-child(2) { top: 38%; width: 55vw; animation-delay: 0.4s; }
+    .wind-line:nth-child(3) { top: 58%; width: 45vw; animation-delay: 0.2s; }
+    .wind-line:nth-child(4) { top: 76%; width: 50vw; animation-delay: 0.6s; }
+
+    @keyframes breezeShoot {
+      0% { left: -55vw; opacity: 0; }
+      40% { opacity: 1; }
+      100% { left: 105vw; opacity: 0; }
+    }
+
+    /* Bird & Leaves Gliding Across Screen (Left to Right) */
+    .breeze-stage {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .gliding-silhouette {
+      position: absolute;
+      top: 24%;
+      left: -260px;
+      width: 220px;
+      height: 160px;
+      filter: drop-shadow(0 8px 16px rgba(74, 107, 83, 0.2));
+      animation: glideAcross 2.5s cubic-bezier(0.25, 0.8, 0.35, 1) forwards;
+    }
+
+    @keyframes glideAcross {
+      0% { left: -240px; top: 32%; transform: rotate(-8deg) scale(0.9); }
+      50% { top: 18%; transform: rotate(4deg) scale(1.05); }
+      100% { left: calc(100vw + 260px); top: 24%; transform: rotate(-5deg) scale(0.95); }
+    }
+
+    .wind-trail-svg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: 4;
+    }
+
+    .wind-path-anim {
+      stroke-dasharray: 2000;
+      stroke-dashoffset: 2000;
+      animation: drawBreeze 2.3s ease-out forwards;
+    }
+
+    @keyframes drawBreeze {
+      0% { stroke-dashoffset: 2000; opacity: 0.8; }
+      80% { stroke-dashoffset: 0; opacity: 0.8; }
+      100% { stroke-dashoffset: 0; opacity: 0; }
+    }
+
+    .loader-centerpiece {
+      position: relative;
+      z-index: 6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+      padding: 28px 38px;
+      background: rgba(255, 255, 255, 0.68);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      border-radius: 26px;
+      box-shadow: 0 20px 50px rgba(47, 72, 55, 0.1);
+    }
+
+    .loader-botanical-crest {
+      width: 64px;
+      height: 64px;
+      animation: gentleFloat 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes gentleFloat {
+      0% { transform: translateY(0) rotate(-3deg); }
+      100% { transform: translateY(-6px) rotate(3deg); }
+    }
+
+    .loader-tag {
+      background: var(--ghibli-sage-soft);
+      color: var(--ghibli-sage-dark);
+      font-weight: 600;
+      font-size: 0.68rem;
+      padding: 4px 14px;
+      border-radius: 99px;
+      border: 1px solid rgba(74, 107, 83, 0.25);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+
+    .loader-logo {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+    }
+
+    .loader-bar-wrap {
+      width: min(260px, 75vw);
+      height: 6px;
+      background: rgba(74, 107, 83, 0.12);
+      border-radius: 99px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+
+    .loader-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--ghibli-sage), var(--ghibli-sky), var(--ghibli-terracotta));
+      border-radius: 99px;
+      animation: fillGhibliBar 2.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+
+    @keyframes fillGhibliBar {
+      0% { width: 0%; }
+      50% { width: 70%; }
+      100% { width: 100%; }
+    }
+
+    .loader-pct {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.14em;
+    }
+
+    /* ==========================================================================
+       5. FLOATING GLASSMORPHISM NAVBAR
+    ========================================================================== */
+    #navbar {
+      position: fixed;
+      top: 14px;
+      left: 5%;
+      right: 5%;
+      z-index: 1000;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      background: var(--bg-glass-nav);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: var(--glass-border);
+      border-radius: 99px;
+      box-shadow: var(--glass-shadow);
+    }
+
+    #navbar.scrolled {
+      top: 8px;
+      padding: 8px 24px;
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 12px 32px rgba(47, 72, 55, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.95);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+    }
+
+    .nav-leaf-icon {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.35s ease;
+    }
+    .nav-brand:hover .nav-leaf-icon {
+      transform: rotate(15deg) scale(1.1);
+    }
+
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span {
+      color: var(--ghibli-sage);
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-menu a {
+      font-size: 0.76rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 99px;
+      transition: all 0.22s ease;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      background: var(--ghibli-sage);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(74, 107, 83, 0.25);
+    }
+
+    /* Hamburger Mobile */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+      padding: 6px;
+      z-index: 1001;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 5px); background: var(--ghibli-sage); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -5px); background: var(--ghibli-sage); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(250, 247, 240, 0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .mobile-menu.open { opacity: 1; pointer-events: all; display: flex; }
+    .mobile-menu a {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .mobile-menu a:hover { color: var(--ghibli-sage); }
+
+    /* ==========================================================================
+       6. COMPACT SECTION STYLING & FORMAL EDITORIAL HEADINGS
+    ========================================================================== */
+    section {
+      padding: 48px 5%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.66rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--ghibli-sage-dark);
+      background: rgba(74, 107, 83, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(74, 107, 83, 0.25);
+      border-radius: 99px;
+      padding: 4px 14px;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.3px;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .section-sub {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 540px;
+    }
+
+    /* Scroll Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-22px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Formal Glassmorphic Buttons */
+    .btn {
+      font-family: var(--font-main);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 99px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.25s ease;
+      letter-spacing: 0.03em;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .btn-symbol {
+      font-style: normal;
+      font-size: 0.85rem;
+      line-height: 1;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--ghibli-sage), var(--ghibli-sage-dark));
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 8px 20px rgba(47, 72, 55, 0.22);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #55795F, #375340);
+      box-shadow: 0 12px 26px rgba(47, 72, 55, 0.3);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--text-primary);
+      border: 1.5px solid rgba(74, 107, 83, 0.25);
+      box-shadow: var(--glass-shadow);
+    }
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: #FFFFFF;
+      border-color: var(--ghibli-sage);
+      box-shadow: var(--glass-shadow-hover);
+    }
+
+    /* ==========================================================================
+       7. HERO SECTION + GHIBLI WIND CHIME + GLASS ARCH PHOTO FRAME
+    ========================================================================== */
+    #hero {
+      min-height: 88vh;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 32px;
+      padding-top: 94px;
+      padding-bottom: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Japanese Furin (Glass Wind Chime) on Right Corner */
+    .wind-chime-wrap {
+      position: absolute;
+      top: 64px;
+      right: 4.5%;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      animation: chimeSway 4s ease-in-out infinite alternate;
+      transform-origin: top center;
+    }
+    .chime-thread {
+      width: 1.5px;
+      height: 48px;
+      background: rgba(74, 107, 83, 0.45);
+    }
+    .chime-svg {
+      width: 48px;
+      height: 76px;
+      filter: drop-shadow(0 6px 14px rgba(123, 167, 188, 0.3));
+    }
+
+    @keyframes chimeSway {
+      0% { transform: rotate(-4deg); }
+      100% { transform: rotate(5deg); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      color: var(--ghibli-sage-dark);
+      border: var(--glass-border);
+      border-radius: 99px;
+      padding: 5px 15px;
+      margin-bottom: 12px;
+      box-shadow: var(--glass-shadow);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .hero-badge span.dot {
+      width: 8px;
+      height: 8px;
+      background: var(--ghibli-sage);
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 8px var(--ghibli-sage);
+    }
+
+    .hero-name {
+      font-family: var(--font-serif);
+      font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+      font-weight: 700;
+      line-height: 0.98;
+      letter-spacing: -1px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--ghibli-sage);
+      font-weight: 600;
+    }
+
+    .hero-subtitle {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--ghibli-sage-dark);
+      background: rgba(74, 107, 83, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(74, 107, 83, 0.22);
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 14px;
+    }
+
+    .hero-desc {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin-bottom: 22px;
+      font-weight: 400;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Hero Photo Frame + Botanical Glass Layers */
+    .hero-visual {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-img-frame {
+      position: relative;
+      width: min(290px, 82%);
+      aspect-ratio: 3/4;
+      animation: floatProfile 5s ease-in-out infinite;
+    }
+
+    @keyframes floatProfile {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+    }
+
+    .hero-img-shadow-sky {
+      position: absolute;
+      inset: 0;
+      border: 1.5px solid rgba(255, 255, 255, 0.9);
+      border-radius: 140px 140px 22px 22px;
+      background: linear-gradient(135deg, rgba(123, 167, 188, 0.35), rgba(123, 167, 188, 0.1));
+      backdrop-filter: blur(12px);
+      transform: translate(-10px, -10px) rotate(-2deg);
+      z-index: 0;
+      transition: transform 0.35s ease;
+    }
+
+    .hero-img-shadow-sage {
+      position: absolute;
+      inset: 0;
+      border: 1.5px solid rgba(255, 255, 255, 0.9);
+      border-radius: 140px 140px 22px 22px;
+      background: linear-gradient(135deg, rgba(74, 107, 83, 0.32), rgba(200, 125, 85, 0.15));
+      backdrop-filter: blur(12px);
+      transform: translate(10px, 10px) rotate(2deg);
+      z-index: 1;
+      transition: transform 0.35s ease;
+    }
+
+    .hero-img-frame:hover .hero-img-shadow-sky {
+      transform: translate(-14px, -14px) rotate(-4deg);
+    }
+    .hero-img-frame:hover .hero-img-shadow-sage {
+      transform: translate(14px, 14px) rotate(4deg);
+    }
+
+    .hero-img {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 140px 140px 20px 20px;
+      border: 2.5px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 16px 36px rgba(47, 72, 55, 0.14);
+      display: block;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .deco {
+      position: absolute;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .deco-box {
+      top: 12px;
+      right: -14px;
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      color: var(--ghibli-sage-dark);
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 700;
+      box-shadow: var(--glass-shadow);
+    }
+
+    .deco-tag {
+      bottom: -12px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(16px);
+      color: var(--text-primary);
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      border-radius: 99px;
+      padding: 5px 15px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      box-shadow: var(--glass-shadow);
+      white-space: nowrap;
+    }
+    .deco-tag strong { color: var(--ghibli-sage-dark); }
+
+    /* ==========================================================================
+       8. SERENE GLASS MARQUEE BANNER
+    ========================================================================== */
+    .ghibli-marquee-bar {
+      background: rgba(74, 107, 83, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      color: #FFFFFF;
+      border-top: 1px solid rgba(255, 255, 255, 0.5);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 9px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      z-index: 3;
+    }
+
+    .ghibli-marquee-track {
+      display: inline-flex;
+      align-items: center;
+      gap: 28px;
+      animation: scrollMarquee 26s linear infinite;
+      font-size: 0.74rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .ghibli-marquee-track span.sep {
+      color: var(--ghibli-sun);
+    }
+
+    @keyframes scrollMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ==========================================================================
+       9. ABOUT SECTION (GLASS CARDS)
+    ========================================================================== */
+    #about {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--glass-shadow);
+      transition: all 0.25s ease;
+    }
+
+    .stat-card:hover {
+      box-shadow: var(--glass-shadow-hover);
+      background: var(--bg-card-hover);
+      transform: translateY(-3px);
+    }
+
+    .stat-num {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.1;
+    }
+
+    .stat-num .acc {
+      color: var(--ghibli-sage);
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: 3px;
+    }
+
+    /* ==========================================================================
+       10. SKILLS SECTION (FROSTED GLASS PILLS)
+    ========================================================================== */
+    .skills-header { margin-bottom: 22px; }
+
+    .skills-grid-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .skills-group-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-primary);
+    }
+
+    .skills-group-title span.sym {
+      color: var(--ghibli-sage);
+      font-size: 0.95rem;
+    }
+
+    .skills-group-title::after {
+      content: '';
+      flex: 1;
+      height: 1.5px;
+      background: linear-gradient(90deg, rgba(74, 107, 83, 0.35), transparent);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+      gap: 10px;
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 11px 10px;
+      text-align: center;
+      box-shadow: var(--glass-shadow);
+      transition: all 0.22s ease;
+      cursor: pointer;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--glass-shadow-hover);
+      background: var(--ghibli-sage);
+      border-color: var(--ghibli-sage);
+      color: #FFFFFF;
+    }
+
+    .skill-name {
+      font-size: 0.74rem;
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       11. EXPERIENCE SECTION
+    ========================================================================== */
+    #experience {
+      background: var(--bg-secondary);
+      border-top: 1px solid rgba(255, 255, 255, 0.7);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+      margin-top: 22px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--ghibli-sage), var(--ghibli-sky));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 22px;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+
+    .timeline-dot {
+      position: absolute;
+      left: -26px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      background: var(--ghibli-sage);
+      border: 2.5px solid #FFFFFF;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(74, 107, 83, 0.2);
+    }
+
+    .exp-card {
+      background: var(--bg-card);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 20px 22px;
+      box-shadow: var(--glass-shadow);
+      transition: all 0.25s ease;
+    }
+
+    .exp-card:hover {
+      background: var(--bg-card-hover);
+      box-shadow: var(--glass-shadow-hover);
+    }
+
+    .exp-company {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+
+    .exp-role {
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: var(--ghibli-sage);
+      color: #FFFFFF;
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 99px;
+      margin-bottom: 6px;
+    }
+
+    .exp-date {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .exp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-list li {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      padding-left: 15px;
+      position: relative;
+    }
+
+    .exp-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--ghibli-sage);
+    }
+
+    /* ==========================================================================
+       12. ORGANIZATION SECTION (UNIFORM GLASS CARDS)
+    ========================================================================== */
+    .org-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .org-card {
+      background: var(--bg-card);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--glass-shadow);
+      transition: all 0.25s ease;
+    }
+
+    .org-card:hover {
+      background: var(--bg-card-hover);
+      box-shadow: var(--glass-shadow-hover);
+      transform: translateY(-3px);
+    }
+
+    .org-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.62rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--ghibli-sage);
+      color: #FFFFFF;
+      padding: 3px 11px;
+      border-radius: 99px;
+      margin-bottom: 10px;
+    }
+
+    .org-name {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+      color: var(--text-primary);
+    }
+
+    .org-role {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--ghibli-terracotta);
+      margin-bottom: 6px;
+    }
+
+    .org-year {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .org-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .org-list li {
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .org-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--ghibli-sage);
+    }
+
+    .org-divider {
+      border: none;
+      border-top: 1px solid rgba(74, 107, 83, 0.14);
+      margin: 10px 0;
+    }
+
+    /* ==========================================================================
+       13. CERTIFICATES SECTION (FROSTED GLASS SHOWCASE)
+    ========================================================================== */
+    #certificates {
+      background: var(--bg-secondary);
+      border-top: 1px solid rgba(255, 255, 255, 0.7);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .cert-card {
+      background: var(--bg-card);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: var(--glass-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--glass-shadow);
+      transition: all 0.25s ease;
+    }
+
+    .cert-card:hover {
+      background: var(--bg-card-hover);
+      box-shadow: var(--glass-shadow-hover);
+      transform: translateY(-4px);
+    }
+
+    .cert-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: rgba(226, 231, 224, 0.5);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .cert-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .cert-card:hover .cert-img img {
+      transform: scale(1.05);
+    }
+
+    .cert-body { padding: 14px 16px; }
+
+    .cert-tag {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: rgba(74, 107, 83, 0.12);
+      color: var(--ghibli-sage-dark);
+      border-radius: 99px;
+      padding: 2px 10px;
+      margin-bottom: 6px;
+    }
+
+    .cert-title {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+
+    .cert-desc {
+      font-size: 0.74rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .cert-btn {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      background: var(--ghibli-sage);
+      border-radius: 99px;
+      padding: 5px 14px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .cert-btn:hover {
+      background: var(--ghibli-terracotta);
+    }
+
+    /* ==========================================================================
+       14. GALLERY SECTION (GLASS FRAMES)
+    ========================================================================== */
+    .gallery-grid {
+      columns: 3;
+      column-gap: 14px;
+      margin-top: 20px;
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 14px;
+      padding: 6px;
+      background: var(--bg-card);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: var(--glass-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      box-shadow: var(--glass-shadow);
+      transition: all 0.25s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--glass-shadow-hover);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 6px;
+      border-radius: 12px;
+      background: rgba(47, 72, 55, 0.35);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      opacity: 0;
+      transition: opacity 0.25s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    /* Lightbox */
+    #lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(28, 36, 30, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 9996;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+    }
+    #lightbox.open { opacity: 1; pointer-events: all; }
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 84vh;
+      border: 3px solid rgba(255, 255, 255, 0.92);
+      border-radius: var(--radius-md);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    }
+    #lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--text-primary);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ==========================================================================
+       15. SPOTIFY-STYLE GHIBLI GLASS MUSIC WIDGET
+    ========================================================================== */
+    #spotify-widget {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(22px) saturate(180%);
+      -webkit-backdrop-filter: blur(22px) saturate(180%);
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      border-radius: 99px;
+      padding: 8px 14px 8px 10px;
+      box-shadow: var(--glass-shadow-hover);
+      z-index: 9995;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 278px;
+      transition: transform 0.25s ease;
+    }
+
+    #spotify-widget:hover {
+      transform: translateY(-3px);
+    }
+
+    .spotify-disk {
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle, var(--ghibli-terracotta) 26%, #232B25 29%, #38453B 65%, #232B25 100%);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      animation: spinDisk 6s linear infinite paused;
+    }
+    .spotify-disk.playing { animation-play-state: running; }
+    .spotify-disk::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: #FAF7F0;
+      border-radius: 50%;
+    }
+    @keyframes spinDisk { to { transform: rotate(360deg); } }
+
+    .spotify-info {
+      flex: 1;
+      overflow: hidden;
+    }
+    .spotify-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--text-primary);
+    }
+    .spotify-artist {
+      font-size: 0.62rem;
+      color: var(--ghibli-sage);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .eq-bars {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 10px;
+    }
+    .eq-bar {
+      width: 2px;
+      height: 3px;
+      background: var(--ghibli-sage);
+      border-radius: 2px;
+    }
+    .playing-eq .eq-bar:nth-child(1) { animation: eqBounce 0.5s infinite alternate; }
+    .playing-eq .eq-bar:nth-child(2) { animation: eqBounce 0.4s 0.15s infinite alternate; }
+    .playing-eq .eq-bar:nth-child(3) { animation: eqBounce 0.55s 0.25s infinite alternate; }
+    @keyframes eqBounce { 0% { height: 2px; } 100% { height: 10px; background: var(--ghibli-terracotta); } }
+
+    .spotify-controls {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .spotify-btn {
+      background: var(--ghibli-sage);
+      color: #FFFFFF;
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .spotify-btn svg {
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
+    }
+    .spotify-btn:hover {
+      background: var(--ghibli-terracotta);
+    }
+
+    /* ==========================================================================
+       16. CONTACT SECTION (FROSTED GLASS PANEL)
+    ========================================================================== */
+    #contact {
+      background: var(--bg-secondary);
+      border-top: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 34px 32px;
+      box-shadow: var(--glass-shadow);
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 28px;
+      align-items: center;
+      max-width: 820px;
+      margin: 0 auto;
+      transition: all 0.25s ease;
+    }
+    .contact-card:hover {
+      background: var(--bg-card-hover);
+      box-shadow: var(--glass-shadow-hover);
+    }
+
+    .contact-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      color: var(--text-primary);
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .contact-item a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-item a:hover {
+      color: var(--ghibli-sage);
+      text-decoration: underline;
+    }
+
+    .contact-icon {
+      width: 30px;
+      height: 30px;
+      background: rgba(74, 107, 83, 0.12);
+      color: var(--ghibli-sage-dark);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
+    .contact-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .contact-btns .btn { justify-content: center; }
+
+    /* ==========================================================================
+       17. GLASSMORPHISM FOOTER
+    ========================================================================== */
+    footer {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      color: var(--text-primary);
+      padding: 26px 5%;
+      border-top: 1.5px solid rgba(255, 255, 255, 0.9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-logo {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .footer-logo span { color: var(--ghibli-sage); }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 8px;
+    }
+
+    .social-btn {
+      width: 34px;
+      height: 34px;
+      background: var(--ghibli-sage);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .social-btn:hover {
+      background: var(--ghibli-terracotta);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       18. RESPONSIVE BREAKPOINTS
+    ========================================================================== */
+    @media (max-width: 900px) {
+      #hero {
+        grid-template-columns: 1fr;
+        padding-top: 86px;
+        gap: 24px;
+      }
+      .hero-visual { order: -1; }
+      .wind-chime-wrap { right: 3%; top: 58px; }
+      .about-grid { grid-template-columns: 1fr; gap: 20px; }
+      .skills-grid-wrap { grid-template-columns: 1fr; gap: 18px; }
+      .contact-card { grid-template-columns: 1fr; padding: 24px 20px; gap: 18px; }
+      .gallery-grid { columns: 2; }
+    }
+
+    @media (max-width: 640px) {
+      section { padding: 36px 5%; }
+      #navbar { left: 3%; right: 3%; padding: 8px 16px; }
+      .nav-menu { display: none; }
+      .hamburger { display: flex; }
+      .gallery-grid { columns: 1; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      #spotify-widget { bottom: 10px; right: 10px; width: 250px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== AMBIENT GHIBLI WATERCOLOR ORBS ========== -->
+  <div class="ambient-glass-bg">
+    <div class="glass-orb orb-meadow"></div>
+    <div class="glass-orb orb-sky"></div>
+    <div class="glass-orb orb-sun"></div>
+    <div class="glass-orb orb-peach"></div>
+  </div>
+
+  <!-- ========== SUBTLE BOTANICAL CORNER SKETCHES ========== -->
+  <svg class="bg-botanical-tl" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#4A6B53" stroke-width="1.5" fill="none" stroke-linecap="round">
+      <path d="M0,0 Q70,50 140,130" />
+      <path d="M40,28 Q65,15 75,32 Q55,42 40,28 Z" fill="rgba(74,107,83,0.15)" />
+      <path d="M75,60 Q105,45 115,65 Q92,75 75,60 Z" fill="rgba(74,107,83,0.15)" />
+      <path d="M55,50 Q30,70 42,88 Q62,72 55,50 Z" fill="rgba(74,107,83,0.15)" />
+      <path d="M110,95 Q138,85 145,105 Q122,112 110,95 Z" fill="rgba(74,107,83,0.15)" />
+    </g>
+  </svg>
+  <svg class="bg-botanical-br" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#4A6B53" stroke-width="1.5" fill="none" stroke-linecap="round">
+      <path d="M0,0 Q70,50 140,130" />
+      <path d="M40,28 Q65,15 75,32 Q55,42 40,28 Z" fill="rgba(74,107,83,0.15)" />
+      <path d="M75,60 Q105,45 115,65 Q92,75 75,60 Z" fill="rgba(74,107,83,0.15)" />
+    </g>
+  </svg>
+
+  <!-- ========== INTERACTIVE GHIBLI BREEZE & PETALS CANVAS ========== -->
+  <canvas id="breeze-canvas"></canvas>
+
+  <!-- ========== SCROLL PROGRESS BAR ========== -->
+  <div id="scroll-progress"></div>
+
+  <!-- ========== STUDIO GHIBLI AESTHETIC PRELOADER (LEFT TO RIGHT BREEZE) ========== -->
+  <div id="loader">
+    <div class="wind-lines">
+      <div class="wind-line"></div>
+      <div class="wind-line"></div>
+      <div class="wind-line"></div>
+      <div class="wind-line"></div>
+    </div>
+
+    <svg class="wind-trail-svg" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+      <path class="wind-path-anim" d="M -100,480 Q 480,240 960,400 T 2050,240" fill="none" stroke="#7BA7BC" stroke-width="2.5" />
+      <path class="wind-path-anim" d="M -100,500 Q 480,270 960,420 T 2050,265" fill="none" stroke="#4A6B53" stroke-width="2" />
+    </svg>
+
+    <div class="breeze-stage">
+      <div class="gliding-silhouette">
+        <svg viewBox="0 0 240 160" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <!-- Graceful Gliding Bird & Floating Leaves -->
+          <path d="M60,85 Q95,45 125,78 Q155,40 195,70 Q155,68 125,95 Q95,72 60,85 Z" fill="#4A6B53" />
+          <path d="M25,110 Q40,98 50,112 Q35,120 25,110 Z" fill="#C87D55" />
+          <path d="M205,42 Q220,30 230,45 Q215,52 205,42 Z" fill="#E6B86A" />
+          <circle cx="140" cy="40" r="3" fill="#E6B86A" />
+          <circle cx="85" cy="115" r="2.5" fill="#7BA7BC" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="loader-centerpiece">
+      <svg class="loader-botanical-crest" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50,85 L50,20" stroke="#4A6B53" stroke-width="3" stroke-linecap="round"/>
+        <path d="M50,65 Q25,55 22,35 Q45,42 50,65 Z" fill="#4A6B53" opacity="0.85"/>
+        <path d="M50,50 Q75,40 78,20 Q55,28 50,50 Z" fill="#7BA7BC" opacity="0.85"/>
+        <path d="M50,35 Q30,25 32,10 Q48,18 50,35 Z" fill="#C87D55" opacity="0.85"/>
+      </svg>
+      <div class="loader-tag">PORTFOLIO // DANA ALPAIJI</div>
+      <div class="loader-logo">Dana Alpaiji.</div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar-fill"></div>
+      </div>
+      <div class="loader-pct" id="loaderPct">MEMUAT HALAMAN... 0%</div>
+    </div>
+  </div>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#hero" onclick="closeMobile()">Home</a>
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#skills" onclick="closeMobile()">Skills</a>
+    <a href="#experience" onclick="closeMobile()">Experience</a>
+    <a href="#organization" onclick="closeMobile()">Organization</a>
+    <a href="#certificates" onclick="closeMobile()">Certificates</a>
+    <a href="#gallery" onclick="closeMobile()">Gallery</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+  </nav>
+
+  <!-- ========== NAVBAR ========== -->
+  <header id="navbar">
+    <a href="#hero" class="nav-brand">
+      <svg class="nav-leaf-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20,80 Q50,50 85,15" stroke="#4A6B53" stroke-width="6" stroke-linecap="round" fill="none"/>
+        <path d="M85,15 Q40,20 25,60 Q65,65 85,15 Z" fill="#4A6B53" opacity="0.85"/>
+      </svg>
+      <span class="nav-logo">Dana Alpaiji<span>.</span></span>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#organization">Organization</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="hero">
+    <!-- Decorative Glass Wind Chime (Furin) on Corner -->
+    <div class="wind-chime-wrap" onclick="triggerPetalBurst(event)" title="Klik untuk efek kelopak angin">
+      <div class="chime-thread"></div>
+      <svg class="chime-svg" viewBox="0 0 80 130" xmlns="http://www.w3.org/2000/svg">
+        <!-- Glass Bell -->
+        <path d="M15,42 C15,15 65,15 65,42 L70,52 C40,56 40,56 10,52 Z" fill="rgba(123, 167, 188, 0.35)" stroke="#4A6B53" stroke-width="2"/>
+        <circle cx="40" cy="48" r="4" fill="#C87D55"/>
+        <line x1="40" y1="52" x2="40" y2="75" stroke="#4A6B53" stroke-width="1.5"/>
+        <!-- Tanzaku Paper Slip -->
+        <polygon points="32,75 48,75 52,122 28,122" fill="#FAF7F0" stroke="#4A6B53" stroke-width="1.5"/>
+        <path d="M36,92 Q40,86 44,92" stroke="#C87D55" stroke-width="1.5" fill="none"/>
+      </svg>
+    </div>
+
+    <div class="hero-content reveal">
+      <div class="hero-badge"><span class="dot"></span> PORTFOLIO RESMI // HELLO, I'M</div>
+      <h1 class="hero-name">Dana<br><em>Alpaiji</em></h1>
+      <div class="hero-subtitle">Mahasiswa Ekonomi Syariah | Inovasi Digital | Kepemimpinan Muda</div>
+      <p class="hero-desc">
+        Mahasiswa S1 Ekonomi Syariah Universitas Sultan Ageng Tirtayasa dengan ketertarikan besar pada Artificial Intelligence, inovasi digital, analisis data, dan kepemimpinan organisasi. Berpengalaman sebagai Assistant Manager dan aktif membangun proyek serta komunitas berbasis teknologi.
+      </p>
+      <div class="hero-buttons">
+        <a href="cv.pdf" download class="btn btn-primary"><i class="btn-symbol">✦</i> Download CV</a>
+        <a href="#contact" class="btn btn-secondary"><i class="btn-symbol">◈</i> Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="hero-img-frame tilt-card">
+        <div class="hero-img-shadow-sky"></div>
+        <div class="hero-img-shadow-sage"></div>
+        <img class="hero-img" src="profile.jpg" alt="Dana Alpaiji" onerror="this.style.opacity='0.2';" />
+        <div class="deco deco-box">AI</div>
+        <div class="deco deco-tag">GPA <strong>3.93</strong> / 4.00</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERENE MARQUEE BANNER ========== -->
+  <div class="ghibli-marquee-bar">
+    <div class="ghibli-marquee-track">
+      <span>❖ DANA ALPAIJI PORTFOLIO</span> <span class="sep">✦</span>
+      <span>ARTIFICIAL INTELLIGENCE</span> <span class="sep">✦</span>
+      <span>SHARIA ECONOMICS UNTIRTA (GPA 3.93/4.00)</span> <span class="sep">✦</span>
+      <span>YOUNG LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="sep">✦</span>
+      <span>SUSTAINABLE ECONOMY</span> <span class="sep">✦</span>
+      <span>❖ DANA ALPAIJI PORTFOLIO</span> <span class="sep">✦</span>
+      <span>ARTIFICIAL INTELLIGENCE</span> <span class="sep">✦</span>
+      <span>SHARIA ECONOMICS UNTIRTA (GPA 3.93/4.00)</span> <span class="sep">✦</span>
+      <span>YOUNG LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="sep">✦</span>
+    </div>
+  </div>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="reveal-left">
+        <span class="section-label">✦ Profile Overview</span>
+        <h2 class="section-title">Tentang Saya</h2>
+        <div class="about-text">
+          <p>Mahasiswa Program Studi Ekonomi Syariah Universitas Sultan Ageng Tirtayasa dengan IPK <strong>3.93/4.00</strong>. Berpengalaman sebagai Assistant Manager selama hampir dua tahun, sekaligus aktif dalam berbagai organisasi kemahasiswaan dan pengembangan teknologi berbasis Artificial Intelligence.</p>
+          <p>Saya percaya bahwa perpaduan kepemimpinan, ekonomi, dan AI dapat menghasilkan solusi inovatif yang berdampak nyata bagi masyarakat.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="about-stats">
+          <div class="stat-card tilt-card">
+            <div class="stat-num"><span class="counter" data-target="3.93" data-decimal="2">0</span><span class="acc">/4.00</span></div>
+            <div class="stat-label">GPA / Indeks Prestasi</div>
+          </div>
+          <div class="stat-card tilt-card">
+            <div class="stat-num"><span class="counter" data-target="2" data-decimal="0">0</span><span class="acc">+</span></div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-card tilt-card">
+            <div class="stat-num"><span class="counter" data-target="4" data-decimal="0">0</span><span class="acc">+</span></div>
+            <div class="stat-label">Student Organizations</div>
+          </div>
+          <div class="stat-card tilt-card">
+            <div class="stat-num"><span class="counter" data-target="10" data-decimal="0">0</span><span class="acc">+</span></div>
+            <div class="stat-label">AI &amp; Digital Projects</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section id="skills">
+    <div class="skills-header reveal">
+      <span class="section-label">✦ Core Competencies</span>
+      <h2 class="section-title">Skill &amp; Kemampuan</h2>
+      <p class="section-sub">Perpaduan kemampuan teknis dan kepemimpinan strategis.</p>
+    </div>
+    <div class="skills-grid-wrap">
+      <div class="reveal">
+        <div class="skills-group-title"><span class="sym">✦</span> Technical Skills</div>
+        <div class="skills-grid">
+          <div class="skill-card"><div class="skill-name">Artificial Intelligence</div></div>
+          <div class="skill-card"><div class="skill-name">Prompt Engineering</div></div>
+          <div class="skill-card"><div class="skill-name">Web Development</div></div>
+          <div class="skill-card"><div class="skill-name">HTML, CSS &amp; JS</div></div>
+          <div class="skill-card"><div class="skill-name">Microsoft Excel</div></div>
+          <div class="skill-card"><div class="skill-name">Microsoft Word</div></div>
+          <div class="skill-card"><div class="skill-name">PowerPoint</div></div>
+          <div class="skill-card"><div class="skill-name">Data Analysis</div></div>
+          <div class="skill-card"><div class="skill-name">UI/UX Thinking</div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="skills-group-title"><span class="sym">◈</span> Soft Skills</div>
+        <div class="skills-grid">
+          <div class="skill-card"><div class="skill-name">Leadership</div></div>
+          <div class="skill-card"><div class="skill-name">Team Management</div></div>
+          <div class="skill-card"><div class="skill-name">Communication</div></div>
+          <div class="skill-card"><div class="skill-name">Public Speaking</div></div>
+          <div class="skill-card"><div class="skill-name">Problem Solving</div></div>
+          <div class="skill-card"><div class="skill-name">Critical Thinking</div></div>
+          <div class="skill-card"><div class="skill-name">Time Management</div></div>
+          <div class="skill-card"><div class="skill-name">Collaboration</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE SECTION ========== -->
+  <section id="experience">
+    <div class="reveal">
+      <span class="section-label">✦ Career Journey</span>
+      <h2 class="section-title">Pengalaman Bekerja</h2>
+      <p class="section-sub">Pengalaman nyata yang membentuk kepemimpinan dan eksekusi operasional.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal-left">
+        <div class="timeline-dot"></div>
+        <div class="exp-card tilt-card">
+          <div class="exp-company">PT Orins Multidaya Indonesia</div>
+          <div class="exp-role">Staff Operasional / Assistant Manager</div>
+          <div class="exp-date">Jul 2022 &ndash; Mei 2024</div>
+          <ul class="exp-list">
+            <li>Membantu manajer dalam merencanakan dan mengawasi kegiatan operasional harian.</li>
+            <li>Mengelola dan membimbing tim kerja agar produktif dan disiplin.</li>
+            <li>Memastikan target dan standar perusahaan tercapai secara konsisten.</li>
+            <li>Menangani keluhan pelanggan serta problem solving internal tim.</li>
+            <li>Membuat laporan operasional dan menggantikan tugas manajer ketika diperlukan.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ORGANIZATION SECTION ========== -->
+  <section id="organization">
+    <div class="reveal">
+      <span class="section-label">✦ Leadership &amp; Community</span>
+      <h2 class="section-title">Pengalaman Organisasi</h2>
+      <p class="section-sub">Aktif berkontribusi dalam berbagai organisasi kampus dan komunitas teknologi.</p>
+    </div>
+    <div class="org-grid">
+      <div class="org-card tilt-card reveal">
+        <div class="org-badge">DPM FEB</div>
+        <div class="org-name">Dewan Perwakilan Mahasiswa FEB</div>
+        <div class="org-role">Ketua Fraksi Ekonomi Syariah | Anggota Komisi IV</div>
+        <div class="org-year">2026 &ndash; Sekarang</div>
+        <ul class="org-list">
+          <li>Menjadi jembatan aspirasi mahasiswa dengan birokrasi fakultas.</li>
+          <li>Mengolah data survei dan menyusun rekomendasi kebijakan.</li>
+          <li>Melakukan pengawasan terhadap program kemahasiswaan.</li>
+        </ul>
+      </div>
+
+      <div class="org-card tilt-card reveal">
+        <div class="org-badge">HMJ</div>
+        <div class="org-name">HMJ Ekonomi Syariah</div>
+        <div class="org-role">Ketua Pelaksana Sharia Economic Festival (SEF) 2025</div>
+        <ul class="org-list">
+          <li>Memimpin keseluruhan pelaksanaan kegiatan berskala besar.</li>
+          <li>Mengoordinasikan panitia lintas divisi dan sponsor eksternal.</li>
+        </ul>
+        <hr class="org-divider" />
+        <div class="org-role">Sekretaris Pelaksana Seminar Karya Ilmiah</div>
+        <ul class="org-list">
+          <li>Mengelola administrasi organisasi, surat resmi, dan arsip kegiatan.</li>
+        </ul>
+      </div>
+
+      <div class="org-card tilt-card reveal">
+        <div class="org-badge">AI DIVISION</div>
+        <div class="org-name">UKM UDC &mdash; United Development Community</div>
+        <div class="org-role">AI Division Member</div>
+        <ul class="org-list">
+          <li>Aktif sebagai anggota Divisi Artificial Intelligence kampus.</li>
+          <li>Mengembangkan implementasi Generative AI dan Machine Learning.</li>
+          <li>Berkolaborasi dalam proyek AI untuk pendidikan dan produktivitas mahasiswa.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATES SECTION ========== -->
+  <section id="certificates">
+    <div class="reveal">
+      <span class="section-label">✦ Credentials &amp; Honors</span>
+      <h2 class="section-title">Sertifikat &amp; Penghargaan</h2>
+      <p class="section-sub">Dokumentasi lisensi, sertifikasi pelatihan, dan pencapaian akademik maupun profesional.</p>
+    </div>
+    <div class="certificates-grid">
+      <div class="cert-card tilt-card reveal">
+        <div class="cert-img" onclick="openLightbox('sertifikat1.png')">
+          <img src="sertifikat1.png" alt="Sertifikat 1" onerror="this.style.opacity='0.2';" />
+        </div>
+        <div class="cert-body">
+          <span class="cert-tag">SERTIFIKAT 01</span>
+          <div class="cert-title">Sertifikat Ketua Pelaksana</div>
+          <p class="cert-desc">Sertifikasi Ketua Pelaksana SEF 2025.</p>
+          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat1.png'); return false;">Lihat Sertifikat <span>↗</span></a>
+        </div>
+      </div>
+
+      <div class="cert-card tilt-card reveal">
+        <div class="cert-img" onclick="openLightbox('sertifikat2.png')">
+          <img src="sertifikat2.png" alt="Sertifikat 2" onerror="this.style.opacity='0.2';" />
+        </div>
+        <div class="cert-body">
+          <span class="cert-tag">SERTIFIKAT 02</span>
+          <div class="cert-title">Penghargaan Volunteer BEM FEB</div>
+          <p class="cert-desc">Sertifikat Kepanitiaan PKKMB FEB 2025.</p>
+          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat2.png'); return false;">Lihat Sertifikat <span>↗</span></a>
+        </div>
+      </div>
+
+      <div class="cert-card tilt-card reveal">
+        <div class="cert-img" onclick="openLightbox('sertifikat3.png')">
+          <img src="sertifikat3.png" alt="Sertifikat 3" onerror="this.style.opacity='0.2';" />
+        </div>
+        <div class="cert-body">
+          <span class="cert-tag">SERTIFIKAT 03</span>
+          <div class="cert-title">Sertifikat Kepengurusan HMJ Ekonomi Syariah 2025</div>
+          <p class="cert-desc">Staff Anggota Divisi Mikat HMJ Ekonomi Syariah 2025.</p>
+          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat3.png'); return false;">Lihat Sertifikat <span>↗</span></a>
+        </div>
+      </div>
+
+      <div class="cert-card tilt-card reveal">
+        <div class="cert-img" onclick="openLightbox('sertifikat4.png')">
+          <img src="sertifikat4.png" alt="Sertifikat 4" onerror="this.style.opacity='0.2';" />
+        </div>
+        <div class="cert-body">
+          <span class="cert-tag">SERTIFIKAT 04</span>
+          <div class="cert-title">Sertifikat Seminar &amp; Workshop</div>
+          <p class="cert-desc">Bukti partisipasi aktif dalam program seminar UKM UDC Untirta.</p>
+          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat4.png'); return false;">Lihat Sertifikat <span>↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY SECTION ========== -->
+  <section id="gallery">
+    <div class="reveal">
+      <span class="section-label">✦ Visual Archive</span>
+      <h2 class="section-title">Moments &amp; Highlights</h2>
+      <p class="section-sub">Dokumentasi perjalanan, kegiatan, dan kolaborasi.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item" onclick="openLightbox('gallery1.jpg')">
+        <img src="gallery1.jpg" alt="Gallery 1" onerror="this.parentNode.style.display='none';" />
+        <div class="gallery-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('gallery2.jpg')">
+        <img src="gallery2.jpg" alt="Gallery 2" onerror="this.parentNode.style.display='none';" />
+        <div class="gallery-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('gallery3.jpg')">
+        <img src="gallery3.jpg" alt="Gallery 3" onerror="this.parentNode.style.display='none';" />
+        <div class="gallery-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('gallery4.jpg')">
+        <img src="gallery4.jpg" alt="Gallery 4" onerror="this.parentNode.style.display='none';" />
+        <div class="gallery-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('gallery5.jpg')">
+        <img src="gallery5.jpg" alt="Gallery 5" onerror="this.parentNode.style.display='none';" />
+        <div class="gallery-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('gallery6.jpg')">
+        <img src="gallery6.jpg" alt="Gallery 6" onerror="this.parentNode.style.display='none';" />
+        <div class="gallery-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox">
+    <div id="lightbox-close" onclick="closeLightbox()">×</div>
+    <img id="lightbox-img" src="" alt="Preview" />
+  </div>
+
+  <!-- ========== SPOTIFY-STYLE MUSIC WIDGET ========== -->
+  <div id="spotify-widget">
+    <div class="spotify-disk" id="spotifyDisk"></div>
+    <div class="spotify-info">
+      <div class="spotify-title" id="songTitle">Favorite Track 01</div>
+      <div class="spotify-artist">
+        <span id="songArtist">Dana's Playlist #1</span>
+        <span class="eq-bars" id="eqBars">
+          <span class="eq-bar"></span>
+          <span class="eq-bar"></span>
+          <span class="eq-bar"></span>
+        </span>
+      </div>
+    </div>
+    <div class="spotify-controls">
+      <button class="spotify-btn" onclick="prevSong()" title="Previous Song" aria-label="Previous Song">
+        <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+      </button>
+      <button class="spotify-btn" id="playPauseBtn" onclick="togglePlayMusic()" title="Play/Pause" aria-label="Play or Pause">
+        <svg id="playPauseSvg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <button class="spotify-btn" onclick="nextSong()" title="Next Song" aria-label="Next Song">
+        <svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+      </button>
+    </div>
+    <audio id="audioPlayer"></audio>
+  </div>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact">
+    <div class="contact-card tilt-card reveal">
+      <div>
+        <h2 class="contact-title">Mari Berkolaborasi &amp; Membangun Solusi Bersama</h2>
+        <div class="contact-info">
+          <div class="contact-item"><div class="contact-icon">DA</div> Dana Alpaiji</div>
+          <div class="contact-item"><div class="contact-icon">@</div><a href="mailto:danaalpaiji@gmail.com">danaalpaiji@gmail.com</a></div>
+          <div class="contact-item"><div class="contact-icon">in</div><a href="https://linkedin.com/in/danaalpaiji" target="_blank">linkedin.com/in/danaalpaiji</a></div>
+          <div class="contact-item"><div class="contact-icon">Tel</div><a href="tel:+6285117751203">+6285117751203</a></div>
+          <div class="contact-item"><div class="contact-icon">Loc</div> Serang, Banten, Indonesia</div>
+        </div>
+      </div>
+      <div class="contact-btns">
+        <a href="mailto:danaalpaiji@gmail.com" class="btn btn-primary"><i class="btn-symbol">✦</i> Email Me</a>
+        <a href="https://linkedin.com/in/danaalpaiji" target="_blank" class="btn btn-secondary"><i class="btn-symbol">↗</i> LinkedIn</a>
+        <a href="cv.pdf" download class="btn btn-secondary"><i class="btn-symbol">◈</i> Download CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-logo">Dana Alpaiji<span>.</span></div>
+    <div class="footer-socials">
+      <a class="social-btn" href="mailto:danaalpaiji@gmail.com">@</a>
+      <a class="social-btn" href="https://linkedin.com/in/danaalpaiji" target="_blank">in</a>
+      <a class="social-btn" href="tel:+6285117751203">Tel</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Dana Alpaiji. Crafted with Passion, Leadership &amp; Artificial Intelligence.</p>
+  </footer>
+
+  <!-- ==========================================================================
+       19. JAVASCRIPT ENGINE
+  ========================================================================== -->
+  <script>
+    const loaderPctEl = document.getElementById('loaderPct');
+    let loadVal = 0;
+    const pctTimer = setInterval(() => {
+      loadVal += Math.floor(Math.random() * 15) + 6;
+      if (loadVal >= 100) {
+        loadVal = 100;
+        clearInterval(pctTimer);
+      }
+      if (loaderPctEl) loaderPctEl.textContent = `MEMUAT HALAMAN... ${loadVal}%`;
+    }, 170);
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        loader.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+        loader.style.opacity = '0';
+        loader.style.transform = 'scale(1.03)';
+        setTimeout(() => loader.style.display = 'none', 550);
+      }, 2400);
+    });
+
+    window.addEventListener('scroll', () => {
+      const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      document.getElementById('scroll-progress').style.width = pct + '%';
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 35);
+    });
+
+    function toggleMobile() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+      document.getElementById('hamburger').classList.toggle('open');
+    }
+    function closeMobile() {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    }
+
+    document.querySelectorAll('.tilt-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -4;
+        const rotateY = ((x - centerX) / centerX) * 4;
+        card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), 40);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+    document.querySelectorAll('.reveal, .reveal-left').forEach(el => observer.observe(el));
+
+    function animateCounter(el) {
+      const target = parseFloat(el.dataset.target);
+      const decimals = parseInt(el.dataset.decimal) || 0;
+      const duration = 1200;
+      const start = performance.now();
+      function update(now) {
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = decimals > 0 ? (eased * target).toFixed(decimals) : Math.round(eased * target);
+        if (t < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+    const cObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCounter(e.target);
+          cObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter').forEach(el => cObserver.observe(el));
+
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('lightbox').addEventListener('click', e => {
+      if (e.target === e.currentTarget) closeLightbox();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    const playlist = [
+      { title: "Favorite Track 01", artist: "Dana's Playlist #1", file: "song1.mp3" },
+      { title: "Favorite Track 02", artist: "Dana's Playlist #2", file: "song2.mp3" },
+      { title: "Favorite Track 03", artist: "Dana's Playlist #3", file: "song3.mp3" }
+    ];
+    let currentTrack = 0;
+    const audioPlayer = document.getElementById('audioPlayer');
+    const playPauseSvg = document.getElementById('playPauseSvg');
+    const spotifyDisk = document.getElementById('spotifyDisk');
+    const songTitleEl = document.getElementById('songTitle');
+    const songArtistEl = document.getElementById('songArtist');
+    const eqBars = document.getElementById('eqBars');
+
+    const playIconPath = '<path d="M8 5v14l11-7z"/>';
+    const pauseIconPath = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+
+    function loadTrack(index) {
+      audioPlayer.src = playlist[index].file;
+      songTitleEl.textContent = playlist[index].title;
+      songArtistEl.textContent = playlist[index].artist;
+    }
+    loadTrack(currentTrack);
+
+    audioPlayer.addEventListener('ended', () => nextSong());
+
+    function togglePlayMusic() {
+      if (audioPlayer.paused) {
+        audioPlayer.play().then(() => {
+          playPauseSvg.innerHTML = pauseIconPath;
+          spotifyDisk.classList.add('playing');
+          eqBars.classList.add('playing-eq');
+        }).catch(err => console.log("Pastikan file song1.mp3 - song3.mp3 berada di folder yang sama:", err));
+      } else {
+        audioPlayer.pause();
+        playPauseSvg.innerHTML = playIconPath;
+        spotifyDisk.classList.remove('playing');
+        eqBars.classList.remove('playing-eq');
+      }
+    }
+
+    function nextSong() {
+      currentTrack = (currentTrack + 1) % playlist.length;
+      loadTrack(currentTrack);
+      audioPlayer.play().then(() => {
+        playPauseSvg.innerHTML = pauseIconPath;
+        spotifyDisk.classList.add('playing');
+        eqBars.classList.add('playing-eq');
+      }).catch(err => console.log("Audio error:", err));
+    }
+
+    function prevSong() {
+      currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
+      loadTrack(currentTrack);
+      audioPlayer.play().then(() => {
+        playPauseSvg.innerHTML = pauseIconPath;
+        spotifyDisk.classList.add('playing');
+        eqBars.classList.add('playing-eq');
+      }).catch(err => console.log("Audio error:", err));
+    }
+
+    /* === INTERACTIVE GHIBLI BREEZE PETALS & STARLIGHT ON CLICK === */
+    const canvas = document.getElementById('breeze-canvas');
+    const ctx = canvas.getContext('2d');
+    let ripples = [];
+    let petals = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    window.addEventListener('click', (e) => {
+      createBreezeImpact(e.clientX, e.clientY);
+    });
+
+    function triggerPetalBurst(e) {
+      e.stopPropagation();
+      createBreezeImpact(e.clientX, e.clientY, true);
+    }
+
+    function createBreezeImpact(x, y, extra = false) {
+      ripples.push({ x, y, radius: 2, maxRadius: extra ? 55 : 32, alpha: 0.7 });
+      const count = extra ? 16 : 8;
+      const colors = ['#4A6B53', '#7BA7BC', '#C87D55', '#E6B86A'];
+      for (let i = 0; i < count; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 3.5 + 1.2;
+        petals.push({
+          x, y,
+          vx: Math.cos(angle) * speed + 0.5,
+          vy: Math.sin(angle) * speed - 0.3,
+          color: colors[i % colors.length],
+          alpha: 0.95,
+          size: Math.random() * 4 + 3,
+          rotation: Math.random() * Math.PI,
+          vRot: (Math.random() - 0.5) * 0.1
+        });
+      }
+    }
+
+    function animateBreezeCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = ripples.length - 1; i >= 0; i--) {
+        const r = ripples[i];
+        r.radius += (r.maxRadius - r.radius) * 0.15;
+        r.alpha -= 0.022;
+        if (r.alpha <= 0) { ripples.splice(i, 1); continue; }
+
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(74, 107, 83, ${r.alpha})`;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      for (let i = petals.length - 1; i >= 0; i--) {
+        const p = petals[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.03; // Soft gravity
+        p.rotation += p.vRot;
+        p.alpha -= 0.018;
+
+        if (p.alpha <= 0) { petals.splice(i, 1); continue; }
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation);
+        ctx.globalAlpha = p.alpha;
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.ellipse(0, 0, p.size, p.size * 0.55, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      requestAnimationFrame(animateBreezeCanvas);
+    }
+    animateBreezeCanvas();
+  </script>
+</body>
+</html>
