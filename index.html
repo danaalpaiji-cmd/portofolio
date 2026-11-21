@@ -6,7 +6,7 @@
   <title>Dana Alpaiji — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ==========================================================================
@@ -51,10 +51,11 @@
         inset 0 1px 2px rgba(255, 255, 255, 1);
         
       --font-main: 'Poppins', sans-serif;
-      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-serif: 'Poppins', sans-serif;
     }
 
     *, *::before, *::after {
+      font-family: 'Poppins', sans-serif !important;
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -393,15 +394,6 @@
       text-decoration: none;
     }
 
-    .nav-leaf-icon {
-      width: 24px;
-      height: 24px;
-      transition: transform 0.35s ease;
-    }
-    .nav-brand:hover .nav-leaf-icon {
-      transform: rotate(15deg) scale(1.1);
-    }
-
     .nav-logo {
       font-family: var(--font-serif);
       font-size: 1.35rem;
@@ -564,12 +556,6 @@
       letter-spacing: 0.03em;
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-    }
-
-    .btn-symbol {
-      font-style: normal;
-      font-size: 0.85rem;
-      line-height: 1;
     }
 
     .btn-primary {
@@ -1090,7 +1076,7 @@
     }
 
     .exp-list li::before {
-      content: '▸';
+      content: ''; 
       position: absolute;
       left: 0;
       color: var(--ghibli-sage);
@@ -1176,7 +1162,7 @@
     }
 
     .org-list li::before {
-      content: '▸';
+      content: ''; 
       position: absolute;
       left: 0;
       color: var(--ghibli-sage);
@@ -1492,10 +1478,10 @@
       cursor: pointer;
       transition: all 0.15s ease;
     }
-    .spotify-btn svg {
-      width: 12px;
-      height: 12px;
-      fill: currentColor;
+    .spotify-btn {
+      font-size: 0.48rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
     }
     .spotify-btn:hover {
       background: var(--ghibli-terracotta);
@@ -1548,7 +1534,7 @@
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 0;
       font-size: 0.8rem;
       font-weight: 500;
       color: var(--text-secondary);
@@ -1562,20 +1548,6 @@
     .contact-item a:hover {
       color: var(--ghibli-sage);
       text-decoration: underline;
-    }
-
-    .contact-icon {
-      width: 30px;
-      height: 30px;
-      background: rgba(74, 107, 83, 0.12);
-      color: var(--ghibli-sage-dark);
-      border-radius: 9px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.72rem;
-      flex-shrink: 0;
-      font-weight: 700;
     }
 
     .contact-btns {
@@ -1623,16 +1595,16 @@
     }
 
     .social-btn {
-      width: 34px;
-      height: 34px;
+      min-height: 34px;
+      padding: 0 13px;
       background: var(--ghibli-sage);
-      border-radius: 50%;
+      border-radius: 99px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
       color: #FFFFFF;
-      font-size: 0.72rem;
+      font-size: 0.65rem;
       font-weight: 600;
       transition: all 0.2s;
     }
@@ -1761,10 +1733,6 @@
   <!-- ========== NAVBAR ========== -->
   <header id="navbar">
     <a href="#hero" class="nav-brand">
-      <svg class="nav-leaf-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20,80 Q50,50 85,15" stroke="#4A6B53" stroke-width="6" stroke-linecap="round" fill="none"/>
-        <path d="M85,15 Q40,20 25,60 Q65,65 85,15 Z" fill="#4A6B53" opacity="0.85"/>
-      </svg>
       <span class="nav-logo">Dana Alpaiji<span>.</span></span>
     </a>
 
@@ -1808,8 +1776,8 @@
         Mahasiswa S1 Ekonomi Syariah Universitas Sultan Ageng Tirtayasa dengan ketertarikan besar pada Artificial Intelligence, inovasi digital, analisis data, dan kepemimpinan organisasi. Berpengalaman sebagai Assistant Manager dan aktif membangun proyek serta komunitas berbasis teknologi.
       </p>
       <div class="hero-buttons">
-        <a href="cv.pdf" download class="btn btn-primary"><i class="btn-symbol">✦</i> Download CV</a>
-        <a href="#contact" class="btn btn-secondary"><i class="btn-symbol">◈</i> Contact Me</a>
+        <a href="cv.pdf" download class="btn btn-primary">Download CV</a>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
       </div>
     </div>
 
@@ -1827,15 +1795,15 @@
   <!-- ========== SERENE MARQUEE BANNER ========== -->
   <div class="ghibli-marquee-bar">
     <div class="ghibli-marquee-track">
-      <span>❖ DANA ALPAIJI PORTFOLIO</span> <span class="sep">✦</span>
-      <span>ARTIFICIAL INTELLIGENCE</span> <span class="sep">✦</span>
-      <span>SHARIA ECONOMICS UNTIRTA (GPA 3.93/4.00)</span> <span class="sep">✦</span>
-      <span>YOUNG LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="sep">✦</span>
-      <span>SUSTAINABLE ECONOMY</span> <span class="sep">✦</span>
-      <span>❖ DANA ALPAIJI PORTFOLIO</span> <span class="sep">✦</span>
-      <span>ARTIFICIAL INTELLIGENCE</span> <span class="sep">✦</span>
-      <span>SHARIA ECONOMICS UNTIRTA (GPA 3.93/4.00)</span> <span class="sep">✦</span>
-      <span>YOUNG LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="sep">✦</span>
+      <span>DANA ALPAIJI PORTFOLIO</span> <span class="sep"></span>
+      <span>ARTIFICIAL INTELLIGENCE</span> <span class="sep"></span>
+      <span>SHARIA ECONOMICS UNTIRTA (GPA 3.93/4.00)</span> <span class="sep"></span>
+      <span>YOUNG LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="sep"></span>
+      <span>SUSTAINABLE ECONOMY</span> <span class="sep"></span>
+      <span>DANA ALPAIJI PORTFOLIO</span> <span class="sep"></span>
+      <span>ARTIFICIAL INTELLIGENCE</span> <span class="sep"></span>
+      <span>SHARIA ECONOMICS UNTIRTA (GPA 3.93/4.00)</span> <span class="sep"></span>
+      <span>YOUNG LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="sep"></span>
     </div>
   </div>
 
@@ -1843,7 +1811,7 @@
   <section id="about">
     <div class="about-grid">
       <div class="reveal-left">
-        <span class="section-label">✦ Profile Overview</span>
+        <span class="section-label">Profile Overview</span>
         <h2 class="section-title">Tentang Saya</h2>
         <div class="about-text">
           <p>Mahasiswa Program Studi Ekonomi Syariah Universitas Sultan Ageng Tirtayasa dengan IPK <strong>3.93/4.00</strong>. Berpengalaman sebagai Assistant Manager selama hampir dua tahun, sekaligus aktif dalam berbagai organisasi kemahasiswaan dan pengembangan teknologi berbasis Artificial Intelligence.</p>
@@ -1876,13 +1844,13 @@
   <!-- ========== SKILLS SECTION ========== -->
   <section id="skills">
     <div class="skills-header reveal">
-      <span class="section-label">✦ Core Competencies</span>
+      <span class="section-label">Core Competencies</span>
       <h2 class="section-title">Skill &amp; Kemampuan</h2>
       <p class="section-sub">Perpaduan kemampuan teknis dan kepemimpinan strategis.</p>
     </div>
     <div class="skills-grid-wrap">
       <div class="reveal">
-        <div class="skills-group-title"><span class="sym">✦</span> Technical Skills</div>
+        <div class="skills-group-title">Technical Skills</div>
         <div class="skills-grid">
           <div class="skill-card"><div class="skill-name">Artificial Intelligence</div></div>
           <div class="skill-card"><div class="skill-name">Prompt Engineering</div></div>
@@ -1896,7 +1864,7 @@
         </div>
       </div>
       <div class="reveal">
-        <div class="skills-group-title"><span class="sym">◈</span> Soft Skills</div>
+        <div class="skills-group-title">Soft Skills</div>
         <div class="skills-grid">
           <div class="skill-card"><div class="skill-name">Leadership</div></div>
           <div class="skill-card"><div class="skill-name">Team Management</div></div>
@@ -1914,7 +1882,7 @@
   <!-- ========== EXPERIENCE SECTION ========== -->
   <section id="experience">
     <div class="reveal">
-      <span class="section-label">✦ Career Journey</span>
+      <span class="section-label">Career Journey</span>
       <h2 class="section-title">Pengalaman Bekerja</h2>
       <p class="section-sub">Pengalaman nyata yang membentuk kepemimpinan dan eksekusi operasional.</p>
     </div>
@@ -1940,7 +1908,7 @@
   <!-- ========== ORGANIZATION SECTION ========== -->
   <section id="organization">
     <div class="reveal">
-      <span class="section-label">✦ Leadership &amp; Community</span>
+      <span class="section-label">Leadership &amp; Community</span>
       <h2 class="section-title">Pengalaman Organisasi</h2>
       <p class="section-sub">Aktif berkontribusi dalam berbagai organisasi kampus dan komunitas teknologi.</p>
     </div>
@@ -1988,7 +1956,7 @@
   <!-- ========== CERTIFICATES SECTION ========== -->
   <section id="certificates">
     <div class="reveal">
-      <span class="section-label">✦ Credentials &amp; Honors</span>
+      <span class="section-label">Credentials &amp; Honors</span>
       <h2 class="section-title">Sertifikat &amp; Penghargaan</h2>
       <p class="section-sub">Dokumentasi lisensi, sertifikasi pelatihan, dan pencapaian akademik maupun profesional.</p>
     </div>
@@ -2001,7 +1969,7 @@
           <span class="cert-tag">SERTIFIKAT 01</span>
           <div class="cert-title">Sertifikat Ketua Pelaksana</div>
           <p class="cert-desc">Sertifikasi Ketua Pelaksana SEF 2025.</p>
-          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat1.png'); return false;">Lihat Sertifikat <span>↗</span></a>
+          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat1.png'); return false;">Lihat Sertifikat </a>
         </div>
       </div>
 
@@ -2013,7 +1981,7 @@
           <span class="cert-tag">SERTIFIKAT 02</span>
           <div class="cert-title">Penghargaan Volunteer BEM FEB</div>
           <p class="cert-desc">Sertifikat Kepanitiaan PKKMB FEB 2025.</p>
-          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat2.png'); return false;">Lihat Sertifikat <span>↗</span></a>
+          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat2.png'); return false;">Lihat Sertifikat </a>
         </div>
       </div>
 
@@ -2025,7 +1993,7 @@
           <span class="cert-tag">SERTIFIKAT 03</span>
           <div class="cert-title">Sertifikat Kepengurusan HMJ Ekonomi Syariah 2025</div>
           <p class="cert-desc">Staff Anggota Divisi Mikat HMJ Ekonomi Syariah 2025.</p>
-          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat3.png'); return false;">Lihat Sertifikat <span>↗</span></a>
+          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat3.png'); return false;">Lihat Sertifikat </a>
         </div>
       </div>
 
@@ -2037,7 +2005,7 @@
           <span class="cert-tag">SERTIFIKAT 04</span>
           <div class="cert-title">Sertifikat Seminar &amp; Workshop</div>
           <p class="cert-desc">Bukti partisipasi aktif dalam program seminar UKM UDC Untirta.</p>
-          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat4.png'); return false;">Lihat Sertifikat <span>↗</span></a>
+          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat4.png'); return false;">Lihat Sertifikat </a>
         </div>
       </div>
     </div>
@@ -2046,41 +2014,41 @@
   <!-- ========== GALLERY SECTION ========== -->
   <section id="gallery">
     <div class="reveal">
-      <span class="section-label">✦ Visual Archive</span>
+      <span class="section-label">Visual Archive</span>
       <h2 class="section-title">Moments &amp; Highlights</h2>
       <p class="section-sub">Dokumentasi perjalanan, kegiatan, dan kolaborasi.</p>
     </div>
     <div class="gallery-grid reveal">
       <div class="gallery-item" onclick="openLightbox('gallery1.jpg')">
         <img src="gallery1.jpg" alt="Gallery 1" onerror="this.parentNode.style.display='none';" />
-        <div class="gallery-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item" onclick="openLightbox('gallery2.jpg')">
         <img src="gallery2.jpg" alt="Gallery 2" onerror="this.parentNode.style.display='none';" />
-        <div class="gallery-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item" onclick="openLightbox('gallery3.jpg')">
         <img src="gallery3.jpg" alt="Gallery 3" onerror="this.parentNode.style.display='none';" />
-        <div class="gallery-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item" onclick="openLightbox('gallery4.jpg')">
         <img src="gallery4.jpg" alt="Gallery 4" onerror="this.parentNode.style.display='none';" />
-        <div class="gallery-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item" onclick="openLightbox('gallery5.jpg')">
         <img src="gallery5.jpg" alt="Gallery 5" onerror="this.parentNode.style.display='none';" />
-        <div class="gallery-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        <div class="gallery-overlay"></div>
       </div>
       <div class="gallery-item" onclick="openLightbox('gallery6.jpg')">
         <img src="gallery6.jpg" alt="Gallery 6" onerror="this.parentNode.style.display='none';" />
-        <div class="gallery-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        <div class="gallery-overlay"></div>
       </div>
     </div>
   </section>
 
   <!-- Lightbox Modal -->
   <div id="lightbox">
-    <div id="lightbox-close" onclick="closeLightbox()">×</div>
+    <div id="lightbox-close" onclick="closeLightbox()">Tutup</div>
     <img id="lightbox-img" src="" alt="Preview" />
   </div>
 
@@ -2100,13 +2068,13 @@
     </div>
     <div class="spotify-controls">
       <button class="spotify-btn" onclick="prevSong()" title="Previous Song" aria-label="Previous Song">
-        <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+        PREV
       </button>
       <button class="spotify-btn" id="playPauseBtn" onclick="togglePlayMusic()" title="Play/Pause" aria-label="Play or Pause">
-        <svg id="playPauseSvg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <span id="playPauseSvg">PLAY</span>
       </button>
       <button class="spotify-btn" onclick="nextSong()" title="Next Song" aria-label="Next Song">
-        <svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+        NEXT
       </button>
     </div>
     <audio id="audioPlayer"></audio>
@@ -2118,17 +2086,17 @@
       <div>
         <h2 class="contact-title">Mari Berkolaborasi &amp; Membangun Solusi Bersama</h2>
         <div class="contact-info">
-          <div class="contact-item"><div class="contact-icon">DA</div> Dana Alpaiji</div>
-          <div class="contact-item"><div class="contact-icon">@</div><a href="mailto:danaalpaiji@gmail.com">danaalpaiji@gmail.com</a></div>
-          <div class="contact-item"><div class="contact-icon">in</div><a href="https://linkedin.com/in/danaalpaiji" target="_blank">linkedin.com/in/danaalpaiji</a></div>
-          <div class="contact-item"><div class="contact-icon">Tel</div><a href="tel:+6285117751203">+6285117751203</a></div>
-          <div class="contact-item"><div class="contact-icon">Loc</div> Serang, Banten, Indonesia</div>
+          <div class="contact-item">Dana Alpaiji</div>
+          <div class="contact-item"><a href="mailto:danaalpaiji@gmail.com">danaalpaiji@gmail.com</a></div>
+          <div class="contact-item"><a href="https://linkedin.com/in/danaalpaiji" target="_blank">linkedin.com/in/danaalpaiji</a></div>
+          <div class="contact-item"><a href="tel:+6285117751203">+6285117751203</a></div>
+          <div class="contact-item">Serang, Banten, Indonesia</div>
         </div>
       </div>
       <div class="contact-btns">
-        <a href="mailto:danaalpaiji@gmail.com" class="btn btn-primary"><i class="btn-symbol">✦</i> Email Me</a>
-        <a href="https://linkedin.com/in/danaalpaiji" target="_blank" class="btn btn-secondary"><i class="btn-symbol">↗</i> LinkedIn</a>
-        <a href="cv.pdf" download class="btn btn-secondary"><i class="btn-symbol">◈</i> Download CV</a>
+        <a href="mailto:danaalpaiji@gmail.com" class="btn btn-primary">Email Me</a>
+        <a href="https://linkedin.com/in/danaalpaiji" target="_blank" class="btn btn-secondary">LinkedIn</a>
+        <a href="cv.pdf" download class="btn btn-secondary">Download CV</a>
       </div>
     </div>
   </section>
@@ -2137,9 +2105,9 @@
   <footer>
     <div class="footer-logo">Dana Alpaiji<span>.</span></div>
     <div class="footer-socials">
-      <a class="social-btn" href="mailto:danaalpaiji@gmail.com">@</a>
-      <a class="social-btn" href="https://linkedin.com/in/danaalpaiji" target="_blank">in</a>
-      <a class="social-btn" href="tel:+6285117751203">Tel</a>
+      <a class="social-btn" href="mailto:danaalpaiji@gmail.com">Email</a>
+      <a class="social-btn" href="https://linkedin.com/in/danaalpaiji" target="_blank">LinkedIn</a>
+      <a class="social-btn" href="tel:+6285117751203">Telepon</a>
     </div>
     <p class="footer-copy">&copy; 2026 Dana Alpaiji. Crafted with Passion, Leadership &amp; Artificial Intelligence.</p>
   </footer>
@@ -2262,8 +2230,8 @@
     const songArtistEl = document.getElementById('songArtist');
     const eqBars = document.getElementById('eqBars');
 
-    const playIconPath = '<path d="M8 5v14l11-7z"/>';
-    const pauseIconPath = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+    const playIconPath = 'PLAY';
+    const pauseIconPath = 'PAUSE';
 
     function loadTrack(index) {
       audioPlayer.src = playlist[index].file;
