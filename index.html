@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dana Alpaiji — Portfolio</title>
-  <link rel="icon" type="image/jpeg" href="profile.jpg" />
-  <link rel="shortcut icon" type="image/jpeg" href="profile.jpg" />
+  <link rel="icon" type="image/jpeg" sizes="any" href="/profile.jpg?v=3" />
+  <link rel="shortcut icon" type="image/jpeg" href="/profile.jpg?v=3" />
+  <link rel="apple-touch-icon" href="/profile.jpg?v=3" />
+  <meta name="theme-color" content="#F5F9FF" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -16,27 +18,27 @@
     ========================================================================== */
     :root {
       /* Studio Ghibli Inspired Nature Palette */
-      --ghibli-sage: #4A6B53;         /* Hutan / Meadow Green */
-      --ghibli-sage-dark: #2F4837;    /* Deep Forest */
-      --ghibli-sage-soft: rgba(74, 107, 83, 0.12);
-      --ghibli-sky: #7BA7BC;          /* Langit Musim Panas */
-      --ghibli-terracotta: #C87D55;   /* Sunset / Warm Autumn */
-      --ghibli-sun: #E6B86A;          /* Golden Hour Glow */
+      --ghibli-sage: #2864A5;         /* Hutan / Meadow Green */
+      --ghibli-sage-dark: #183B63;    /* Deep Forest */
+      --ghibli-sage-soft: rgba(40, 100, 165, 0.12);
+      --ghibli-sky: #6FA8DC;          /* Langit Musim Panas */
+      --ghibli-terracotta: #4D86C6;   /* Sunset / Warm Autumn */
+      --ghibli-sun: #A9D5F5;          /* Golden Hour Glow */
       
       /* Pure Light Warm Paper & Frosted Glass */
-      --bg-primary: #FAF7F0;
+      --bg-primary: #F5F9FF;
       --bg-secondary: rgba(238, 233, 221, 0.45);
       --bg-glass-nav: rgba(252, 250, 245, 0.72);
       --bg-card: rgba(255, 255, 255, 0.65);
       --bg-card-hover: rgba(255, 255, 255, 0.88);
       
-      --text-primary: #232B25;
-      --text-secondary: #4A544C;
-      --text-muted: #768078;
+      --text-primary: #172B45;
+      --text-secondary: #40566F;
+      --text-muted: #71849B;
       
       /* Glassmorphism Borders & Shadows */
       --glass-border: 1.5px solid rgba(255, 255, 255, 0.9);
-      --glass-border-subtle: 1px solid rgba(74, 107, 83, 0.18);
+      --glass-border-subtle: 1px solid rgba(40, 100, 165, 0.18);
       --glass-blur: blur(20px) saturate(160%);
       
       --radius-sm: 10px;
@@ -44,12 +46,12 @@
       --radius-lg: 26px;
       
       --glass-shadow: 
-        0 12px 32px -8px rgba(47, 72, 55, 0.08),
-        0 4px 12px -2px rgba(74, 107, 83, 0.04),
+        0 12px 32px -8px rgba(24, 59, 99, 0.08),
+        0 4px 12px -2px rgba(40, 100, 165, 0.04),
         inset 0 1px 2px rgba(255, 255, 255, 0.95);
       --glass-shadow-hover: 
-        0 18px 40px -8px rgba(74, 107, 83, 0.16),
-        0 6px 18px -4px rgba(200, 125, 85, 0.1),
+        0 18px 40px -8px rgba(40, 100, 165, 0.16),
+        0 6px 18px -4px rgba(77, 134, 198, 0.1),
         inset 0 1px 2px rgba(255, 255, 255, 1);
         
       --font-main: 'Poppins', sans-serif;
@@ -76,8 +78,8 @@
       position: relative;
       /* Subtle Warm Watercolor Texture */
       background-image: 
-        radial-gradient(rgba(74, 107, 83, 0.045) 1px, transparent 1px),
-        radial-gradient(rgba(200, 125, 85, 0.04) 1px, transparent 1px);
+        radial-gradient(rgba(40, 100, 165, 0.045) 1px, transparent 1px),
+        radial-gradient(rgba(77, 134, 198, 0.04) 1px, transparent 1px);
       background-size: 28px 28px;
       background-position: 0 0, 14px 14px;
     }
@@ -135,7 +137,7 @@
     }
 
     ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #F2EFE6; }
+    ::-webkit-scrollbar-track { background: #EAF2FB; }
     ::-webkit-scrollbar-thumb {
       background: var(--ghibli-sage);
       border-radius: 99px;
@@ -223,7 +225,7 @@
     .wind-line {
       position: absolute;
       height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(74, 107, 83, 0.35), rgba(200, 125, 85, 0.4), transparent);
+      background: linear-gradient(90deg, transparent, rgba(40, 100, 165, 0.35), rgba(77, 134, 198, 0.4), transparent);
       border-radius: 99px;
       opacity: 0;
       animation: breezeShoot 1.6s cubic-bezier(0.25, 1, 0.5, 1) infinite;
@@ -253,7 +255,7 @@
       left: -260px;
       width: 220px;
       height: 160px;
-      filter: drop-shadow(0 8px 16px rgba(74, 107, 83, 0.2));
+      filter: drop-shadow(0 8px 16px rgba(40, 100, 165, 0.2));
       animation: glideAcross 2.5s cubic-bezier(0.25, 0.8, 0.35, 1) forwards;
     }
 
@@ -296,7 +298,7 @@
       -webkit-backdrop-filter: blur(18px);
       border: 1.5px solid rgba(255, 255, 255, 0.95);
       border-radius: 26px;
-      box-shadow: 0 20px 50px rgba(47, 72, 55, 0.1);
+      box-shadow: 0 20px 50px rgba(24, 59, 99, 0.1);
     }
 
     .loader-botanical-crest {
@@ -317,7 +319,7 @@
       font-size: 0.68rem;
       padding: 4px 14px;
       border-radius: 99px;
-      border: 1px solid rgba(74, 107, 83, 0.25);
+      border: 1px solid rgba(40, 100, 165, 0.25);
       text-transform: uppercase;
       letter-spacing: 0.2em;
     }
@@ -333,7 +335,7 @@
     .loader-bar-wrap {
       width: min(260px, 75vw);
       height: 6px;
-      background: rgba(74, 107, 83, 0.12);
+      background: rgba(40, 100, 165, 0.12);
       border-radius: 99px;
       overflow: hidden;
       margin-top: 4px;
@@ -386,7 +388,7 @@
       top: 8px;
       padding: 8px 24px;
       background: rgba(255, 255, 255, 0.85);
-      box-shadow: 0 12px 32px rgba(47, 72, 55, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.95);
+      box-shadow: 0 12px 32px rgba(24, 59, 99, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.95);
     }
 
     .nav-brand {
@@ -428,7 +430,7 @@
     .nav-menu a.active {
       background: var(--ghibli-sage);
       color: #FFFFFF;
-      box-shadow: 0 4px 12px rgba(74, 107, 83, 0.25);
+      box-shadow: 0 4px 12px rgba(40, 100, 165, 0.25);
     }
 
     /* Hamburger Mobile */
@@ -496,10 +498,10 @@
       text-transform: uppercase;
       letter-spacing: 0.18em;
       color: var(--ghibli-sage-dark);
-      background: rgba(74, 107, 83, 0.1);
+      background: rgba(40, 100, 165, 0.1);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(74, 107, 83, 0.25);
+      border: 1px solid rgba(40, 100, 165, 0.25);
       border-radius: 99px;
       padding: 4px 14px;
       margin-bottom: 8px;
@@ -564,18 +566,18 @@
       background: linear-gradient(135deg, var(--ghibli-sage), var(--ghibli-sage-dark));
       color: #FFFFFF;
       border: 1px solid rgba(255, 255, 255, 0.6);
-      box-shadow: 0 8px 20px rgba(47, 72, 55, 0.22);
+      box-shadow: 0 8px 20px rgba(24, 59, 99, 0.22);
     }
     .btn-primary:hover {
       transform: translateY(-2px);
       background: linear-gradient(135deg, #55795F, #375340);
-      box-shadow: 0 12px 26px rgba(47, 72, 55, 0.3);
+      box-shadow: 0 12px 26px rgba(24, 59, 99, 0.3);
     }
 
     .btn-secondary {
       background: rgba(255, 255, 255, 0.72);
       color: var(--text-primary);
-      border: 1.5px solid rgba(74, 107, 83, 0.25);
+      border: 1.5px solid rgba(40, 100, 165, 0.25);
       box-shadow: var(--glass-shadow);
     }
     .btn-secondary:hover {
@@ -616,12 +618,12 @@
     .chime-thread {
       width: 1.5px;
       height: 48px;
-      background: rgba(74, 107, 83, 0.45);
+      background: rgba(40, 100, 165, 0.45);
     }
     .chime-svg {
       width: 48px;
       height: 76px;
-      filter: drop-shadow(0 6px 14px rgba(123, 167, 188, 0.3));
+      filter: drop-shadow(0 6px 14px rgba(111, 168, 220, 0.3));
     }
 
     @keyframes chimeSway {
@@ -681,10 +683,10 @@
       font-size: 0.76rem;
       font-weight: 600;
       color: var(--ghibli-sage-dark);
-      background: rgba(74, 107, 83, 0.1);
+      background: rgba(40, 100, 165, 0.1);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(74, 107, 83, 0.22);
+      border: 1px solid rgba(40, 100, 165, 0.22);
       display: inline-block;
       padding: 6px 14px;
       border-radius: var(--radius-sm);
@@ -731,7 +733,7 @@
       inset: 0;
       border: 1.5px solid rgba(255, 255, 255, 0.9);
       border-radius: 140px 140px 22px 22px;
-      background: linear-gradient(135deg, rgba(123, 167, 188, 0.35), rgba(123, 167, 188, 0.1));
+      background: linear-gradient(135deg, rgba(111, 168, 220, 0.35), rgba(111, 168, 220, 0.1));
       backdrop-filter: blur(12px);
       transform: translate(-10px, -10px) rotate(-2deg);
       z-index: 0;
@@ -743,7 +745,7 @@
       inset: 0;
       border: 1.5px solid rgba(255, 255, 255, 0.9);
       border-radius: 140px 140px 22px 22px;
-      background: linear-gradient(135deg, rgba(74, 107, 83, 0.32), rgba(200, 125, 85, 0.15));
+      background: linear-gradient(135deg, rgba(40, 100, 165, 0.32), rgba(77, 134, 198, 0.15));
       backdrop-filter: blur(12px);
       transform: translate(10px, 10px) rotate(2deg);
       z-index: 1;
@@ -765,7 +767,7 @@
       object-fit: cover;
       border-radius: 140px 140px 20px 20px;
       border: 2.5px solid rgba(255, 255, 255, 0.95);
-      box-shadow: 0 16px 36px rgba(47, 72, 55, 0.14);
+      box-shadow: 0 16px 36px rgba(24, 59, 99, 0.14);
       display: block;
       background: rgba(255, 255, 255, 0.6);
     }
@@ -814,7 +816,7 @@
        8. SERENE GLASS MARQUEE BANNER
     ========================================================================== */
     .ghibli-marquee-bar {
-      background: rgba(74, 107, 83, 0.85);
+      background: rgba(40, 100, 165, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       color: #FFFFFF;
@@ -942,7 +944,7 @@
       content: '';
       flex: 1;
       height: 1.5px;
-      background: linear-gradient(90deg, rgba(74, 107, 83, 0.35), transparent);
+      background: linear-gradient(90deg, rgba(40, 100, 165, 0.35), transparent);
     }
 
     .skills-grid {
@@ -1017,7 +1019,7 @@
       background: var(--ghibli-sage);
       border: 2.5px solid #FFFFFF;
       border-radius: 50%;
-      box-shadow: 0 0 0 3px rgba(74, 107, 83, 0.2);
+      box-shadow: 0 0 0 3px rgba(40, 100, 165, 0.2);
     }
 
     .exp-card {
@@ -1172,7 +1174,7 @@
 
     .org-divider {
       border: none;
-      border-top: 1px solid rgba(74, 107, 83, 0.14);
+      border-top: 1px solid rgba(40, 100, 165, 0.14);
       margin: 10px 0;
     }
 
@@ -1240,7 +1242,7 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      background: rgba(74, 107, 83, 0.12);
+      background: rgba(40, 100, 165, 0.12);
       color: var(--ghibli-sage-dark);
       border-radius: 99px;
       padding: 2px 10px;
@@ -1321,7 +1323,7 @@
       position: absolute;
       inset: 6px;
       border-radius: 12px;
-      background: rgba(47, 72, 55, 0.35);
+      background: rgba(24, 59, 99, 0.35);
       backdrop-filter: blur(3px);
       -webkit-backdrop-filter: blur(3px);
       opacity: 0;
@@ -1404,7 +1406,7 @@
     .spotify-disk {
       width: 40px;
       height: 40px;
-      background: radial-gradient(circle, var(--ghibli-terracotta) 26%, #232B25 29%, #38453B 65%, #232B25 100%);
+      background: radial-gradient(circle, var(--ghibli-terracotta) 26%, #172B45 29%, #38453B 65%, #172B45 100%);
       border: 2px solid rgba(255, 255, 255, 0.9);
       border-radius: 50%;
       display: flex;
@@ -1418,7 +1420,7 @@
       content: '';
       width: 8px;
       height: 8px;
-      background: #FAF7F0;
+      background: #F5F9FF;
       border-radius: 50%;
     }
     @keyframes spinDisk { to { transform: rotate(360deg); } }
@@ -1615,6 +1617,93 @@
       transform: translateY(-2px);
     }
 
+
+    /* PROJECTS SECTION */
+    #projects {
+      background: var(--bg-secondary);
+      border-top: 1px solid rgba(255, 255, 255, 0.7);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .project-card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 22px;
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      border: var(--glass-border);
+      box-shadow: var(--glass-shadow);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      background: var(--bg-card-hover);
+      box-shadow: var(--glass-shadow-hover);
+    }
+    .project-topline { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:18px; }
+    .project-category { color:var(--ghibli-sage-dark); font-size:.62rem; font-weight:700; letter-spacing:.12em; }
+    .project-index { color:var(--ghibli-sage); font-size:.8rem; font-weight:700; }
+    .project-title { color:var(--text-primary); font-size:1.05rem; line-height:1.45; font-weight:700; margin-bottom:10px; }
+    .project-desc { color:var(--text-secondary); font-size:.76rem; line-height:1.7; margin-bottom:16px; flex:1; }
+    .project-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:15px; }
+    .project-tags span { padding:4px 9px; border-radius:99px; background:var(--ghibli-sage-soft); color:var(--ghibli-sage-dark); font-size:.62rem; font-weight:600; }
+    .project-status { border-top:1px solid rgba(40,100,165,.16); padding-top:11px; color:var(--ghibli-sage); font-size:.68rem; font-weight:600; }
+
+    /* EXPANDED SPOTIFY-INSPIRED PLAYER */
+    #spotify-widget {
+      width: min(360px, calc(100vw - 28px));
+      display: grid;
+      grid-template-columns: 54px minmax(0, 1fr) auto;
+      grid-template-areas: "cover info controls" "progress progress progress" "times times times";
+      gap: 9px 11px;
+      padding: 12px 14px 10px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(255,255,255,.96);
+      box-shadow: 0 14px 38px rgba(24,59,99,.18);
+      backdrop-filter: blur(22px) saturate(170%);
+      -webkit-backdrop-filter: blur(22px) saturate(170%);
+    }
+    .spotify-disk {
+      grid-area: cover;
+      width:54px; height:54px; border-radius:10px; overflow:hidden;
+      background:#e8eee8; border:0; animation:none !important;
+    }
+    .spotify-disk img { width:100%; height:100%; object-fit:cover; display:block; }
+    .spotify-info { grid-area:info; min-width:0; align-self:center; }
+    .spotify-title { font-size:.76rem; }
+    .spotify-artist { font-size:.65rem; }
+    .eq-bars { display:none; }
+    .spotify-controls { grid-area:controls; gap:5px; align-self:center; }
+    .spotify-btn {
+      width:30px; height:30px; border-radius:50%; background:transparent;
+      color:var(--ghibli-sage-dark); font-family:var(--font-main); font-size:.55rem;
+      border:1px solid rgba(40,100,165,.18); font-weight:700; padding:0;
+    }
+    .spotify-btn:hover { background:var(--ghibli-sage); color:#fff; }
+    .spotify-btn svg { width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+    #playPauseBtn { width:34px; height:34px; background:var(--ghibli-sage); color:#fff; font-size:.58rem; }
+    #playPauseBtn svg { width:17px; height:17px; }
+    #playPauseBtn .play-shape { fill:currentColor; stroke:none; }
+    .project-action { display:inline-flex; align-items:center; justify-content:center; align-self:flex-start; margin-top:2px; padding:8px 14px; border-radius:99px; background:var(--ghibli-sage); color:#fff; text-decoration:none; font-size:.68rem; font-weight:600; transition:background .2s ease, transform .2s ease; }
+    .project-action:hover { background:var(--ghibli-sage-dark); transform:translateY(-2px); }
+    .spotify-progress-wrap { grid-area:progress; display:flex; align-items:center; }
+    #musicProgress { width:100%; height:4px; accent-color:var(--ghibli-sage); cursor:pointer; }
+    .spotify-times { grid-area:times; display:flex; justify-content:space-between; color:var(--text-muted); font-size:.58rem; font-variant-numeric:tabular-nums; }
+    @media (max-width: 900px) { .projects-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width: 640px) {
+      .projects-grid { grid-template-columns:1fr; }
+      #spotify-widget { bottom:10px; right:10px; width:min(360px,calc(100vw - 20px)); }
+    }
+
     /* ==========================================================================
        18. RESPONSIVE BREAKPOINTS
     ========================================================================== */
@@ -1641,6 +1730,75 @@
       .about-stats { grid-template-columns: 1fr 1fr; }
       #spotify-widget { bottom: 10px; right: 10px; width: 250px; }
     }
+
+    /* COMPACT TRANSPARENT MUSIC CONTROL — keeps page text unobstructed */
+    #spotify-widget {
+      width: 248px !important;
+      grid-template-columns: 36px minmax(0, 1fr) auto !important;
+      grid-template-areas: "cover info controls" !important;
+      gap: 7px !important;
+      padding: 6px 9px !important;
+      border-radius: 14px !important;
+      background: rgba(255, 255, 255, 0.22) !important;
+      border: 1px solid rgba(255, 255, 255, 0.28) !important;
+      box-shadow: none !important;
+      backdrop-filter: blur(8px) saturate(115%) !important;
+      -webkit-backdrop-filter: blur(8px) saturate(115%) !important;
+      opacity: 0.72;
+      transition: opacity .2s ease, background .2s ease !important;
+    }
+    #spotify-widget:hover {
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.38) !important;
+      transform: none !important;
+    }
+    .spotify-disk { width: 36px !important; height: 36px !important; }
+    .spotify-title { font-size: .66rem !important; }
+    .spotify-artist { font-size: .57rem !important; }
+    .spotify-controls { gap: 3px !important; }
+    .spotify-btn { width: 23px !important; height: 23px !important; border: 0 !important; background: transparent !important; }
+    .spotify-btn svg { width: 13px !important; height: 13px !important; }
+    #playPauseBtn { width: 26px !important; height: 26px !important; background: rgba(40,100,165,.72) !important; color: #fff !important; }
+    #playPauseBtn svg { width: 14px !important; height: 14px !important; }
+    .spotify-progress-wrap, .spotify-times { display: none !important; }
+    @media (max-width: 640px) {
+      #spotify-widget { width: 218px !important; right: 8px !important; bottom: 8px !important; }
+    }
+
+
+    /* BLUE & WHITE THEME + LIGHT/DARK MODE */
+    :root {
+      color-scheme: light;
+      --bg-primary: #F5F9FF;
+      --bg-secondary: rgba(226, 238, 252, .58);
+      --bg-glass-nav: rgba(248, 252, 255, .82);
+      --bg-card: rgba(255,255,255,.78);
+      --bg-card-hover: rgba(255,255,255,.96);
+      --text-primary: #172B45;
+      --text-secondary: #40566F;
+      --text-muted: #71849B;
+      --glass-border: 1.5px solid rgba(255,255,255,.94);
+      --glass-border-subtle: 1px solid rgba(40,100,165,.2);
+      --glass-shadow: 0 12px 32px -8px rgba(24,59,99,.09), 0 4px 12px -2px rgba(40,100,165,.05), inset 0 1px 2px rgba(255,255,255,.96);
+      --glass-shadow-hover: 0 18px 40px -8px rgba(40,100,165,.18), 0 6px 18px -4px rgba(77,134,198,.12), inset 0 1px 2px #fff;
+    }
+    .theme-toggle { width:34px; height:34px; flex:0 0 34px; display:inline-flex; align-items:center; justify-content:center; border:1px solid rgba(40,100,165,.22); border-radius:50%; background:rgba(255,255,255,.62); color:#183B63; cursor:pointer; font:600 1.05rem var(--font-main); transition:all .2s ease; }
+    .theme-toggle:hover { background:#2864A5; color:#fff; transform:rotate(-12deg); }
+    .theme-icon { line-height:1; }
+    body[data-theme="dark"] { color-scheme:dark; --bg-primary:#0C1728; --bg-secondary:rgba(17,36,60,.72); --bg-glass-nav:rgba(13,28,47,.86); --bg-card:rgba(20,42,68,.82); --bg-card-hover:rgba(27,55,87,.96); --text-primary:#EDF5FF; --text-secondary:#C2D4E8; --text-muted:#91A9C3; --glass-border:1px solid rgba(151,190,231,.2); --glass-border-subtle:1px solid rgba(111,168,220,.24); --glass-shadow:0 12px 32px -8px rgba(0,0,0,.28), inset 0 1px 1px rgba(255,255,255,.05); --glass-shadow-hover:0 18px 40px -8px rgba(0,0,0,.38), inset 0 1px 1px rgba(255,255,255,.08); background-color:var(--bg-primary); }
+    body[data-theme="dark"] { background-image:radial-gradient(rgba(111,168,220,.055) 1px,transparent 1px),radial-gradient(rgba(77,134,198,.045) 1px,transparent 1px); }
+    body[data-theme="dark"] #about, body[data-theme="dark"] #experience, body[data-theme="dark"] #certificates, body[data-theme="dark"] #contact { background:var(--bg-secondary); border-color:rgba(151,190,231,.12); }
+    body[data-theme="dark"] #navbar, body[data-theme="dark"] .mobile-menu { background:var(--bg-glass-nav); border-color:rgba(151,190,231,.2); }
+    body[data-theme="dark"] .mobile-menu a, body[data-theme="dark"] .nav-menu a { color:var(--text-primary); }
+    body[data-theme="dark"] .project-card, body[data-theme="dark"] .org-card, body[data-theme="dark"] .exp-card, body[data-theme="dark"] .cert-card, body[data-theme="dark"] .stat-card, body[data-theme="dark"] .skill-card, body[data-theme="dark"] .contact-card, body[data-theme="dark"] .gallery-item { background:var(--bg-card); border-color:var(--glass-border-subtle); }
+    body[data-theme="dark"] .project-card:hover, body[data-theme="dark"] .org-card:hover, body[data-theme="dark"] .exp-card:hover, body[data-theme="dark"] .cert-card:hover, body[data-theme="dark"] .contact-card:hover { background:var(--bg-card-hover); }
+    body[data-theme="dark"] #spotify-widget { background:rgba(16,35,58,.48)!important; border-color:rgba(151,190,231,.2)!important; }
+    body[data-theme="dark"] .spotify-btn { color:#DCEBFA; }
+    body[data-theme="dark"] .theme-toggle { background:rgba(40,100,165,.22); color:#DCEBFA; border-color:rgba(151,190,231,.3); }
+    body[data-theme="dark"] .loader-centerpiece { background:rgba(16,35,58,.88); border-color:rgba(151,190,231,.25); }
+    body[data-theme="dark"] #loader { background:linear-gradient(160deg,#10243D 0%,#0C1728 55%,#162F4D 100%); }
+    @media (max-width:640px) { .theme-toggle { margin-left:auto; margin-right:10px; } }
+
   </style>
 </head>
 <body>
@@ -1655,19 +1813,19 @@
 
   <!-- ========== SUBTLE BOTANICAL CORNER SKETCHES ========== -->
   <svg class="bg-botanical-tl" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="#4A6B53" stroke-width="1.5" fill="none" stroke-linecap="round">
+    <g stroke="#2864A5" stroke-width="1.5" fill="none" stroke-linecap="round">
       <path d="M0,0 Q70,50 140,130" />
-      <path d="M40,28 Q65,15 75,32 Q55,42 40,28 Z" fill="rgba(74,107,83,0.15)" />
-      <path d="M75,60 Q105,45 115,65 Q92,75 75,60 Z" fill="rgba(74,107,83,0.15)" />
-      <path d="M55,50 Q30,70 42,88 Q62,72 55,50 Z" fill="rgba(74,107,83,0.15)" />
-      <path d="M110,95 Q138,85 145,105 Q122,112 110,95 Z" fill="rgba(74,107,83,0.15)" />
+      <path d="M40,28 Q65,15 75,32 Q55,42 40,28 Z" fill="rgba(40,100,165,0.15)" />
+      <path d="M75,60 Q105,45 115,65 Q92,75 75,60 Z" fill="rgba(40,100,165,0.15)" />
+      <path d="M55,50 Q30,70 42,88 Q62,72 55,50 Z" fill="rgba(40,100,165,0.15)" />
+      <path d="M110,95 Q138,85 145,105 Q122,112 110,95 Z" fill="rgba(40,100,165,0.15)" />
     </g>
   </svg>
   <svg class="bg-botanical-br" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="#4A6B53" stroke-width="1.5" fill="none" stroke-linecap="round">
+    <g stroke="#2864A5" stroke-width="1.5" fill="none" stroke-linecap="round">
       <path d="M0,0 Q70,50 140,130" />
-      <path d="M40,28 Q65,15 75,32 Q55,42 40,28 Z" fill="rgba(74,107,83,0.15)" />
-      <path d="M75,60 Q105,45 115,65 Q92,75 75,60 Z" fill="rgba(74,107,83,0.15)" />
+      <path d="M40,28 Q65,15 75,32 Q55,42 40,28 Z" fill="rgba(40,100,165,0.15)" />
+      <path d="M75,60 Q105,45 115,65 Q92,75 75,60 Z" fill="rgba(40,100,165,0.15)" />
     </g>
   </svg>
 
@@ -1687,29 +1845,29 @@
     </div>
 
     <svg class="wind-trail-svg" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-      <path class="wind-path-anim" d="M -100,480 Q 480,240 960,400 T 2050,240" fill="none" stroke="#7BA7BC" stroke-width="2.5" />
-      <path class="wind-path-anim" d="M -100,500 Q 480,270 960,420 T 2050,265" fill="none" stroke="#4A6B53" stroke-width="2" />
+      <path class="wind-path-anim" d="M -100,480 Q 480,240 960,400 T 2050,240" fill="none" stroke="#6FA8DC" stroke-width="2.5" />
+      <path class="wind-path-anim" d="M -100,500 Q 480,270 960,420 T 2050,265" fill="none" stroke="#2864A5" stroke-width="2" />
     </svg>
 
     <div class="breeze-stage">
       <div class="gliding-silhouette">
         <svg viewBox="0 0 240 160" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <!-- Graceful Gliding Bird & Floating Leaves -->
-          <path d="M60,85 Q95,45 125,78 Q155,40 195,70 Q155,68 125,95 Q95,72 60,85 Z" fill="#4A6B53" />
-          <path d="M25,110 Q40,98 50,112 Q35,120 25,110 Z" fill="#C87D55" />
-          <path d="M205,42 Q220,30 230,45 Q215,52 205,42 Z" fill="#E6B86A" />
-          <circle cx="140" cy="40" r="3" fill="#E6B86A" />
-          <circle cx="85" cy="115" r="2.5" fill="#7BA7BC" />
+          <path d="M60,85 Q95,45 125,78 Q155,40 195,70 Q155,68 125,95 Q95,72 60,85 Z" fill="#2864A5" />
+          <path d="M25,110 Q40,98 50,112 Q35,120 25,110 Z" fill="#4D86C6" />
+          <path d="M205,42 Q220,30 230,45 Q215,52 205,42 Z" fill="#A9D5F5" />
+          <circle cx="140" cy="40" r="3" fill="#A9D5F5" />
+          <circle cx="85" cy="115" r="2.5" fill="#6FA8DC" />
         </svg>
       </div>
     </div>
 
     <div class="loader-centerpiece">
       <svg class="loader-botanical-crest" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50,85 L50,20" stroke="#4A6B53" stroke-width="3" stroke-linecap="round"/>
-        <path d="M50,65 Q25,55 22,35 Q45,42 50,65 Z" fill="#4A6B53" opacity="0.85"/>
-        <path d="M50,50 Q75,40 78,20 Q55,28 50,50 Z" fill="#7BA7BC" opacity="0.85"/>
-        <path d="M50,35 Q30,25 32,10 Q48,18 50,35 Z" fill="#C87D55" opacity="0.85"/>
+        <path d="M50,85 L50,20" stroke="#2864A5" stroke-width="3" stroke-linecap="round"/>
+        <path d="M50,65 Q25,55 22,35 Q45,42 50,65 Z" fill="#2864A5" opacity="0.85"/>
+        <path d="M50,50 Q75,40 78,20 Q55,28 50,50 Z" fill="#6FA8DC" opacity="0.85"/>
+        <path d="M50,35 Q30,25 32,10 Q48,18 50,35 Z" fill="#4D86C6" opacity="0.85"/>
       </svg>
       <div class="loader-tag">PORTFOLIO // DANA ALPAIJI</div>
       <div class="loader-logo">Dana Alpaiji.</div>
@@ -1727,6 +1885,7 @@
     <a href="#skills" onclick="closeMobile()">Skills</a>
     <a href="#experience" onclick="closeMobile()">Experience</a>
     <a href="#organization" onclick="closeMobile()">Organization</a>
+    <a href="#projects" onclick="closeMobile()">Projects</a>
     <a href="#certificates" onclick="closeMobile()">Certificates</a>
     <a href="#gallery" onclick="closeMobile()">Gallery</a>
     <a href="#contact" onclick="closeMobile()">Contact</a>
@@ -1744,10 +1903,13 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#organization">Organization</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#certificates">Certificates</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Aktifkan mode gelap" title="Ganti tema"><span class="theme-icon" aria-hidden="true">☾</span></button>
 
     <div class="hamburger" id="hamburger" onclick="toggleMobile()">
       <span></span><span></span><span></span>
@@ -1761,12 +1923,12 @@
       <div class="chime-thread"></div>
       <svg class="chime-svg" viewBox="0 0 80 130" xmlns="http://www.w3.org/2000/svg">
         <!-- Glass Bell -->
-        <path d="M15,42 C15,15 65,15 65,42 L70,52 C40,56 40,56 10,52 Z" fill="rgba(123, 167, 188, 0.35)" stroke="#4A6B53" stroke-width="2"/>
-        <circle cx="40" cy="48" r="4" fill="#C87D55"/>
-        <line x1="40" y1="52" x2="40" y2="75" stroke="#4A6B53" stroke-width="1.5"/>
+        <path d="M15,42 C15,15 65,15 65,42 L70,52 C40,56 40,56 10,52 Z" fill="rgba(111, 168, 220, 0.35)" stroke="#2864A5" stroke-width="2"/>
+        <circle cx="40" cy="48" r="4" fill="#4D86C6"/>
+        <line x1="40" y1="52" x2="40" y2="75" stroke="#2864A5" stroke-width="1.5"/>
         <!-- Tanzaku Paper Slip -->
-        <polygon points="32,75 48,75 52,122 28,122" fill="#FAF7F0" stroke="#4A6B53" stroke-width="1.5"/>
-        <path d="M36,92 Q40,86 44,92" stroke="#C87D55" stroke-width="1.5" fill="none"/>
+        <polygon points="32,75 48,75 52,122 28,122" fill="#F5F9FF" stroke="#2864A5" stroke-width="1.5"/>
+        <path d="M36,92 Q40,86 44,92" stroke="#4D86C6" stroke-width="1.5" fill="none"/>
       </svg>
     </div>
 
@@ -1955,6 +2117,39 @@
     </div>
   </section>
 
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section id="projects">
+    <div class="reveal">
+      <span class="section-label">Selected Work</span>
+      <h2 class="section-title">Proyek yang Dikerjakan</h2>
+      <p class="section-sub">Beberapa karya digital yang dikembangkan, mulai dari platform web hingga pengelolaan keuangan dan personal branding.</p>
+    </div>
+    <div class="projects-grid">
+      <article class="project-card tilt-card reveal">
+        <div class="project-topline"><span class="project-category">WEB DEVELOPMENT</span><span class="project-index">01</span></div>
+        <h3 class="project-title">TAMARA — Platform UMKM &amp; Fintech</h3>
+        <p class="project-desc">Pengembangan platform digital untuk mendukung kebutuhan UMKM dan mitra melalui autentikasi pengguna serta dashboard berdasarkan peran Admin, UMKM, dan Mitra.</p>
+        <div class="project-tags"><span>PHP</span><span>MySQL</span><span>PDO</span><span>Responsive UI</span></div>
+        <a class="project-action" href="https://tamaraku.my.id/" target="_blank" rel="noopener noreferrer">Kunjungi Website</a>
+      </article>
+      <article class="project-card tilt-card reveal">
+        <div class="project-topline"><span class="project-category">FINANCIAL TECHNOLOGY</span><span class="project-index">02</span></div>
+        <h3 class="project-title">IMPACT ID — Platform Digital</h3>
+        <p class="project-desc">Pengembangan website IMPACT ID sebagai salah satu proyek digital, dengan fokus pada penyajian informasi dan pengalaman pengguna melalui antarmuka web.</p>
+        <div class="project-tags"><span>Web Development</span><span>Vercel</span><span>UI/UX</span></div>
+        <a class="project-action" href="https://impact-id.vercel.app/" target="_blank" rel="noopener noreferrer">Kunjungi Website</a>
+      </article>
+      <article class="project-card tilt-card reveal">
+        <div class="project-topline"><span class="project-category">INVENTORY MANAGEMENT</span><span class="project-index">03</span></div>
+        <h3 class="project-title">UDC — Sistem Inventaris &amp; Manajemen Gudang</h3>
+        <p class="project-desc">Sistem inventaris berbasis web untuk membantu operasional toko material melalui pengelolaan barang, pencatatan transaksi barang masuk dan keluar, serta pemantauan stok. Dilengkapi akses multi-role, pemindaian QR Code, dan laporan persediaan.</p>
+        <div class="project-tags"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>QR Code</span><span>Multi-Role</span></div>
+        <a class="project-action" href="https://web-udc.vercel.app/" target="_blank" rel="noopener noreferrer">Kunjungi Website</a>
+      </article>
+    </div>
+  </section>
+
   <!-- ========== CERTIFICATES SECTION ========== -->
   <section id="certificates">
     <div class="reveal">
@@ -2054,32 +2249,21 @@
     <img id="lightbox-img" src="" alt="Preview" />
   </div>
 
-  <!-- ========== SPOTIFY-STYLE MUSIC WIDGET ========== -->
-  <div id="spotify-widget">
-    <div class="spotify-disk" id="spotifyDisk"></div>
+  <!-- ========== SPOTIFY-INSPIRED MUSIC PLAYER ========== -->
+  <div id="spotify-widget" aria-label="Pemutar musik">
+    <div class="spotify-disk" id="spotifyDisk"><img src="/profile.jpg" alt="Sampul musik" onerror="this.style.display='none';" /></div>
     <div class="spotify-info">
       <div class="spotify-title" id="songTitle">Favorite Track 01</div>
-      <div class="spotify-artist">
-        <span id="songArtist">Dana's Playlist #1</span>
-        <span class="eq-bars" id="eqBars">
-          <span class="eq-bar"></span>
-          <span class="eq-bar"></span>
-          <span class="eq-bar"></span>
-        </span>
-      </div>
+      <div class="spotify-artist" id="songArtist">Dana's Playlist #1</div>
     </div>
     <div class="spotify-controls">
-      <button class="spotify-btn" onclick="prevSong()" title="Previous Song" aria-label="Previous Song">
-        PREV
-      </button>
-      <button class="spotify-btn" id="playPauseBtn" onclick="togglePlayMusic()" title="Play/Pause" aria-label="Play or Pause">
-        <span id="playPauseSvg">PLAY</span>
-      </button>
-      <button class="spotify-btn" onclick="nextSong()" title="Next Song" aria-label="Next Song">
-        NEXT
-      </button>
+      <button class="spotify-btn" onclick="prevSong()" title="Lagu sebelumnya" aria-label="Lagu sebelumnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M19 6l-9 6 9 6V6Z" /></svg></button>
+      <button class="spotify-btn" id="playPauseBtn" onclick="togglePlayMusic()" title="Putar atau jeda" aria-label="Putar atau jeda"><span id="playPauseSvg"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="play-shape" d="M8 5.5v13l10-6.5-10-6.5Z" /></svg></span></button>
+      <button class="spotify-btn" onclick="nextSong()" title="Lagu berikutnya" aria-label="Lagu berikutnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 6l9 6-9 6V6Z" /></svg></button>
     </div>
-    <audio id="audioPlayer"></audio>
+    <div class="spotify-progress-wrap"><input id="musicProgress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Posisi lagu" /></div>
+    <div class="spotify-times"><span id="musicCurrentTime">0:00</span><span id="musicDuration">0:00</span></div>
+    <audio id="audioPlayer" preload="metadata"></audio>
   </div>
 
   <!-- ========== CONTACT SECTION ========== -->
@@ -2230,53 +2414,70 @@
     const spotifyDisk = document.getElementById('spotifyDisk');
     const songTitleEl = document.getElementById('songTitle');
     const songArtistEl = document.getElementById('songArtist');
-    const eqBars = document.getElementById('eqBars');
+    const musicProgress = document.getElementById('musicProgress');
+    const musicCurrentTime = document.getElementById('musicCurrentTime');
+    const musicDuration = document.getElementById('musicDuration');
 
-    const playIconPath = 'PLAY';
-    const pauseIconPath = 'PAUSE';
-
+    function formatMusicTime(seconds) {
+      if (!Number.isFinite(seconds)) return '0:00';
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60).toString().padStart(2, '0');
+      return `${mins}:${secs}`;
+    }
+    function updateMusicButton(playing) {
+      playPauseSvg.innerHTML = playing
+        ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" /></svg>'
+        : '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="play-shape" d="M8 5.5v13l10-6.5-10-6.5Z" /></svg>';
+      spotifyDisk.classList.toggle('playing', playing);
+    }
     function loadTrack(index) {
       audioPlayer.src = playlist[index].file;
       songTitleEl.textContent = playlist[index].title;
       songArtistEl.textContent = playlist[index].artist;
+      musicProgress.value = 0;
+      musicCurrentTime.textContent = '0:00';
+      musicDuration.textContent = '0:00';
+      updateMusicButton(false);
     }
     loadTrack(currentTrack);
-
+    audioPlayer.addEventListener('loadedmetadata', () => {
+      musicDuration.textContent = formatMusicTime(audioPlayer.duration);
+    });
+    audioPlayer.addEventListener('timeupdate', () => {
+      if (Number.isFinite(audioPlayer.duration) && audioPlayer.duration > 0) {
+        musicProgress.value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+      }
+      musicCurrentTime.textContent = formatMusicTime(audioPlayer.currentTime);
+    });
+    musicProgress.addEventListener('input', () => {
+      if (Number.isFinite(audioPlayer.duration) && audioPlayer.duration > 0) {
+        audioPlayer.currentTime = (Number(musicProgress.value) / 100) * audioPlayer.duration;
+      }
+    });
+    audioPlayer.addEventListener('play', () => updateMusicButton(true));
+    audioPlayer.addEventListener('pause', () => updateMusicButton(false));
     audioPlayer.addEventListener('ended', () => nextSong());
 
     function togglePlayMusic() {
       if (audioPlayer.paused) {
-        audioPlayer.play().then(() => {
-          playPauseSvg.innerHTML = pauseIconPath;
-          spotifyDisk.classList.add('playing');
-          eqBars.classList.add('playing-eq');
-        }).catch(err => console.log("Pastikan file song1.mp3 - song3.mp3 berada di folder yang sama:", err));
+        audioPlayer.play().catch(err => console.log('Pastikan file song1.mp3 - song3.mp3 tersedia di folder website:', err));
       } else {
         audioPlayer.pause();
-        playPauseSvg.innerHTML = playIconPath;
-        spotifyDisk.classList.remove('playing');
-        eqBars.classList.remove('playing-eq');
       }
     }
-
     function nextSong() {
       currentTrack = (currentTrack + 1) % playlist.length;
       loadTrack(currentTrack);
-      audioPlayer.play().then(() => {
-        playPauseSvg.innerHTML = pauseIconPath;
-        spotifyDisk.classList.add('playing');
-        eqBars.classList.add('playing-eq');
-      }).catch(err => console.log("Audio error:", err));
+      audioPlayer.play().catch(err => console.log('Audio tidak dapat diputar:', err));
     }
-
     function prevSong() {
+      if (audioPlayer.currentTime > 3) {
+        audioPlayer.currentTime = 0;
+        return;
+      }
       currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
       loadTrack(currentTrack);
-      audioPlayer.play().then(() => {
-        playPauseSvg.innerHTML = pauseIconPath;
-        spotifyDisk.classList.add('playing');
-        eqBars.classList.add('playing-eq');
-      }).catch(err => console.log("Audio error:", err));
+      audioPlayer.play().catch(err => console.log('Audio tidak dapat diputar:', err));
     }
 
     /* === INTERACTIVE GHIBLI BREEZE PETALS & STARLIGHT ON CLICK === */
@@ -2304,7 +2505,7 @@
     function createBreezeImpact(x, y, extra = false) {
       ripples.push({ x, y, radius: 2, maxRadius: extra ? 55 : 32, alpha: 0.7 });
       const count = extra ? 16 : 8;
-      const colors = ['#4A6B53', '#7BA7BC', '#C87D55', '#E6B86A'];
+      const colors = ['#2864A5', '#6FA8DC', '#4D86C6', '#A9D5F5'];
       for (let i = 0; i < count; i++) {
         const angle = Math.random() * Math.PI * 2;
         const speed = Math.random() * 3.5 + 1.2;
@@ -2333,7 +2534,7 @@
         ctx.save();
         ctx.beginPath();
         ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(74, 107, 83, ${r.alpha})`;
+        ctx.strokeStyle = `rgba(40, 100, 165, ${r.alpha})`;
         ctx.lineWidth = 1.5;
         ctx.stroke();
         ctx.restore();
@@ -2364,5 +2565,27 @@
     }
     animateBreezeCanvas();
   </script>
+
+  <script>
+    (function () {
+      const key = 'dana-portfolio-theme';
+      const toggle = document.getElementById('themeToggle');
+      const icon = toggle && toggle.querySelector('.theme-icon');
+      function applyTheme(theme) {
+        document.body.setAttribute('data-theme', theme);
+        if (icon) icon.textContent = theme === 'dark' ? '☀' : '☾';
+        if (toggle) toggle.setAttribute('aria-label', theme === 'dark' ? 'Aktifkan mode terang' : 'Aktifkan mode gelap');
+      }
+      let saved = null;
+      try { saved = localStorage.getItem(key); } catch (e) {}
+      applyTheme(saved === 'dark' ? 'dark' : 'light');
+      if (toggle) toggle.addEventListener('click', function () {
+        const next = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+        try { localStorage.setItem(key, next); } catch (e) {}
+      });
+    })();
+  </script>
+
 </body>
 </html>
