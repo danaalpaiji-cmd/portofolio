@@ -1,18 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dana Alpaiji — Portfolio</title>
-  <link rel="icon" type="image/jpeg" sizes="any" href="/profile.jpg?v=3" />
-  <link rel="shortcut icon" type="image/jpeg" href="/profile.jpg?v=3" />
-  <link rel="apple-touch-icon" href="/profile.jpg?v=3" />
-  <meta name="theme-color" content="#F5F9FF" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dana Alpaiji — Creative Portfolio</title>
+<link href="/profile.jpg?v=3" rel="icon" sizes="any" type="image/jpeg"/>
+<link href="/profile.jpg?v=3" rel="shortcut icon" type="image/jpeg"/>
+<link href="/profile.jpg?v=3" rel="apple-touch-icon"/>
+<meta content="#5636F5" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&amp;family=Patrick+Hand&amp;display=swap" rel="stylesheet"/>
+<style>
     /* ==========================================================================
        1. CSS VARIABLES — STUDIO GHIBLI FORMAL GLASSMORPHISM (PURE LIGHT MODE)
     ========================================================================== */
@@ -1800,508 +1800,629 @@
     @media (max-width:640px) { .theme-toggle { margin-left:auto; margin-right:10px; } }
 
   </style>
-</head>
+<style>
+/* ==========================================================
+   HAND-DRAWN EDITORIAL PORTFOLIO — NEW VISUAL SYSTEM
+   Existing content, links, gallery, counters and interactions retained.
+========================================================== */
+:root{
+ --ink:#171329; --purple:#5636f5; --purple-deep:#4324d8; --lav:#eee9ff;
+ --pink:#ff75c8; --mint:#57e2bd; --yellow:#ffe45e; --paper:#fffefa;
+ --line:#171329; --soft-shadow:7px 8px 0 rgba(23,19,41,.10);
+ --font-main:'Nunito',sans-serif; --font-serif:'Patrick Hand',cursive;
+ --bg-primary:#5636f5; --bg-secondary:#f0ebff; --bg-card:#fffefa;
+ --bg-card-hover:#fff; --text-primary:#171329; --text-secondary:#45405b;
+ --text-muted:#817b96; --ghibli-sage:#5636f5; --ghibli-sage-dark:#3921a8;
+ --ghibli-sage-soft:rgba(86,54,245,.12); --ghibli-sky:#57e2bd;
+ --ghibli-terracotta:#ff75c8; --ghibli-sun:#ffe45e;
+ --glass-border:2px solid #171329; --glass-border-subtle:2px solid #ddd5ff;
+ --glass-blur:blur(12px); --radius-sm:14px; --radius-md:22px; --radius-lg:28px;
+ --glass-shadow:5px 6px 0 rgba(23,19,41,.10);
+ --glass-shadow-hover:8px 9px 0 rgba(23,19,41,.14);
+}
+*,*::before,*::after{font-family:'Nunito',sans-serif!important;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--purple);color:var(--ink);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(rgba(255,255,255,.15) 1px,transparent 1px);background-size:22px 22px}
+.ambient-glass-bg,.bg-botanical-tl,.bg-botanical-br,#breeze-canvas{display:none!important}
+#scroll-progress{background:var(--yellow);height:5px}
+#navbar{position:sticky;top:0;left:auto;right:auto;width:min(1320px,96%);margin:12px auto 18px;padding:12px 22px;background:var(--paper);border:2px solid var(--ink);border-radius:18px;box-shadow:5px 6px 0 rgba(23,19,41,.2);backdrop-filter:none;z-index:1000}
+.nav-logo{font-family:'Patrick Hand',cursive!important;font-size:2rem;color:var(--ink)}
+.nav-logo span,.footer-logo span{color:var(--purple)}
+.nav-menu{gap:3px;flex-wrap:wrap;justify-content:center}
+.nav-menu a{font-size:.82rem;color:var(--ink);font-weight:800;padding:8px 12px;border-radius:999px}
+.nav-menu a:hover,.nav-menu a.active{background:var(--purple);color:white;box-shadow:none}
+.theme-toggle{border:2px solid var(--ink);background:var(--yellow);border-radius:50%;width:38px;height:38px;color:var(--ink)}
+.hamburger span{background:var(--ink)}
+.mobile-menu{background:rgba(86,54,245,.97);backdrop-filter:blur(16px)}
+.mobile-menu a{font-family:'Patrick Hand',cursive!important;color:#fff}
+.portfolio-layout{width:min(1320px,96%);margin:0 auto 24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:18px}
+.layout-column{display:flex;flex-direction:column;gap:18px;min-width:0}
+section{padding:26px;background:var(--paper);border:2px solid var(--ink);border-radius:22px;position:relative;overflow:hidden;box-shadow:var(--soft-shadow);z-index:1}
+section::after{content:"";position:absolute;right:18px;top:14px;width:42px;height:15px;border-top:3px solid var(--purple);border-radius:50%;transform:rotate(-12deg);opacity:.7;pointer-events:none}
+#hero{min-height:unset;display:flex;flex-direction:column;gap:16px;padding:0;background:var(--paper);overflow:hidden}
+#hero .hero-content{padding:30px 28px 0;order:1}
+#hero .hero-visual{padding:0 24px 26px;order:2;justify-content:center}
+.hero-badge,.section-label{background:#eee9ff;color:var(--purple-deep);border:1.5px solid var(--purple);border-radius:999px;box-shadow:none;font-weight:900;letter-spacing:.06em}
+.hero-name,.section-title,.contact-title{font-family:'Patrick Hand',cursive!important;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+.hero-name{font-size:clamp(3.2rem,6vw,5.4rem);line-height:.88}
+.hero-name em{font-family:'Patrick Hand',cursive!important;color:var(--purple);font-style:normal;text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:7px;text-underline-offset:5px}
+.hero-subtitle{background:var(--yellow);border:2px solid var(--ink);border-radius:8px;color:var(--ink);font-weight:900}
+.hero-desc,.about-text p,.section-sub,.exp-list li,.org-list li,.cert-desc,.project-desc{font-size:.94rem;line-height:1.7;color:var(--text-secondary)}
+.btn{border:2px solid var(--ink);border-radius:999px;font-weight:900;backdrop-filter:none;box-shadow:3px 4px 0 rgba(23,19,41,.18)}
+.btn-primary{background:var(--purple);color:white;border-color:var(--ink)}
+.btn-primary:hover{background:var(--yellow);color:var(--ink);transform:translate(-2px,-2px);box-shadow:5px 6px 0 rgba(23,19,41,.18)}
+.btn-secondary{background:white;color:var(--ink);border-color:var(--ink)}
+.btn-secondary:hover{background:var(--mint);border-color:var(--ink)}
+.hero-img-frame{width:min(300px,90%);aspect-ratio:1/1;animation:floatDoodle 4s ease-in-out infinite}
+.hero-img{border:3px solid var(--ink);border-radius:22px;box-shadow:6px 7px 0 var(--purple);object-fit:cover}
+.hero-img-shadow-sky,.hero-img-shadow-sage{border:2px solid var(--ink);border-radius:22px;backdrop-filter:none}
+.hero-img-shadow-sky{background:var(--yellow);transform:translate(-12px,-10px) rotate(-4deg)}
+.hero-img-shadow-sage{background:var(--pink);transform:translate(10px,10px) rotate(4deg)}
+.wind-chime-wrap{display:none}
+.deco-box,.deco-tag{border:2px solid var(--ink);box-shadow:3px 4px 0 rgba(23,19,41,.14);backdrop-filter:none}
+.ghibli-marquee-bar{background:var(--yellow);color:var(--ink);border:2px solid var(--ink);padding:12px 0}
+.ghibli-marquee-track{font-weight:900}
+#about,#experience,#certificates,#contact{background:var(--paper);border:2px solid var(--ink)}
+.about-grid,.skills-grid-wrap{grid-template-columns:1fr;gap:18px}
+.about-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.stat-card,.skill-card,.exp-card,.org-card,.cert-card,.project-card,.contact-card,.gallery-item{background:white;border:2px solid var(--ink);border-radius:18px;box-shadow:4px 5px 0 rgba(23,19,41,.12);backdrop-filter:none;-webkit-backdrop-filter:none}
+.stat-card:hover,.skill-card:hover,.org-card:hover,.cert-card:hover,.gallery-item:hover{transform:translate(-2px,-2px);box-shadow:7px 8px 0 rgba(23,19,41,.15)}
+.stat-num{font-family:'Patrick Hand',cursive!important;font-size:2.2rem}
+.stat-num .acc{color:var(--purple)}
+.section-title{font-size:clamp(2rem,3.8vw,3rem);line-height:1}
+.section-label{display:inline-flex;padding:5px 12px;margin-bottom:10px}
+.skills-group-title{font-family:'Patrick Hand',cursive!important;font-size:1.55rem}
+.skills-group-title::after{height:3px;background:var(--yellow)}
+.skills-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.skill-card{padding:12px 10px;text-align:left}
+.skill-card:hover{background:var(--lav);color:var(--ink);border-color:var(--ink)}
+.skill-name{font-weight:800}
+.timeline{padding-left:24px}
+.timeline::before{background:repeating-linear-gradient(to bottom,var(--purple) 0 8px,transparent 8px 14px);width:3px}
+.timeline-dot{background:var(--yellow);border:2px solid var(--ink);box-shadow:none}
+.exp-card,.org-card{padding:20px}
+.exp-company,.org-name,.cert-title,.project-title{font-family:'Patrick Hand',cursive!important;font-size:1.55rem;font-weight:700}
+.exp-role,.org-badge,.cert-tag{background:var(--lav);color:var(--purple-deep);border:1px solid var(--purple);border-radius:999px;font-weight:900}
+.exp-date,.org-year{color:var(--purple-deep);font-weight:900}
+.exp-list li::before,.org-list li::before{content:"↗";color:var(--purple);font-weight:900}
+.org-grid,.certificates-grid,.projects-grid{grid-template-columns:1fr;gap:14px}
+.project-card{padding:20px}
+.project-category{color:var(--purple-deep);font-weight:900}
+.project-index{background:var(--yellow);border:1.5px solid var(--ink);border-radius:50%;padding:5px 9px}
+.project-tags span{background:var(--lav);border:1px solid #c9bfff;color:var(--purple-deep);border-radius:999px;font-weight:800}
+.project-action,.cert-btn{background:var(--purple);color:#fff;border:2px solid var(--ink);border-radius:999px;padding:8px 14px;font-weight:900}
+.cert-img{background:var(--lav);border-bottom:2px solid var(--ink)}
+.gallery-grid{columns:2;column-gap:12px}
+.gallery-item{padding:5px;margin-bottom:12px}
+.gallery-item img{border-radius:12px}
+.gallery-overlay{background:rgba(86,54,245,.18);backdrop-filter:none}
+#contact .contact-card{display:grid;grid-template-columns:1fr;gap:20px;padding:22px}
+.contact-title{font-size:2.5rem}
+.contact-btns{flex-direction:row;flex-wrap:wrap}
+.contact-info{gap:10px}
+.contact-item a{color:var(--purple-deep)}
+footer{width:min(1320px,96%);margin:0 auto 20px;background:#eee9ff;border:2px solid var(--ink);border-radius:22px;padding:24px 28px;color:var(--ink);box-shadow:var(--soft-shadow)}
+.footer-logo{font-family:'Patrick Hand',cursive!important;font-size:2rem;font-weight:900}
+.footer-copy{color:#5e5876}
+.social-btn{border:2px solid var(--ink);background:white;color:var(--ink);border-radius:999px;padding:7px 12px;font-weight:900}
+.social-btn:hover{background:var(--yellow)}
+/* Spider-hero hand-drawn preloader: swings across from left to right */
+#loader{background:var(--purple);color:white;z-index:99999;overflow:hidden}
+.loader-scribbles{position:absolute;inset:0;pointer-events:none}
+.loader-scribbles span{position:absolute;width:110px;height:25px;border-top:3px solid rgba(255,255,255,.45);border-radius:50%;transform:rotate(-18deg);animation:scribbleDrift 2.8s ease-in-out infinite}
+.loader-scribbles span:nth-child(1){top:18%;left:8%}
+.loader-scribbles span:nth-child(2){top:70%;left:28%;animation-delay:.4s}
+.loader-scribbles span:nth-child(3){top:28%;right:10%;animation-delay:.8s}
+.loader-scribbles span:nth-child(4){top:82%;right:18%;animation-delay:1.2s}
+.loader-web{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.loader-web path{fill:none;stroke:#fff;stroke-width:3;stroke-dasharray:12 14;opacity:.7;animation:webDraw 2.5s ease-out forwards}
+.loader-web path+path{stroke:var(--yellow);stroke-width:2;animation-delay:.15s}
+.spidey-stage{position:absolute;inset:0;pointer-events:none}
+.spidey{position:absolute;width:clamp(125px,18vw,235px);height:auto;left:-260px;top:20%;filter:drop-shadow(5px 8px 0 rgba(20,12,70,.2));animation:spideySwing 3.1s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes spideySwing{0%{left:-260px;top:65%;transform:rotate(-22deg) scale(.72)}28%{top:18%;transform:rotate(16deg) scale(1.02)}52%{top:34%;transform:rotate(-12deg) scale(.96)}76%{top:12%;transform:rotate(12deg) scale(1.03)}100%{left:calc(100% + 270px);top:25%;transform:rotate(-18deg) scale(.82)}}
+@keyframes webDraw{from{stroke-dashoffset:1200;opacity:0}to{stroke-dashoffset:0;opacity:.7}}
+@keyframes scribbleDrift{0%,100%{transform:translateX(0) rotate(-18deg)}50%{transform:translateX(30px) rotate(-8deg)}}
+.loader-centerpiece{background:var(--paper);border:2px solid var(--ink);border-radius:22px;box-shadow:7px 8px 0 rgba(23,19,41,.2);padding:26px 34px;color:var(--ink);z-index:8}
+.loader-tag{background:var(--yellow);border:1.5px solid var(--ink);color:var(--ink);border-radius:999px;font-weight:900;letter-spacing:.08em}
+.loader-logo{font-family:'Patrick Hand',cursive!important;color:var(--ink);font-size:clamp(2.5rem,6vw,4rem)}
+.loader-logo span{color:var(--purple)}
+.loader-caption{font-family:'Patrick Hand',cursive!important;font-size:1.25rem;color:#5d5677}
+.loader-bar-wrap{background:#e8e1ff;border:1px solid var(--ink);height:9px}
+.loader-bar-fill{background:linear-gradient(90deg,var(--purple),var(--pink),var(--yellow))}
+.loader-pct{color:var(--purple-deep);font-weight:900}
+@keyframes floatDoodle{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-9px) rotate(1deg)}}
+body[data-theme="dark"]{--paper:#24203b;--ink:#fff;--text-primary:#fff;--text-secondary:#e4defb;--text-muted:#b9b0d8;--bg-card:#2d2847}
+body[data-theme="dark"] #navbar,body[data-theme="dark"] section,body[data-theme="dark"] footer,body[data-theme="dark"] .contact-card,body[data-theme="dark"] .stat-card,body[data-theme="dark"] .skill-card,body[data-theme="dark"] .exp-card,body[data-theme="dark"] .org-card,body[data-theme="dark"] .cert-card,body[data-theme="dark"] .project-card{background:var(--paper);color:var(--ink)}
+body[data-theme="dark"] .hero-name,body[data-theme="dark"] .section-title,body[data-theme="dark"] .contact-title,body[data-theme="dark"] .nav-logo{color:var(--ink)}
+@media(max-width:900px){
+ #navbar{width:94%;padding:10px 15px}
+ .nav-menu{display:none}
+ .hamburger{display:flex}
+ .portfolio-layout{grid-template-columns:1fr;width:94%;gap:14px}
+ .layout-column{gap:14px}
+ #hero .hero-content{padding:26px 22px 0}
+ #hero .hero-visual{padding:0 18px 22px}
+}
+@media(max-width:560px){
+ #navbar{margin:8px auto 12px;border-radius:15px}
+ .portfolio-layout{width:94%}
+ section{padding:20px;border-radius:18px}
+ #hero .hero-content{padding:22px 18px 0}
+ .hero-name{font-size:3.35rem}
+ .hero-desc{font-size:.88rem}
+ .about-stats{gap:9px}
+ .stat-card{padding:12px}
+ .skills-grid{grid-template-columns:1fr 1fr}
+ .gallery-grid{columns:2}
+ #contact .contact-card{padding:18px}
+ .contact-btns{flex-direction:column}
+ .contact-btns .btn{width:100%;justify-content:center}
+ footer{padding:20px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style></head>
 <body>
+<!-- ========== AMBIENT GHIBLI WATERCOLOR ORBS ========== -->
+<div class="ambient-glass-bg">
+<div class="glass-orb orb-meadow"></div>
+<div class="glass-orb orb-sky"></div>
+<div class="glass-orb orb-sun"></div>
+<div class="glass-orb orb-peach"></div>
+</div>
+<!-- ========== SUBTLE BOTANICAL CORNER SKETCHES ========== -->
+<svg class="bg-botanical-tl" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<g fill="none" stroke="#2864A5" stroke-linecap="round" stroke-width="1.5">
+<path d="M0,0 Q70,50 140,130"></path>
+<path d="M40,28 Q65,15 75,32 Q55,42 40,28 Z" fill="rgba(40,100,165,0.15)"></path>
+<path d="M75,60 Q105,45 115,65 Q92,75 75,60 Z" fill="rgba(40,100,165,0.15)"></path>
+<path d="M55,50 Q30,70 42,88 Q62,72 55,50 Z" fill="rgba(40,100,165,0.15)"></path>
+<path d="M110,95 Q138,85 145,105 Q122,112 110,95 Z" fill="rgba(40,100,165,0.15)"></path>
+</g>
+</svg>
+<svg class="bg-botanical-br" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<g fill="none" stroke="#2864A5" stroke-linecap="round" stroke-width="1.5">
+<path d="M0,0 Q70,50 140,130"></path>
+<path d="M40,28 Q65,15 75,32 Q55,42 40,28 Z" fill="rgba(40,100,165,0.15)"></path>
+<path d="M75,60 Q105,45 115,65 Q92,75 75,60 Z" fill="rgba(40,100,165,0.15)"></path>
+</g>
+</svg>
+<!-- ========== INTERACTIVE GHIBLI BREEZE & PETALS CANVAS ========== -->
+<canvas id="breeze-canvas"></canvas>
+<!-- ========== SCROLL PROGRESS BAR ========== -->
+<div id="scroll-progress"></div>
+<!-- ========== STUDIO GHIBLI AESTHETIC PRELOADER (LEFT TO RIGHT BREEZE) ========== -->
+<div id="loader">
+<div aria-hidden="true" class="loader-scribbles">
+<span></span><span></span><span></span><span></span>
+</div>
+<svg aria-hidden="true" class="loader-web" preserveaspectratio="none" viewbox="0 0 1440 900">
+<path d="M-80 600 C180 220 360 760 620 420 S1080 170 1510 430"></path>
+<path d="M-80 630 C180 250 360 790 620 450 S1080 200 1510 460"></path>
+</svg>
+<div aria-hidden="true" class="spidey-stage">
+<svg class="spidey" viewbox="0 0 260 220" xmlns="http://www.w3.org/2000/svg">
+<path d="M130 18 Q112 -4 96 12" fill="none" stroke="#171329" stroke-linecap="round" stroke-width="4"></path>
+<path d="M126 20 Q145 -5 164 11" fill="none" stroke="#171329" stroke-linecap="round" stroke-width="4"></path>
+<path d="M129 22 C88 20 72 54 82 86 C92 116 162 116 176 82 C190 48 166 22 129 22Z" fill="#F04455" stroke="#171329" stroke-width="5"></path>
+<path d="M91 58 Q111 43 124 67 Q109 89 91 76Z" fill="#FFF" stroke="#171329" stroke-width="4"></path>
+<path d="M143 67 Q158 43 175 57 L171 77 Q153 90 143 67Z" fill="#FFF" stroke="#171329" stroke-width="4"></path>
+<path d="M130 26 L130 108 M94 42 L164 91 M166 40 L94 91 M82 68 L176 68" fill="none" opacity=".8" stroke="#171329" stroke-width="2"></path>
+<path d="M106 111 Q130 96 154 111 L169 171 Q131 193 91 171Z" fill="#3478F6" stroke="#171329" stroke-width="5"></path>
+<path d="M109 120 L151 163 M151 120 L109 163 M130 108 L130 180" fill="none" stroke="#171329" stroke-width="2.5"></path>
+<path d="M102 122 Q73 133 48 160 L30 146" fill="none" stroke="#F04455" stroke-linecap="round" stroke-width="17"></path>
+<path d="M158 122 Q188 105 208 78 L222 84" fill="none" stroke="#F04455" stroke-linecap="round" stroke-width="17"></path>
+<path d="M108 170 Q92 191 77 207 M151 170 Q170 190 188 205" fill="none" stroke="#3478F6" stroke-linecap="round" stroke-width="17"></path>
+<path d="M218 83 Q240 53 251 26" fill="none" stroke="#171329" stroke-linecap="round" stroke-width="3"></path>
+<path d="M245 27 L251 26 L249 34 M251 26 L242 24" fill="none" stroke="#171329" stroke-linecap="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<div class="loader-centerpiece">
+<div class="loader-tag">A LITTLE CREATIVE PORTFOLIO</div>
+<div class="loader-logo">Dana Alpaiji<span>.</span></div>
+<p class="loader-caption">Swinging into something creative...</p>
+<div class="loader-bar-wrap"><div class="loader-bar-fill"></div></div>
+<div class="loader-pct" id="loaderPct">MEMUAT HALAMAN... 0%</div>
+</div>
+</div>
+<!-- ========== MOBILE MENU ========== -->
+<nav class="mobile-menu" id="mobileMenu">
+<a href="#hero" onclick="closeMobile()">Home</a>
+<a href="#about" onclick="closeMobile()">About</a>
+<a href="#skills" onclick="closeMobile()">Skills</a>
+<a href="#experience" onclick="closeMobile()">Experience</a>
+<a href="#organization" onclick="closeMobile()">Organization</a>
+<a href="#projects" onclick="closeMobile()">Projects</a>
+<a href="#certificates" onclick="closeMobile()">Certificates</a>
+<a href="#gallery" onclick="closeMobile()">Gallery</a>
+<a href="#contact" onclick="closeMobile()">Contact</a>
+</nav>
+<!-- ========== NAVBAR ========== -->
+<header id="navbar">
+<a class="nav-brand" href="#hero">
+<span class="nav-logo">Dana Alpaiji<span>.</span></span>
+</a>
+<ul class="nav-menu">
+<li><a href="#hero">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#organization">Organization</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#certificates">Certificates</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<button aria-label="Aktifkan mode gelap" class="theme-toggle" id="themeToggle" title="Ganti tema" type="button"><span aria-hidden="true" class="theme-icon">☾</span></button>
+<div class="hamburger" id="hamburger" onclick="toggleMobile()">
+<span></span><span></span><span></span>
+</div>
+</header><main class="portfolio-layout" id="portfolioLayout"><div class="layout-column layout-left"><section id="hero">
+<!-- Decorative Glass Wind Chime (Furin) on Corner -->
+<div class="wind-chime-wrap" onclick="triggerPetalBurst(event)" title="Klik untuk efek kelopak angin">
+<div class="chime-thread"></div>
+<svg class="chime-svg" viewbox="0 0 80 130" xmlns="http://www.w3.org/2000/svg">
+<!-- Glass Bell -->
+<path d="M15,42 C15,15 65,15 65,42 L70,52 C40,56 40,56 10,52 Z" fill="rgba(111, 168, 220, 0.35)" stroke="#2864A5" stroke-width="2"></path>
+<circle cx="40" cy="48" fill="#4D86C6" r="4"></circle>
+<line stroke="#2864A5" stroke-width="1.5" x1="40" x2="40" y1="52" y2="75"></line>
+<!-- Tanzaku Paper Slip -->
+<polygon fill="#F5F9FF" points="32,75 48,75 52,122 28,122" stroke="#2864A5" stroke-width="1.5"></polygon>
+<path d="M36,92 Q40,86 44,92" fill="none" stroke="#4D86C6" stroke-width="1.5"></path>
+</svg>
+</div>
+<div class="hero-content reveal">
+<div class="hero-badge"><span class="dot"></span>HELLO THERE! // MY CREATIVE SPACE</div>
+<h1 class="hero-name">Dana<br/><em>Alpaiji</em></h1>
+<div class="hero-subtitle">Ekonomi Syariah • Digital Innovation • Leadership</div>
+<p class="hero-desc">Saya adalah mahasiswa Ekonomi Syariah yang senang mengeksplorasi teknologi, Artificial Intelligence, analisis data, dan kepemimpinan. Saya menggabungkan rasa ingin tahu, pengalaman organisasi, dan ide digital untuk membangun sesuatu yang bermanfaat.</p>
+<div class="hero-buttons">
+<a class="btn btn-primary" download="" href="cv.pdf">Download CV</a>
+<a class="btn btn-secondary" href="#contact">Contact Me</a>
+</div>
+</div>
+<div class="hero-visual reveal">
+<div class="hero-img-frame tilt-card">
+<div class="hero-img-shadow-sky"></div>
+<div class="hero-img-shadow-sage"></div>
+<img alt="Dana Alpaiji" class="hero-img" onerror="this.style.opacity='0.2';" src="profile.jpg"/>
+<div class="deco deco-box">AI</div>
+<div class="deco deco-tag">GPA <strong>3.93</strong> / 4.00</div>
+</div>
+</div>
+</section><section id="about">
+<div class="about-grid">
+<div class="reveal-left">
+<span class="section-label">Profile Overview</span>
+<h2 class="section-title">A Little About Me</h2>
+<div class="about-text">
+<p>Mahasiswa Program Studi Ekonomi Syariah Universitas Sultan Ageng Tirtayasa dengan IPK <strong>3.93/4.00</strong>. Berpengalaman sebagai Assistant Manager selama hampir dua tahun, sekaligus aktif dalam berbagai organisasi kemahasiswaan dan pengembangan teknologi berbasis Artificial Intelligence.</p>
+<p>Saya percaya bahwa perpaduan kepemimpinan, ekonomi, dan AI dapat menghasilkan solusi inovatif yang berdampak nyata bagi masyarakat.</p>
+</div>
+</div>
+<div class="reveal">
+<div class="about-stats">
+<div class="stat-card tilt-card">
+<div class="stat-num"><span class="counter" data-decimal="2" data-target="3.93">0</span><span class="acc">/4.00</span></div>
+<div class="stat-label">GPA / Indeks Prestasi</div>
+</div>
+<div class="stat-card tilt-card">
+<div class="stat-num"><span class="counter" data-decimal="0" data-target="2">0</span><span class="acc">+</span></div>
+<div class="stat-label">Years Experience</div>
+</div>
+<div class="stat-card tilt-card">
+<div class="stat-num"><span class="counter" data-decimal="0" data-target="4">0</span><span class="acc">+</span></div>
+<div class="stat-label">Student Organizations</div>
+</div>
+<div class="stat-card tilt-card">
+<div class="stat-num"><span class="counter" data-decimal="0" data-target="10">0</span><span class="acc">+</span></div>
+<div class="stat-label">AI &amp; Digital Projects</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="projects">
+<div class="reveal">
+<span class="section-label">Selected Work</span>
+<h2 class="section-title">Things I’ve Built</h2>
+<p class="section-sub">Beberapa karya digital yang dikembangkan, mulai dari platform web hingga pengelolaan keuangan dan personal branding.</p>
+</div>
+<div class="projects-grid">
+<article class="project-card tilt-card reveal">
+<div class="project-topline"><span class="project-category">WEB DEVELOPMENT</span><span class="project-index">01</span></div>
+<h3 class="project-title">TAMARA — Platform UMKM &amp; Fintech</h3>
+<p class="project-desc">Pengembangan platform digital untuk mendukung kebutuhan UMKM dan mitra melalui autentikasi pengguna serta dashboard berdasarkan peran Admin, UMKM, dan Mitra.</p>
+<div class="project-tags"><span>PHP</span><span>MySQL</span><span>PDO</span><span>Responsive UI</span></div>
+<a class="project-action" href="https://tamaraku.my.id/" rel="noopener noreferrer" target="_blank">Kunjungi Website</a>
+</article>
+<article class="project-card tilt-card reveal">
+<div class="project-topline"><span class="project-category">FINANCIAL TECHNOLOGY</span><span class="project-index">02</span></div>
+<h3 class="project-title">IMPACT ID — Platform Digital</h3>
+<p class="project-desc">Pengembangan website IMPACT ID sebagai salah satu proyek digital, dengan fokus pada penyajian informasi dan pengalaman pengguna melalui antarmuka web.</p>
+<div class="project-tags"><span>Web Development</span><span>Vercel</span><span>UI/UX</span></div>
+<a class="project-action" href="https://impact-id.vercel.app/" rel="noopener noreferrer" target="_blank">Kunjungi Website</a>
+</article>
+<article class="project-card tilt-card reveal">
+<div class="project-topline"><span class="project-category">ORGANIZATION WEBSITE</span><span class="project-index">03</span></div>
+<h3 class="project-title">Website UKM Untirta Digital Creative (UDC)</h3>
+<p class="project-desc">Website UKM Untirta Digital Creative sebagai media informasi dan publikasi organisasi, memperkenalkan profil, kegiatan, serta program UKM kepada mahasiswa dan pengunjung.</p>
+<div class="project-tags"><span>UKM</span><span>Organization Website</span><span>Digital Creative</span></div>
+<a class="project-action" href="https://web-udc.vercel.app/" rel="noopener noreferrer" target="_blank">Kunjungi Website</a>
+</article>
+</div>
+</section><section id="gallery">
+<div class="reveal">
+<span class="section-label">Visual Archive</span>
+<h2 class="section-title">Little Moments</h2>
+<p class="section-sub">Dokumentasi perjalanan, kegiatan, dan kolaborasi.</p>
+</div>
+<div class="gallery-grid reveal">
+<div class="gallery-item" onclick="openLightbox('gallery1.jpg')">
+<img alt="Gallery 1" onerror="this.parentNode.style.display='none';" src="gallery1.jpg"/>
+<div class="gallery-overlay"></div>
+</div>
+<div class="gallery-item" onclick="openLightbox('gallery2.jpg')">
+<img alt="Gallery 2" onerror="this.parentNode.style.display='none';" src="gallery2.jpg"/>
+<div class="gallery-overlay"></div>
+</div>
+<div class="gallery-item" onclick="openLightbox('gallery3.jpg')">
+<img alt="Gallery 3" onerror="this.parentNode.style.display='none';" src="gallery3.jpg"/>
+<div class="gallery-overlay"></div>
+</div>
+<div class="gallery-item" onclick="openLightbox('gallery4.jpg')">
+<img alt="Gallery 4" onerror="this.parentNode.style.display='none';" src="gallery4.jpg"/>
+<div class="gallery-overlay"></div>
+</div>
+<div class="gallery-item" onclick="openLightbox('gallery5.jpg')">
+<img alt="Gallery 5" onerror="this.parentNode.style.display='none';" src="gallery5.jpg"/>
+<div class="gallery-overlay"></div>
+</div>
+<div class="gallery-item" onclick="openLightbox('gallery6.jpg')">
+<img alt="Gallery 6" onerror="this.parentNode.style.display='none';" src="gallery6.jpg"/>
+<div class="gallery-overlay"></div>
+</div>
+</div>
+</section></div><div class="layout-column layout-right"><section id="skills">
+<div class="skills-header reveal">
+<span class="section-label">Core Competencies</span>
+<h2 class="section-title">Things I Can Do</h2>
+<p class="section-sub">Perpaduan kemampuan teknis dan kepemimpinan strategis.</p>
+</div>
+<div class="skills-grid-wrap">
+<div class="reveal">
+<div class="skills-group-title">Technical Skills</div>
+<div class="skills-grid">
+<div class="skill-card"><div class="skill-name">Artificial Intelligence</div></div>
+<div class="skill-card"><div class="skill-name">Prompt Engineering</div></div>
+<div class="skill-card"><div class="skill-name">Web Development</div></div>
+<div class="skill-card"><div class="skill-name">HTML, CSS &amp; JS</div></div>
+<div class="skill-card"><div class="skill-name">Microsoft Excel</div></div>
+<div class="skill-card"><div class="skill-name">Microsoft Word</div></div>
+<div class="skill-card"><div class="skill-name">PowerPoint</div></div>
+<div class="skill-card"><div class="skill-name">Data Analysis</div></div>
+<div class="skill-card"><div class="skill-name">UI/UX Thinking</div></div>
+</div>
+</div>
+<div class="reveal">
+<div class="skills-group-title">Soft Skills</div>
+<div class="skills-grid">
+<div class="skill-card"><div class="skill-name">Leadership</div></div>
+<div class="skill-card"><div class="skill-name">Team Management</div></div>
+<div class="skill-card"><div class="skill-name">Communication</div></div>
+<div class="skill-card"><div class="skill-name">Public Speaking</div></div>
+<div class="skill-card"><div class="skill-name">Problem Solving</div></div>
+<div class="skill-card"><div class="skill-name">Critical Thinking</div></div>
+<div class="skill-card"><div class="skill-name">Time Management</div></div>
+<div class="skill-card"><div class="skill-name">Collaboration</div></div>
+</div>
+</div>
+</div>
+</section><section id="experience">
+<div class="reveal">
+<span class="section-label">Career Journey</span>
+<h2 class="section-title">Where I’ve Worked</h2>
+<p class="section-sub">Pengalaman nyata yang membentuk kepemimpinan dan eksekusi operasional.</p>
+</div>
+<div class="timeline">
+<div class="timeline-item reveal-left">
+<div class="timeline-dot"></div>
+<div class="exp-card tilt-card">
+<div class="exp-company">PT Orins Multidaya Indonesia</div>
+<div class="exp-role">Staff Operasional / Assistant Manager</div>
+<div class="exp-date">Jul 2023 – Mei 2024</div>
+<ul class="exp-list">
+<li>Membantu manajer dalam merencanakan dan mengawasi kegiatan operasional harian.</li>
+<li>Mengelola dan membimbing tim kerja agar produktif dan disiplin.</li>
+<li>Memastikan target dan standar perusahaan tercapai secara konsisten.</li>
+<li>Menangani keluhan pelanggan serta problem solving internal tim.</li>
+<li>Membuat laporan operasional dan menggantikan tugas manajer ketika diperlukan.</li>
+</ul>
+</div>
+</div>
+</div>
+</section><section id="organization">
+<div class="reveal">
+<span class="section-label">Leadership &amp; Community</span>
+<h2 class="section-title">Teams &amp; Communities</h2>
+<p class="section-sub">Aktif berkontribusi dalam berbagai organisasi kampus dan komunitas teknologi.</p>
+</div>
+<div class="org-grid">
+<div class="org-card tilt-card reveal">
+<div class="org-badge">DPM FEB</div>
+<div class="org-name">Dewan Perwakilan Mahasiswa FEB</div>
+<div class="org-role">Ketua Fraksi Ekonomi Syariah | Anggota Komisi IV</div>
+<div class="org-year">2026 – Sekarang</div>
+<ul class="org-list">
+<li>Menjadi jembatan aspirasi mahasiswa dengan birokrasi fakultas.</li>
+<li>Mengolah data survei dan menyusun rekomendasi kebijakan.</li>
+<li>Melakukan pengawasan terhadap program kemahasiswaan.</li>
+</ul>
+</div>
+<div class="org-card tilt-card reveal">
+<div class="org-badge">HMJ</div>
+<div class="org-name">HMJ Ekonomi Syariah</div>
+<div class="org-role">Ketua Pelaksana Sharia Economic Festival (SEF) 2025</div>
+<ul class="org-list">
+<li>Memimpin keseluruhan pelaksanaan kegiatan berskala besar.</li>
+<li>Mengoordinasikan panitia lintas divisi dan sponsor eksternal.</li>
+</ul>
+<hr class="org-divider"/>
+<div class="org-role">Sekretaris Pelaksana Seminar Karya Ilmiah</div>
+<ul class="org-list">
+<li>Mengelola administrasi organisasi, surat resmi, dan arsip kegiatan.</li>
+</ul>
+</div>
+<div class="org-card tilt-card reveal">
+<div class="org-badge">AI DIVISION</div>
+<div class="org-name">UKM UDC — Untirta Digital Creative</div>
+<div class="org-role">AI Division Member</div>
+<ul class="org-list">
+<li>Aktif sebagai anggota Divisi Artificial Intelligence kampus.</li>
+<li>Mengembangkan implementasi Generative AI dan Machine Learning.</li>
+<li>Berkolaborasi dalam proyek AI untuk pendidikan dan produktivitas mahasiswa.</li>
+</ul>
+</div>
+</div>
+</section><section id="certificates">
+<div class="reveal">
+<span class="section-label">Credentials &amp; Honors</span>
+<h2 class="section-title">Milestones &amp; Certificates</h2>
+<p class="section-sub">Dokumentasi lisensi, sertifikasi pelatihan, dan pencapaian akademik maupun profesional.</p>
+</div>
+<div class="certificates-grid">
+<div class="cert-card tilt-card reveal">
+<div class="cert-img" onclick="openLightbox('sertifikat1.png')">
+<img alt="Sertifikat 1" onerror="this.style.opacity='0.2';" src="sertifikat1.png"/>
+</div>
+<div class="cert-body">
+<span class="cert-tag">SERTIFIKAT 01</span>
+<div class="cert-title">Sertifikat Ketua Pelaksana</div>
+<p class="cert-desc">Sertifikasi Ketua Pelaksana SEF 2025.</p>
+<a class="cert-btn" href="#" onclick="openLightbox('sertifikat1.png'); return false;">Lihat Sertifikat </a>
+</div>
+</div>
+<div class="cert-card tilt-card reveal">
+<div class="cert-img" onclick="openLightbox('sertifikat2.png')">
+<img alt="Sertifikat 2" onerror="this.style.opacity='0.2';" src="sertifikat2.png"/>
+</div>
+<div class="cert-body">
+<span class="cert-tag">SERTIFIKAT 02</span>
+<div class="cert-title">Penghargaan Volunteer BEM FEB</div>
+<p class="cert-desc">Sertifikat Kepanitiaan PKKMB FEB 2025.</p>
+<a class="cert-btn" href="#" onclick="openLightbox('sertifikat2.png'); return false;">Lihat Sertifikat </a>
+</div>
+</div>
+<div class="cert-card tilt-card reveal">
+<div class="cert-img" onclick="openLightbox('sertifikat3.png')">
+<img alt="Sertifikat 3" onerror="this.style.opacity='0.2';" src="sertifikat3.png"/>
+</div>
+<div class="cert-body">
+<span class="cert-tag">SERTIFIKAT 03</span>
+<div class="cert-title">Sertifikat Kepengurusan HMJ Ekonomi Syariah 2025</div>
+<p class="cert-desc">Staff Anggota Divisi Mikat HMJ Ekonomi Syariah 2025.</p>
+<a class="cert-btn" href="#" onclick="openLightbox('sertifikat3.png'); return false;">Lihat Sertifikat </a>
+</div>
+</div>
+<div class="cert-card tilt-card reveal">
+<div class="cert-img" onclick="openLightbox('sertifikat4.png')">
+<img alt="Sertifikat 4" onerror="this.style.opacity='0.2';" src="sertifikat4.png"/>
+</div>
+<div class="cert-body">
+<span class="cert-tag">SERTIFIKAT 04</span>
+<div class="cert-title">Sertifikat Seminar &amp; Workshop</div>
+<p class="cert-desc">Bukti partisipasi aktif dalam program seminar UKM UDC Untirta.</p>
+<a class="cert-btn" href="#" onclick="openLightbox('sertifikat4.png'); return false;">Lihat Sertifikat </a>
+</div>
+</div>
+</div>
+</section><section id="contact">
+<div class="contact-card tilt-card reveal">
+<div>
+<h2 class="contact-title">Let’s Make Something Great Together</h2>
+<div class="contact-info">
+<div class="contact-item">Dana Alpaiji</div>
+<div class="contact-item"><a href="mailto:danaalpaiji@gmail.com">danaalpaiji@gmail.com</a></div>
+<div class="contact-item"><a href="https://linkedin.com/in/danaalpaiji" target="_blank">linkedin.com/in/danaalpaiji</a></div>
+<div class="contact-item"><a href="tel:+6285117751203">+6285117751203</a></div>
+<div class="contact-item">Serang, Banten, Indonesia</div>
+</div>
+</div>
+<div class="contact-btns">
+<a class="btn btn-primary" href="mailto:danaalpaiji@gmail.com">Email Me</a>
+<a class="btn btn-secondary" href="https://linkedin.com/in/danaalpaiji" target="_blank">LinkedIn</a>
+<a class="btn btn-secondary" download="" href="cv.pdf">Download CV</a>
+</div>
+</div>
+</section></div></main>
+<!-- ========== HERO SECTION ========== -->
 
-  <!-- ========== AMBIENT GHIBLI WATERCOLOR ORBS ========== -->
-  <div class="ambient-glass-bg">
-    <div class="glass-orb orb-meadow"></div>
-    <div class="glass-orb orb-sky"></div>
-    <div class="glass-orb orb-sun"></div>
-    <div class="glass-orb orb-peach"></div>
-  </div>
+<!-- ========== SERENE MARQUEE BANNER ========== -->
+<div class="ghibli-marquee-bar">
+<div class="ghibli-marquee-track">
+<span>DANA ALPAIJI PORTFOLIO</span> <span class="sep"></span>
+<span>ARTIFICIAL INTELLIGENCE</span> <span class="sep"></span>
+<span>SHARIA ECONOMICS UNTIRTA (GPA 3.93/4.00)</span> <span class="sep"></span>
+<span>YOUNG LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="sep"></span>
+<span>SUSTAINABLE ECONOMY</span> <span class="sep"></span>
+<span>DANA ALPAIJI PORTFOLIO</span> <span class="sep"></span>
+<span>ARTIFICIAL INTELLIGENCE</span> <span class="sep"></span>
+<span>SHARIA ECONOMICS UNTIRTA (GPA 3.93/4.00)</span> <span class="sep"></span>
+<span>YOUNG LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="sep"></span>
+</div>
+</div>
+<!-- ========== ABOUT SECTION ========== -->
 
-  <!-- ========== SUBTLE BOTANICAL CORNER SKETCHES ========== -->
-  <svg class="bg-botanical-tl" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="#2864A5" stroke-width="1.5" fill="none" stroke-linecap="round">
-      <path d="M0,0 Q70,50 140,130" />
-      <path d="M40,28 Q65,15 75,32 Q55,42 40,28 Z" fill="rgba(40,100,165,0.15)" />
-      <path d="M75,60 Q105,45 115,65 Q92,75 75,60 Z" fill="rgba(40,100,165,0.15)" />
-      <path d="M55,50 Q30,70 42,88 Q62,72 55,50 Z" fill="rgba(40,100,165,0.15)" />
-      <path d="M110,95 Q138,85 145,105 Q122,112 110,95 Z" fill="rgba(40,100,165,0.15)" />
-    </g>
-  </svg>
-  <svg class="bg-botanical-br" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="#2864A5" stroke-width="1.5" fill="none" stroke-linecap="round">
-      <path d="M0,0 Q70,50 140,130" />
-      <path d="M40,28 Q65,15 75,32 Q55,42 40,28 Z" fill="rgba(40,100,165,0.15)" />
-      <path d="M75,60 Q105,45 115,65 Q92,75 75,60 Z" fill="rgba(40,100,165,0.15)" />
-    </g>
-  </svg>
+<!-- ========== SKILLS SECTION ========== -->
 
-  <!-- ========== INTERACTIVE GHIBLI BREEZE & PETALS CANVAS ========== -->
-  <canvas id="breeze-canvas"></canvas>
+<!-- ========== EXPERIENCE SECTION ========== -->
 
-  <!-- ========== SCROLL PROGRESS BAR ========== -->
-  <div id="scroll-progress"></div>
+<!-- ========== ORGANIZATION SECTION ========== -->
 
-  <!-- ========== STUDIO GHIBLI AESTHETIC PRELOADER (LEFT TO RIGHT BREEZE) ========== -->
-  <div id="loader">
-    <div class="wind-lines">
-      <div class="wind-line"></div>
-      <div class="wind-line"></div>
-      <div class="wind-line"></div>
-      <div class="wind-line"></div>
-    </div>
+<!-- ========== PROJECTS SECTION ========== -->
 
-    <svg class="wind-trail-svg" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-      <path class="wind-path-anim" d="M -100,480 Q 480,240 960,400 T 2050,240" fill="none" stroke="#6FA8DC" stroke-width="2.5" />
-      <path class="wind-path-anim" d="M -100,500 Q 480,270 960,420 T 2050,265" fill="none" stroke="#2864A5" stroke-width="2" />
-    </svg>
+<!-- ========== CERTIFICATES SECTION ========== -->
 
-    <div class="breeze-stage">
-      <div class="gliding-silhouette">
-        <svg viewBox="0 0 240 160" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <!-- Graceful Gliding Bird & Floating Leaves -->
-          <path d="M60,85 Q95,45 125,78 Q155,40 195,70 Q155,68 125,95 Q95,72 60,85 Z" fill="#2864A5" />
-          <path d="M25,110 Q40,98 50,112 Q35,120 25,110 Z" fill="#4D86C6" />
-          <path d="M205,42 Q220,30 230,45 Q215,52 205,42 Z" fill="#A9D5F5" />
-          <circle cx="140" cy="40" r="3" fill="#A9D5F5" />
-          <circle cx="85" cy="115" r="2.5" fill="#6FA8DC" />
-        </svg>
-      </div>
-    </div>
+<!-- ========== GALLERY SECTION ========== -->
 
-    <div class="loader-centerpiece">
-      <svg class="loader-botanical-crest" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50,85 L50,20" stroke="#2864A5" stroke-width="3" stroke-linecap="round"/>
-        <path d="M50,65 Q25,55 22,35 Q45,42 50,65 Z" fill="#2864A5" opacity="0.85"/>
-        <path d="M50,50 Q75,40 78,20 Q55,28 50,50 Z" fill="#6FA8DC" opacity="0.85"/>
-        <path d="M50,35 Q30,25 32,10 Q48,18 50,35 Z" fill="#4D86C6" opacity="0.85"/>
-      </svg>
-      <div class="loader-tag">PORTFOLIO // DANA ALPAIJI</div>
-      <div class="loader-logo">Dana Alpaiji.</div>
-      <div class="loader-bar-wrap">
-        <div class="loader-bar-fill"></div>
-      </div>
-      <div class="loader-pct" id="loaderPct">MEMUAT HALAMAN... 0%</div>
-    </div>
-  </div>
+<!-- Lightbox Modal -->
+<div id="lightbox">
+<div id="lightbox-close" onclick="closeLightbox()">Tutup</div>
+<img alt="Preview" id="lightbox-img" src=""/>
+</div>
+<!-- ========== SPOTIFY-INSPIRED MUSIC PLAYER ========== -->
+<div aria-label="Pemutar musik" id="spotify-widget">
+<div class="spotify-disk" id="spotifyDisk"><img alt="Sampul musik" onerror="this.style.display='none';" src="/profile.jpg"/></div>
+<div class="spotify-info">
+<div class="spotify-title" id="songTitle">Favorite Track 01</div>
+<div class="spotify-artist" id="songArtist">Dana's Playlist #1</div>
+</div>
+<div class="spotify-controls">
+<button aria-label="Lagu sebelumnya" class="spotify-btn" onclick="prevSong()" title="Lagu sebelumnya"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 5v14M19 6l-9 6 9 6V6Z"></path></svg></button>
+<button aria-label="Putar atau jeda" class="spotify-btn" id="playPauseBtn" onclick="togglePlayMusic()" title="Putar atau jeda"><span id="playPauseSvg"><svg aria-hidden="true" viewbox="0 0 24 24"><path class="play-shape" d="M8 5.5v13l10-6.5-10-6.5Z"></path></svg></span></button>
+<button aria-label="Lagu berikutnya" class="spotify-btn" onclick="nextSong()" title="Lagu berikutnya"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M18 5v14M5 6l9 6-9 6V6Z"></path></svg></button>
+</div>
+<div class="spotify-progress-wrap"><input aria-label="Posisi lagu" id="musicProgress" max="100" min="0" step="0.1" type="range" value="0"/></div>
+<div class="spotify-times"><span id="musicCurrentTime">0:00</span><span id="musicDuration">0:00</span></div>
+<audio id="audioPlayer" preload="metadata"></audio>
+</div>
+<!-- ========== CONTACT SECTION ========== -->
 
-  <!-- ========== MOBILE MENU ========== -->
-  <nav class="mobile-menu" id="mobileMenu">
-    <a href="#hero" onclick="closeMobile()">Home</a>
-    <a href="#about" onclick="closeMobile()">About</a>
-    <a href="#skills" onclick="closeMobile()">Skills</a>
-    <a href="#experience" onclick="closeMobile()">Experience</a>
-    <a href="#organization" onclick="closeMobile()">Organization</a>
-    <a href="#projects" onclick="closeMobile()">Projects</a>
-    <a href="#certificates" onclick="closeMobile()">Certificates</a>
-    <a href="#gallery" onclick="closeMobile()">Gallery</a>
-    <a href="#contact" onclick="closeMobile()">Contact</a>
-  </nav>
-
-  <!-- ========== NAVBAR ========== -->
-  <header id="navbar">
-    <a href="#hero" class="nav-brand">
-      <span class="nav-logo">Dana Alpaiji<span>.</span></span>
-    </a>
-
-    <ul class="nav-menu">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#organization">Organization</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Aktifkan mode gelap" title="Ganti tema"><span class="theme-icon" aria-hidden="true">☾</span></button>
-
-    <div class="hamburger" id="hamburger" onclick="toggleMobile()">
-      <span></span><span></span><span></span>
-    </div>
-  </header>
-
-  <!-- ========== HERO SECTION ========== -->
-  <section id="hero">
-    <!-- Decorative Glass Wind Chime (Furin) on Corner -->
-    <div class="wind-chime-wrap" onclick="triggerPetalBurst(event)" title="Klik untuk efek kelopak angin">
-      <div class="chime-thread"></div>
-      <svg class="chime-svg" viewBox="0 0 80 130" xmlns="http://www.w3.org/2000/svg">
-        <!-- Glass Bell -->
-        <path d="M15,42 C15,15 65,15 65,42 L70,52 C40,56 40,56 10,52 Z" fill="rgba(111, 168, 220, 0.35)" stroke="#2864A5" stroke-width="2"/>
-        <circle cx="40" cy="48" r="4" fill="#4D86C6"/>
-        <line x1="40" y1="52" x2="40" y2="75" stroke="#2864A5" stroke-width="1.5"/>
-        <!-- Tanzaku Paper Slip -->
-        <polygon points="32,75 48,75 52,122 28,122" fill="#F5F9FF" stroke="#2864A5" stroke-width="1.5"/>
-        <path d="M36,92 Q40,86 44,92" stroke="#4D86C6" stroke-width="1.5" fill="none"/>
-      </svg>
-    </div>
-
-    <div class="hero-content reveal">
-      <div class="hero-badge"><span class="dot"></span> PORTFOLIO RESMI // HELLO, I'M</div>
-      <h1 class="hero-name">Dana<br><em>Alpaiji</em></h1>
-      <div class="hero-subtitle">Mahasiswa Ekonomi Syariah | Inovasi Digital | Kepemimpinan Muda</div>
-      <p class="hero-desc">
-        Mahasiswa S1 Ekonomi Syariah Universitas Sultan Ageng Tirtayasa dengan ketertarikan besar pada Artificial Intelligence, inovasi digital, analisis data, dan kepemimpinan organisasi. Berpengalaman sebagai Assistant Manager dan aktif membangun proyek serta komunitas berbasis teknologi.
-      </p>
-      <div class="hero-buttons">
-        <a href="cv.pdf" download class="btn btn-primary">Download CV</a>
-        <a href="#contact" class="btn btn-secondary">Contact Me</a>
-      </div>
-    </div>
-
-    <div class="hero-visual reveal">
-      <div class="hero-img-frame tilt-card">
-        <div class="hero-img-shadow-sky"></div>
-        <div class="hero-img-shadow-sage"></div>
-        <img class="hero-img" src="profile.jpg" alt="Dana Alpaiji" onerror="this.style.opacity='0.2';" />
-        <div class="deco deco-box">AI</div>
-        <div class="deco deco-tag">GPA <strong>3.93</strong> / 4.00</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== SERENE MARQUEE BANNER ========== -->
-  <div class="ghibli-marquee-bar">
-    <div class="ghibli-marquee-track">
-      <span>DANA ALPAIJI PORTFOLIO</span> <span class="sep"></span>
-      <span>ARTIFICIAL INTELLIGENCE</span> <span class="sep"></span>
-      <span>SHARIA ECONOMICS UNTIRTA (GPA 3.93/4.00)</span> <span class="sep"></span>
-      <span>YOUNG LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="sep"></span>
-      <span>SUSTAINABLE ECONOMY</span> <span class="sep"></span>
-      <span>DANA ALPAIJI PORTFOLIO</span> <span class="sep"></span>
-      <span>ARTIFICIAL INTELLIGENCE</span> <span class="sep"></span>
-      <span>SHARIA ECONOMICS UNTIRTA (GPA 3.93/4.00)</span> <span class="sep"></span>
-      <span>YOUNG LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="sep"></span>
-    </div>
-  </div>
-
-  <!-- ========== ABOUT SECTION ========== -->
-  <section id="about">
-    <div class="about-grid">
-      <div class="reveal-left">
-        <span class="section-label">Profile Overview</span>
-        <h2 class="section-title">Tentang Saya</h2>
-        <div class="about-text">
-          <p>Mahasiswa Program Studi Ekonomi Syariah Universitas Sultan Ageng Tirtayasa dengan IPK <strong>3.93/4.00</strong>. Berpengalaman sebagai Assistant Manager selama hampir dua tahun, sekaligus aktif dalam berbagai organisasi kemahasiswaan dan pengembangan teknologi berbasis Artificial Intelligence.</p>
-          <p>Saya percaya bahwa perpaduan kepemimpinan, ekonomi, dan AI dapat menghasilkan solusi inovatif yang berdampak nyata bagi masyarakat.</p>
-        </div>
-      </div>
-      <div class="reveal">
-        <div class="about-stats">
-          <div class="stat-card tilt-card">
-            <div class="stat-num"><span class="counter" data-target="3.93" data-decimal="2">0</span><span class="acc">/4.00</span></div>
-            <div class="stat-label">GPA / Indeks Prestasi</div>
-          </div>
-          <div class="stat-card tilt-card">
-            <div class="stat-num"><span class="counter" data-target="2" data-decimal="0">0</span><span class="acc">+</span></div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="stat-card tilt-card">
-            <div class="stat-num"><span class="counter" data-target="4" data-decimal="0">0</span><span class="acc">+</span></div>
-            <div class="stat-label">Student Organizations</div>
-          </div>
-          <div class="stat-card tilt-card">
-            <div class="stat-num"><span class="counter" data-target="10" data-decimal="0">0</span><span class="acc">+</span></div>
-            <div class="stat-label">AI &amp; Digital Projects</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== SKILLS SECTION ========== -->
-  <section id="skills">
-    <div class="skills-header reveal">
-      <span class="section-label">Core Competencies</span>
-      <h2 class="section-title">Skill &amp; Kemampuan</h2>
-      <p class="section-sub">Perpaduan kemampuan teknis dan kepemimpinan strategis.</p>
-    </div>
-    <div class="skills-grid-wrap">
-      <div class="reveal">
-        <div class="skills-group-title">Technical Skills</div>
-        <div class="skills-grid">
-          <div class="skill-card"><div class="skill-name">Artificial Intelligence</div></div>
-          <div class="skill-card"><div class="skill-name">Prompt Engineering</div></div>
-          <div class="skill-card"><div class="skill-name">Web Development</div></div>
-          <div class="skill-card"><div class="skill-name">HTML, CSS &amp; JS</div></div>
-          <div class="skill-card"><div class="skill-name">Microsoft Excel</div></div>
-          <div class="skill-card"><div class="skill-name">Microsoft Word</div></div>
-          <div class="skill-card"><div class="skill-name">PowerPoint</div></div>
-          <div class="skill-card"><div class="skill-name">Data Analysis</div></div>
-          <div class="skill-card"><div class="skill-name">UI/UX Thinking</div></div>
-        </div>
-      </div>
-      <div class="reveal">
-        <div class="skills-group-title">Soft Skills</div>
-        <div class="skills-grid">
-          <div class="skill-card"><div class="skill-name">Leadership</div></div>
-          <div class="skill-card"><div class="skill-name">Team Management</div></div>
-          <div class="skill-card"><div class="skill-name">Communication</div></div>
-          <div class="skill-card"><div class="skill-name">Public Speaking</div></div>
-          <div class="skill-card"><div class="skill-name">Problem Solving</div></div>
-          <div class="skill-card"><div class="skill-name">Critical Thinking</div></div>
-          <div class="skill-card"><div class="skill-name">Time Management</div></div>
-          <div class="skill-card"><div class="skill-name">Collaboration</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== EXPERIENCE SECTION ========== -->
-  <section id="experience">
-    <div class="reveal">
-      <span class="section-label">Career Journey</span>
-      <h2 class="section-title">Pengalaman Bekerja</h2>
-      <p class="section-sub">Pengalaman nyata yang membentuk kepemimpinan dan eksekusi operasional.</p>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item reveal-left">
-        <div class="timeline-dot"></div>
-        <div class="exp-card tilt-card">
-          <div class="exp-company">PT Orins Multidaya Indonesia</div>
-          <div class="exp-role">Staff Operasional / Assistant Manager</div>
-          <div class="exp-date">Jul 2023 &ndash; Mei 2024</div>
-          <ul class="exp-list">
-            <li>Membantu manajer dalam merencanakan dan mengawasi kegiatan operasional harian.</li>
-            <li>Mengelola dan membimbing tim kerja agar produktif dan disiplin.</li>
-            <li>Memastikan target dan standar perusahaan tercapai secara konsisten.</li>
-            <li>Menangani keluhan pelanggan serta problem solving internal tim.</li>
-            <li>Membuat laporan operasional dan menggantikan tugas manajer ketika diperlukan.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== ORGANIZATION SECTION ========== -->
-  <section id="organization">
-    <div class="reveal">
-      <span class="section-label">Leadership &amp; Community</span>
-      <h2 class="section-title">Pengalaman Organisasi</h2>
-      <p class="section-sub">Aktif berkontribusi dalam berbagai organisasi kampus dan komunitas teknologi.</p>
-    </div>
-    <div class="org-grid">
-      <div class="org-card tilt-card reveal">
-        <div class="org-badge">DPM FEB</div>
-        <div class="org-name">Dewan Perwakilan Mahasiswa FEB</div>
-        <div class="org-role">Ketua Fraksi Ekonomi Syariah | Anggota Komisi IV</div>
-        <div class="org-year">2026 &ndash; Sekarang</div>
-        <ul class="org-list">
-          <li>Menjadi jembatan aspirasi mahasiswa dengan birokrasi fakultas.</li>
-          <li>Mengolah data survei dan menyusun rekomendasi kebijakan.</li>
-          <li>Melakukan pengawasan terhadap program kemahasiswaan.</li>
-        </ul>
-      </div>
-
-      <div class="org-card tilt-card reveal">
-        <div class="org-badge">HMJ</div>
-        <div class="org-name">HMJ Ekonomi Syariah</div>
-        <div class="org-role">Ketua Pelaksana Sharia Economic Festival (SEF) 2025</div>
-        <ul class="org-list">
-          <li>Memimpin keseluruhan pelaksanaan kegiatan berskala besar.</li>
-          <li>Mengoordinasikan panitia lintas divisi dan sponsor eksternal.</li>
-        </ul>
-        <hr class="org-divider" />
-        <div class="org-role">Sekretaris Pelaksana Seminar Karya Ilmiah</div>
-        <ul class="org-list">
-          <li>Mengelola administrasi organisasi, surat resmi, dan arsip kegiatan.</li>
-        </ul>
-      </div>
-
-      <div class="org-card tilt-card reveal">
-        <div class="org-badge">AI DIVISION</div>
-        <div class="org-name">UKM UDC &mdash; Untirta Digital Creative</div>
-        <div class="org-role">AI Division Member</div>
-        <ul class="org-list">
-          <li>Aktif sebagai anggota Divisi Artificial Intelligence kampus.</li>
-          <li>Mengembangkan implementasi Generative AI dan Machine Learning.</li>
-          <li>Berkolaborasi dalam proyek AI untuk pendidikan dan produktivitas mahasiswa.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========== PROJECTS SECTION ========== -->
-  <section id="projects">
-    <div class="reveal">
-      <span class="section-label">Selected Work</span>
-      <h2 class="section-title">Proyek yang Dikerjakan</h2>
-      <p class="section-sub">Beberapa karya digital yang dikembangkan, mulai dari platform web hingga pengelolaan keuangan dan personal branding.</p>
-    </div>
-    <div class="projects-grid">
-      <article class="project-card tilt-card reveal">
-        <div class="project-topline"><span class="project-category">WEB DEVELOPMENT</span><span class="project-index">01</span></div>
-        <h3 class="project-title">TAMARA — Platform UMKM &amp; Fintech</h3>
-        <p class="project-desc">Pengembangan platform digital untuk mendukung kebutuhan UMKM dan mitra melalui autentikasi pengguna serta dashboard berdasarkan peran Admin, UMKM, dan Mitra.</p>
-        <div class="project-tags"><span>PHP</span><span>MySQL</span><span>PDO</span><span>Responsive UI</span></div>
-        <a class="project-action" href="https://tamaraku.my.id/" target="_blank" rel="noopener noreferrer">Kunjungi Website</a>
-      </article>
-      <article class="project-card tilt-card reveal">
-        <div class="project-topline"><span class="project-category">FINANCIAL TECHNOLOGY</span><span class="project-index">02</span></div>
-        <h3 class="project-title">IMPACT ID — Platform Digital</h3>
-        <p class="project-desc">Pengembangan website IMPACT ID sebagai salah satu proyek digital, dengan fokus pada penyajian informasi dan pengalaman pengguna melalui antarmuka web.</p>
-        <div class="project-tags"><span>Web Development</span><span>Vercel</span><span>UI/UX</span></div>
-        <a class="project-action" href="https://impact-id.vercel.app/" target="_blank" rel="noopener noreferrer">Kunjungi Website</a>
-      </article>
-      <article class="project-card tilt-card reveal">
-        <div class="project-topline"><span class="project-category">ORGANIZATION WEBSITE</span><span class="project-index">03</span></div>
-        <h3 class="project-title">Website UKM Untirta Digital Creative (UDC)</h3>
-        <p class="project-desc">Website UKM Untirta Digital Creative sebagai media informasi dan publikasi organisasi, memperkenalkan profil, kegiatan, serta program UKM kepada mahasiswa dan pengunjung.</p>
-        <div class="project-tags"><span>UKM</span><span>Organization Website</span><span>Digital Creative</span></div>
-        <a class="project-action" href="https://web-udc.vercel.app/" target="_blank" rel="noopener noreferrer">Kunjungi Website</a>
-      </article>
-    </div>
-  </section>
-
-  <!-- ========== CERTIFICATES SECTION ========== -->
-  <section id="certificates">
-    <div class="reveal">
-      <span class="section-label">Credentials &amp; Honors</span>
-      <h2 class="section-title">Sertifikat &amp; Penghargaan</h2>
-      <p class="section-sub">Dokumentasi lisensi, sertifikasi pelatihan, dan pencapaian akademik maupun profesional.</p>
-    </div>
-    <div class="certificates-grid">
-      <div class="cert-card tilt-card reveal">
-        <div class="cert-img" onclick="openLightbox('sertifikat1.png')">
-          <img src="sertifikat1.png" alt="Sertifikat 1" onerror="this.style.opacity='0.2';" />
-        </div>
-        <div class="cert-body">
-          <span class="cert-tag">SERTIFIKAT 01</span>
-          <div class="cert-title">Sertifikat Ketua Pelaksana</div>
-          <p class="cert-desc">Sertifikasi Ketua Pelaksana SEF 2025.</p>
-          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat1.png'); return false;">Lihat Sertifikat </a>
-        </div>
-      </div>
-
-      <div class="cert-card tilt-card reveal">
-        <div class="cert-img" onclick="openLightbox('sertifikat2.png')">
-          <img src="sertifikat2.png" alt="Sertifikat 2" onerror="this.style.opacity='0.2';" />
-        </div>
-        <div class="cert-body">
-          <span class="cert-tag">SERTIFIKAT 02</span>
-          <div class="cert-title">Penghargaan Volunteer BEM FEB</div>
-          <p class="cert-desc">Sertifikat Kepanitiaan PKKMB FEB 2025.</p>
-          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat2.png'); return false;">Lihat Sertifikat </a>
-        </div>
-      </div>
-
-      <div class="cert-card tilt-card reveal">
-        <div class="cert-img" onclick="openLightbox('sertifikat3.png')">
-          <img src="sertifikat3.png" alt="Sertifikat 3" onerror="this.style.opacity='0.2';" />
-        </div>
-        <div class="cert-body">
-          <span class="cert-tag">SERTIFIKAT 03</span>
-          <div class="cert-title">Sertifikat Kepengurusan HMJ Ekonomi Syariah 2025</div>
-          <p class="cert-desc">Staff Anggota Divisi Mikat HMJ Ekonomi Syariah 2025.</p>
-          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat3.png'); return false;">Lihat Sertifikat </a>
-        </div>
-      </div>
-
-      <div class="cert-card tilt-card reveal">
-        <div class="cert-img" onclick="openLightbox('sertifikat4.png')">
-          <img src="sertifikat4.png" alt="Sertifikat 4" onerror="this.style.opacity='0.2';" />
-        </div>
-        <div class="cert-body">
-          <span class="cert-tag">SERTIFIKAT 04</span>
-          <div class="cert-title">Sertifikat Seminar &amp; Workshop</div>
-          <p class="cert-desc">Bukti partisipasi aktif dalam program seminar UKM UDC Untirta.</p>
-          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat4.png'); return false;">Lihat Sertifikat </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== GALLERY SECTION ========== -->
-  <section id="gallery">
-    <div class="reveal">
-      <span class="section-label">Visual Archive</span>
-      <h2 class="section-title">Moments &amp; Highlights</h2>
-      <p class="section-sub">Dokumentasi perjalanan, kegiatan, dan kolaborasi.</p>
-    </div>
-    <div class="gallery-grid reveal">
-      <div class="gallery-item" onclick="openLightbox('gallery1.jpg')">
-        <img src="gallery1.jpg" alt="Gallery 1" onerror="this.parentNode.style.display='none';" />
-        <div class="gallery-overlay"></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('gallery2.jpg')">
-        <img src="gallery2.jpg" alt="Gallery 2" onerror="this.parentNode.style.display='none';" />
-        <div class="gallery-overlay"></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('gallery3.jpg')">
-        <img src="gallery3.jpg" alt="Gallery 3" onerror="this.parentNode.style.display='none';" />
-        <div class="gallery-overlay"></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('gallery4.jpg')">
-        <img src="gallery4.jpg" alt="Gallery 4" onerror="this.parentNode.style.display='none';" />
-        <div class="gallery-overlay"></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('gallery5.jpg')">
-        <img src="gallery5.jpg" alt="Gallery 5" onerror="this.parentNode.style.display='none';" />
-        <div class="gallery-overlay"></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('gallery6.jpg')">
-        <img src="gallery6.jpg" alt="Gallery 6" onerror="this.parentNode.style.display='none';" />
-        <div class="gallery-overlay"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Lightbox Modal -->
-  <div id="lightbox">
-    <div id="lightbox-close" onclick="closeLightbox()">Tutup</div>
-    <img id="lightbox-img" src="" alt="Preview" />
-  </div>
-
-  <!-- ========== SPOTIFY-INSPIRED MUSIC PLAYER ========== -->
-  <div id="spotify-widget" aria-label="Pemutar musik">
-    <div class="spotify-disk" id="spotifyDisk"><img src="/profile.jpg" alt="Sampul musik" onerror="this.style.display='none';" /></div>
-    <div class="spotify-info">
-      <div class="spotify-title" id="songTitle">Favorite Track 01</div>
-      <div class="spotify-artist" id="songArtist">Dana's Playlist #1</div>
-    </div>
-    <div class="spotify-controls">
-      <button class="spotify-btn" onclick="prevSong()" title="Lagu sebelumnya" aria-label="Lagu sebelumnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M19 6l-9 6 9 6V6Z" /></svg></button>
-      <button class="spotify-btn" id="playPauseBtn" onclick="togglePlayMusic()" title="Putar atau jeda" aria-label="Putar atau jeda"><span id="playPauseSvg"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="play-shape" d="M8 5.5v13l10-6.5-10-6.5Z" /></svg></span></button>
-      <button class="spotify-btn" onclick="nextSong()" title="Lagu berikutnya" aria-label="Lagu berikutnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 6l9 6-9 6V6Z" /></svg></button>
-    </div>
-    <div class="spotify-progress-wrap"><input id="musicProgress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Posisi lagu" /></div>
-    <div class="spotify-times"><span id="musicCurrentTime">0:00</span><span id="musicDuration">0:00</span></div>
-    <audio id="audioPlayer" preload="metadata"></audio>
-  </div>
-
-  <!-- ========== CONTACT SECTION ========== -->
-  <section id="contact">
-    <div class="contact-card tilt-card reveal">
-      <div>
-        <h2 class="contact-title">Mari Berkolaborasi &amp; Membangun Solusi Bersama</h2>
-        <div class="contact-info">
-          <div class="contact-item">Dana Alpaiji</div>
-          <div class="contact-item"><a href="mailto:danaalpaiji@gmail.com">danaalpaiji@gmail.com</a></div>
-          <div class="contact-item"><a href="https://linkedin.com/in/danaalpaiji" target="_blank">linkedin.com/in/danaalpaiji</a></div>
-          <div class="contact-item"><a href="tel:+6285117751203">+6285117751203</a></div>
-          <div class="contact-item">Serang, Banten, Indonesia</div>
-        </div>
-      </div>
-      <div class="contact-btns">
-        <a href="mailto:danaalpaiji@gmail.com" class="btn btn-primary">Email Me</a>
-        <a href="https://linkedin.com/in/danaalpaiji" target="_blank" class="btn btn-secondary">LinkedIn</a>
-        <a href="cv.pdf" download class="btn btn-secondary">Download CV</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
-  <footer>
-    <div class="footer-logo">Dana Alpaiji<span>.</span></div>
-    <div class="footer-socials">
-      <a class="social-btn" href="mailto:danaalpaiji@gmail.com">Email</a>
-      <a class="social-btn" href="https://linkedin.com/in/danaalpaiji" target="_blank">LinkedIn</a>
-      <a class="social-btn" href="tel:+6285117751203">Telepon</a>
-    </div>
-    <p class="footer-copy">&copy; 2026 Dana Alpaiji. Crafted with Passion, Leadership &amp; Artificial Intelligence.</p>
-  </footer>
-
-  <!-- ==========================================================================
+<!-- ========== FOOTER ========== -->
+<footer>
+<div class="footer-logo">Dana Alpaiji<span>.</span></div>
+<div class="footer-socials">
+<a class="social-btn" href="mailto:danaalpaiji@gmail.com">Email</a>
+<a class="social-btn" href="https://linkedin.com/in/danaalpaiji" target="_blank">LinkedIn</a>
+<a class="social-btn" href="tel:+6285117751203">Telepon</a>
+</div>
+<p class="footer-copy">© 2026 Dana Alpaiji. Crafted with Passion, Leadership &amp; Artificial Intelligence.</p>
+</footer>
+<!-- ==========================================================================
        19. JAVASCRIPT ENGINE
   ========================================================================== -->
-  <script>
+<script>
     const loaderPctEl = document.getElementById('loaderPct');
     let loadVal = 0;
     const pctTimer = setInterval(() => {
@@ -2565,8 +2686,7 @@
     }
     animateBreezeCanvas();
   </script>
-
-  <script>
+<script>
     (function () {
       const key = 'dana-portfolio-theme';
       const toggle = document.getElementById('themeToggle');
@@ -2586,6 +2706,5 @@
       });
     })();
   </script>
-
 </body>
 </html>
