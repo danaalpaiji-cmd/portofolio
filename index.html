@@ -17,12 +17,12 @@
     ========================================================================== */
     :root {
       color-scheme: light;
-      --paper: #F4F1EA;         /* Kertas komik hangat */
+      --paper: #F4F1EA;
       --panel-bg: #FFFFFF;
       --panel-soft: #FDF3EE;
-      --ink: #141416;           /* Tinta hitam pekat manga */
+      --ink: #141416;
       --muted: #4A4A52;
-      --accent: #E86F3A;        /* Oranye Terakota ala referensi */
+      --accent: #E86F3A;
       --accent-dark: #C85320;
       --yellow: #FFE45E;
       --border-manga: 3px solid #141416;
@@ -64,7 +64,6 @@
       color: var(--ink);
       overflow-x: hidden;
       line-height: 1.55;
-      /* Efek titik screentone manga halus di latar belakang */
       background-image: radial-gradient(rgba(20, 20, 22, 0.08) 1.2px, transparent 1.2px);
       background-size: 14px 14px;
       transition: background-color 0.25s ease, color 0.25s ease;
@@ -74,7 +73,153 @@
     }
 
     /* ==========================================================================
-       2. SCROLL PROGRESS & MANGA HEADER BAR
+       2. MANGA COVER PRELOADER (SPEEDLINES + COMIC PANEL)
+    ========================================================================== */
+    #manga-loader {
+      position: fixed;
+      inset: 0;
+      background-color: #F4F1EA;
+      background-image: radial-gradient(rgba(20, 20, 22, 0.12) 1.5px, transparent 1.5px);
+      background-size: 12px 12px;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: transform 0.65s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s ease;
+    }
+    #manga-loader.hide {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Efek Garis Kecepatan Manga (Concentration Lines) */
+    .manga-speedlines {
+      position: absolute;
+      width: 180vmax;
+      height: 180vmax;
+      background: repeating-conic-gradient(
+        from 0deg,
+        transparent 0deg 4deg,
+        rgba(20, 20, 22, 0.06) 4deg 5deg
+      );
+      mask-image: radial-gradient(circle, transparent 18%, black 55%);
+      -webkit-mask-image: radial-gradient(circle, transparent 18%, black 55%);
+      animation: spinLines 18s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes spinLines {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Panel Utama Preloader */
+    .loader-comic-box {
+      position: relative;
+      z-index: 2;
+      width: min(410px, 90vw);
+      background: #FFFFFF;
+      border: 4px solid #141416;
+      box-shadow: 10px 12px 0px #141416;
+      padding: 26px 24px 22px;
+      text-align: center;
+      color: #141416;
+    }
+
+    .loader-vol-strip {
+      position: absolute;
+      top: -15px;
+      left: 16px;
+      background: #141416;
+      color: #FFFFFF;
+      font-family: var(--font-comic);
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 2px 12px;
+      letter-spacing: 0.06em;
+    }
+
+    .loader-sfx {
+      position: absolute;
+      top: -18px;
+      right: -12px;
+      background: #FFE45E;
+      color: #141416;
+      border: 3px solid #141416;
+      font-family: var(--font-comic);
+      font-size: 1.45rem;
+      font-weight: 700;
+      padding: 2px 12px;
+      transform: rotate(9deg);
+      box-shadow: 3px 4px 0px #141416;
+      animation: popSfx 0.8s ease-in-out infinite alternate;
+    }
+    @keyframes popSfx {
+      from { transform: rotate(7deg) scale(0.96); }
+      to { transform: rotate(12deg) scale(1.05); }
+    }
+
+    .loader-sketch-char {
+      width: 112px;
+      height: 102px;
+      margin: 4px auto 10px;
+      background: #FDF3EE;
+      border: 2.5px solid #141416;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loader-title {
+      font-family: var(--font-comic);
+      font-size: 2.7rem;
+      font-weight: 700;
+      line-height: 0.95;
+      color: #141416;
+      margin-bottom: 4px;
+    }
+    .loader-title span { color: #E86F3A; }
+
+    .loader-sub {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #4A4A52;
+      margin-bottom: 14px;
+    }
+
+    /* Progress Bar Tinta Komik */
+    .loader-ink-bar {
+      width: 100%;
+      height: 16px;
+      background: #F4F1EA;
+      border: 2.5px solid #141416;
+      padding: 2px;
+      margin-bottom: 8px;
+    }
+    .loader-ink-fill {
+      height: 100%;
+      width: 0%;
+      background: repeating-linear-gradient(
+        -45deg,
+        #E86F3A,
+        #E86F3A 8px,
+        #C85320 8px,
+        #C85320 16px
+      );
+      transition: width 0.12s linear;
+    }
+
+    .loader-status-row {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-comic);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #141416;
+    }
+
+    /* ==========================================================================
+       3. SCROLL PROGRESS & MANGA HEADER BAR
     ========================================================================== */
     #scroll-progress {
       position: fixed;
@@ -215,7 +360,7 @@
     }
 
     /* ==========================================================================
-       3. MANGA PAGE GRID SYSTEM (PADAT & DINAMIS ALA KOMIK)
+       4. MANGA PAGE GRID SYSTEM
     ========================================================================== */
     .manga-sheet {
       width: min(1240px, 95%);
@@ -225,7 +370,6 @@
       gap: 14px;
     }
 
-    /* Panel Komik Dasar */
     .manga-panel {
       background: var(--panel-bg);
       border: var(--border-manga);
@@ -239,9 +383,7 @@
       transform: translate(-2px, -2px);
       box-shadow: 7px 8px 0px var(--ink);
     }
-    .manga-panel.soft { background: var(--panel-soft); }
 
-    /* Nomor Chapter / Panel Pojok */
     .panel-tag {
       display: inline-block;
       font-family: var(--font-comic);
@@ -260,7 +402,6 @@
       border: 1.5px solid var(--ink);
     }
 
-    /* Judul Komik */
     .comic-title {
       font-family: var(--font-comic);
       font-size: clamp(1.75rem, 2.8vw, 2.35rem);
@@ -271,7 +412,6 @@
     }
     .comic-title span { color: var(--accent); }
 
-    /* Gelembung Dialog (Speech Bubble) */
     .speech-bubble {
       position: relative;
       background: var(--panel-bg);
@@ -294,7 +434,6 @@
       border-color: var(--ink) transparent transparent transparent;
     }
 
-    /* Tombol Komik */
     .btn {
       font-family: var(--font-main);
       font-size: 0.82rem;
@@ -322,14 +461,13 @@
     }
 
     /* ==========================================================================
-       4. PANEL 1 & 2: HERO COVER & CHARACTER CARD (COL 7 + COL 5)
+       5. HERO & CHARACTER PANELS
     ========================================================================== */
     .panel-hero {
       grid-column: span 7;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      /* Efek Garis Kecepatan Manga (Speedlines) di pojok kanan atas */
       background-image: repeating-linear-gradient(
         -35deg,
         transparent,
@@ -372,7 +510,6 @@
     }
     .hero-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
 
-    /* Panel Karakter Foto */
     .panel-character {
       grid-column: span 5;
       background: var(--panel-soft);
@@ -429,7 +566,7 @@
     .char-caption span { color: var(--accent); }
 
     /* ==========================================================================
-       5. MARQUEE TICKER KOMIK (COL 12)
+       6. TICKER, ABOUT, SKILLS, PROJECTS, EXP, ORG, WORKFLOW, CERTS, GALLERY
     ========================================================================== */
     .panel-ticker {
       grid-column: span 12;
@@ -461,9 +598,6 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* ==========================================================================
-       6. PANEL ABOUT & STATS (COL 6) + PANEL SKILLS (COL 6)
-    ========================================================================== */
     .panel-about { grid-column: span 6; }
     .about-flex {
       display: flex;
@@ -509,7 +643,6 @@
       margin-top: 2px;
     }
 
-    /* Panel Skills */
     .panel-skills { grid-column: span 6; }
     .skill-cat-title {
       font-family: var(--font-comic);
@@ -532,7 +665,6 @@
       color: var(--ink);
       box-shadow: 2px 2px 0px var(--ink);
       transition: transform 0.15s ease, background 0.15s ease;
-      cursor: default;
     }
     .skill-chip:hover {
       background: var(--accent);
@@ -540,9 +672,6 @@
       transform: translate(-1px, -1px);
     }
 
-    /* ==========================================================================
-       7. PANEL SELECTED WORK / PROJECTS (3 PANEL SEJAJAR COL 4 + 4 + 4)
-    ========================================================================== */
     .panel-project {
       grid-column: span 4;
       display: flex;
@@ -612,9 +741,6 @@
     }
     .proj-link:hover { background: var(--accent-dark); }
 
-    /* ==========================================================================
-       8. PANEL EXPERIENCE (COL 5) + PANEL ORGANIZATIONS (COL 7)
-    ========================================================================== */
     .panel-exp { grid-column: span 5; }
     .exp-box {
       background: var(--panel-soft);
@@ -695,9 +821,6 @@
       margin-bottom: 6px;
     }
 
-    /* ==========================================================================
-       9. PANEL WORKFLOW 5-STEP MANGA STRIP (COL 12)
-    ========================================================================== */
     .panel-workflow { grid-column: span 12; }
     .workflow-strip {
       display: grid;
@@ -708,7 +831,6 @@
       background: var(--panel-soft);
       border: 2px solid var(--ink);
       padding: 12px;
-      position: relative;
     }
     .wf-num {
       font-family: var(--font-comic);
@@ -728,9 +850,6 @@
       color: var(--muted);
     }
 
-    /* ==========================================================================
-       10. PANEL CERTIFICATES (COL 6) + PANEL GALLERY (COL 6)
-    ========================================================================== */
     .panel-certs { grid-column: span 6; }
     .cert-mini-grid {
       display: grid;
@@ -783,7 +902,6 @@
       text-decoration: none;
     }
 
-    /* Gallery Panel */
     .panel-gallery { grid-column: span 6; }
     .gallery-comic-grid {
       display: grid;
@@ -806,9 +924,6 @@
     }
     .gal-frame:hover img { transform: scale(1.06); }
 
-    /* ==========================================================================
-       11. PANEL FINALE / CONTACT FOOTER (COL 12)
-    ========================================================================== */
     .panel-contact {
       grid-column: span 12;
       background: var(--panel-soft);
@@ -859,7 +974,7 @@
     }
 
     /* ==========================================================================
-       12. LIGHTBOX & COMPACT MANGA MUSIC PLAYER
+       7. LIGHTBOX & COMPACT MANGA MUSIC PLAYER
     ========================================================================== */
     #lightbox {
       position: fixed;
@@ -946,7 +1061,7 @@
     #playPauseBtn .play-shape { fill: currentColor; stroke: none; }
 
     /* ==========================================================================
-       13. RESPONSIVE
+       8. RESPONSIVE
     ========================================================================== */
     @media (max-width: 960px) {
       .panel-hero, .panel-character, .panel-about, .panel-skills,
@@ -968,6 +1083,42 @@
   </style>
 </head>
 <body>
+
+  <!-- ==========================================================================
+       MANGA COVER PRELOADER
+  ========================================================================== -->
+  <div id="manga-loader">
+    <div class="manga-speedlines"></div>
+    <div class="loader-comic-box">
+      <div class="loader-vol-strip">VOL. 01 // SPECIAL ISSUE</div>
+      <div class="loader-sfx">DON!!</div>
+
+      <!-- Ilustrasi Karakter Sketsa Manga -->
+      <div class="loader-sketch-char">
+        <svg width="86" height="82" viewBox="0 0 220 200" fill="none" stroke="#141416" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="110" cy="68" r="30" fill="#FFFFFF"/>
+          <path d="M80 62 C86 30, 136 30, 142 62 C126 52, 96 52, 80 62 Z" fill="#141416"/>
+          <path d="M98 68 L104 68 M116 68 L122 68"/>
+          <path d="M104 82 Q110 88 116 82"/>
+          <path d="M62 175 C68 122, 152 122, 158 175 Z" fill="#FFFFFF"/>
+          <rect x="95" y="128" width="30" height="32" rx="4" fill="#E86F3A"/>
+          <line x1="25" y1="180" x2="195" y2="180"/>
+        </svg>
+      </div>
+
+      <div class="loader-title">DANA <span>ALPAIJI</span></div>
+      <div class="loader-sub">SHARIA ECONOMICS &bull; AI &bull; LEADERSHIP</div>
+
+      <div class="loader-ink-bar">
+        <div class="loader-ink-fill" id="loaderInkFill"></div>
+      </div>
+      <div class="loader-status-row">
+        <span id="loaderStatusText">INKING PAGES...</span>
+        <span id="loaderPctText">0%</span>
+      </div>
+    </div>
+  </div>
+
   <div id="scroll-progress"></div>
 
   <!-- MOBILE MENU -->
@@ -1054,7 +1205,6 @@
       <h2 class="comic-title">A Little <span>About Me</span></h2>
       <div class="about-flex">
         <div class="about-doodle">
-          <!-- Ilustrasi Sketsa Tangan -->
           <svg width="95" height="85" viewBox="0 0 260 220" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="130" cy="75" r="32" fill="var(--panel-bg)"/>
             <path d="M100 68 C104 38, 158 38, 162 68 Z" fill="currentColor"/>
@@ -1116,7 +1266,7 @@
       </div>
     </section>
 
-    <!-- PANEL 06, 07, 08: SELECTED WORKS (3 EPISODE KOMIK) -->
+    <!-- PANEL 06, 07, 08: SELECTED WORKS -->
     <article class="manga-panel panel-project" id="projects">
       <div>
         <div class="proj-top">
@@ -1379,6 +1529,30 @@
   </div>
 
   <script>
+    /* Manga Preloader Script */
+    (function () {
+      const loader = document.getElementById('manga-loader');
+      const fill = document.getElementById('loaderInkFill');
+      const pctText = document.getElementById('loaderPctText');
+      const statusText = document.getElementById('loaderStatusText');
+      let progress = 0;
+
+      const timer = setInterval(() => {
+        progress += Math.floor(Math.random() * 18) + 9;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(timer);
+          if (statusText) statusText.textContent = 'READY TO READ!';
+          setTimeout(() => {
+            if (loader) loader.classList.add('hide');
+            setTimeout(() => { if (loader) loader.style.display = 'none'; }, 650);
+          }, 300);
+        }
+        if (fill) fill.style.width = progress + '%';
+        if (pctText) pctText.textContent = progress + '%';
+      }, 110);
+    })();
+
     /* Scroll Progress */
     window.addEventListener('scroll', () => {
       const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
