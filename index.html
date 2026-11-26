@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Dana Alpaiji — Creative Portfolio</title>
+<title>Dana Alpaiji — Manga Comic Portfolio</title>
 <link href="/profile.jpg?v=3" rel="icon" sizes="any" type="image/jpeg"/>
 <link href="/profile.jpg?v=3" rel="shortcut icon" type="image/jpeg"/>
 <link href="/profile.jpg?v=3" rel="apple-touch-icon"/>
@@ -1799,7 +1799,86 @@
     body[data-theme="dark"] #loader { background:linear-gradient(160deg,#10243D 0%,#0C1728 55%,#162F4D 100%); }
     @media (max-width:640px) { .theme-toggle { margin-left:auto; margin-right:10px; } }
 
-  </style>
+  
+/* ===== MODERN HAND-DRAWN × MANGA OVERRIDE ===== */
+:root{
+ --ink:#211b35;--paper:#fffdf8;--purple:#7657f6;--purple-deep:#4c35c9;
+ --pink:#ff6f9f;--yellow:#ffe36e;--mint:#a8f0d2;
+ --bg-primary:#f5f0ff;--bg-secondary:#eee7ff;
+ --text-primary:#211b35;--text-secondary:#5c5670;--text-muted:#827b96;
+ --radius-sm:14px;--radius-md:22px;--radius-lg:30px;
+ --glass-border:2px solid rgba(33,27,53,.78);
+ --glass-shadow:5px 6px 0 rgba(33,27,53,.12);
+ --glass-shadow-hover:8px 10px 0 rgba(33,27,53,.16);
+ --bg-card:rgba(255,255,255,.88);--bg-card-hover:#fff;
+ --bg-glass-nav:rgba(255,253,248,.9);
+ --ghibli-sage:var(--purple);--ghibli-sage-dark:var(--purple-deep);
+ --ghibli-sage-soft:rgba(118,87,246,.12);--ghibli-sky:#8bd9ff;
+ --ghibli-terracotta:var(--pink);--ghibli-sun:var(--yellow);
+ --glass-blur:blur(18px) saturate(140%);
+}
+body{background-color:var(--bg-primary);background-image:radial-gradient(rgba(118,87,246,.11) 1px,transparent 1px),linear-gradient(135deg,rgba(255,255,255,.55),transparent 55%);background-size:18px 18px,100% 100%}
+#navbar{border:2px solid var(--ink);border-radius:18px;box-shadow:4px 5px 0 var(--ink);backdrop-filter:blur(18px);background:rgba(255,253,248,.92)}
+#navbar.scrolled{border-color:var(--ink);box-shadow:3px 4px 0 var(--ink)}
+.nav-logo,.hero-name,.section-title,.contact-title,.exp-company,.org-name,.cert-title{font-family:'Patrick Hand',cursive!important;letter-spacing:.01em}
+.nav-menu a{font-weight:800;border-radius:10px}
+.nav-menu a:hover,.nav-menu a.active{background:var(--yellow);color:var(--ink);box-shadow:2px 2px 0 var(--ink)}
+section{padding-top:76px;padding-bottom:76px}
+.section-label,.hero-badge,.hero-subtitle{border:1.8px solid var(--ink);border-radius:9px;background:var(--yellow);color:var(--ink);box-shadow:2px 3px 0 var(--ink);font-weight:900}
+.section-title{font-size:clamp(2.2rem,4vw,3.3rem);text-shadow:2px 2px 0 rgba(255,227,110,.75)}
+.btn{border:2px solid var(--ink);border-radius:12px;box-shadow:3px 4px 0 var(--ink);font-weight:900;backdrop-filter:none}
+.btn-primary{background:var(--purple);color:white}
+.btn-primary:hover{background:var(--pink);color:var(--ink);transform:translate(-2px,-3px);box-shadow:6px 7px 0 var(--ink)}
+.btn-secondary{background:var(--paper);color:var(--ink)}
+.btn-secondary:hover{background:var(--mint);border-color:var(--ink);box-shadow:5px 6px 0 var(--ink)}
+.hero-name{font-size:clamp(3.3rem,7vw,6.2rem);line-height:.9;text-shadow:3px 3px 0 var(--yellow)}
+.hero-name em{color:var(--purple);text-shadow:2px 2px 0 var(--pink)}
+.hero-img-frame{filter:drop-shadow(7px 8px 0 var(--ink))}
+.hero-img,.hero-img-shadow-sky,.hero-img-shadow-sage{border:2.5px solid var(--ink);border-radius:28px}
+.hero-img{transform:rotate(2deg)}
+.hero-img-shadow-sky{background:var(--yellow);transform:translate(-13px,-12px) rotate(-5deg)}
+.hero-img-shadow-sage{background:var(--pink);transform:translate(12px,12px) rotate(5deg)}
+.stat-card,.skill-card,.exp-card,.org-card,.contact-card{border:2px solid var(--ink);border-radius:18px;box-shadow:4px 5px 0 rgba(33,27,53,.18);backdrop-filter:none;background:var(--paper)}
+.stat-card:hover,.skill-card:hover,.exp-card:hover,.org-card:hover{transform:translate(-3px,-4px) rotate(-.5deg);box-shadow:7px 8px 0 rgba(33,27,53,.22)}
+.skill-card:hover{background:var(--yellow);color:var(--ink);border-color:var(--ink)}
+.ghibli-marquee-bar{background:var(--purple);border-block:2px solid var(--ink);color:#fff}
+.ghibli-marquee-track{font-family:'Patrick Hand',cursive!important;font-size:1.15rem;font-weight:900}
+#about,#experience,#certificates,#contact{background:rgba(255,255,255,.34);border-block:2px dashed rgba(33,27,53,.28)}
+.timeline::before{background:repeating-linear-gradient(to bottom,var(--purple) 0 9px,transparent 9px 15px);width:3px}
+.timeline-dot{background:var(--yellow);border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink)}
+.exp-role,.org-badge{background:var(--pink);color:var(--ink);border:1.5px solid var(--ink);border-radius:8px;font-weight:900}
+.org-card:nth-child(2n){transform:rotate(.4deg)}.org-card:nth-child(2n+1){transform:rotate(-.4deg)}
+#spotify-widget{border:2px solid var(--ink);border-radius:18px;box-shadow:4px 5px 0 var(--ink);background:var(--paper)}
+.spotify-btn{border:1.5px solid var(--ink);background:var(--purple);color:#fff}
+#lightbox{background:rgba(24,17,48,.9)}
+#lightbox img{border:3px solid var(--ink);border-radius:12px;box-shadow:8px 9px 0 rgba(0,0,0,.35)}
+/* folder-library certificate layout */
+.certificates-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:28px;margin-top:34px;align-items:start}
+.cert-card{position:relative;background:transparent!important;border:0!important;border-radius:0!important;overflow:visible!important;box-shadow:none!important;padding-top:18px;transition:transform .28s cubic-bezier(.2,.8,.2,1)}
+.cert-card:nth-child(4n+1){transform:rotate(-1.5deg)}.cert-card:nth-child(4n+2){transform:rotate(1.2deg)}.cert-card:nth-child(4n+3){transform:rotate(-.7deg)}.cert-card:nth-child(4n){transform:rotate(1.7deg)}
+.cert-card:hover{transform:translateY(-9px) rotate(0deg) scale(1.025)}
+.cert-card::before{content:"";position:absolute;top:0;left:15px;width:43%;height:31px;background:var(--folder-color,var(--yellow));border:2px solid var(--ink);border-bottom:0;border-radius:12px 12px 0 0;transform:skewX(-12deg);z-index:0}
+.cert-card::after{content:"";position:absolute;inset:17px 0 0;background:var(--folder-color,var(--yellow));border:2px solid var(--ink);border-radius:8px 15px 16px 13px;box-shadow:5px 6px 0 rgba(33,27,53,.18);z-index:0}
+.cert-card:nth-child(4n+2){--folder-color:#ff9fc0}.cert-card:nth-child(4n+3){--folder-color:#a8f0d2}.cert-card:nth-child(4n){--folder-color:#a9dfff}
+.cert-img{position:relative;z-index:1;margin:18px 13px 0;padding:10px;background:var(--paper);border:2px solid var(--ink);border-radius:5px;aspect-ratio:16/10;box-shadow:3px 4px 0 rgba(33,27,53,.2);transform:rotate(-1deg)}
+.cert-img img{object-fit:contain;background:#fff;mix-blend-mode:multiply}
+.cert-body{position:relative;z-index:1;padding:13px 17px 19px;color:var(--ink)}
+.cert-tag{background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);border-radius:6px;font-weight:900;letter-spacing:.06em}
+.cert-title{font-size:1.45rem;line-height:1.02;margin:4px 0 7px;color:var(--ink)}
+.cert-desc{font-size:.78rem;color:#3f3853;line-height:1.45;min-height:34px}
+.cert-btn{background:var(--ink);color:#fff;border:1.5px solid var(--ink);border-radius:8px;box-shadow:2px 3px 0 rgba(33,27,53,.22);font-weight:900}
+.cert-btn:hover{background:var(--paper);color:var(--ink)}
+@media(max-width:700px){
+ section{padding:58px 5%}
+ #navbar{left:4%;right:4%;padding:10px 15px}
+ .certificates-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}
+ .cert-img{margin-inline:9px;padding:6px}
+ .cert-body{padding:10px 12px 16px}
+ .cert-title{font-size:1.2rem}
+}
+@media(max-width:430px){.certificates-grid{grid-template-columns:1fr 1fr}.cert-desc{font-size:.7rem}}
+
+</style>
 <style>
 /* ==========================================================
    HAND-DRAWN EDITORIAL PORTFOLIO — NEW VISUAL SYSTEM
@@ -1907,126 +1986,212 @@ footer{width:min(1320px,96%);margin:0 auto 20px;background:#eee9ff;border:2px so
 .footer-copy{color:#5e5876}
 .social-btn{border:2px solid var(--ink);background:white;color:var(--ink);border-radius:999px;padding:7px 12px;font-weight:900}
 .social-btn:hover{background:var(--yellow)}
-/* Spider-hero hand-drawn preloader: swings across from left to right */
-#loader{background:var(--purple);color:white;z-index:99999;overflow:hidden}
-.loader-scribbles{position:absolute;inset:0;pointer-events:none}
-.loader-scribbles span{position:absolute;width:110px;height:25px;border-top:3px solid rgba(255,255,255,.45);border-radius:50%;transform:rotate(-18deg);animation:scribbleDrift 2.8s ease-in-out infinite}
-.loader-scribbles span:nth-child(1){top:18%;left:8%}
-.loader-scribbles span:nth-child(2){top:70%;left:28%;animation-delay:.4s}
-.loader-scribbles span:nth-child(3){top:28%;right:10%;animation-delay:.8s}
-.loader-scribbles span:nth-child(4){top:82%;right:18%;animation-delay:1.2s}
-.loader-web{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.loader-web path{fill:none;stroke:#fff;stroke-width:3;stroke-dasharray:12 14;opacity:.7;animation:webDraw 2.5s ease-out forwards}
-.loader-web path+path{stroke:var(--yellow);stroke-width:2;animation-delay:.15s}
-.spidey-stage{position:absolute;inset:0;pointer-events:none}
-.spidey{position:absolute;width:clamp(125px,18vw,235px);height:auto;left:-260px;top:20%;filter:drop-shadow(5px 8px 0 rgba(20,12,70,.2));animation:spideySwing 3.1s cubic-bezier(.4,0,.2,1) forwards}
-@keyframes spideySwing{0%{left:-260px;top:65%;transform:rotate(-22deg) scale(.72)}28%{top:18%;transform:rotate(16deg) scale(1.02)}52%{top:34%;transform:rotate(-12deg) scale(.96)}76%{top:12%;transform:rotate(12deg) scale(1.03)}100%{left:calc(100% + 270px);top:25%;transform:rotate(-18deg) scale(.82)}}
-@keyframes webDraw{from{stroke-dashoffset:1200;opacity:0}to{stroke-dashoffset:0;opacity:.7}}
-@keyframes scribbleDrift{0%,100%{transform:translateX(0) rotate(-18deg)}50%{transform:translateX(30px) rotate(-8deg)}}
-.loader-centerpiece{background:var(--paper);border:2px solid var(--ink);border-radius:22px;box-shadow:7px 8px 0 rgba(23,19,41,.2);padding:26px 34px;color:var(--ink);z-index:8}
-.loader-tag{background:var(--yellow);border:1.5px solid var(--ink);color:var(--ink);border-radius:999px;font-weight:900;letter-spacing:.08em}
-.loader-logo{font-family:'Patrick Hand',cursive!important;color:var(--ink);font-size:clamp(2.5rem,6vw,4rem)}
-.loader-logo span{color:var(--purple)}
-.loader-caption{font-family:'Patrick Hand',cursive!important;font-size:1.25rem;color:#5d5677}
-.loader-bar-wrap{background:#e8e1ff;border:1px solid var(--ink);height:9px}
-.loader-bar-fill{background:linear-gradient(90deg,var(--purple),var(--pink),var(--yellow))}
-.loader-pct{color:var(--purple-deep);font-weight:900}
-@keyframes floatDoodle{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-9px) rotate(1deg)}}
-body[data-theme="dark"]{--paper:#24203b;--ink:#fff;--text-primary:#fff;--text-secondary:#e4defb;--text-muted:#b9b0d8;--bg-card:#2d2847}
-body[data-theme="dark"] #navbar,body[data-theme="dark"] section,body[data-theme="dark"] footer,body[data-theme="dark"] .contact-card,body[data-theme="dark"] .stat-card,body[data-theme="dark"] .skill-card,body[data-theme="dark"] .exp-card,body[data-theme="dark"] .org-card,body[data-theme="dark"] .cert-card,body[data-theme="dark"] .project-card{background:var(--paper);color:var(--ink)}
-body[data-theme="dark"] .hero-name,body[data-theme="dark"] .section-title,body[data-theme="dark"] .contact-title,body[data-theme="dark"] .nav-logo{color:var(--ink)}
-@media(max-width:900px){
- #navbar{width:94%;padding:10px 15px}
- .nav-menu{display:none}
- .hamburger{display:flex}
- .portfolio-layout{grid-template-columns:1fr;width:94%;gap:14px}
- .layout-column{gap:14px}
- #hero .hero-content{padding:26px 22px 0}
- #hero .hero-visual{padding:0 18px 22px}
+</style>
+<!-- V7: MONOCHROME MANGA / PREMIUM HAND-DRAWN LANDING PAGE -->
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Patrick+Hand&family=Kalam:wght@400;700&display=swap" rel="stylesheet"/>
+<style id="v7-monochrome-luxury">
+:root{
+ --ink:#090909;--paper:#fff;--purple:#111;--purple-deep:#000;--lav:#f1f1f1;
+ --pink:#d8d8d8;--mint:#c9c9c9;--yellow:#e8e8e8;
+ --line:#111;--soft-shadow:5px 6px 0 rgba(0,0,0,.09);
+ --font-main:'Kalam', 'Patrick Hand', cursive;--font-serif:'Bangers', cursive;
+ --bg-primary:#fff;--bg-secondary:#f5f5f5;--bg-card:#fff;--bg-card-hover:#f7f7f7;
+ --text-primary:#080808;--text-secondary:#363636;--text-muted:#777;
+ --ghibli-sage:#111;--ghibli-sage-dark:#000;--ghibli-sage-soft:#eee;
+ --ghibli-sky:#aaa;--ghibli-terracotta:#777;--ghibli-sun:#ddd;
+ --glass-border:2px solid #111;--glass-border-subtle:1px solid #bbb;
+ --glass-shadow:4px 5px 0 rgba(0,0,0,.08);--glass-shadow-hover:7px 8px 0 rgba(0,0,0,.13);
 }
-@media(max-width:560px){
- #navbar{margin:8px auto 12px;border-radius:15px}
- .portfolio-layout{width:94%}
- section{padding:20px;border-radius:18px}
- #hero .hero-content{padding:22px 18px 0}
- .hero-name{font-size:3.35rem}
- .hero-desc{font-size:.88rem}
- .about-stats{gap:9px}
- .stat-card{padding:12px}
- .skills-grid{grid-template-columns:1fr 1fr}
- .gallery-grid{columns:2}
- #contact .contact-card{padding:18px}
- .contact-btns{flex-direction:column}
- .contact-btns .btn{width:100%;justify-content:center}
- footer{padding:20px}
-}
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-}
-</style></head>
+*,*::before,*::after{font-family:'Kalam','Patrick Hand',cursive!important}
+html{font-size:15px;scroll-padding-top:100px}
+body{background:#f7f7f7;color:#090909;line-height:1.52}
+body::before{background-image:radial-gradient(#000 0.65px,transparent .65px);background-size:19px 19px;opacity:.07}
+#scroll-progress{background:#111!important;height:4px}
+#navbar{width:min(1240px,94%);margin:14px auto 16px;background:rgba(255,255,255,.96);border:1.5px solid #111;border-radius:999px;box-shadow:3px 4px 0 #111;padding:9px 20px}
+.nav-logo,.footer-logo{font-family:'Bangers',cursive!important;letter-spacing:1.2px;color:#050505}
+.nav-logo{font-size:2.05rem}.nav-logo span,.footer-logo span{color:#777}
+.nav-menu a{font-family:'Kalam',cursive!important;font-size:.84rem;font-weight:700;color:#111}
+.nav-menu a:hover,.nav-menu a.active{background:#111;color:#fff}
+.theme-toggle{background:#111;color:#fff;border:1.5px solid #111}
+.hamburger span{background:#111}.mobile-menu{background:rgba(10,10,10,.97)}
+.portfolio-layout{width:min(1240px,94%);grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:15px;margin-bottom:18px}
+.layout-column{gap:15px}
+section{background:#fff;border:1.5px solid #111;border-radius:25px;padding:clamp(19px,2.5vw,29px);box-shadow:4px 5px 0 rgba(0,0,0,.08)}
+section::after{border-color:#111;opacity:.45}
+#hero{border-radius:27px;gap:9px}
+#hero .hero-content{padding:27px 26px 0}
+#hero .hero-visual{padding:0 22px 22px}
+.hero-name,.section-title,.contact-title,.exp-company,.org-name,.cert-title,.project-title,.skills-group-title,.stat-num{font-family:'Bangers',cursive!important;letter-spacing:.5px;color:#080808}
+.hero-name{font-size:clamp(3.7rem,6vw,5.8rem);line-height:.86;letter-spacing:1px}
+.hero-name em{font-family:'Bangers',cursive!important;color:#111;text-decoration:underline;text-decoration-color:#888;text-decoration-thickness:5px;text-underline-offset:5px}
+.section-title{font-size:clamp(2.15rem,3.4vw,3.05rem);line-height:.98}
+.contact-title{font-size:2.7rem}
+.hero-badge,.section-label,.exp-role,.org-badge,.cert-tag{background:#f1f1f1;color:#111;border:1.3px solid #111;border-radius:999px;box-shadow:none;font-weight:700}
+.hero-subtitle{background:#111;color:#fff;border:1.5px solid #111;border-radius:999px;padding:6px 13px;font-weight:700}
+.hero-desc,.about-text p,.section-sub,.exp-list li,.org-list li,.cert-desc,.project-desc{font-family:'Kalam','Patrick Hand',cursive!important;color:#393939;font-size:.92rem;line-height:1.55}
+.btn,.project-action,.cert-btn{border:1.5px solid #111;border-radius:999px;box-shadow:2px 3px 0 #111;font-weight:700}
+.btn-primary,.project-action,.cert-btn{background:#111;color:#fff}
+.btn-primary:hover,.project-action:hover,.cert-btn:hover{background:#e8e8e8;color:#111}
+.btn-secondary{background:#fff;color:#111}.btn-secondary:hover{background:#eee}
+.hero-img{border:2px solid #111;box-shadow:5px 6px 0 #888;border-radius:50%;filter:grayscale(1)}
+.hero-img-shadow-sky{background:#ddd;border:1.5px solid #111}.hero-img-shadow-sage{background:#aaa;border:1.5px solid #111}
+.ghibli-marquee-bar{background:#111;color:#fff;border-block:1.5px solid #111;padding:9px 0}
+#about,#experience,#certificates,#contact{background:#fff;border-color:#111}
+.stat-card,.skill-card,.exp-card,.org-card,.project-card,.contact-card,.gallery-item{background:#fff;border:1.4px solid #111;border-radius:20px;box-shadow:3px 4px 0 rgba(0,0,0,.08)}
+.stat-card:hover,.skill-card:hover,.org-card:hover,.gallery-item:hover,.project-card:hover{background:#f3f3f3;transform:translateY(-3px);box-shadow:5px 6px 0 rgba(0,0,0,.13)}
+.stat-num{font-size:2.3rem}.stat-num .acc{color:#555}
+.skills-grid{gap:8px}.skill-card{padding:10px 12px}.skill-name{font-weight:700}
+.skills-group-title{font-size:1.55rem}.skills-group-title::after{background:#111}
+.timeline::before{background:repeating-linear-gradient(to bottom,#111 0 7px,transparent 7px 12px)}
+.timeline-dot{background:#fff;border:2px solid #111}
+.exp-card,.org-card,.project-card{padding:17px}
+.exp-company,.org-name,.cert-title,.project-title{font-size:1.55rem}
+.exp-date,.org-year,.project-category{color:#333;font-weight:700}
+.exp-list li::before,.org-list li::before{color:#111}
+.org-grid,.certificates-grid,.projects-grid{gap:12px}
+.project-index{background:#111;color:#fff;border:1px solid #111}
+.project-tags span{background:#eee;border:1px solid #aaa;color:#111;border-radius:999px}
+.gallery-grid{column-gap:10px}.gallery-item{padding:5px}.gallery-item img{filter:grayscale(1);border-radius:15px}
+.gallery-overlay{background:rgba(0,0,0,.22)}
+#contact .contact-card{padding:19px;gap:16px}.contact-item a{color:#111}
+footer{width:min(1240px,94%);background:#111;color:#fff;border:1.5px solid #111;border-radius:23px;padding:20px 25px;box-shadow:4px 5px 0 rgba(0,0,0,.12)}
+.footer-logo,.footer-logo span{color:#fff}.footer-copy{color:#ccc}.social-btn{background:#fff;color:#111;border:1.4px solid #fff}.social-btn:hover{background:#ccc}
+/* Single archive folder, redesigned in monochrome */
+.certificate-archive-wrap{max-width:850px;margin:25px auto 0}
+.certificate-archive-folder{filter:drop-shadow(4px 6px 0 rgba(0,0,0,.12))}
+.archive-folder-tab{background:#111;color:#fff;border:1.5px solid #111;border-bottom:0;border-radius:15px 15px 0 0;font-family:'Bangers',cursive!important;letter-spacing:1px}
+.archive-folder-inner{background:#ededed;border:1.5px solid #111;border-radius:8px 23px 23px 23px;padding:22px clamp(14px,3vw,28px) 17px}
+.archive-folder-heading{color:#111;border-bottom:1.5px dashed #888}
+.archive-folder-icon{background:#fff;border:1.5px solid #111;color:#111}
+.archive-folder-heading strong{font-family:'Bangers',cursive!important;letter-spacing:.8px;font-size:1.65rem}
+.archive-folder-heading small,.archive-file-info em{color:#555}
+.archive-count{background:#111;color:#fff;border:1.5px solid #111;box-shadow:2px 2px 0 #888}
+.archive-file{background:#fff;border:1.3px solid #111;border-radius:17px;box-shadow:2px 3px 0 rgba(0,0,0,.12);color:#111}
+.archive-file:hover{background:#f2f2f2;box-shadow:4px 5px 0 rgba(0,0,0,.15)}
+.archive-file-preview{background:#e8e8e8;border:1px solid #111;border-radius:10px}.archive-file-preview img{filter:grayscale(1);border-radius:6px}
+.archive-file-info small{color:#666}.archive-file-info strong{font-family:'Kalam','Patrick Hand',cursive!important;font-weight:700}
+.archive-open{background:#111;color:#fff;border:1px solid #111}
+.archive-folder-footer{color:#555;border-color:#999}
+/* Dark theme toggle remains monochrome */
+body[data-theme="dark"]{--paper:#111;--ink:#fff;--text-primary:#fff;--text-secondary:#ddd;--text-muted:#aaa;--bg-card:#181818}
+body[data-theme="dark"]{background:#080808;color:#fff}
+body[data-theme="dark"] #navbar,body[data-theme="dark"] section,body[data-theme="dark"] .contact-card,body[data-theme="dark"] .stat-card,body[data-theme="dark"] .skill-card,body[data-theme="dark"] .exp-card,body[data-theme="dark"] .org-card,body[data-theme="dark"] .project-card{background:#111;color:#fff;border-color:#eee}
+body[data-theme="dark"] .hero-name,body[data-theme="dark"] .section-title,body[data-theme="dark"] .contact-title,body[data-theme="dark"] .nav-logo{color:#fff}
+body[data-theme="dark"] .archive-folder-inner{background:#222;border-color:#eee}body[data-theme="dark"] .archive-folder-tab{background:#fff;color:#111;border-color:#fff}body[data-theme="dark"] .archive-file{background:#171717;color:#fff;border-color:#ddd}body[data-theme="dark"] .archive-file-preview{background:#333}body[data-theme="dark"] footer{background:#fff;color:#111}body[data-theme="dark"] .footer-logo,body[data-theme="dark"] .footer-logo span,body[data-theme="dark"] .footer-copy{color:#111}
+@media(max-width:900px){.portfolio-layout{grid-template-columns:1fr;width:94%;gap:14px}.layout-column{gap:14px}#navbar{width:94%}}
+@media(max-width:700px){section{padding:21px!important;border-radius:23px!important}.portfolio-layout{width:94%!important}.hero-name{font-size:3.65rem}#hero .hero-content{padding:23px 20px 0}.archive-folder-inner{border-radius:20px;padding:19px 12px 15px}.archive-file{border-radius:16px}.archive-file-preview{border-radius:9px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+
+<style id="v8-manga-comic-interior">
+:root{--ink:#080808;--paper:#fff;--halftone:rgba(0,0,0,.12)}
+html{scroll-behavior:smooth}
+body{background:#f4f4f4!important;color:#080808!important;background-image:radial-gradient(#111 0.65px,transparent .65px)!important;background-size:8px 8px!important}
+body::before{opacity:.035!important}
+/* Bold inked manga panels */
+section{position:relative;isolation:isolate;border:2px solid #080808!important;border-radius:18px 24px 17px 22px!important;background:#fff!important;box-shadow:5px 6px 0 #080808!important;overflow:hidden}
+section::before{content:"";position:absolute;z-index:-1;right:-25px;top:-25px;width:130px;height:130px;opacity:.075;background:radial-gradient(#000 1px,transparent 1.5px);background-size:6px 6px;transform:rotate(12deg);pointer-events:none}
+section::after{border:1px dashed #111!important;border-radius:14px!important;inset:7px!important;opacity:.28!important;pointer-events:none}
+#hero{background:linear-gradient(135deg,#fff 0 72%,#ededed 72% 100%)!important}
+#hero .hero-content{position:relative}
+.hero-name{font-size:clamp(4rem,7vw,6.3rem)!important;text-shadow:2px 2px 0 #bbb;line-height:.82!important}
+.hero-name em{display:inline-block;transform:rotate(-2deg);text-decoration-thickness:3px!important;text-underline-offset:7px!important}
+.section-title,.contact-title{position:relative;display:inline-block;text-shadow:1.5px 1.5px 0 #bbb;letter-spacing:1px!important}
+.section-title::after{content:"";display:block;width:70%;height:5px;margin-top:5px;background:repeating-linear-gradient(135deg,#111 0 3px,transparent 3px 6px);clip-path:polygon(0 20%,100% 0,97% 100%,2% 80%)}
+/* Comic lettering and handwritten narration */
+.nav-logo,.footer-logo,.hero-name,.section-title,.contact-title,.exp-company,.org-name,.cert-title,.project-title,.skills-group-title,.stat-num,.archive-folder-heading strong{font-family:'Bangers',Impact,cursive!important;letter-spacing:1px!important}
+.hero-desc,.about-text p,.section-sub,.exp-list li,.org-list li,.cert-desc,.project-desc,.nav-menu a,.archive-file-info{font-family:'Kalam','Patrick Hand',cursive!important}
+/* Speech bubble treatment */
+.hero-subtitle,.hero-badge,.section-label{position:relative;border:2px solid #111!important;background:#fff!important;color:#111!important;box-shadow:2px 3px 0 #111!important}
+.hero-subtitle{background:#111!important;color:#fff!important;transform:rotate(-1deg)}
+.hero-badge{transform:rotate(1.5deg)}
+/* Panel cards feel like comic frames */
+.stat-card,.skill-card,.exp-card,.org-card,.project-card,.contact-card,.gallery-item,.archive-file{border:1.7px solid #111!important;border-radius:13px 18px 12px 16px!important;box-shadow:3px 4px 0 #111!important;background:#fff!important}
+.stat-card:hover,.skill-card:hover,.org-card:hover,.gallery-item:hover,.project-card:hover,.archive-file:hover{transform:translate(-2px,-3px) rotate(-.3deg)!important;box-shadow:6px 7px 0 #111!important;background:#f1f1f1!important}
+.project-index,.archive-count{font-family:'Bangers',cursive!important;border-radius:50%!important;box-shadow:2px 2px 0 #777!important}
+.btn,.project-action,.cert-btn,.social-btn,.theme-toggle{border:2px solid #111!important;border-radius:999px!important;box-shadow:3px 3px 0 #111!important;font-family:'Bangers',cursive!important;letter-spacing:.5px}
+.btn:hover,.project-action:hover,.cert-btn:hover,.social-btn:hover{transform:translate(-1px,-2px) rotate(-1deg)!important;box-shadow:5px 5px 0 #111!important}
+.hero-img{border:3px solid #111!important;box-shadow:7px 7px 0 #111!important;filter:grayscale(1) contrast(1.08)!important}
+.gallery-item img,.archive-file-preview img{filter:grayscale(1) contrast(1.06)!important}
+/* Halftone speed-line separators */
+.ghibli-marquee-bar{background:#111!important;color:#fff!important;border-block:2px solid #111!important;transform:skewY(-1deg);margin-block:8px}
+.timeline::before{background:repeating-linear-gradient(to bottom,#111 0 6px,transparent 6px 10px)!important}
+.timeline-dot{box-shadow:0 0 0 3px #fff,0 0 0 5px #111!important}
+/* Archive stays as one folder, styled like a manga prop */
+.archive-folder-tab{border:2px solid #111!important;border-bottom:0!important;border-radius:14px 14px 0 0!important}
+.archive-folder-inner{border:2px solid #111!important;border-radius:5px 19px 18px 18px!important;background:repeating-linear-gradient(135deg,#eee 0 2px,#f8f8f8 2px 7px)!important}
+.archive-file-preview{border:1.5px solid #111!important}
+footer{border:2px solid #111!important;border-radius:20px!important;box-shadow:5px 6px 0 #111!important}
+#scroll-progress{background:#111!important;height:5px!important;border-bottom:1px solid #fff}
+/* Hand-drawn comic accents */
+.manga-spark{display:none!important}
+#about .stat-card:nth-child(2n),#skills .skill-card:nth-child(2n){transform:rotate(.5deg)}
+#projects .project-card:nth-child(2n){transform:rotate(.35deg)}
+::selection{background:#111;color:#fff}
+@media(max-width:900px){section{box-shadow:4px 5px 0 #111!important}}
+@media(max-width:700px){section{border-radius:17px!important;padding:20px!important}.hero-name{font-size:clamp(3.5rem,16vw,5rem)!important}.section-title{font-size:2.35rem!important}.portfolio-layout{gap:15px!important}.layout-column{gap:15px!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+
+<style id="manga-cinematic-intro">
+.manga-intro{position:fixed;inset:0;z-index:99999;background:#050505;color:#fff;overflow:hidden;display:flex;align-items:center;justify-content:center;isolation:isolate;animation:introCurtainOut .75s cubic-bezier(.7,0,.2,1) 5.25s forwards}
+.manga-intro.is-gone{display:none}
+.intro-grain{position:absolute;inset:-50%;opacity:.14;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");animation:grainDrift .25s steps(2) infinite}
+.intro-topline,.intro-bottom{position:absolute;left:clamp(18px,4vw,58px);right:clamp(18px,4vw,58px);display:flex;justify-content:space-between;align-items:center;font:700 10px/1.2 'Kalam','Patrick Hand',cursive;letter-spacing:2px;z-index:8}
+.intro-topline{top:25px;color:#aaa}.intro-bottom{bottom:24px;color:#aaa}
+.intro-bottom button{border:1px solid #777;border-radius:999px;background:transparent;color:#fff;padding:10px 17px;font:700 11px 'Kalam',cursive;letter-spacing:1px;cursor:pointer;transition:.2s}
+.intro-bottom button:hover{background:#fff;color:#000;transform:translateY(-2px)}
+.intro-panels{position:absolute;inset:10% 4% 12%;display:grid;grid-template-columns:1.05fr .8fr 1.1fr .85fr 1fr;gap:9px;transform:skewX(-7deg) scale(1.08)}
+.intro-panel{position:relative;overflow:hidden;border:3px solid #f4f4f4;background:linear-gradient(145deg,#292929,#080808);opacity:0;transform:translateY(110%) rotate(5deg);box-shadow:8px 8px 0 #555;filter:grayscale(1);animation:panelReveal .65s cubic-bezier(.16,.8,.2,1) forwards}
+.intro-panel:before{content:"";position:absolute;inset:0;background:radial-gradient(#aaa 0.8px,transparent 1px);background-size:6px 6px;opacity:.2;mix-blend-mode:screen}
+.panel-one{animation-delay:.15s}.panel-two{animation-delay:.55s}.panel-three{animation-delay:.95s}.panel-four{animation-delay:1.35s}.panel-five{animation-delay:1.75s}
+.panel-kicker{position:absolute;top:14px;left:12px;z-index:3;font:700 10px 'Kalam',cursive;letter-spacing:1.5px;color:#ddd}
+.panel-sfx{position:absolute;z-index:4;font:italic 900 clamp(24px,4vw,54px) 'Bangers',Impact,cursive;color:#fff;-webkit-text-stroke:1px #111;text-shadow:3px 3px #111;transform:rotate(-12deg)}
+.panel-one .panel-sfx{right:4%;bottom:18%}.panel-two .panel-sfx{right:4%;bottom:13%;font-size:clamp(30px,4vw,52px)}.panel-three .panel-sfx{left:8%;bottom:17%}.panel-four .panel-sfx{right:5%;top:42%}.panel-five .panel-sfx{right:12%;bottom:16%}
+.ink-sun{position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle,#eee 0 2px,#222 3px 5px);top:19%;left:15%;box-shadow:0 0 0 10px #111,0 0 0 13px #ddd}
+.ink-figure{position:absolute;width:43%;height:54%;left:29%;bottom:5%;background:linear-gradient(110deg,#eee 0 22%,#222 23% 42%,#aaa 43% 55%,#111 56%);clip-path:polygon(34% 0,67% 4%,82% 20%,75% 34%,100% 56%,86% 100%,12% 100%,0 61%,25% 37%,18% 19%);filter:drop-shadow(8px 5px 0 #000)}
+.figure-one{transform:rotate(-15deg)}.figure-two{height:62%;transform:rotate(24deg);left:24%;bottom:0}
+.ink-eye{position:absolute;left:-8%;top:25%;width:120%;height:42%;background:radial-gradient(ellipse at 50% 50%,#050505 0 10%,#eee 11% 18%,#111 19% 26%,transparent 27%);border-top:15px solid #eee;border-bottom:12px solid #aaa;transform:rotate(-13deg);filter:drop-shadow(0 8px 0 #111)}
+.ink-city{position:absolute;inset:28% -10% 0;background:repeating-linear-gradient(90deg,#eee 0 8%,#111 8% 10%,#777 10% 18%,#050505 18% 22%);clip-path:polygon(0 34%,12% 34%,12% 10%,25% 10%,25% 42%,37% 42%,37% 0,53% 0,53% 28%,68% 28%,68% 12%,80% 12%,80% 48%,100% 48%,100% 100%,0 100%)}
+.ink-speed{position:absolute;inset:-20%;background:repeating-conic-gradient(from 20deg at 50% 50%,transparent 0 7deg,#eee 7.5deg 8deg,transparent 8.5deg 15deg);opacity:.6;mix-blend-mode:screen}
+.ink-star{position:absolute;inset:15% 0 0;display:grid;place-items:center;font-size:clamp(100px,18vw,240px);color:#fff;text-shadow:8px 8px #555,-5px -5px #111;animation:starPulse .8s ease-in-out 2.2s both}
+.intro-title-wrap{position:relative;z-index:7;text-align:center;padding:20px 30px;background:#050505;border-block:2px solid #fff;transform:scale(.65);opacity:0;animation:titlePunch .8s cubic-bezier(.16,1.4,.3,1) 2.55s forwards}
+.intro-overline{font:700 10px 'Kalam',cursive;letter-spacing:5px;color:#aaa}
+.intro-title{font:clamp(48px,10vw,128px)/.9 'Bangers',Impact,cursive;letter-spacing:3px;color:#fff;text-shadow:4px 4px 0 #555,-2px -2px 0 #fff}
+.intro-title i{font-style:normal;-webkit-text-stroke:1px #fff;color:transparent}
+.intro-subtitle{margin-top:15px;font:700 11px 'Kalam',cursive;letter-spacing:4px}
+@keyframes panelReveal{0%{opacity:0;transform:translateY(110%) rotate(5deg) scale(.8)}70%{opacity:1;transform:translateY(-4%) rotate(-1deg) scale(1.02)}100%{opacity:1;transform:translateY(0) rotate(0) scale(1)}}
+@keyframes titlePunch{0%{opacity:0;transform:scale(.65) rotate(-4deg)}65%{opacity:1;transform:scale(1.08) rotate(1deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes starPulse{0%{transform:scale(.2) rotate(-40deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes grainDrift{0%{transform:translate(0,0)}100%{transform:translate(2%,-2%)}}
+@keyframes introCurtainOut{to{opacity:0;visibility:hidden;pointer-events:none}}
+@media(max-width:700px){.intro-panels{inset:13% 3% 16%;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:6px;transform:skewX(-4deg) scale(1.02)}.panel-four{display:none}.panel-five{grid-column:3}.intro-title-wrap{padding:18px 12px}.intro-title{font-size:clamp(45px,13vw,78px)}.intro-topline,.intro-bottom{font-size:8px;letter-spacing:1px}.intro-bottom{align-items:flex-end}.panel-kicker{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.manga-intro{animation:none;display:none!important}}
+</style>
+
+</head>
 <body>
-<!-- ========== AMBIENT GHIBLI WATERCOLOR ORBS ========== -->
-<div class="ambient-glass-bg">
-<div class="glass-orb orb-meadow"></div>
-<div class="glass-orb orb-sky"></div>
-<div class="glass-orb orb-sun"></div>
-<div class="glass-orb orb-peach"></div>
+
+<!-- CINEMATIC MANGA INTRO: original comic-panel montage -->
+<div id="mangaIntro" class="manga-intro" role="dialog" aria-label="Intro portfolio" aria-modal="true">
+  <div class="intro-grain"></div>
+  <div class="intro-topline"><span>AN ORIGINAL STORY</span><span>CHAPTER 01 / DANA ALPAIJI</span></div>
+  <div class="intro-panels" aria-hidden="true">
+    <div class="intro-panel panel-one"><span class="panel-kicker">THE BEGINNING</span><div class="ink-sun"></div><div class="ink-figure figure-one"></div><b class="panel-sfx">WHOOSH!</b></div>
+    <div class="intro-panel panel-two"><span class="panel-kicker">DREAM IT</span><div class="ink-eye"></div><b class="panel-sfx">目覚め</b></div>
+    <div class="intro-panel panel-three"><span class="panel-kicker">MAKE IT REAL</span><div class="ink-city"></div><b class="panel-sfx">BOOM!</b></div>
+    <div class="intro-panel panel-four"><span class="panel-kicker">KEEP MOVING</span><div class="ink-figure figure-two"></div><div class="ink-speed"></div><b class="panel-sfx">GO!</b></div>
+    <div class="intro-panel panel-five"><span class="panel-kicker">YOUR NEXT CHAPTER</span><div class="ink-star">✦</div><b class="panel-sfx">…</b></div>
+  </div>
+  <div class="intro-title-wrap"><div class="intro-overline">A PORTFOLIO IN PANELS</div><div class="intro-title">DANA <i>ALPAIJI</i></div><div class="intro-subtitle">CREATIVITY IN EVERY FRAME.</div></div>
+  <div class="intro-bottom"><span>INK • IDEAS • IMPACT</span><button id="introSkip" type="button">SKIP INTRO <span>↗</span></button></div>
 </div>
-<!-- ========== SUBTLE BOTANICAL CORNER SKETCHES ========== -->
-<svg class="bg-botanical-tl" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-<g fill="none" stroke="#2864A5" stroke-linecap="round" stroke-width="1.5">
-<path d="M0,0 Q70,50 140,130"></path>
-<path d="M40,28 Q65,15 75,32 Q55,42 40,28 Z" fill="rgba(40,100,165,0.15)"></path>
-<path d="M75,60 Q105,45 115,65 Q92,75 75,60 Z" fill="rgba(40,100,165,0.15)"></path>
-<path d="M55,50 Q30,70 42,88 Q62,72 55,50 Z" fill="rgba(40,100,165,0.15)"></path>
-<path d="M110,95 Q138,85 145,105 Q122,112 110,95 Z" fill="rgba(40,100,165,0.15)"></path>
-</g>
-</svg>
-<svg class="bg-botanical-br" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-<g fill="none" stroke="#2864A5" stroke-linecap="round" stroke-width="1.5">
-<path d="M0,0 Q70,50 140,130"></path>
-<path d="M40,28 Q65,15 75,32 Q55,42 40,28 Z" fill="rgba(40,100,165,0.15)"></path>
-<path d="M75,60 Q105,45 115,65 Q92,75 75,60 Z" fill="rgba(40,100,165,0.15)"></path>
-</g>
-</svg>
-<!-- ========== INTERACTIVE GHIBLI BREEZE & PETALS CANVAS ========== -->
-<canvas id="breeze-canvas"></canvas>
+
+<!-- Manga-inspired monochrome page texture -->
 <!-- ========== SCROLL PROGRESS BAR ========== -->
 <div id="scroll-progress"></div>
-<!-- ========== STUDIO GHIBLI AESTHETIC PRELOADER (LEFT TO RIGHT BREEZE) ========== -->
-<div id="loader">
-<div aria-hidden="true" class="loader-scribbles">
-<span></span><span></span><span></span><span></span>
-</div>
-<svg aria-hidden="true" class="loader-web" preserveaspectratio="none" viewbox="0 0 1440 900">
-<path d="M-80 600 C180 220 360 760 620 420 S1080 170 1510 430"></path>
-<path d="M-80 630 C180 250 360 790 620 450 S1080 200 1510 460"></path>
-</svg>
-<div aria-hidden="true" class="spidey-stage">
-<svg class="spidey" viewbox="0 0 260 220" xmlns="http://www.w3.org/2000/svg">
-<path d="M130 18 Q112 -4 96 12" fill="none" stroke="#171329" stroke-linecap="round" stroke-width="4"></path>
-<path d="M126 20 Q145 -5 164 11" fill="none" stroke="#171329" stroke-linecap="round" stroke-width="4"></path>
-<path d="M129 22 C88 20 72 54 82 86 C92 116 162 116 176 82 C190 48 166 22 129 22Z" fill="#F04455" stroke="#171329" stroke-width="5"></path>
-<path d="M91 58 Q111 43 124 67 Q109 89 91 76Z" fill="#FFF" stroke="#171329" stroke-width="4"></path>
-<path d="M143 67 Q158 43 175 57 L171 77 Q153 90 143 67Z" fill="#FFF" stroke="#171329" stroke-width="4"></path>
-<path d="M130 26 L130 108 M94 42 L164 91 M166 40 L94 91 M82 68 L176 68" fill="none" opacity=".8" stroke="#171329" stroke-width="2"></path>
-<path d="M106 111 Q130 96 154 111 L169 171 Q131 193 91 171Z" fill="#3478F6" stroke="#171329" stroke-width="5"></path>
-<path d="M109 120 L151 163 M151 120 L109 163 M130 108 L130 180" fill="none" stroke="#171329" stroke-width="2.5"></path>
-<path d="M102 122 Q73 133 48 160 L30 146" fill="none" stroke="#F04455" stroke-linecap="round" stroke-width="17"></path>
-<path d="M158 122 Q188 105 208 78 L222 84" fill="none" stroke="#F04455" stroke-linecap="round" stroke-width="17"></path>
-<path d="M108 170 Q92 191 77 207 M151 170 Q170 190 188 205" fill="none" stroke="#3478F6" stroke-linecap="round" stroke-width="17"></path>
-<path d="M218 83 Q240 53 251 26" fill="none" stroke="#171329" stroke-linecap="round" stroke-width="3"></path>
-<path d="M245 27 L251 26 L249 34 M251 26 L242 24" fill="none" stroke="#171329" stroke-linecap="round" stroke-width="2.5"></path>
-</svg>
-</div>
-<div class="loader-centerpiece">
-<div class="loader-tag">A LITTLE CREATIVE PORTFOLIO</div>
-<div class="loader-logo">Dana Alpaiji<span>.</span></div>
-<p class="loader-caption">Swinging into something creative...</p>
-<div class="loader-bar-wrap"><div class="loader-bar-fill"></div></div>
-<div class="loader-pct" id="loaderPct">MEMUAT HALAMAN... 0%</div>
-</div>
-</div>
+<!-- Preloader dihapus: halaman langsung tampil -->
 <!-- ========== MOBILE MENU ========== -->
 <nav class="mobile-menu" id="mobileMenu">
 <a href="#hero" onclick="closeMobile()">Home</a>
@@ -2061,7 +2226,7 @@ body[data-theme="dark"] .hero-name,body[data-theme="dark"] .section-title,body[d
 </div>
 </header><main class="portfolio-layout" id="portfolioLayout"><div class="layout-column layout-left"><section id="hero">
 <!-- Decorative Glass Wind Chime (Furin) on Corner -->
-<div class="wind-chime-wrap" onclick="triggerPetalBurst(event)" title="Klik untuk efek kelopak angin">
+<div class="wind-chime-wrap manga-spark" aria-hidden="true">
 <div class="chime-thread"></div>
 <svg class="chime-svg" viewbox="0 0 80 130" xmlns="http://www.w3.org/2000/svg">
 <!-- Glass Bell -->
@@ -2287,54 +2452,23 @@ body[data-theme="dark"] .hero-name,body[data-theme="dark"] .section-title,body[d
 </div>
 </section><section id="certificates">
 <div class="reveal">
-<span class="section-label">Credentials &amp; Honors</span>
-<h2 class="section-title">Milestones &amp; Certificates</h2>
-<p class="section-sub">Dokumentasi lisensi, sertifikasi pelatihan, dan pencapaian akademik maupun profesional.</p>
+<span class="section-label">MY ACHIEVEMENTS / FILE ARCHIVE</span>
+<h2 class="section-title">Certificate Folder</h2>
+<p class="section-sub">Koleksi perjalanan, pengalaman, dan pencapaian yang tersimpan dalam arsip kecil.</p>
 </div>
-<div class="certificates-grid">
-<div class="cert-card tilt-card reveal">
-<div class="cert-img" onclick="openLightbox('sertifikat1.png')">
-<img alt="Sertifikat 1" onerror="this.style.opacity='0.2';" src="sertifikat1.png"/>
-</div>
-<div class="cert-body">
-<span class="cert-tag">SERTIFIKAT 01</span>
-<div class="cert-title">Sertifikat Ketua Pelaksana</div>
-<p class="cert-desc">Sertifikasi Ketua Pelaksana SEF 2025.</p>
-<a class="cert-btn" href="#" onclick="openLightbox('sertifikat1.png'); return false;">Lihat Sertifikat </a>
-</div>
-</div>
-<div class="cert-card tilt-card reveal">
-<div class="cert-img" onclick="openLightbox('sertifikat2.png')">
-<img alt="Sertifikat 2" onerror="this.style.opacity='0.2';" src="sertifikat2.png"/>
-</div>
-<div class="cert-body">
-<span class="cert-tag">SERTIFIKAT 02</span>
-<div class="cert-title">Penghargaan Volunteer BEM FEB</div>
-<p class="cert-desc">Sertifikat Kepanitiaan PKKMB FEB 2025.</p>
-<a class="cert-btn" href="#" onclick="openLightbox('sertifikat2.png'); return false;">Lihat Sertifikat </a>
-</div>
-</div>
-<div class="cert-card tilt-card reveal">
-<div class="cert-img" onclick="openLightbox('sertifikat3.png')">
-<img alt="Sertifikat 3" onerror="this.style.opacity='0.2';" src="sertifikat3.png"/>
-</div>
-<div class="cert-body">
-<span class="cert-tag">SERTIFIKAT 03</span>
-<div class="cert-title">Sertifikat Kepengurusan HMJ Ekonomi Syariah 2025</div>
-<p class="cert-desc">Staff Anggota Divisi Mikat HMJ Ekonomi Syariah 2025.</p>
-<a class="cert-btn" href="#" onclick="openLightbox('sertifikat3.png'); return false;">Lihat Sertifikat </a>
-</div>
-</div>
-<div class="cert-card tilt-card reveal">
-<div class="cert-img" onclick="openLightbox('sertifikat4.png')">
-<img alt="Sertifikat 4" onerror="this.style.opacity='0.2';" src="sertifikat4.png"/>
-</div>
-<div class="cert-body">
-<span class="cert-tag">SERTIFIKAT 04</span>
-<div class="cert-title">Sertifikat Seminar &amp; Workshop</div>
-<p class="cert-desc">Bukti partisipasi aktif dalam program seminar UKM UDC Untirta.</p>
-<a class="cert-btn" href="#" onclick="openLightbox('sertifikat4.png'); return false;">Lihat Sertifikat </a>
-</div>
+<div class="certificate-archive-wrap">
+<div class="certificate-archive-folder">
+  <div class="archive-folder-tab"><span>MY CERTIFICATES</span><span>ARCHIVE · 04 FILES</span></div>
+  <div class="archive-folder-inner">
+    <div class="archive-folder-heading"><span class="archive-folder-icon">📁</span><div><strong>Certificate Collection</strong><small>4 dokumen tersimpan dalam satu folder</small></div><span class="archive-count">04</span></div>
+    <div class="archive-file-list">
+      <button class="archive-file" type="button" onclick="openLightbox('sertifikat1.png')"><span class="archive-file-preview"><img src="sertifikat1.png" alt="Preview Sertifikat Ketua Pelaksana" onerror="this.style.opacity='.2'"></span><span class="archive-file-info"><small>FILE 01 · LEADERSHIP</small><strong>Ketua Pelaksana</strong><em>Sertifikasi Ketua Pelaksana SEF 2025</em></span><span class="archive-open">↗</span></button>
+      <button class="archive-file" type="button" onclick="openLightbox('sertifikat2.png')"><span class="archive-file-preview"><img src="sertifikat2.png" alt="Preview Sertifikat Volunteer BEM FEB" onerror="this.style.opacity='.2'"></span><span class="archive-file-info"><small>FILE 02 · VOLUNTEER</small><strong>Volunteer BEM FEB</strong><em>Sertifikat Kepanitiaan PKKMB FEB 2025</em></span><span class="archive-open">↗</span></button>
+      <button class="archive-file" type="button" onclick="openLightbox('sertifikat3.png')"><span class="archive-file-preview"><img src="sertifikat3.png" alt="Preview Sertifikat Pengurus HMJ Ekonomi Syariah" onerror="this.style.opacity='.2'"></span><span class="archive-file-info"><small>FILE 03 · ORGANIZATION</small><strong>Pengurus HMJ Ekonomi Syariah</strong><em>Staff Anggota Divisi Mikat HMJ Ekonomi Syariah 2025</em></span><span class="archive-open">↗</span></button>
+      <button class="archive-file" type="button" onclick="openLightbox('sertifikat4.png')"><span class="archive-file-preview"><img src="sertifikat4.png" alt="Preview Sertifikat Seminar dan Workshop" onerror="this.style.opacity='.2'"></span><span class="archive-file-info"><small>FILE 04 · LEARNING</small><strong>Seminar &amp; Workshop</strong><em>Partisipasi aktif dalam program seminar UKM UDC Untirta</em></span><span class="archive-open">↗</span></button>
+    </div>
+    <div class="archive-folder-footer"><span>✦ CLICK A FILE TO VIEW</span><span>4 ITEMS · 1 FOLDER</span></div>
+  </div>
 </div>
 </div>
 </section><section id="contact">
@@ -2423,28 +2557,7 @@ body[data-theme="dark"] .hero-name,body[data-theme="dark"] .section-title,body[d
        19. JAVASCRIPT ENGINE
   ========================================================================== -->
 <script>
-    const loaderPctEl = document.getElementById('loaderPct');
-    let loadVal = 0;
-    const pctTimer = setInterval(() => {
-      loadVal += Math.floor(Math.random() * 15) + 6;
-      if (loadVal >= 100) {
-        loadVal = 100;
-        clearInterval(pctTimer);
-      }
-      if (loaderPctEl) loaderPctEl.textContent = `MEMUAT HALAMAN... ${loadVal}%`;
-    }, 170);
-
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        const loader = document.getElementById('loader');
-        loader.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
-        loader.style.opacity = '0';
-        loader.style.transform = 'scale(1.03)';
-        setTimeout(() => loader.style.display = 'none', 550);
-      }, 2400);
-    });
-
-    window.addEventListener('scroll', () => {
+window.addEventListener('scroll', () => {
       const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
       document.getElementById('scroll-progress').style.width = pct + '%';
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 35);
@@ -2600,92 +2713,7 @@ body[data-theme="dark"] .hero-name,body[data-theme="dark"] .section-title,body[d
       loadTrack(currentTrack);
       audioPlayer.play().catch(err => console.log('Audio tidak dapat diputar:', err));
     }
-
-    /* === INTERACTIVE GHIBLI BREEZE PETALS & STARLIGHT ON CLICK === */
-    const canvas = document.getElementById('breeze-canvas');
-    const ctx = canvas.getContext('2d');
-    let ripples = [];
-    let petals = [];
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    window.addEventListener('click', (e) => {
-      createBreezeImpact(e.clientX, e.clientY);
-    });
-
-    function triggerPetalBurst(e) {
-      e.stopPropagation();
-      createBreezeImpact(e.clientX, e.clientY, true);
-    }
-
-    function createBreezeImpact(x, y, extra = false) {
-      ripples.push({ x, y, radius: 2, maxRadius: extra ? 55 : 32, alpha: 0.7 });
-      const count = extra ? 16 : 8;
-      const colors = ['#2864A5', '#6FA8DC', '#4D86C6', '#A9D5F5'];
-      for (let i = 0; i < count; i++) {
-        const angle = Math.random() * Math.PI * 2;
-        const speed = Math.random() * 3.5 + 1.2;
-        petals.push({
-          x, y,
-          vx: Math.cos(angle) * speed + 0.5,
-          vy: Math.sin(angle) * speed - 0.3,
-          color: colors[i % colors.length],
-          alpha: 0.95,
-          size: Math.random() * 4 + 3,
-          rotation: Math.random() * Math.PI,
-          vRot: (Math.random() - 0.5) * 0.1
-        });
-      }
-    }
-
-    function animateBreezeCanvas() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      for (let i = ripples.length - 1; i >= 0; i--) {
-        const r = ripples[i];
-        r.radius += (r.maxRadius - r.radius) * 0.15;
-        r.alpha -= 0.022;
-        if (r.alpha <= 0) { ripples.splice(i, 1); continue; }
-
-        ctx.save();
-        ctx.beginPath();
-        ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(40, 100, 165, ${r.alpha})`;
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-        ctx.restore();
-      }
-
-      for (let i = petals.length - 1; i >= 0; i--) {
-        const p = petals[i];
-        p.x += p.vx;
-        p.y += p.vy;
-        p.vy += 0.03; // Soft gravity
-        p.rotation += p.vRot;
-        p.alpha -= 0.018;
-
-        if (p.alpha <= 0) { petals.splice(i, 1); continue; }
-
-        ctx.save();
-        ctx.translate(p.x, p.y);
-        ctx.rotate(p.rotation);
-        ctx.globalAlpha = p.alpha;
-        ctx.fillStyle = p.color;
-        ctx.beginPath();
-        ctx.ellipse(0, 0, p.size, p.size * 0.55, 0, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-      }
-
-      requestAnimationFrame(animateBreezeCanvas);
-    }
-    animateBreezeCanvas();
-  </script>
+</script>
 <script>
     (function () {
       const key = 'dana-portfolio-theme';
@@ -2706,5 +2734,25 @@ body[data-theme="dark"] .hero-name,body[data-theme="dark"] .section-title,body[d
       });
     })();
   </script>
+
+<script>
+(function(){
+  const intro=document.getElementById('mangaIntro');
+  const skip=document.getElementById('introSkip');
+  if(!intro) return;
+  let closed=false;
+  function closeIntro(){
+    if(closed) return;
+    closed=true;
+    intro.classList.add('is-gone');
+    document.body.style.overflow='';
+  }
+  document.body.style.overflow='hidden';
+  if(skip) skip.addEventListener('click',closeIntro);
+  window.setTimeout(closeIntro,6000);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!closed) closeIntro();});
+})();
+</script>
+
 </body>
 </html>
