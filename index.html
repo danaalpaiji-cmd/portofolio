@@ -1,18 +1,27 @@
-<!DOCTYPE html>
 
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Dana Alpaiji — Manga Comic Portfolio</title>
-<link href="/profile.jpg?v=3" rel="icon" sizes="any" type="image/jpeg"/>
-<link href="/profile.jpg?v=3" rel="shortcut icon" type="image/jpeg"/>
-<link href="/profile.jpg?v=3" rel="apple-touch-icon"/>
-<meta content="#5636F5" name="theme-color"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&amp;family=Patrick+Hand&amp;display=swap" rel="stylesheet"/>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dana Alpaiji — Portfolio</title>
+  <link rel="icon" type="image/jpeg" sizes="any" href="/profile.jpg?v=3" />
+  <link rel="shortcut icon" type="image/jpeg" href="/profile.jpg?v=3" />
+  <link rel="apple-touch-icon" href="/profile.jpg?v=3" />
+  <meta name="theme-color" content="#F5F9FF" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
     /* ==========================================================================
        1. CSS VARIABLES — STUDIO GHIBLI FORMAL GLASSMORPHISM (PURE LIGHT MODE)
     ========================================================================== */
@@ -1799,765 +1808,531 @@
     body[data-theme="dark"] #loader { background:linear-gradient(160deg,#10243D 0%,#0C1728 55%,#162F4D 100%); }
     @media (max-width:640px) { .theme-toggle { margin-left:auto; margin-right:10px; } }
 
-  
-/* ===== MODERN HAND-DRAWN × MANGA OVERRIDE ===== */
-:root{
- --ink:#211b35;--paper:#fffdf8;--purple:#7657f6;--purple-deep:#4c35c9;
- --pink:#ff6f9f;--yellow:#ffe36e;--mint:#a8f0d2;
- --bg-primary:#f5f0ff;--bg-secondary:#eee7ff;
- --text-primary:#211b35;--text-secondary:#5c5670;--text-muted:#827b96;
- --radius-sm:14px;--radius-md:22px;--radius-lg:30px;
- --glass-border:2px solid rgba(33,27,53,.78);
- --glass-shadow:5px 6px 0 rgba(33,27,53,.12);
- --glass-shadow-hover:8px 10px 0 rgba(33,27,53,.16);
- --bg-card:rgba(255,255,255,.88);--bg-card-hover:#fff;
- --bg-glass-nav:rgba(255,253,248,.9);
- --ghibli-sage:var(--purple);--ghibli-sage-dark:var(--purple-deep);
- --ghibli-sage-soft:rgba(118,87,246,.12);--ghibli-sky:#8bd9ff;
- --ghibli-terracotta:var(--pink);--ghibli-sun:var(--yellow);
- --glass-blur:blur(18px) saturate(140%);
-}
-body{background-color:var(--bg-primary);background-image:radial-gradient(rgba(118,87,246,.11) 1px,transparent 1px),linear-gradient(135deg,rgba(255,255,255,.55),transparent 55%);background-size:18px 18px,100% 100%}
-#navbar{border:2px solid var(--ink);border-radius:18px;box-shadow:4px 5px 0 var(--ink);backdrop-filter:blur(18px);background:rgba(255,253,248,.92)}
-#navbar.scrolled{border-color:var(--ink);box-shadow:3px 4px 0 var(--ink)}
-.nav-logo,.hero-name,.section-title,.contact-title,.exp-company,.org-name,.cert-title{font-family:'Patrick Hand',cursive!important;letter-spacing:.01em}
-.nav-menu a{font-weight:800;border-radius:10px}
-.nav-menu a:hover,.nav-menu a.active{background:var(--yellow);color:var(--ink);box-shadow:2px 2px 0 var(--ink)}
-section{padding-top:76px;padding-bottom:76px}
-.section-label,.hero-badge,.hero-subtitle{border:1.8px solid var(--ink);border-radius:9px;background:var(--yellow);color:var(--ink);box-shadow:2px 3px 0 var(--ink);font-weight:900}
-.section-title{font-size:clamp(2.2rem,4vw,3.3rem);text-shadow:2px 2px 0 rgba(255,227,110,.75)}
-.btn{border:2px solid var(--ink);border-radius:12px;box-shadow:3px 4px 0 var(--ink);font-weight:900;backdrop-filter:none}
-.btn-primary{background:var(--purple);color:white}
-.btn-primary:hover{background:var(--pink);color:var(--ink);transform:translate(-2px,-3px);box-shadow:6px 7px 0 var(--ink)}
-.btn-secondary{background:var(--paper);color:var(--ink)}
-.btn-secondary:hover{background:var(--mint);border-color:var(--ink);box-shadow:5px 6px 0 var(--ink)}
-.hero-name{font-size:clamp(3.3rem,7vw,6.2rem);line-height:.9;text-shadow:3px 3px 0 var(--yellow)}
-.hero-name em{color:var(--purple);text-shadow:2px 2px 0 var(--pink)}
-.hero-img-frame{filter:drop-shadow(7px 8px 0 var(--ink))}
-.hero-img,.hero-img-shadow-sky,.hero-img-shadow-sage{border:2.5px solid var(--ink);border-radius:28px}
-.hero-img{transform:rotate(2deg)}
-.hero-img-shadow-sky{background:var(--yellow);transform:translate(-13px,-12px) rotate(-5deg)}
-.hero-img-shadow-sage{background:var(--pink);transform:translate(12px,12px) rotate(5deg)}
-.stat-card,.skill-card,.exp-card,.org-card,.contact-card{border:2px solid var(--ink);border-radius:18px;box-shadow:4px 5px 0 rgba(33,27,53,.18);backdrop-filter:none;background:var(--paper)}
-.stat-card:hover,.skill-card:hover,.exp-card:hover,.org-card:hover{transform:translate(-3px,-4px) rotate(-.5deg);box-shadow:7px 8px 0 rgba(33,27,53,.22)}
-.skill-card:hover{background:var(--yellow);color:var(--ink);border-color:var(--ink)}
-.ghibli-marquee-bar{background:var(--purple);border-block:2px solid var(--ink);color:#fff}
-.ghibli-marquee-track{font-family:'Patrick Hand',cursive!important;font-size:1.15rem;font-weight:900}
-#about,#experience,#certificates,#contact{background:rgba(255,255,255,.34);border-block:2px dashed rgba(33,27,53,.28)}
-.timeline::before{background:repeating-linear-gradient(to bottom,var(--purple) 0 9px,transparent 9px 15px);width:3px}
-.timeline-dot{background:var(--yellow);border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink)}
-.exp-role,.org-badge{background:var(--pink);color:var(--ink);border:1.5px solid var(--ink);border-radius:8px;font-weight:900}
-.org-card:nth-child(2n){transform:rotate(.4deg)}.org-card:nth-child(2n+1){transform:rotate(-.4deg)}
-#spotify-widget{border:2px solid var(--ink);border-radius:18px;box-shadow:4px 5px 0 var(--ink);background:var(--paper)}
-.spotify-btn{border:1.5px solid var(--ink);background:var(--purple);color:#fff}
-#lightbox{background:rgba(24,17,48,.9)}
-#lightbox img{border:3px solid var(--ink);border-radius:12px;box-shadow:8px 9px 0 rgba(0,0,0,.35)}
-/* folder-library certificate layout */
-.certificates-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:28px;margin-top:34px;align-items:start}
-.cert-card{position:relative;background:transparent!important;border:0!important;border-radius:0!important;overflow:visible!important;box-shadow:none!important;padding-top:18px;transition:transform .28s cubic-bezier(.2,.8,.2,1)}
-.cert-card:nth-child(4n+1){transform:rotate(-1.5deg)}.cert-card:nth-child(4n+2){transform:rotate(1.2deg)}.cert-card:nth-child(4n+3){transform:rotate(-.7deg)}.cert-card:nth-child(4n){transform:rotate(1.7deg)}
-.cert-card:hover{transform:translateY(-9px) rotate(0deg) scale(1.025)}
-.cert-card::before{content:"";position:absolute;top:0;left:15px;width:43%;height:31px;background:var(--folder-color,var(--yellow));border:2px solid var(--ink);border-bottom:0;border-radius:12px 12px 0 0;transform:skewX(-12deg);z-index:0}
-.cert-card::after{content:"";position:absolute;inset:17px 0 0;background:var(--folder-color,var(--yellow));border:2px solid var(--ink);border-radius:8px 15px 16px 13px;box-shadow:5px 6px 0 rgba(33,27,53,.18);z-index:0}
-.cert-card:nth-child(4n+2){--folder-color:#ff9fc0}.cert-card:nth-child(4n+3){--folder-color:#a8f0d2}.cert-card:nth-child(4n){--folder-color:#a9dfff}
-.cert-img{position:relative;z-index:1;margin:18px 13px 0;padding:10px;background:var(--paper);border:2px solid var(--ink);border-radius:5px;aspect-ratio:16/10;box-shadow:3px 4px 0 rgba(33,27,53,.2);transform:rotate(-1deg)}
-.cert-img img{object-fit:contain;background:#fff;mix-blend-mode:multiply}
-.cert-body{position:relative;z-index:1;padding:13px 17px 19px;color:var(--ink)}
-.cert-tag{background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);border-radius:6px;font-weight:900;letter-spacing:.06em}
-.cert-title{font-size:1.45rem;line-height:1.02;margin:4px 0 7px;color:var(--ink)}
-.cert-desc{font-size:.78rem;color:#3f3853;line-height:1.45;min-height:34px}
-.cert-btn{background:var(--ink);color:#fff;border:1.5px solid var(--ink);border-radius:8px;box-shadow:2px 3px 0 rgba(33,27,53,.22);font-weight:900}
-.cert-btn:hover{background:var(--paper);color:var(--ink)}
-@media(max-width:700px){
- section{padding:58px 5%}
- #navbar{left:4%;right:4%;padding:10px 15px}
- .certificates-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}
- .cert-img{margin-inline:9px;padding:6px}
- .cert-body{padding:10px 12px 16px}
- .cert-title{font-size:1.2rem}
-}
-@media(max-width:430px){.certificates-grid{grid-template-columns:1fr 1fr}.cert-desc{font-size:.7rem}}
-
-</style>
-<style>
-/* ==========================================================
-   HAND-DRAWN EDITORIAL PORTFOLIO — NEW VISUAL SYSTEM
-   Existing content, links, gallery, counters and interactions retained.
-========================================================== */
-:root{
- --ink:#171329; --purple:#5636f5; --purple-deep:#4324d8; --lav:#eee9ff;
- --pink:#ff75c8; --mint:#57e2bd; --yellow:#ffe45e; --paper:#fffefa;
- --line:#171329; --soft-shadow:7px 8px 0 rgba(23,19,41,.10);
- --font-main:'Nunito',sans-serif; --font-serif:'Patrick Hand',cursive;
- --bg-primary:#5636f5; --bg-secondary:#f0ebff; --bg-card:#fffefa;
- --bg-card-hover:#fff; --text-primary:#171329; --text-secondary:#45405b;
- --text-muted:#817b96; --ghibli-sage:#5636f5; --ghibli-sage-dark:#3921a8;
- --ghibli-sage-soft:rgba(86,54,245,.12); --ghibli-sky:#57e2bd;
- --ghibli-terracotta:#ff75c8; --ghibli-sun:#ffe45e;
- --glass-border:2px solid #171329; --glass-border-subtle:2px solid #ddd5ff;
- --glass-blur:blur(12px); --radius-sm:14px; --radius-md:22px; --radius-lg:28px;
- --glass-shadow:5px 6px 0 rgba(23,19,41,.10);
- --glass-shadow-hover:8px 9px 0 rgba(23,19,41,.14);
-}
-*,*::before,*::after{font-family:'Nunito',sans-serif!important;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{background:var(--purple);color:var(--ink);overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(rgba(255,255,255,.15) 1px,transparent 1px);background-size:22px 22px}
-.ambient-glass-bg,.bg-botanical-tl,.bg-botanical-br,#breeze-canvas{display:none!important}
-#scroll-progress{background:var(--yellow);height:5px}
-#navbar{position:sticky;top:0;left:auto;right:auto;width:min(1320px,96%);margin:12px auto 18px;padding:12px 22px;background:var(--paper);border:2px solid var(--ink);border-radius:18px;box-shadow:5px 6px 0 rgba(23,19,41,.2);backdrop-filter:none;z-index:1000}
-.nav-logo{font-family:'Patrick Hand',cursive!important;font-size:2rem;color:var(--ink)}
-.nav-logo span,.footer-logo span{color:var(--purple)}
-.nav-menu{gap:3px;flex-wrap:wrap;justify-content:center}
-.nav-menu a{font-size:.82rem;color:var(--ink);font-weight:800;padding:8px 12px;border-radius:999px}
-.nav-menu a:hover,.nav-menu a.active{background:var(--purple);color:white;box-shadow:none}
-.theme-toggle{border:2px solid var(--ink);background:var(--yellow);border-radius:50%;width:38px;height:38px;color:var(--ink)}
-.hamburger span{background:var(--ink)}
-.mobile-menu{background:rgba(86,54,245,.97);backdrop-filter:blur(16px)}
-.mobile-menu a{font-family:'Patrick Hand',cursive!important;color:#fff}
-.portfolio-layout{width:min(1320px,96%);margin:0 auto 24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:18px}
-.layout-column{display:flex;flex-direction:column;gap:18px;min-width:0}
-section{padding:26px;background:var(--paper);border:2px solid var(--ink);border-radius:22px;position:relative;overflow:hidden;box-shadow:var(--soft-shadow);z-index:1}
-section::after{content:"";position:absolute;right:18px;top:14px;width:42px;height:15px;border-top:3px solid var(--purple);border-radius:50%;transform:rotate(-12deg);opacity:.7;pointer-events:none}
-#hero{min-height:unset;display:flex;flex-direction:column;gap:16px;padding:0;background:var(--paper);overflow:hidden}
-#hero .hero-content{padding:30px 28px 0;order:1}
-#hero .hero-visual{padding:0 24px 26px;order:2;justify-content:center}
-.hero-badge,.section-label{background:#eee9ff;color:var(--purple-deep);border:1.5px solid var(--purple);border-radius:999px;box-shadow:none;font-weight:900;letter-spacing:.06em}
-.hero-name,.section-title,.contact-title{font-family:'Patrick Hand',cursive!important;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
-.hero-name{font-size:clamp(3.2rem,6vw,5.4rem);line-height:.88}
-.hero-name em{font-family:'Patrick Hand',cursive!important;color:var(--purple);font-style:normal;text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:7px;text-underline-offset:5px}
-.hero-subtitle{background:var(--yellow);border:2px solid var(--ink);border-radius:8px;color:var(--ink);font-weight:900}
-.hero-desc,.about-text p,.section-sub,.exp-list li,.org-list li,.cert-desc,.project-desc{font-size:.94rem;line-height:1.7;color:var(--text-secondary)}
-.btn{border:2px solid var(--ink);border-radius:999px;font-weight:900;backdrop-filter:none;box-shadow:3px 4px 0 rgba(23,19,41,.18)}
-.btn-primary{background:var(--purple);color:white;border-color:var(--ink)}
-.btn-primary:hover{background:var(--yellow);color:var(--ink);transform:translate(-2px,-2px);box-shadow:5px 6px 0 rgba(23,19,41,.18)}
-.btn-secondary{background:white;color:var(--ink);border-color:var(--ink)}
-.btn-secondary:hover{background:var(--mint);border-color:var(--ink)}
-.hero-img-frame{width:min(300px,90%);aspect-ratio:1/1;animation:floatDoodle 4s ease-in-out infinite}
-.hero-img{border:3px solid var(--ink);border-radius:22px;box-shadow:6px 7px 0 var(--purple);object-fit:cover}
-.hero-img-shadow-sky,.hero-img-shadow-sage{border:2px solid var(--ink);border-radius:22px;backdrop-filter:none}
-.hero-img-shadow-sky{background:var(--yellow);transform:translate(-12px,-10px) rotate(-4deg)}
-.hero-img-shadow-sage{background:var(--pink);transform:translate(10px,10px) rotate(4deg)}
-.wind-chime-wrap{display:none}
-.deco-box,.deco-tag{border:2px solid var(--ink);box-shadow:3px 4px 0 rgba(23,19,41,.14);backdrop-filter:none}
-.ghibli-marquee-bar{background:var(--yellow);color:var(--ink);border:2px solid var(--ink);padding:12px 0}
-.ghibli-marquee-track{font-weight:900}
-#about,#experience,#certificates,#contact{background:var(--paper);border:2px solid var(--ink)}
-.about-grid,.skills-grid-wrap{grid-template-columns:1fr;gap:18px}
-.about-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
-.stat-card,.skill-card,.exp-card,.org-card,.cert-card,.project-card,.contact-card,.gallery-item{background:white;border:2px solid var(--ink);border-radius:18px;box-shadow:4px 5px 0 rgba(23,19,41,.12);backdrop-filter:none;-webkit-backdrop-filter:none}
-.stat-card:hover,.skill-card:hover,.org-card:hover,.cert-card:hover,.gallery-item:hover{transform:translate(-2px,-2px);box-shadow:7px 8px 0 rgba(23,19,41,.15)}
-.stat-num{font-family:'Patrick Hand',cursive!important;font-size:2.2rem}
-.stat-num .acc{color:var(--purple)}
-.section-title{font-size:clamp(2rem,3.8vw,3rem);line-height:1}
-.section-label{display:inline-flex;padding:5px 12px;margin-bottom:10px}
-.skills-group-title{font-family:'Patrick Hand',cursive!important;font-size:1.55rem}
-.skills-group-title::after{height:3px;background:var(--yellow)}
-.skills-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-.skill-card{padding:12px 10px;text-align:left}
-.skill-card:hover{background:var(--lav);color:var(--ink);border-color:var(--ink)}
-.skill-name{font-weight:800}
-.timeline{padding-left:24px}
-.timeline::before{background:repeating-linear-gradient(to bottom,var(--purple) 0 8px,transparent 8px 14px);width:3px}
-.timeline-dot{background:var(--yellow);border:2px solid var(--ink);box-shadow:none}
-.exp-card,.org-card{padding:20px}
-.exp-company,.org-name,.cert-title,.project-title{font-family:'Patrick Hand',cursive!important;font-size:1.55rem;font-weight:700}
-.exp-role,.org-badge,.cert-tag{background:var(--lav);color:var(--purple-deep);border:1px solid var(--purple);border-radius:999px;font-weight:900}
-.exp-date,.org-year{color:var(--purple-deep);font-weight:900}
-.exp-list li::before,.org-list li::before{content:"↗";color:var(--purple);font-weight:900}
-.org-grid,.certificates-grid,.projects-grid{grid-template-columns:1fr;gap:14px}
-.project-card{padding:20px}
-.project-category{color:var(--purple-deep);font-weight:900}
-.project-index{background:var(--yellow);border:1.5px solid var(--ink);border-radius:50%;padding:5px 9px}
-.project-tags span{background:var(--lav);border:1px solid #c9bfff;color:var(--purple-deep);border-radius:999px;font-weight:800}
-.project-action,.cert-btn{background:var(--purple);color:#fff;border:2px solid var(--ink);border-radius:999px;padding:8px 14px;font-weight:900}
-.cert-img{background:var(--lav);border-bottom:2px solid var(--ink)}
-.gallery-grid{columns:2;column-gap:12px}
-.gallery-item{padding:5px;margin-bottom:12px}
-.gallery-item img{border-radius:12px}
-.gallery-overlay{background:rgba(86,54,245,.18);backdrop-filter:none}
-#contact .contact-card{display:grid;grid-template-columns:1fr;gap:20px;padding:22px}
-.contact-title{font-size:2.5rem}
-.contact-btns{flex-direction:row;flex-wrap:wrap}
-.contact-info{gap:10px}
-.contact-item a{color:var(--purple-deep)}
-footer{width:min(1320px,96%);margin:0 auto 20px;background:#eee9ff;border:2px solid var(--ink);border-radius:22px;padding:24px 28px;color:var(--ink);box-shadow:var(--soft-shadow)}
-.footer-logo{font-family:'Patrick Hand',cursive!important;font-size:2rem;font-weight:900}
-.footer-copy{color:#5e5876}
-.social-btn{border:2px solid var(--ink);background:white;color:var(--ink);border-radius:999px;padding:7px 12px;font-weight:900}
-.social-btn:hover{background:var(--yellow)}
-</style>
-<!-- V7: MONOCHROME MANGA / PREMIUM HAND-DRAWN LANDING PAGE -->
-<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Patrick+Hand&family=Kalam:wght@400;700&display=swap" rel="stylesheet"/>
-<style id="v7-monochrome-luxury">
-:root{
- --ink:#090909;--paper:#fff;--purple:#111;--purple-deep:#000;--lav:#f1f1f1;
- --pink:#d8d8d8;--mint:#c9c9c9;--yellow:#e8e8e8;
- --line:#111;--soft-shadow:5px 6px 0 rgba(0,0,0,.09);
- --font-main:'Kalam', 'Patrick Hand', cursive;--font-serif:'Bangers', cursive;
- --bg-primary:#fff;--bg-secondary:#f5f5f5;--bg-card:#fff;--bg-card-hover:#f7f7f7;
- --text-primary:#080808;--text-secondary:#363636;--text-muted:#777;
- --ghibli-sage:#111;--ghibli-sage-dark:#000;--ghibli-sage-soft:#eee;
- --ghibli-sky:#aaa;--ghibli-terracotta:#777;--ghibli-sun:#ddd;
- --glass-border:2px solid #111;--glass-border-subtle:1px solid #bbb;
- --glass-shadow:4px 5px 0 rgba(0,0,0,.08);--glass-shadow-hover:7px 8px 0 rgba(0,0,0,.13);
-}
-*,*::before,*::after{font-family:'Kalam','Patrick Hand',cursive!important}
-html{font-size:15px;scroll-padding-top:100px}
-body{background:#f7f7f7;color:#090909;line-height:1.52}
-body::before{background-image:radial-gradient(#000 0.65px,transparent .65px);background-size:19px 19px;opacity:.07}
-#scroll-progress{background:#111!important;height:4px}
-#navbar{width:min(1240px,94%);margin:14px auto 16px;background:rgba(255,255,255,.96);border:1.5px solid #111;border-radius:999px;box-shadow:3px 4px 0 #111;padding:9px 20px}
-.nav-logo,.footer-logo{font-family:'Bangers',cursive!important;letter-spacing:1.2px;color:#050505}
-.nav-logo{font-size:2.05rem}.nav-logo span,.footer-logo span{color:#777}
-.nav-menu a{font-family:'Kalam',cursive!important;font-size:.84rem;font-weight:700;color:#111}
-.nav-menu a:hover,.nav-menu a.active{background:#111;color:#fff}
-.theme-toggle{background:#111;color:#fff;border:1.5px solid #111}
-.hamburger span{background:#111}.mobile-menu{background:rgba(10,10,10,.97)}
-.portfolio-layout{width:min(1240px,94%);grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:15px;margin-bottom:18px}
-.layout-column{gap:15px}
-section{background:#fff;border:1.5px solid #111;border-radius:25px;padding:clamp(19px,2.5vw,29px);box-shadow:4px 5px 0 rgba(0,0,0,.08)}
-section::after{border-color:#111;opacity:.45}
-#hero{border-radius:27px;gap:9px}
-#hero .hero-content{padding:27px 26px 0}
-#hero .hero-visual{padding:0 22px 22px}
-.hero-name,.section-title,.contact-title,.exp-company,.org-name,.cert-title,.project-title,.skills-group-title,.stat-num{font-family:'Bangers',cursive!important;letter-spacing:.5px;color:#080808}
-.hero-name{font-size:clamp(3.7rem,6vw,5.8rem);line-height:.86;letter-spacing:1px}
-.hero-name em{font-family:'Bangers',cursive!important;color:#111;text-decoration:underline;text-decoration-color:#888;text-decoration-thickness:5px;text-underline-offset:5px}
-.section-title{font-size:clamp(2.15rem,3.4vw,3.05rem);line-height:.98}
-.contact-title{font-size:2.7rem}
-.hero-badge,.section-label,.exp-role,.org-badge,.cert-tag{background:#f1f1f1;color:#111;border:1.3px solid #111;border-radius:999px;box-shadow:none;font-weight:700}
-.hero-subtitle{background:#111;color:#fff;border:1.5px solid #111;border-radius:999px;padding:6px 13px;font-weight:700}
-.hero-desc,.about-text p,.section-sub,.exp-list li,.org-list li,.cert-desc,.project-desc{font-family:'Kalam','Patrick Hand',cursive!important;color:#393939;font-size:.92rem;line-height:1.55}
-.btn,.project-action,.cert-btn{border:1.5px solid #111;border-radius:999px;box-shadow:2px 3px 0 #111;font-weight:700}
-.btn-primary,.project-action,.cert-btn{background:#111;color:#fff}
-.btn-primary:hover,.project-action:hover,.cert-btn:hover{background:#e8e8e8;color:#111}
-.btn-secondary{background:#fff;color:#111}.btn-secondary:hover{background:#eee}
-.hero-img{border:2px solid #111;box-shadow:5px 6px 0 #888;border-radius:50%;filter:grayscale(1)}
-.hero-img-shadow-sky{background:#ddd;border:1.5px solid #111}.hero-img-shadow-sage{background:#aaa;border:1.5px solid #111}
-.ghibli-marquee-bar{background:#111;color:#fff;border-block:1.5px solid #111;padding:9px 0}
-#about,#experience,#certificates,#contact{background:#fff;border-color:#111}
-.stat-card,.skill-card,.exp-card,.org-card,.project-card,.contact-card,.gallery-item{background:#fff;border:1.4px solid #111;border-radius:20px;box-shadow:3px 4px 0 rgba(0,0,0,.08)}
-.stat-card:hover,.skill-card:hover,.org-card:hover,.gallery-item:hover,.project-card:hover{background:#f3f3f3;transform:translateY(-3px);box-shadow:5px 6px 0 rgba(0,0,0,.13)}
-.stat-num{font-size:2.3rem}.stat-num .acc{color:#555}
-.skills-grid{gap:8px}.skill-card{padding:10px 12px}.skill-name{font-weight:700}
-.skills-group-title{font-size:1.55rem}.skills-group-title::after{background:#111}
-.timeline::before{background:repeating-linear-gradient(to bottom,#111 0 7px,transparent 7px 12px)}
-.timeline-dot{background:#fff;border:2px solid #111}
-.exp-card,.org-card,.project-card{padding:17px}
-.exp-company,.org-name,.cert-title,.project-title{font-size:1.55rem}
-.exp-date,.org-year,.project-category{color:#333;font-weight:700}
-.exp-list li::before,.org-list li::before{color:#111}
-.org-grid,.certificates-grid,.projects-grid{gap:12px}
-.project-index{background:#111;color:#fff;border:1px solid #111}
-.project-tags span{background:#eee;border:1px solid #aaa;color:#111;border-radius:999px}
-.gallery-grid{column-gap:10px}.gallery-item{padding:5px}.gallery-item img{filter:grayscale(1);border-radius:15px}
-.gallery-overlay{background:rgba(0,0,0,.22)}
-#contact .contact-card{padding:19px;gap:16px}.contact-item a{color:#111}
-footer{width:min(1240px,94%);background:#111;color:#fff;border:1.5px solid #111;border-radius:23px;padding:20px 25px;box-shadow:4px 5px 0 rgba(0,0,0,.12)}
-.footer-logo,.footer-logo span{color:#fff}.footer-copy{color:#ccc}.social-btn{background:#fff;color:#111;border:1.4px solid #fff}.social-btn:hover{background:#ccc}
-/* Single archive folder, redesigned in monochrome */
-.certificate-archive-wrap{max-width:850px;margin:25px auto 0}
-.certificate-archive-folder{filter:drop-shadow(4px 6px 0 rgba(0,0,0,.12))}
-.archive-folder-tab{background:#111;color:#fff;border:1.5px solid #111;border-bottom:0;border-radius:15px 15px 0 0;font-family:'Bangers',cursive!important;letter-spacing:1px}
-.archive-folder-inner{background:#ededed;border:1.5px solid #111;border-radius:8px 23px 23px 23px;padding:22px clamp(14px,3vw,28px) 17px}
-.archive-folder-heading{color:#111;border-bottom:1.5px dashed #888}
-.archive-folder-icon{background:#fff;border:1.5px solid #111;color:#111}
-.archive-folder-heading strong{font-family:'Bangers',cursive!important;letter-spacing:.8px;font-size:1.65rem}
-.archive-folder-heading small,.archive-file-info em{color:#555}
-.archive-count{background:#111;color:#fff;border:1.5px solid #111;box-shadow:2px 2px 0 #888}
-.archive-file{background:#fff;border:1.3px solid #111;border-radius:17px;box-shadow:2px 3px 0 rgba(0,0,0,.12);color:#111}
-.archive-file:hover{background:#f2f2f2;box-shadow:4px 5px 0 rgba(0,0,0,.15)}
-.archive-file-preview{background:#e8e8e8;border:1px solid #111;border-radius:10px}.archive-file-preview img{filter:grayscale(1);border-radius:6px}
-.archive-file-info small{color:#666}.archive-file-info strong{font-family:'Kalam','Patrick Hand',cursive!important;font-weight:700}
-.archive-open{background:#111;color:#fff;border:1px solid #111}
-.archive-folder-footer{color:#555;border-color:#999}
-/* Dark theme toggle remains monochrome */
-body[data-theme="dark"]{--paper:#111;--ink:#fff;--text-primary:#fff;--text-secondary:#ddd;--text-muted:#aaa;--bg-card:#181818}
-body[data-theme="dark"]{background:#080808;color:#fff}
-body[data-theme="dark"] #navbar,body[data-theme="dark"] section,body[data-theme="dark"] .contact-card,body[data-theme="dark"] .stat-card,body[data-theme="dark"] .skill-card,body[data-theme="dark"] .exp-card,body[data-theme="dark"] .org-card,body[data-theme="dark"] .project-card{background:#111;color:#fff;border-color:#eee}
-body[data-theme="dark"] .hero-name,body[data-theme="dark"] .section-title,body[data-theme="dark"] .contact-title,body[data-theme="dark"] .nav-logo{color:#fff}
-body[data-theme="dark"] .archive-folder-inner{background:#222;border-color:#eee}body[data-theme="dark"] .archive-folder-tab{background:#fff;color:#111;border-color:#fff}body[data-theme="dark"] .archive-file{background:#171717;color:#fff;border-color:#ddd}body[data-theme="dark"] .archive-file-preview{background:#333}body[data-theme="dark"] footer{background:#fff;color:#111}body[data-theme="dark"] .footer-logo,body[data-theme="dark"] .footer-logo span,body[data-theme="dark"] .footer-copy{color:#111}
-@media(max-width:900px){.portfolio-layout{grid-template-columns:1fr;width:94%;gap:14px}.layout-column{gap:14px}#navbar{width:94%}}
-@media(max-width:700px){section{padding:21px!important;border-radius:23px!important}.portfolio-layout{width:94%!important}.hero-name{font-size:3.65rem}#hero .hero-content{padding:23px 20px 0}.archive-folder-inner{border-radius:20px;padding:19px 12px 15px}.archive-file{border-radius:16px}.archive-file-preview{border-radius:9px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-</style>
-
-<style id="v8-manga-comic-interior">
-:root{--ink:#080808;--paper:#fff;--halftone:rgba(0,0,0,.12)}
-html{scroll-behavior:smooth}
-body{background:#f4f4f4!important;color:#080808!important;background-image:radial-gradient(#111 0.65px,transparent .65px)!important;background-size:8px 8px!important}
-body::before{opacity:.035!important}
-/* Bold inked manga panels */
-section{position:relative;isolation:isolate;border:2px solid #080808!important;border-radius:18px 24px 17px 22px!important;background:#fff!important;box-shadow:5px 6px 0 #080808!important;overflow:hidden}
-section::before{content:"";position:absolute;z-index:-1;right:-25px;top:-25px;width:130px;height:130px;opacity:.075;background:radial-gradient(#000 1px,transparent 1.5px);background-size:6px 6px;transform:rotate(12deg);pointer-events:none}
-section::after{border:1px dashed #111!important;border-radius:14px!important;inset:7px!important;opacity:.28!important;pointer-events:none}
-#hero{background:linear-gradient(135deg,#fff 0 72%,#ededed 72% 100%)!important}
-#hero .hero-content{position:relative}
-.hero-name{font-size:clamp(4rem,7vw,6.3rem)!important;text-shadow:2px 2px 0 #bbb;line-height:.82!important}
-.hero-name em{display:inline-block;transform:rotate(-2deg);text-decoration-thickness:3px!important;text-underline-offset:7px!important}
-.section-title,.contact-title{position:relative;display:inline-block;text-shadow:1.5px 1.5px 0 #bbb;letter-spacing:1px!important}
-.section-title::after{content:"";display:block;width:70%;height:5px;margin-top:5px;background:repeating-linear-gradient(135deg,#111 0 3px,transparent 3px 6px);clip-path:polygon(0 20%,100% 0,97% 100%,2% 80%)}
-/* Comic lettering and handwritten narration */
-.nav-logo,.footer-logo,.hero-name,.section-title,.contact-title,.exp-company,.org-name,.cert-title,.project-title,.skills-group-title,.stat-num,.archive-folder-heading strong{font-family:'Bangers',Impact,cursive!important;letter-spacing:1px!important}
-.hero-desc,.about-text p,.section-sub,.exp-list li,.org-list li,.cert-desc,.project-desc,.nav-menu a,.archive-file-info{font-family:'Kalam','Patrick Hand',cursive!important}
-/* Speech bubble treatment */
-.hero-subtitle,.hero-badge,.section-label{position:relative;border:2px solid #111!important;background:#fff!important;color:#111!important;box-shadow:2px 3px 0 #111!important}
-.hero-subtitle{background:#111!important;color:#fff!important;transform:rotate(-1deg)}
-.hero-badge{transform:rotate(1.5deg)}
-/* Panel cards feel like comic frames */
-.stat-card,.skill-card,.exp-card,.org-card,.project-card,.contact-card,.gallery-item,.archive-file{border:1.7px solid #111!important;border-radius:13px 18px 12px 16px!important;box-shadow:3px 4px 0 #111!important;background:#fff!important}
-.stat-card:hover,.skill-card:hover,.org-card:hover,.gallery-item:hover,.project-card:hover,.archive-file:hover{transform:translate(-2px,-3px) rotate(-.3deg)!important;box-shadow:6px 7px 0 #111!important;background:#f1f1f1!important}
-.project-index,.archive-count{font-family:'Bangers',cursive!important;border-radius:50%!important;box-shadow:2px 2px 0 #777!important}
-.btn,.project-action,.cert-btn,.social-btn,.theme-toggle{border:2px solid #111!important;border-radius:999px!important;box-shadow:3px 3px 0 #111!important;font-family:'Bangers',cursive!important;letter-spacing:.5px}
-.btn:hover,.project-action:hover,.cert-btn:hover,.social-btn:hover{transform:translate(-1px,-2px) rotate(-1deg)!important;box-shadow:5px 5px 0 #111!important}
-.hero-img{border:3px solid #111!important;box-shadow:7px 7px 0 #111!important;filter:grayscale(1) contrast(1.08)!important}
-.gallery-item img,.archive-file-preview img{filter:grayscale(1) contrast(1.06)!important}
-/* Halftone speed-line separators */
-.ghibli-marquee-bar{background:#111!important;color:#fff!important;border-block:2px solid #111!important;transform:skewY(-1deg);margin-block:8px}
-.timeline::before{background:repeating-linear-gradient(to bottom,#111 0 6px,transparent 6px 10px)!important}
-.timeline-dot{box-shadow:0 0 0 3px #fff,0 0 0 5px #111!important}
-/* Archive stays as one folder, styled like a manga prop */
-.archive-folder-tab{border:2px solid #111!important;border-bottom:0!important;border-radius:14px 14px 0 0!important}
-.archive-folder-inner{border:2px solid #111!important;border-radius:5px 19px 18px 18px!important;background:repeating-linear-gradient(135deg,#eee 0 2px,#f8f8f8 2px 7px)!important}
-.archive-file-preview{border:1.5px solid #111!important}
-footer{border:2px solid #111!important;border-radius:20px!important;box-shadow:5px 6px 0 #111!important}
-#scroll-progress{background:#111!important;height:5px!important;border-bottom:1px solid #fff}
-/* Hand-drawn comic accents */
-.manga-spark{display:none!important}
-#about .stat-card:nth-child(2n),#skills .skill-card:nth-child(2n){transform:rotate(.5deg)}
-#projects .project-card:nth-child(2n){transform:rotate(.35deg)}
-::selection{background:#111;color:#fff}
-@media(max-width:900px){section{box-shadow:4px 5px 0 #111!important}}
-@media(max-width:700px){section{border-radius:17px!important;padding:20px!important}.hero-name{font-size:clamp(3.5rem,16vw,5rem)!important}.section-title{font-size:2.35rem!important}.portfolio-layout{gap:15px!important}.layout-column{gap:15px!important}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-</style>
-
-
-<style id="manga-cinematic-intro">
-.manga-intro{position:fixed;inset:0;z-index:99999;background:#050505;color:#fff;overflow:hidden;display:flex;align-items:center;justify-content:center;isolation:isolate;animation:introCurtainOut .75s cubic-bezier(.7,0,.2,1) 5.25s forwards}
-.manga-intro.is-gone{display:none}
-.intro-grain{position:absolute;inset:-50%;opacity:.14;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");animation:grainDrift .25s steps(2) infinite}
-.intro-topline,.intro-bottom{position:absolute;left:clamp(18px,4vw,58px);right:clamp(18px,4vw,58px);display:flex;justify-content:space-between;align-items:center;font:700 10px/1.2 'Kalam','Patrick Hand',cursive;letter-spacing:2px;z-index:8}
-.intro-topline{top:25px;color:#aaa}.intro-bottom{bottom:24px;color:#aaa}
-.intro-bottom button{border:1px solid #777;border-radius:999px;background:transparent;color:#fff;padding:10px 17px;font:700 11px 'Kalam',cursive;letter-spacing:1px;cursor:pointer;transition:.2s}
-.intro-bottom button:hover{background:#fff;color:#000;transform:translateY(-2px)}
-.intro-panels{position:absolute;inset:10% 4% 12%;display:grid;grid-template-columns:1.05fr .8fr 1.1fr .85fr 1fr;gap:9px;transform:skewX(-7deg) scale(1.08)}
-.intro-panel{position:relative;overflow:hidden;border:3px solid #f4f4f4;background:linear-gradient(145deg,#292929,#080808);opacity:0;transform:translateY(110%) rotate(5deg);box-shadow:8px 8px 0 #555;filter:grayscale(1);animation:panelReveal .65s cubic-bezier(.16,.8,.2,1) forwards}
-.intro-panel:before{content:"";position:absolute;inset:0;background:radial-gradient(#aaa 0.8px,transparent 1px);background-size:6px 6px;opacity:.2;mix-blend-mode:screen}
-.panel-one{animation-delay:.15s}.panel-two{animation-delay:.55s}.panel-three{animation-delay:.95s}.panel-four{animation-delay:1.35s}.panel-five{animation-delay:1.75s}
-.panel-kicker{position:absolute;top:14px;left:12px;z-index:3;font:700 10px 'Kalam',cursive;letter-spacing:1.5px;color:#ddd}
-.panel-sfx{position:absolute;z-index:4;font:italic 900 clamp(24px,4vw,54px) 'Bangers',Impact,cursive;color:#fff;-webkit-text-stroke:1px #111;text-shadow:3px 3px #111;transform:rotate(-12deg)}
-.panel-one .panel-sfx{right:4%;bottom:18%}.panel-two .panel-sfx{right:4%;bottom:13%;font-size:clamp(30px,4vw,52px)}.panel-three .panel-sfx{left:8%;bottom:17%}.panel-four .panel-sfx{right:5%;top:42%}.panel-five .panel-sfx{right:12%;bottom:16%}
-.ink-sun{position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle,#eee 0 2px,#222 3px 5px);top:19%;left:15%;box-shadow:0 0 0 10px #111,0 0 0 13px #ddd}
-.ink-figure{position:absolute;width:43%;height:54%;left:29%;bottom:5%;background:linear-gradient(110deg,#eee 0 22%,#222 23% 42%,#aaa 43% 55%,#111 56%);clip-path:polygon(34% 0,67% 4%,82% 20%,75% 34%,100% 56%,86% 100%,12% 100%,0 61%,25% 37%,18% 19%);filter:drop-shadow(8px 5px 0 #000)}
-.figure-one{transform:rotate(-15deg)}.figure-two{height:62%;transform:rotate(24deg);left:24%;bottom:0}
-.ink-eye{position:absolute;left:-8%;top:25%;width:120%;height:42%;background:radial-gradient(ellipse at 50% 50%,#050505 0 10%,#eee 11% 18%,#111 19% 26%,transparent 27%);border-top:15px solid #eee;border-bottom:12px solid #aaa;transform:rotate(-13deg);filter:drop-shadow(0 8px 0 #111)}
-.ink-city{position:absolute;inset:28% -10% 0;background:repeating-linear-gradient(90deg,#eee 0 8%,#111 8% 10%,#777 10% 18%,#050505 18% 22%);clip-path:polygon(0 34%,12% 34%,12% 10%,25% 10%,25% 42%,37% 42%,37% 0,53% 0,53% 28%,68% 28%,68% 12%,80% 12%,80% 48%,100% 48%,100% 100%,0 100%)}
-.ink-speed{position:absolute;inset:-20%;background:repeating-conic-gradient(from 20deg at 50% 50%,transparent 0 7deg,#eee 7.5deg 8deg,transparent 8.5deg 15deg);opacity:.6;mix-blend-mode:screen}
-.ink-star{position:absolute;inset:15% 0 0;display:grid;place-items:center;font-size:clamp(100px,18vw,240px);color:#fff;text-shadow:8px 8px #555,-5px -5px #111;animation:starPulse .8s ease-in-out 2.2s both}
-.intro-title-wrap{position:relative;z-index:7;text-align:center;padding:20px 30px;background:#050505;border-block:2px solid #fff;transform:scale(.65);opacity:0;animation:titlePunch .8s cubic-bezier(.16,1.4,.3,1) 2.55s forwards}
-.intro-overline{font:700 10px 'Kalam',cursive;letter-spacing:5px;color:#aaa}
-.intro-title{font:clamp(48px,10vw,128px)/.9 'Bangers',Impact,cursive;letter-spacing:3px;color:#fff;text-shadow:4px 4px 0 #555,-2px -2px 0 #fff}
-.intro-title i{font-style:normal;-webkit-text-stroke:1px #fff;color:transparent}
-.intro-subtitle{margin-top:15px;font:700 11px 'Kalam',cursive;letter-spacing:4px}
-@keyframes panelReveal{0%{opacity:0;transform:translateY(110%) rotate(5deg) scale(.8)}70%{opacity:1;transform:translateY(-4%) rotate(-1deg) scale(1.02)}100%{opacity:1;transform:translateY(0) rotate(0) scale(1)}}
-@keyframes titlePunch{0%{opacity:0;transform:scale(.65) rotate(-4deg)}65%{opacity:1;transform:scale(1.08) rotate(1deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
-@keyframes starPulse{0%{transform:scale(.2) rotate(-40deg)}100%{transform:scale(1) rotate(0)}}
-@keyframes grainDrift{0%{transform:translate(0,0)}100%{transform:translate(2%,-2%)}}
-@keyframes introCurtainOut{to{opacity:0;visibility:hidden;pointer-events:none}}
-@media(max-width:700px){.intro-panels{inset:13% 3% 16%;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:6px;transform:skewX(-4deg) scale(1.02)}.panel-four{display:none}.panel-five{grid-column:3}.intro-title-wrap{padding:18px 12px}.intro-title{font-size:clamp(45px,13vw,78px)}.intro-topline,.intro-bottom{font-size:8px;letter-spacing:1px}.intro-bottom{align-items:flex-end}.panel-kicker{font-size:8px}}
-@media(prefers-reduced-motion:reduce){.manga-intro{animation:none;display:none!important}}
-</style>
-
+  </style>
 </head>
 <body>
 
-<!-- CINEMATIC MANGA INTRO: original comic-panel montage -->
-<div id="mangaIntro" class="manga-intro" role="dialog" aria-label="Intro portfolio" aria-modal="true">
-  <div class="intro-grain"></div>
-  <div class="intro-topline"><span>AN ORIGINAL STORY</span><span>CHAPTER 01 / DANA ALPAIJI</span></div>
-  <div class="intro-panels" aria-hidden="true">
-    <div class="intro-panel panel-one"><span class="panel-kicker">THE BEGINNING</span><div class="ink-sun"></div><div class="ink-figure figure-one"></div><b class="panel-sfx">WHOOSH!</b></div>
-    <div class="intro-panel panel-two"><span class="panel-kicker">DREAM IT</span><div class="ink-eye"></div><b class="panel-sfx">目覚め</b></div>
-    <div class="intro-panel panel-three"><span class="panel-kicker">MAKE IT REAL</span><div class="ink-city"></div><b class="panel-sfx">BOOM!</b></div>
-    <div class="intro-panel panel-four"><span class="panel-kicker">KEEP MOVING</span><div class="ink-figure figure-two"></div><div class="ink-speed"></div><b class="panel-sfx">GO!</b></div>
-    <div class="intro-panel panel-five"><span class="panel-kicker">YOUR NEXT CHAPTER</span><div class="ink-star">✦</div><b class="panel-sfx">…</b></div>
+  <!-- ========== AMBIENT GHIBLI WATERCOLOR ORBS ========== -->
+  <div class="ambient-glass-bg">
+    <div class="glass-orb orb-meadow"></div>
+    <div class="glass-orb orb-sky"></div>
+    <div class="glass-orb orb-sun"></div>
+    <div class="glass-orb orb-peach"></div>
   </div>
-  <div class="intro-title-wrap"><div class="intro-overline">A PORTFOLIO IN PANELS</div><div class="intro-title">DANA <i>ALPAIJI</i></div><div class="intro-subtitle">CREATIVITY IN EVERY FRAME.</div></div>
-  <div class="intro-bottom"><span>INK • IDEAS • IMPACT</span><button id="introSkip" type="button">SKIP INTRO <span>↗</span></button></div>
-</div>
 
-<!-- Manga-inspired monochrome page texture -->
-<!-- ========== SCROLL PROGRESS BAR ========== -->
-<div id="scroll-progress"></div>
-<!-- Preloader dihapus: halaman langsung tampil -->
-<!-- ========== MOBILE MENU ========== -->
-<nav class="mobile-menu" id="mobileMenu">
-<a href="#hero" onclick="closeMobile()">Home</a>
-<a href="#about" onclick="closeMobile()">About</a>
-<a href="#skills" onclick="closeMobile()">Skills</a>
-<a href="#experience" onclick="closeMobile()">Experience</a>
-<a href="#organization" onclick="closeMobile()">Organization</a>
-<a href="#projects" onclick="closeMobile()">Projects</a>
-<a href="#certificates" onclick="closeMobile()">Certificates</a>
-<a href="#gallery" onclick="closeMobile()">Gallery</a>
-<a href="#contact" onclick="closeMobile()">Contact</a>
-</nav>
-<!-- ========== NAVBAR ========== -->
-<header id="navbar">
-<a class="nav-brand" href="#hero">
-<span class="nav-logo">Dana Alpaiji<span>.</span></span>
-</a>
-<ul class="nav-menu">
-<li><a href="#hero">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#organization">Organization</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#certificates">Certificates</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-<button aria-label="Aktifkan mode gelap" class="theme-toggle" id="themeToggle" title="Ganti tema" type="button"><span aria-hidden="true" class="theme-icon">☾</span></button>
-<div class="hamburger" id="hamburger" onclick="toggleMobile()">
-<span></span><span></span><span></span>
-</div>
-</header><main class="portfolio-layout" id="portfolioLayout"><div class="layout-column layout-left"><section id="hero">
-<!-- Decorative Glass Wind Chime (Furin) on Corner -->
-<div class="wind-chime-wrap manga-spark" aria-hidden="true">
-<div class="chime-thread"></div>
-<svg class="chime-svg" viewbox="0 0 80 130" xmlns="http://www.w3.org/2000/svg">
-<!-- Glass Bell -->
-<path d="M15,42 C15,15 65,15 65,42 L70,52 C40,56 40,56 10,52 Z" fill="rgba(111, 168, 220, 0.35)" stroke="#2864A5" stroke-width="2"></path>
-<circle cx="40" cy="48" fill="#4D86C6" r="4"></circle>
-<line stroke="#2864A5" stroke-width="1.5" x1="40" x2="40" y1="52" y2="75"></line>
-<!-- Tanzaku Paper Slip -->
-<polygon fill="#F5F9FF" points="32,75 48,75 52,122 28,122" stroke="#2864A5" stroke-width="1.5"></polygon>
-<path d="M36,92 Q40,86 44,92" fill="none" stroke="#4D86C6" stroke-width="1.5"></path>
-</svg>
-</div>
-<div class="hero-content reveal">
-<div class="hero-badge"><span class="dot"></span>HELLO THERE! // MY CREATIVE SPACE</div>
-<h1 class="hero-name">Dana<br/><em>Alpaiji</em></h1>
-<div class="hero-subtitle">Ekonomi Syariah • Digital Innovation • Leadership</div>
-<p class="hero-desc">Saya adalah mahasiswa Ekonomi Syariah yang senang mengeksplorasi teknologi, Artificial Intelligence, analisis data, dan kepemimpinan. Saya menggabungkan rasa ingin tahu, pengalaman organisasi, dan ide digital untuk membangun sesuatu yang bermanfaat.</p>
-<div class="hero-buttons">
-<a class="btn btn-primary" download="" href="cv.pdf">Download CV</a>
-<a class="btn btn-secondary" href="#contact">Contact Me</a>
-</div>
-</div>
-<div class="hero-visual reveal">
-<div class="hero-img-frame tilt-card">
-<div class="hero-img-shadow-sky"></div>
-<div class="hero-img-shadow-sage"></div>
-<img alt="Dana Alpaiji" class="hero-img" onerror="this.style.opacity='0.2';" src="profile.jpg"/>
-<div class="deco deco-box">AI</div>
-<div class="deco deco-tag">GPA <strong>3.93</strong> / 4.00</div>
-</div>
-</div>
-</section><section id="about">
-<div class="about-grid">
-<div class="reveal-left">
-<span class="section-label">Profile Overview</span>
-<h2 class="section-title">A Little About Me</h2>
-<div class="about-text">
-<p>Mahasiswa Program Studi Ekonomi Syariah Universitas Sultan Ageng Tirtayasa dengan IPK <strong>3.93/4.00</strong>. Berpengalaman sebagai Assistant Manager selama hampir dua tahun, sekaligus aktif dalam berbagai organisasi kemahasiswaan dan pengembangan teknologi berbasis Artificial Intelligence.</p>
-<p>Saya percaya bahwa perpaduan kepemimpinan, ekonomi, dan AI dapat menghasilkan solusi inovatif yang berdampak nyata bagi masyarakat.</p>
-</div>
-</div>
-<div class="reveal">
-<div class="about-stats">
-<div class="stat-card tilt-card">
-<div class="stat-num"><span class="counter" data-decimal="2" data-target="3.93">0</span><span class="acc">/4.00</span></div>
-<div class="stat-label">GPA / Indeks Prestasi</div>
-</div>
-<div class="stat-card tilt-card">
-<div class="stat-num"><span class="counter" data-decimal="0" data-target="2">0</span><span class="acc">+</span></div>
-<div class="stat-label">Years Experience</div>
-</div>
-<div class="stat-card tilt-card">
-<div class="stat-num"><span class="counter" data-decimal="0" data-target="4">0</span><span class="acc">+</span></div>
-<div class="stat-label">Student Organizations</div>
-</div>
-<div class="stat-card tilt-card">
-<div class="stat-num"><span class="counter" data-decimal="0" data-target="10">0</span><span class="acc">+</span></div>
-<div class="stat-label">AI &amp; Digital Projects</div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="projects">
-<div class="reveal">
-<span class="section-label">Selected Work</span>
-<h2 class="section-title">Things I’ve Built</h2>
-<p class="section-sub">Beberapa karya digital yang dikembangkan, mulai dari platform web hingga pengelolaan keuangan dan personal branding.</p>
-</div>
-<div class="projects-grid">
-<article class="project-card tilt-card reveal">
-<div class="project-topline"><span class="project-category">WEB DEVELOPMENT</span><span class="project-index">01</span></div>
-<h3 class="project-title">TAMARA — Platform UMKM &amp; Fintech</h3>
-<p class="project-desc">Pengembangan platform digital untuk mendukung kebutuhan UMKM dan mitra melalui autentikasi pengguna serta dashboard berdasarkan peran Admin, UMKM, dan Mitra.</p>
-<div class="project-tags"><span>PHP</span><span>MySQL</span><span>PDO</span><span>Responsive UI</span></div>
-<a class="project-action" href="https://tamaraku.my.id/" rel="noopener noreferrer" target="_blank">Kunjungi Website</a>
-</article>
-<article class="project-card tilt-card reveal">
-<div class="project-topline"><span class="project-category">FINANCIAL TECHNOLOGY</span><span class="project-index">02</span></div>
-<h3 class="project-title">IMPACT ID — Platform Digital</h3>
-<p class="project-desc">Pengembangan website IMPACT ID sebagai salah satu proyek digital, dengan fokus pada penyajian informasi dan pengalaman pengguna melalui antarmuka web.</p>
-<div class="project-tags"><span>Web Development</span><span>Vercel</span><span>UI/UX</span></div>
-<a class="project-action" href="https://impact-id.vercel.app/" rel="noopener noreferrer" target="_blank">Kunjungi Website</a>
-</article>
-<article class="project-card tilt-card reveal">
-<div class="project-topline"><span class="project-category">ORGANIZATION WEBSITE</span><span class="project-index">03</span></div>
-<h3 class="project-title">Website UKM Untirta Digital Creative (UDC)</h3>
-<p class="project-desc">Website UKM Untirta Digital Creative sebagai media informasi dan publikasi organisasi, memperkenalkan profil, kegiatan, serta program UKM kepada mahasiswa dan pengunjung.</p>
-<div class="project-tags"><span>UKM</span><span>Organization Website</span><span>Digital Creative</span></div>
-<a class="project-action" href="https://web-udc.vercel.app/" rel="noopener noreferrer" target="_blank">Kunjungi Website</a>
-</article>
-</div>
-</section><section id="gallery">
-<div class="reveal">
-<span class="section-label">Visual Archive</span>
-<h2 class="section-title">Little Moments</h2>
-<p class="section-sub">Dokumentasi perjalanan, kegiatan, dan kolaborasi.</p>
-</div>
-<div class="gallery-grid reveal">
-<div class="gallery-item" onclick="openLightbox('gallery1.jpg')">
-<img alt="Gallery 1" onerror="this.parentNode.style.display='none';" src="gallery1.jpg"/>
-<div class="gallery-overlay"></div>
-</div>
-<div class="gallery-item" onclick="openLightbox('gallery2.jpg')">
-<img alt="Gallery 2" onerror="this.parentNode.style.display='none';" src="gallery2.jpg"/>
-<div class="gallery-overlay"></div>
-</div>
-<div class="gallery-item" onclick="openLightbox('gallery3.jpg')">
-<img alt="Gallery 3" onerror="this.parentNode.style.display='none';" src="gallery3.jpg"/>
-<div class="gallery-overlay"></div>
-</div>
-<div class="gallery-item" onclick="openLightbox('gallery4.jpg')">
-<img alt="Gallery 4" onerror="this.parentNode.style.display='none';" src="gallery4.jpg"/>
-<div class="gallery-overlay"></div>
-</div>
-<div class="gallery-item" onclick="openLightbox('gallery5.jpg')">
-<img alt="Gallery 5" onerror="this.parentNode.style.display='none';" src="gallery5.jpg"/>
-<div class="gallery-overlay"></div>
-</div>
-<div class="gallery-item" onclick="openLightbox('gallery6.jpg')">
-<img alt="Gallery 6" onerror="this.parentNode.style.display='none';" src="gallery6.jpg"/>
-<div class="gallery-overlay"></div>
-</div>
-</div>
-</section></div><div class="layout-column layout-right"><section id="skills">
-<div class="skills-header reveal">
-<span class="section-label">Core Competencies</span>
-<h2 class="section-title">Things I Can Do</h2>
-<p class="section-sub">Perpaduan kemampuan teknis dan kepemimpinan strategis.</p>
-</div>
-<div class="skills-grid-wrap">
-<div class="reveal">
-<div class="skills-group-title">Technical Skills</div>
-<div class="skills-grid">
-<div class="skill-card"><div class="skill-name">Artificial Intelligence</div></div>
-<div class="skill-card"><div class="skill-name">Prompt Engineering</div></div>
-<div class="skill-card"><div class="skill-name">Web Development</div></div>
-<div class="skill-card"><div class="skill-name">HTML, CSS &amp; JS</div></div>
-<div class="skill-card"><div class="skill-name">Microsoft Excel</div></div>
-<div class="skill-card"><div class="skill-name">Microsoft Word</div></div>
-<div class="skill-card"><div class="skill-name">PowerPoint</div></div>
-<div class="skill-card"><div class="skill-name">Data Analysis</div></div>
-<div class="skill-card"><div class="skill-name">UI/UX Thinking</div></div>
-</div>
-</div>
-<div class="reveal">
-<div class="skills-group-title">Soft Skills</div>
-<div class="skills-grid">
-<div class="skill-card"><div class="skill-name">Leadership</div></div>
-<div class="skill-card"><div class="skill-name">Team Management</div></div>
-<div class="skill-card"><div class="skill-name">Communication</div></div>
-<div class="skill-card"><div class="skill-name">Public Speaking</div></div>
-<div class="skill-card"><div class="skill-name">Problem Solving</div></div>
-<div class="skill-card"><div class="skill-name">Critical Thinking</div></div>
-<div class="skill-card"><div class="skill-name">Time Management</div></div>
-<div class="skill-card"><div class="skill-name">Collaboration</div></div>
-</div>
-</div>
-</div>
-</section><section id="experience">
-<div class="reveal">
-<span class="section-label">Career Journey</span>
-<h2 class="section-title">Where I’ve Worked</h2>
-<p class="section-sub">Pengalaman nyata yang membentuk kepemimpinan dan eksekusi operasional.</p>
-</div>
-<div class="timeline">
-<div class="timeline-item reveal-left">
-<div class="timeline-dot"></div>
-<div class="exp-card tilt-card">
-<div class="exp-company">PT Orins Multidaya Indonesia</div>
-<div class="exp-role">Staff Operasional / Assistant Manager</div>
-<div class="exp-date">Jul 2023 – Mei 2024</div>
-<ul class="exp-list">
-<li>Membantu manajer dalam merencanakan dan mengawasi kegiatan operasional harian.</li>
-<li>Mengelola dan membimbing tim kerja agar produktif dan disiplin.</li>
-<li>Memastikan target dan standar perusahaan tercapai secara konsisten.</li>
-<li>Menangani keluhan pelanggan serta problem solving internal tim.</li>
-<li>Membuat laporan operasional dan menggantikan tugas manajer ketika diperlukan.</li>
-</ul>
-</div>
-</div>
-</div>
-</section><section id="organization">
-<div class="reveal">
-<span class="section-label">Leadership &amp; Community</span>
-<h2 class="section-title">Teams &amp; Communities</h2>
-<p class="section-sub">Aktif berkontribusi dalam berbagai organisasi kampus dan komunitas teknologi.</p>
-</div>
-<div class="org-grid">
-<div class="org-card tilt-card reveal">
-<div class="org-badge">DPM FEB</div>
-<div class="org-name">Dewan Perwakilan Mahasiswa FEB</div>
-<div class="org-role">Ketua Fraksi Ekonomi Syariah | Anggota Komisi IV</div>
-<div class="org-year">2026 – Sekarang</div>
-<ul class="org-list">
-<li>Menjadi jembatan aspirasi mahasiswa dengan birokrasi fakultas.</li>
-<li>Mengolah data survei dan menyusun rekomendasi kebijakan.</li>
-<li>Melakukan pengawasan terhadap program kemahasiswaan.</li>
-</ul>
-</div>
-<div class="org-card tilt-card reveal">
-<div class="org-badge">HMJ</div>
-<div class="org-name">HMJ Ekonomi Syariah</div>
-<div class="org-role">Ketua Pelaksana Sharia Economic Festival (SEF) 2025</div>
-<ul class="org-list">
-<li>Memimpin keseluruhan pelaksanaan kegiatan berskala besar.</li>
-<li>Mengoordinasikan panitia lintas divisi dan sponsor eksternal.</li>
-</ul>
-<hr class="org-divider"/>
-<div class="org-role">Sekretaris Pelaksana Seminar Karya Ilmiah</div>
-<ul class="org-list">
-<li>Mengelola administrasi organisasi, surat resmi, dan arsip kegiatan.</li>
-</ul>
-</div>
-<div class="org-card tilt-card reveal">
-<div class="org-badge">AI DIVISION</div>
-<div class="org-name">UKM UDC — Untirta Digital Creative</div>
-<div class="org-role">AI Division Member</div>
-<ul class="org-list">
-<li>Aktif sebagai anggota Divisi Artificial Intelligence kampus.</li>
-<li>Mengembangkan implementasi Generative AI dan Machine Learning.</li>
-<li>Berkolaborasi dalam proyek AI untuk pendidikan dan produktivitas mahasiswa.</li>
-</ul>
-</div>
-</div>
-</section><section id="certificates">
-<div class="reveal">
-<span class="section-label">MY ACHIEVEMENTS / FILE ARCHIVE</span>
-<h2 class="section-title">Certificate Folder</h2>
-<p class="section-sub">Koleksi perjalanan, pengalaman, dan pencapaian yang tersimpan dalam arsip kecil.</p>
-</div>
-<div class="certificate-archive-wrap">
-<div class="certificate-archive-folder">
-  <div class="archive-folder-tab"><span>MY CERTIFICATES</span><span>ARCHIVE · 04 FILES</span></div>
-  <div class="archive-folder-inner">
-    <div class="archive-folder-heading"><span class="archive-folder-icon">📁</span><div><strong>Certificate Collection</strong><small>4 dokumen tersimpan dalam satu folder</small></div><span class="archive-count">04</span></div>
-    <div class="archive-file-list">
-      <button class="archive-file" type="button" onclick="openLightbox('sertifikat1.png')"><span class="archive-file-preview"><img src="sertifikat1.png" alt="Preview Sertifikat Ketua Pelaksana" onerror="this.style.opacity='.2'"></span><span class="archive-file-info"><small>FILE 01 · LEADERSHIP</small><strong>Ketua Pelaksana</strong><em>Sertifikasi Ketua Pelaksana SEF 2025</em></span><span class="archive-open">↗</span></button>
-      <button class="archive-file" type="button" onclick="openLightbox('sertifikat2.png')"><span class="archive-file-preview"><img src="sertifikat2.png" alt="Preview Sertifikat Volunteer BEM FEB" onerror="this.style.opacity='.2'"></span><span class="archive-file-info"><small>FILE 02 · VOLUNTEER</small><strong>Volunteer BEM FEB</strong><em>Sertifikat Kepanitiaan PKKMB FEB 2025</em></span><span class="archive-open">↗</span></button>
-      <button class="archive-file" type="button" onclick="openLightbox('sertifikat3.png')"><span class="archive-file-preview"><img src="sertifikat3.png" alt="Preview Sertifikat Pengurus HMJ Ekonomi Syariah" onerror="this.style.opacity='.2'"></span><span class="archive-file-info"><small>FILE 03 · ORGANIZATION</small><strong>Pengurus HMJ Ekonomi Syariah</strong><em>Staff Anggota Divisi Mikat HMJ Ekonomi Syariah 2025</em></span><span class="archive-open">↗</span></button>
-      <button class="archive-file" type="button" onclick="openLightbox('sertifikat4.png')"><span class="archive-file-preview"><img src="sertifikat4.png" alt="Preview Sertifikat Seminar dan Workshop" onerror="this.style.opacity='.2'"></span><span class="archive-file-info"><small>FILE 04 · LEARNING</small><strong>Seminar &amp; Workshop</strong><em>Partisipasi aktif dalam program seminar UKM UDC Untirta</em></span><span class="archive-open">↗</span></button>
+  <!-- ========== SUBTLE BOTANICAL CORNER SKETCHES ========== -->
+  <svg class="bg-botanical-tl" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#2864A5" stroke-width="1.5" fill="none" stroke-linecap="round">
+      <path d="M0,0 Q70,50 140,130" />
+      <path d="M40,28 Q65,15 75,32 Q55,42 40,28 Z" fill="rgba(40,100,165,0.15)" />
+      <path d="M75,60 Q105,45 115,65 Q92,75 75,60 Z" fill="rgba(40,100,165,0.15)" />
+      <path d="M55,50 Q30,70 42,88 Q62,72 55,50 Z" fill="rgba(40,100,165,0.15)" />
+      <path d="M110,95 Q138,85 145,105 Q122,112 110,95 Z" fill="rgba(40,100,165,0.15)" />
+    </g>
+  </svg>
+  <svg class="bg-botanical-br" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#2864A5" stroke-width="1.5" fill="none" stroke-linecap="round">
+      <path d="M0,0 Q70,50 140,130" />
+      <path d="M40,28 Q65,15 75,32 Q55,42 40,28 Z" fill="rgba(40,100,165,0.15)" />
+      <path d="M75,60 Q105,45 115,65 Q92,75 75,60 Z" fill="rgba(40,100,165,0.15)" />
+    </g>
+  </svg>
+
+  <!-- ========== INTERACTIVE GHIBLI BREEZE & PETALS CANVAS ========== -->
+  <canvas id="breeze-canvas"></canvas>
+
+  <!-- ========== SCROLL PROGRESS BAR ========== -->
+  <div id="scroll-progress"></div>
+
+  <!-- ========== STUDIO GHIBLI AESTHETIC PRELOADER (LEFT TO RIGHT BREEZE) ========== -->
+  <div id="loader">
+    <div class="wind-lines">
+      <div class="wind-line"></div>
+      <div class="wind-line"></div>
+      <div class="wind-line"></div>
+      <div class="wind-line"></div>
     </div>
-    <div class="archive-folder-footer"><span>✦ CLICK A FILE TO VIEW</span><span>4 ITEMS · 1 FOLDER</span></div>
+
+    <svg class="wind-trail-svg" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+      <path class="wind-path-anim" d="M -100,480 Q 480,240 960,400 T 2050,240" fill="none" stroke="#6FA8DC" stroke-width="2.5" />
+      <path class="wind-path-anim" d="M -100,500 Q 480,270 960,420 T 2050,265" fill="none" stroke="#2864A5" stroke-width="2" />
+    </svg>
+
+    <div class="breeze-stage">
+      <div class="gliding-silhouette">
+        <svg viewBox="0 0 240 160" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <!-- Graceful Gliding Bird & Floating Leaves -->
+          <path d="M60,85 Q95,45 125,78 Q155,40 195,70 Q155,68 125,95 Q95,72 60,85 Z" fill="#2864A5" />
+          <path d="M25,110 Q40,98 50,112 Q35,120 25,110 Z" fill="#4D86C6" />
+          <path d="M205,42 Q220,30 230,45 Q215,52 205,42 Z" fill="#A9D5F5" />
+          <circle cx="140" cy="40" r="3" fill="#A9D5F5" />
+          <circle cx="85" cy="115" r="2.5" fill="#6FA8DC" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="loader-centerpiece">
+      <svg class="loader-botanical-crest" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50,85 L50,20" stroke="#2864A5" stroke-width="3" stroke-linecap="round"/>
+        <path d="M50,65 Q25,55 22,35 Q45,42 50,65 Z" fill="#2864A5" opacity="0.85"/>
+        <path d="M50,50 Q75,40 78,20 Q55,28 50,50 Z" fill="#6FA8DC" opacity="0.85"/>
+        <path d="M50,35 Q30,25 32,10 Q48,18 50,35 Z" fill="#4D86C6" opacity="0.85"/>
+      </svg>
+      <div class="loader-tag">PORTFOLIO // DANA ALPAIJI</div>
+      <div class="loader-logo">Dana Alpaiji.</div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar-fill"></div>
+      </div>
+      <div class="loader-pct" id="loaderPct">MEMUAT HALAMAN... 0%</div>
+    </div>
   </div>
-</div>
-</div>
-</section><section id="contact">
-<div class="contact-card tilt-card reveal">
-<div>
-<h2 class="contact-title">Let’s Make Something Great Together</h2>
-<div class="contact-info">
-<div class="contact-item">Dana Alpaiji</div>
-<div class="contact-item"><a href="mailto:danaalpaiji@gmail.com">danaalpaiji@gmail.com</a></div>
-<div class="contact-item"><a href="https://linkedin.com/in/danaalpaiji" target="_blank">linkedin.com/in/danaalpaiji</a></div>
-<div class="contact-item"><a href="tel:+6285117751203">+6285117751203</a></div>
-<div class="contact-item">Serang, Banten, Indonesia</div>
-</div>
-</div>
-<div class="contact-btns">
-<a class="btn btn-primary" href="mailto:danaalpaiji@gmail.com">Email Me</a>
-<a class="btn btn-secondary" href="https://linkedin.com/in/danaalpaiji" target="_blank">LinkedIn</a>
-<a class="btn btn-secondary" download="" href="cv.pdf">Download CV</a>
-</div>
-</div>
-</section></div></main>
-<!-- ========== HERO SECTION ========== -->
 
-<!-- ========== SERENE MARQUEE BANNER ========== -->
-<div class="ghibli-marquee-bar">
-<div class="ghibli-marquee-track">
-<span>DANA ALPAIJI PORTFOLIO</span> <span class="sep"></span>
-<span>ARTIFICIAL INTELLIGENCE</span> <span class="sep"></span>
-<span>SHARIA ECONOMICS UNTIRTA (GPA 3.93/4.00)</span> <span class="sep"></span>
-<span>YOUNG LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="sep"></span>
-<span>SUSTAINABLE ECONOMY</span> <span class="sep"></span>
-<span>DANA ALPAIJI PORTFOLIO</span> <span class="sep"></span>
-<span>ARTIFICIAL INTELLIGENCE</span> <span class="sep"></span>
-<span>SHARIA ECONOMICS UNTIRTA (GPA 3.93/4.00)</span> <span class="sep"></span>
-<span>YOUNG LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="sep"></span>
-</div>
-</div>
-<!-- ========== ABOUT SECTION ========== -->
+  <!-- ========== MOBILE MENU ========== -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#hero" onclick="closeMobile()">Home</a>
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#skills" onclick="closeMobile()">Skills</a>
+    <a href="#experience" onclick="closeMobile()">Experience</a>
+    <a href="#organization" onclick="closeMobile()">Organization</a>
+    <a href="#projects" onclick="closeMobile()">Projects</a>
+    <a href="#certificates" onclick="closeMobile()">Certificates</a>
+    <a href="#gallery" onclick="closeMobile()">Gallery</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+  </nav>
 
-<!-- ========== SKILLS SECTION ========== -->
+  <!-- ========== NAVBAR ========== -->
+  <header id="navbar">
+    <a href="#hero" class="nav-brand">
+      <span class="nav-logo">Dana Alpaiji<span>.</span></span>
+    </a>
 
-<!-- ========== EXPERIENCE SECTION ========== -->
+    <ul class="nav-menu">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#organization">Organization</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-<!-- ========== ORGANIZATION SECTION ========== -->
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Aktifkan mode gelap" title="Ganti tema"><span class="theme-icon" aria-hidden="true">☾</span></button>
 
-<!-- ========== PROJECTS SECTION ========== -->
+    <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
 
-<!-- ========== CERTIFICATES SECTION ========== -->
+  <!-- ========== HERO SECTION ========== -->
+  <section id="hero">
+    <!-- Decorative Glass Wind Chime (Furin) on Corner -->
+    <div class="wind-chime-wrap" onclick="triggerPetalBurst(event)" title="Klik untuk efek kelopak angin">
+      <div class="chime-thread"></div>
+      <svg class="chime-svg" viewBox="0 0 80 130" xmlns="http://www.w3.org/2000/svg">
+        <!-- Glass Bell -->
+        <path d="M15,42 C15,15 65,15 65,42 L70,52 C40,56 40,56 10,52 Z" fill="rgba(111, 168, 220, 0.35)" stroke="#2864A5" stroke-width="2"/>
+        <circle cx="40" cy="48" r="4" fill="#4D86C6"/>
+        <line x1="40" y1="52" x2="40" y2="75" stroke="#2864A5" stroke-width="1.5"/>
+        <!-- Tanzaku Paper Slip -->
+        <polygon points="32,75 48,75 52,122 28,122" fill="#F5F9FF" stroke="#2864A5" stroke-width="1.5"/>
+        <path d="M36,92 Q40,86 44,92" stroke="#4D86C6" stroke-width="1.5" fill="none"/>
+      </svg>
+    </div>
 
-<!-- ========== GALLERY SECTION ========== -->
+    <div class="hero-content reveal">
+      <div class="hero-badge"><span class="dot"></span> PORTFOLIO RESMI // HELLO, I'M</div>
+      <h1 class="hero-name">Dana<br><em>Alpaiji</em></h1>
+      <div class="hero-subtitle">Mahasiswa Ekonomi Syariah | Inovasi Digital | Kepemimpinan Muda</div>
+      <p class="hero-desc">
+        Mahasiswa S1 Ekonomi Syariah Universitas Sultan Ageng Tirtayasa dengan ketertarikan besar pada Artificial Intelligence, inovasi digital, analisis data, dan kepemimpinan organisasi. Berpengalaman sebagai Assistant Manager dan aktif membangun proyek serta komunitas berbasis teknologi.
+      </p>
+      <div class="hero-buttons">
+        <a href="cv.pdf" download class="btn btn-primary">Download CV</a>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+      </div>
+    </div>
 
-<!-- Lightbox Modal -->
-<div id="lightbox">
-<div id="lightbox-close" onclick="closeLightbox()">Tutup</div>
-<img alt="Preview" id="lightbox-img" src=""/>
-</div>
-<!-- ========== SPOTIFY-INSPIRED MUSIC PLAYER ========== -->
-<div aria-label="Pemutar musik" id="spotify-widget">
-<div class="spotify-disk" id="spotifyDisk"><img alt="Sampul musik" onerror="this.style.display='none';" src="/profile.jpg"/></div>
-<div class="spotify-info">
-<div class="spotify-title" id="songTitle">Favorite Track 01</div>
-<div class="spotify-artist" id="songArtist">Dana's Playlist #1</div>
-</div>
-<div class="spotify-controls">
-<button aria-label="Lagu sebelumnya" class="spotify-btn" onclick="prevSong()" title="Lagu sebelumnya"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 5v14M19 6l-9 6 9 6V6Z"></path></svg></button>
-<button aria-label="Putar atau jeda" class="spotify-btn" id="playPauseBtn" onclick="togglePlayMusic()" title="Putar atau jeda"><span id="playPauseSvg"><svg aria-hidden="true" viewbox="0 0 24 24"><path class="play-shape" d="M8 5.5v13l10-6.5-10-6.5Z"></path></svg></span></button>
-<button aria-label="Lagu berikutnya" class="spotify-btn" onclick="nextSong()" title="Lagu berikutnya"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M18 5v14M5 6l9 6-9 6V6Z"></path></svg></button>
-</div>
-<div class="spotify-progress-wrap"><input aria-label="Posisi lagu" id="musicProgress" max="100" min="0" step="0.1" type="range" value="0"/></div>
-<div class="spotify-times"><span id="musicCurrentTime">0:00</span><span id="musicDuration">0:00</span></div>
-<audio id="audioPlayer" preload="metadata"></audio>
-</div>
-<!-- ========== CONTACT SECTION ========== -->
+    <div class="hero-visual reveal">
+      <div class="hero-img-frame tilt-card">
+        <div class="hero-img-shadow-sky"></div>
+        <div class="hero-img-shadow-sage"></div>
+        <img class="hero-img" src="profile.jpg" alt="Dana Alpaiji" onerror="this.style.opacity='0.2';" />
+        <div class="deco deco-box">AI</div>
+        <div class="deco deco-tag">GPA <strong>3.93</strong> / 4.00</div>
+      </div>
+    </div>
+  </section>
 
-<!-- ========== FOOTER ========== -->
-<footer>
-<div class="footer-logo">Dana Alpaiji<span>.</span></div>
-<div class="footer-socials">
-<a class="social-btn" href="mailto:danaalpaiji@gmail.com">Email</a>
-<a class="social-btn" href="https://linkedin.com/in/danaalpaiji" target="_blank">LinkedIn</a>
-<a class="social-btn" href="tel:+6285117751203">Telepon</a>
-</div>
-<p class="footer-copy">© 2026 Dana Alpaiji. Crafted with Passion, Leadership &amp; Artificial Intelligence.</p>
-</footer>
-<!-- ==========================================================================
+  <!-- ========== SERENE MARQUEE BANNER ========== -->
+  <div class="ghibli-marquee-bar">
+    <div class="ghibli-marquee-track">
+      <span>DANA ALPAIJI PORTFOLIO</span> <span class="sep"></span>
+      <span>ARTIFICIAL INTELLIGENCE</span> <span class="sep"></span>
+      <span>SHARIA ECONOMICS UNTIRTA (GPA 3.93/4.00)</span> <span class="sep"></span>
+      <span>YOUNG LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="sep"></span>
+      <span>SUSTAINABLE ECONOMY</span> <span class="sep"></span>
+      <span>DANA ALPAIJI PORTFOLIO</span> <span class="sep"></span>
+      <span>ARTIFICIAL INTELLIGENCE</span> <span class="sep"></span>
+      <span>SHARIA ECONOMICS UNTIRTA (GPA 3.93/4.00)</span> <span class="sep"></span>
+      <span>YOUNG LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="sep"></span>
+    </div>
+  </div>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="reveal-left">
+        <span class="section-label">Profile Overview</span>
+        <h2 class="section-title">Tentang Saya</h2>
+        <div class="about-text">
+          <p>Mahasiswa Program Studi Ekonomi Syariah Universitas Sultan Ageng Tirtayasa dengan IPK <strong>3.93/4.00</strong>. Berpengalaman sebagai Assistant Manager selama hampir dua tahun, sekaligus aktif dalam berbagai organisasi kemahasiswaan dan pengembangan teknologi berbasis Artificial Intelligence.</p>
+          <p>Saya percaya bahwa perpaduan kepemimpinan, ekonomi, dan AI dapat menghasilkan solusi inovatif yang berdampak nyata bagi masyarakat.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="about-stats">
+          <div class="stat-card tilt-card">
+            <div class="stat-num"><span class="counter" data-target="3.93" data-decimal="2">0</span><span class="acc">/4.00</span></div>
+            <div class="stat-label">GPA / Indeks Prestasi</div>
+          </div>
+          <div class="stat-card tilt-card">
+            <div class="stat-num"><span class="counter" data-target="2" data-decimal="0">0</span><span class="acc">+</span></div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-card tilt-card">
+            <div class="stat-num"><span class="counter" data-target="4" data-decimal="0">0</span><span class="acc">+</span></div>
+            <div class="stat-label">Student Organizations</div>
+          </div>
+          <div class="stat-card tilt-card">
+            <div class="stat-num"><span class="counter" data-target="10" data-decimal="0">0</span><span class="acc">+</span></div>
+            <div class="stat-label">AI &amp; Digital Projects</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section id="skills">
+    <div class="skills-header reveal">
+      <span class="section-label">Core Competencies</span>
+      <h2 class="section-title">Skill &amp; Kemampuan</h2>
+      <p class="section-sub">Perpaduan kemampuan teknis dan kepemimpinan strategis.</p>
+    </div>
+    <div class="skills-grid-wrap">
+      <div class="reveal">
+        <div class="skills-group-title">Technical Skills</div>
+        <div class="skills-grid">
+          <div class="skill-card"><div class="skill-name">Artificial Intelligence</div></div>
+          <div class="skill-card"><div class="skill-name">Prompt Engineering</div></div>
+          <div class="skill-card"><div class="skill-name">Web Development</div></div>
+          <div class="skill-card"><div class="skill-name">HTML, CSS &amp; JS</div></div>
+          <div class="skill-card"><div class="skill-name">Microsoft Excel</div></div>
+          <div class="skill-card"><div class="skill-name">Microsoft Word</div></div>
+          <div class="skill-card"><div class="skill-name">PowerPoint</div></div>
+          <div class="skill-card"><div class="skill-name">Data Analysis</div></div>
+          <div class="skill-card"><div class="skill-name">UI/UX Thinking</div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="skills-group-title">Soft Skills</div>
+        <div class="skills-grid">
+          <div class="skill-card"><div class="skill-name">Leadership</div></div>
+          <div class="skill-card"><div class="skill-name">Team Management</div></div>
+          <div class="skill-card"><div class="skill-name">Communication</div></div>
+          <div class="skill-card"><div class="skill-name">Public Speaking</div></div>
+          <div class="skill-card"><div class="skill-name">Problem Solving</div></div>
+          <div class="skill-card"><div class="skill-name">Critical Thinking</div></div>
+          <div class="skill-card"><div class="skill-name">Time Management</div></div>
+          <div class="skill-card"><div class="skill-name">Collaboration</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE SECTION ========== -->
+  <section id="experience">
+    <div class="reveal">
+      <span class="section-label">Career Journey</span>
+      <h2 class="section-title">Pengalaman Bekerja</h2>
+      <p class="section-sub">Pengalaman nyata yang membentuk kepemimpinan dan eksekusi operasional.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal-left">
+        <div class="timeline-dot"></div>
+        <div class="exp-card tilt-card">
+          <div class="exp-company">PT Orins Multidaya Indonesia</div>
+          <div class="exp-role">Staff Operasional / Assistant Manager</div>
+          <div class="exp-date">Jul 2023 &ndash; Mei 2024</div>
+          <ul class="exp-list">
+            <li>Membantu manajer dalam merencanakan dan mengawasi kegiatan operasional harian.</li>
+            <li>Mengelola dan membimbing tim kerja agar produktif dan disiplin.</li>
+            <li>Memastikan target dan standar perusahaan tercapai secara konsisten.</li>
+            <li>Menangani keluhan pelanggan serta problem solving internal tim.</li>
+            <li>Membuat laporan operasional dan menggantikan tugas manajer ketika diperlukan.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ORGANIZATION SECTION ========== -->
+  <section id="organization">
+    <div class="reveal">
+      <span class="section-label">Leadership &amp; Community</span>
+      <h2 class="section-title">Pengalaman Organisasi</h2>
+      <p class="section-sub">Aktif berkontribusi dalam berbagai organisasi kampus dan komunitas teknologi.</p>
+    </div>
+    <div class="org-grid">
+      <div class="org-card tilt-card reveal">
+        <div class="org-badge">DPM FEB</div>
+        <div class="org-name">Dewan Perwakilan Mahasiswa FEB</div>
+        <div class="org-role">Ketua Fraksi Ekonomi Syariah | Anggota Komisi IV</div>
+        <div class="org-year">2026 &ndash; Sekarang</div>
+        <ul class="org-list">
+          <li>Menjadi jembatan aspirasi mahasiswa dengan birokrasi fakultas.</li>
+          <li>Mengolah data survei dan menyusun rekomendasi kebijakan.</li>
+          <li>Melakukan pengawasan terhadap program kemahasiswaan.</li>
+        </ul>
+      </div>
+
+      <div class="org-card tilt-card reveal">
+        <div class="org-badge">HMJ</div>
+        <div class="org-name">HMJ Ekonomi Syariah</div>
+        <div class="org-role">Ketua Pelaksana Sharia Economic Festival (SEF) 2025</div>
+        <ul class="org-list">
+          <li>Memimpin keseluruhan pelaksanaan kegiatan berskala besar.</li>
+          <li>Mengoordinasikan panitia lintas divisi dan sponsor eksternal.</li>
+        </ul>
+        <hr class="org-divider" />
+        <div class="org-role">Sekretaris Pelaksana Seminar Karya Ilmiah</div>
+        <ul class="org-list">
+          <li>Mengelola administrasi organisasi, surat resmi, dan arsip kegiatan.</li>
+        </ul>
+      </div>
+
+      <div class="org-card tilt-card reveal">
+        <div class="org-badge">AI DIVISION</div>
+        <div class="org-name">UKM UDC &mdash; Untirta Digital Creative</div>
+        <div class="org-role">AI Division Member</div>
+        <ul class="org-list">
+          <li>Aktif sebagai anggota Divisi Artificial Intelligence kampus.</li>
+          <li>Mengembangkan implementasi Generative AI dan Machine Learning.</li>
+          <li>Berkolaborasi dalam proyek AI untuk pendidikan dan produktivitas mahasiswa.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section id="projects">
+    <div class="reveal">
+      <span class="section-label">Selected Work</span>
+      <h2 class="section-title">Proyek yang Dikerjakan</h2>
+      <p class="section-sub">Beberapa karya digital yang dikembangkan, mulai dari platform web hingga pengelolaan keuangan dan personal branding.</p>
+    </div>
+    <div class="projects-grid">
+      <article class="project-card tilt-card reveal">
+        <div class="project-topline"><span class="project-category">WEB DEVELOPMENT</span><span class="project-index">01</span></div>
+        <h3 class="project-title">TAMARA — Platform UMKM &amp; Fintech</h3>
+        <p class="project-desc">Pengembangan platform digital untuk mendukung kebutuhan UMKM dan mitra melalui autentikasi pengguna serta dashboard berdasarkan peran Admin, UMKM, dan Mitra.</p>
+        <div class="project-tags"><span>PHP</span><span>MySQL</span><span>PDO</span><span>Responsive UI</span></div>
+        <a class="project-action" href="https://tamaraku.my.id/" target="_blank" rel="noopener noreferrer">Kunjungi Website</a>
+      </article>
+      <article class="project-card tilt-card reveal">
+        <div class="project-topline"><span class="project-category">FINANCIAL TECHNOLOGY</span><span class="project-index">02</span></div>
+        <h3 class="project-title">IMPACT ID — Platform Digital</h3>
+        <p class="project-desc">Pengembangan website IMPACT ID sebagai salah satu proyek digital, dengan fokus pada penyajian informasi dan pengalaman pengguna melalui antarmuka web.</p>
+        <div class="project-tags"><span>Web Development</span><span>Vercel</span><span>UI/UX</span></div>
+        <a class="project-action" href="https://impact-id.vercel.app/" target="_blank" rel="noopener noreferrer">Kunjungi Website</a>
+      </article>
+      <article class="project-card tilt-card reveal">
+        <div class="project-topline"><span class="project-category">ORGANIZATION WEBSITE</span><span class="project-index">03</span></div>
+        <h3 class="project-title">Website UKM Untirta Digital Creative (UDC)</h3>
+        <p class="project-desc">Website UKM Untirta Digital Creative sebagai media informasi dan publikasi organisasi, memperkenalkan profil, kegiatan, serta program UKM kepada mahasiswa dan pengunjung.</p>
+        <div class="project-tags"><span>UKM</span><span>Organization Website</span><span>Digital Creative</span></div>
+        <a class="project-action" href="https://web-udc.vercel.app/" target="_blank" rel="noopener noreferrer">Kunjungi Website</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATES SECTION ========== -->
+  <section id="certificates">
+    <div class="reveal">
+      <span class="section-label">Credentials &amp; Honors</span>
+      <h2 class="section-title">Sertifikat &amp; Penghargaan</h2>
+      <p class="section-sub">Dokumentasi lisensi, sertifikasi pelatihan, dan pencapaian akademik maupun profesional.</p>
+    </div>
+    <div class="certificates-grid">
+      <div class="cert-card tilt-card reveal">
+        <div class="cert-img" onclick="openLightbox('sertifikat1.png')">
+          <img src="sertifikat1.png" alt="Sertifikat 1" onerror="this.style.opacity='0.2';" />
+        </div>
+        <div class="cert-body">
+          <span class="cert-tag">SERTIFIKAT 01</span>
+          <div class="cert-title">Sertifikat Ketua Pelaksana</div>
+          <p class="cert-desc">Sertifikasi Ketua Pelaksana SEF 2025.</p>
+          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat1.png'); return false;">Lihat Sertifikat </a>
+        </div>
+      </div>
+
+      <div class="cert-card tilt-card reveal">
+        <div class="cert-img" onclick="openLightbox('sertifikat2.png')">
+          <img src="sertifikat2.png" alt="Sertifikat 2" onerror="this.style.opacity='0.2';" />
+        </div>
+        <div class="cert-body">
+          <span class="cert-tag">SERTIFIKAT 02</span>
+          <div class="cert-title">Penghargaan Volunteer BEM FEB</div>
+          <p class="cert-desc">Sertifikat Kepanitiaan PKKMB FEB 2025.</p>
+          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat2.png'); return false;">Lihat Sertifikat </a>
+        </div>
+      </div>
+
+      <div class="cert-card tilt-card reveal">
+        <div class="cert-img" onclick="openLightbox('sertifikat3.png')">
+          <img src="sertifikat3.png" alt="Sertifikat 3" onerror="this.style.opacity='0.2';" />
+        </div>
+        <div class="cert-body">
+          <span class="cert-tag">SERTIFIKAT 03</span>
+          <div class="cert-title">Sertifikat Kepengurusan HMJ Ekonomi Syariah 2025</div>
+          <p class="cert-desc">Staff Anggota Divisi Mikat HMJ Ekonomi Syariah 2025.</p>
+          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat3.png'); return false;">Lihat Sertifikat </a>
+        </div>
+      </div>
+
+      <div class="cert-card tilt-card reveal">
+        <div class="cert-img" onclick="openLightbox('sertifikat4.png')">
+          <img src="sertifikat4.png" alt="Sertifikat 4" onerror="this.style.opacity='0.2';" />
+        </div>
+        <div class="cert-body">
+          <span class="cert-tag">SERTIFIKAT 04</span>
+          <div class="cert-title">Sertifikat Seminar &amp; Workshop</div>
+          <p class="cert-desc">Bukti partisipasi aktif dalam program seminar UKM UDC Untirta.</p>
+          <a href="#" class="cert-btn" onclick="openLightbox('sertifikat4.png'); return false;">Lihat Sertifikat </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY SECTION ========== -->
+  <section id="gallery">
+    <div class="reveal">
+      <span class="section-label">Visual Archive</span>
+      <h2 class="section-title">Moments &amp; Highlights</h2>
+      <p class="section-sub">Dokumentasi perjalanan, kegiatan, dan kolaborasi.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item" onclick="openLightbox('gallery1.jpg')">
+        <img src="gallery1.jpg" alt="Gallery 1" onerror="this.parentNode.style.display='none';" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('gallery2.jpg')">
+        <img src="gallery2.jpg" alt="Gallery 2" onerror="this.parentNode.style.display='none';" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('gallery3.jpg')">
+        <img src="gallery3.jpg" alt="Gallery 3" onerror="this.parentNode.style.display='none';" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('gallery4.jpg')">
+        <img src="gallery4.jpg" alt="Gallery 4" onerror="this.parentNode.style.display='none';" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('gallery5.jpg')">
+        <img src="gallery5.jpg" alt="Gallery 5" onerror="this.parentNode.style.display='none';" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('gallery6.jpg')">
+        <img src="gallery6.jpg" alt="Gallery 6" onerror="this.parentNode.style.display='none';" />
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox">
+    <div id="lightbox-close" onclick="closeLightbox()">Tutup</div>
+    <img id="lightbox-img" src="" alt="Preview" />
+  </div>
+
+  <!-- ========== SPOTIFY-INSPIRED MUSIC PLAYER ========== -->
+  <div id="spotify-widget" aria-label="Pemutar musik">
+    <div class="spotify-disk" id="spotifyDisk"><img src="/profile.jpg" alt="Sampul musik" onerror="this.style.display='none';" /></div>
+    <div class="spotify-info">
+      <div class="spotify-title" id="songTitle">Favorite Track 01</div>
+      <div class="spotify-artist" id="songArtist">Dana's Playlist #1</div>
+    </div>
+    <div class="spotify-controls">
+      <button class="spotify-btn" onclick="prevSong()" title="Lagu sebelumnya" aria-label="Lagu sebelumnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M19 6l-9 6 9 6V6Z" /></svg></button>
+      <button class="spotify-btn" id="playPauseBtn" onclick="togglePlayMusic()" title="Putar atau jeda" aria-label="Putar atau jeda"><span id="playPauseSvg"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="play-shape" d="M8 5.5v13l10-6.5-10-6.5Z" /></svg></span></button>
+      <button class="spotify-btn" onclick="nextSong()" title="Lagu berikutnya" aria-label="Lagu berikutnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 6l9 6-9 6V6Z" /></svg></button>
+    </div>
+    <div class="spotify-progress-wrap"><input id="musicProgress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Posisi lagu" /></div>
+    <div class="spotify-times"><span id="musicCurrentTime">0:00</span><span id="musicDuration">0:00</span></div>
+    <audio id="audioPlayer" preload="metadata"></audio>
+  </div>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact">
+    <div class="contact-card tilt-card reveal">
+      <div>
+        <h2 class="contact-title">Mari Berkolaborasi &amp; Membangun Solusi Bersama</h2>
+        <div class="contact-info">
+          <div class="contact-item">Dana Alpaiji</div>
+          <div class="contact-item"><a href="mailto:danaalpaiji@gmail.com">danaalpaiji@gmail.com</a></div>
+          <div class="contact-item"><a href="https://linkedin.com/in/danaalpaiji" target="_blank">linkedin.com/in/danaalpaiji</a></div>
+          <div class="contact-item"><a href="tel:+6285117751203">+6285117751203</a></div>
+          <div class="contact-item">Serang, Banten, Indonesia</div>
+        </div>
+      </div>
+      <div class="contact-btns">
+        <a href="mailto:danaalpaiji@gmail.com" class="btn btn-primary">Email Me</a>
+        <a href="https://linkedin.com/in/danaalpaiji" target="_blank" class="btn btn-secondary">LinkedIn</a>
+        <a href="cv.pdf" download class="btn btn-secondary">Download CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-logo">Dana Alpaiji<span>.</span></div>
+    <div class="footer-socials">
+      <a class="social-btn" href="mailto:danaalpaiji@gmail.com">Email</a>
+      <a class="social-btn" href="https://linkedin.com/in/danaalpaiji" target="_blank">LinkedIn</a>
+      <a class="social-btn" href="tel:+6285117751203">Telepon</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Dana Alpaiji. Crafted with Passion, Leadership &amp; Artificial Intelligence.</p>
+  </footer>
+
+  <!-- ==========================================================================
        19. JAVASCRIPT ENGINE
   ========================================================================== -->
-<script>
-window.addEventListener('scroll', () => {
+  <script>
+    const loaderPctEl = document.getElementById('loaderPct');
+    let loadVal = 0;
+    const pctTimer = setInterval(() => {
+      loadVal += Math.floor(Math.random() * 15) + 6;
+      if (loadVal >= 100) {
+        loadVal = 100;
+        clearInterval(pctTimer);
+      }
+      if (loaderPctEl) loaderPctEl.textContent = `MEMUAT HALAMAN... ${loadVal}%`;
+    }, 170);
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        loader.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+        loader.style.opacity = '0';
+        loader.style.transform = 'scale(1.03)';
+        setTimeout(() => loader.style.display = 'none', 550);
+      }, 2400);
+    });
+
+    window.addEventListener('scroll', () => {
       const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
       document.getElementById('scroll-progress').style.width = pct + '%';
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 35);
@@ -2713,8 +2488,94 @@ window.addEventListener('scroll', () => {
       loadTrack(currentTrack);
       audioPlayer.play().catch(err => console.log('Audio tidak dapat diputar:', err));
     }
-</script>
-<script>
+
+    /* === INTERACTIVE GHIBLI BREEZE PETALS & STARLIGHT ON CLICK === */
+    const canvas = document.getElementById('breeze-canvas');
+    const ctx = canvas.getContext('2d');
+    let ripples = [];
+    let petals = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    window.addEventListener('click', (e) => {
+      createBreezeImpact(e.clientX, e.clientY);
+    });
+
+    function triggerPetalBurst(e) {
+      e.stopPropagation();
+      createBreezeImpact(e.clientX, e.clientY, true);
+    }
+
+    function createBreezeImpact(x, y, extra = false) {
+      ripples.push({ x, y, radius: 2, maxRadius: extra ? 55 : 32, alpha: 0.7 });
+      const count = extra ? 16 : 8;
+      const colors = ['#2864A5', '#6FA8DC', '#4D86C6', '#A9D5F5'];
+      for (let i = 0; i < count; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 3.5 + 1.2;
+        petals.push({
+          x, y,
+          vx: Math.cos(angle) * speed + 0.5,
+          vy: Math.sin(angle) * speed - 0.3,
+          color: colors[i % colors.length],
+          alpha: 0.95,
+          size: Math.random() * 4 + 3,
+          rotation: Math.random() * Math.PI,
+          vRot: (Math.random() - 0.5) * 0.1
+        });
+      }
+    }
+
+    function animateBreezeCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = ripples.length - 1; i >= 0; i--) {
+        const r = ripples[i];
+        r.radius += (r.maxRadius - r.radius) * 0.15;
+        r.alpha -= 0.022;
+        if (r.alpha <= 0) { ripples.splice(i, 1); continue; }
+
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(40, 100, 165, ${r.alpha})`;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      for (let i = petals.length - 1; i >= 0; i--) {
+        const p = petals[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.03; // Soft gravity
+        p.rotation += p.vRot;
+        p.alpha -= 0.018;
+
+        if (p.alpha <= 0) { petals.splice(i, 1); continue; }
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation);
+        ctx.globalAlpha = p.alpha;
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.ellipse(0, 0, p.size, p.size * 0.55, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      requestAnimationFrame(animateBreezeCanvas);
+    }
+    animateBreezeCanvas();
+  </script>
+
+  <script>
     (function () {
       const key = 'dana-portfolio-theme';
       const toggle = document.getElementById('themeToggle');
@@ -2735,24 +2596,9 @@ window.addEventListener('scroll', () => {
     })();
   </script>
 
-<script>
-(function(){
-  const intro=document.getElementById('mangaIntro');
-  const skip=document.getElementById('introSkip');
-  if(!intro) return;
-  let closed=false;
-  function closeIntro(){
-    if(closed) return;
-    closed=true;
-    intro.classList.add('is-gone');
-    document.body.style.overflow='';
-  }
-  document.body.style.overflow='hidden';
-  if(skip) skip.addEventListener('click',closeIntro);
-  window.setTimeout(closeIntro,6000);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!closed) closeIntro();});
-})();
-</script>
-
 </body>
 </html>
+
+
+
+
