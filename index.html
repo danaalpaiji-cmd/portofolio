@@ -3,55 +3,47 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Dana Alpaiji — Creative Portfolio</title>
+  <title>Dana Alpaiji — Manga Creative Portfolio</title>
   <link href="profile.jpg" rel="icon" sizes="any" type="image/jpeg"/>
   <link href="profile.jpg" rel="shortcut icon" type="image/jpeg"/>
   <link href="profile.jpg" rel="apple-touch-icon"/>
   <meta content="#E86F3A" name="theme-color"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Patrick+Hand&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Patrick+Hand&display=swap" rel="stylesheet"/>
   <style>
     /* ==========================================================================
-       1. HAND-DRAWN EDITORIAL UI VARIABLES (CLEAN WHITE + TERRACOTTA)
+       1. MANGA COMIC PANEL + HAND-DRAWN UI VARIABLES
     ========================================================================== */
     :root {
       color-scheme: light;
-      --bg-primary: #FFFFFF;
-      --bg-soft: #FDF3EE;
-      --bg-card: #FFFFFF;
-      --bg-card-hover: #FFFDFB;
-      --ink: #18181B;
-      --muted: #52525B;
-      --muted-light: #71717A;
-      --accent: #E86F3A;
+      --paper: #F4F1EA;         /* Kertas komik hangat */
+      --panel-bg: #FFFFFF;
+      --panel-soft: #FDF3EE;
+      --ink: #141416;           /* Tinta hitam pekat manga */
+      --muted: #4A4A52;
+      --accent: #E86F3A;        /* Oranye Terakota ala referensi */
       --accent-dark: #C85320;
-      --accent-soft: #FDF3EE;
       --yellow: #FFE45E;
-      --border-sketch: 2px solid #18181B;
-      --radius-sketch: 255px 15px 225px 15px / 15px 225px 15px 255px;
-      --radius-card: 18px 24px 20px 22px / 22px 18px 24px 20px;
-      --shadow-sketch: 4px 5px 0px #18181B;
-      --shadow-sketch-lg: 7px 8px 0px #18181B;
+      --border-manga: 3px solid #141416;
+      --shadow-manga: 5px 6px 0px #141416;
+      --shadow-manga-sm: 3px 4px 0px #141416;
       --font-main: 'Nunito', sans-serif;
-      --font-hand: 'Patrick Hand', cursive;
+      --font-comic: 'Patrick Hand', cursive;
     }
 
     body[data-theme="dark"] {
       color-scheme: dark;
-      --bg-primary: #141418;
-      --bg-soft: #1E1D24;
-      --bg-card: #1C1B22;
-      --bg-card-hover: #24232C;
-      --ink: #F4F4F5;
+      --paper: #121215;
+      --panel-bg: #1B1B20;
+      --panel-soft: #252020;
+      --ink: #F4F4F6;
       --muted: #A1A1AA;
-      --muted-light: #71717A;
       --accent: #F07B47;
       --accent-dark: #FF9466;
-      --accent-soft: #272222;
-      --border-sketch: 2px solid #F4F4F5;
-      --shadow-sketch: 4px 5px 0px #09090B;
-      --shadow-sketch-lg: 7px 8px 0px #09090B;
+      --border-manga: 3px solid #F4F4F6;
+      --shadow-manga: 5px 6px 0px #000000;
+      --shadow-manga-sm: 3px 4px 0px #000000;
     }
 
     *, *::before, *::after {
@@ -62,31 +54,27 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 86px;
-      font-size: 15px;
+      scroll-padding-top: 78px;
+      font-size: 14.5px;
     }
 
     body {
       font-family: var(--font-main);
-      background-color: var(--bg-primary);
+      background-color: var(--paper);
       color: var(--ink);
       overflow-x: hidden;
-      line-height: 1.65;
-      background-image: radial-gradient(rgba(24, 24, 27, 0.05) 1px, transparent 1px);
-      background-size: 24px 24px;
+      line-height: 1.55;
+      /* Efek titik screentone manga halus di latar belakang */
+      background-image: radial-gradient(rgba(20, 20, 22, 0.08) 1.2px, transparent 1.2px);
+      background-size: 14px 14px;
       transition: background-color 0.25s ease, color 0.25s ease;
     }
     body[data-theme="dark"] {
-      background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-    }
-
-    ::selection {
-      background: var(--accent);
-      color: #FFFFFF;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1.2px, transparent 1.2px);
     }
 
     /* ==========================================================================
-       2. SCROLL PROGRESS & FLOATING HAND-DRAWN NAVBAR
+       2. SCROLL PROGRESS & MANGA HEADER BAR
     ========================================================================== */
     #scroll-progress {
       position: fixed;
@@ -95,443 +83,378 @@
       background: var(--accent);
       z-index: 9998;
       width: 0%;
-      transition: width 0.05s linear;
     }
 
     #navbar {
       position: sticky;
-      top: 12px;
-      width: min(1240px, 94%);
-      margin: 12px auto 0;
-      padding: 11px 22px;
-      background: var(--bg-card);
-      border: var(--border-sketch);
-      border-radius: 18px 22px 16px 20px / 20px 16px 22px 18px;
-      box-shadow: var(--shadow-sketch);
+      top: 10px;
+      width: min(1240px, 95%);
+      margin: 10px auto 14px;
+      padding: 9px 18px;
+      background: var(--panel-bg);
+      border: var(--border-manga);
+      box-shadow: var(--shadow-manga-sm);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 10px;
       z-index: 1000;
-      transition: all 0.25s ease;
     }
 
     .nav-brand {
       text-decoration: none;
       display: inline-flex;
       align-items: center;
+      gap: 8px;
     }
-
     .nav-logo {
-      font-family: var(--font-hand);
-      font-size: 2rem;
+      font-family: var(--font-comic);
+      font-size: 1.9rem;
       font-weight: 700;
       color: var(--ink);
       line-height: 1;
+      letter-spacing: 0.02em;
     }
-    .nav-logo span {
-      color: var(--accent);
+    .nav-logo span { color: var(--accent); }
+    .vol-badge {
+      font-size: 0.65rem;
+      font-weight: 900;
+      background: var(--yellow);
+      color: #141416;
+      border: 2px solid #141416;
+      padding: 1px 7px;
+      transform: rotate(-3deg);
     }
 
     .nav-menu {
       display: flex;
-      gap: 4px;
+      gap: 3px;
       list-style: none;
       align-items: center;
       flex-wrap: wrap;
     }
-
     .nav-menu a {
-      font-size: 0.84rem;
-      font-weight: 700;
+      font-size: 0.78rem;
+      font-weight: 800;
       color: var(--ink);
       text-decoration: none;
-      padding: 6px 12px;
-      border-radius: 999px;
-      transition: all 0.2s ease;
+      padding: 5px 10px;
+      border: 1.5px solid transparent;
+      transition: all 0.15s ease;
     }
-
-    .nav-menu a:hover,
-    .nav-menu a.active {
-      color: var(--accent);
-      background: var(--accent-soft);
+    .nav-menu a:hover, .nav-menu a.active {
+      background: var(--accent);
+      color: #FFFFFF;
+      border-color: var(--ink);
     }
 
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
-
     .nav-cta {
       background: var(--ink);
-      color: var(--bg-primary);
-      font-size: 0.82rem;
+      color: var(--panel-bg);
+      font-size: 0.78rem;
       font-weight: 800;
-      padding: 8px 16px;
-      border: var(--border-sketch);
-      border-radius: var(--radius-sketch);
+      padding: 6px 14px;
+      border: 2px solid var(--ink);
       text-decoration: none;
       box-shadow: 2px 3px 0px var(--accent);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.15s ease;
     }
-    .nav-cta:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 4px 5px 0px var(--accent);
-    }
+    .nav-cta:hover { transform: translate(-2px, -2px); }
 
     .theme-toggle {
-      width: 36px;
-      height: 36px;
-      border: var(--border-sketch);
-      border-radius: 50%;
-      background: var(--accent-soft);
+      width: 34px;
+      height: 34px;
+      border: 2px solid var(--ink);
+      background: var(--panel-soft);
       color: var(--ink);
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
-      font-weight: 800;
-      transition: transform 0.2s ease, background 0.2s ease;
+      font-weight: 900;
     }
-    .theme-toggle:hover {
-      background: var(--accent);
-      color: #FFFFFF;
-      transform: rotate(-12deg);
-    }
+    .theme-toggle:hover { background: var(--accent); color: #FFFFFF; }
 
     .hamburger {
       display: none;
       flex-direction: column;
-      gap: 5px;
+      gap: 4px;
       cursor: pointer;
-      padding: 6px;
-      z-index: 1001;
+      padding: 5px;
     }
     .hamburger span {
       display: block;
-      width: 24px;
+      width: 22px;
       height: 2.5px;
       background: var(--ink);
-      border-radius: 2px;
-      transition: 0.3s;
     }
-    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
     .mobile-menu {
       display: none;
       position: fixed;
       inset: 0;
-      background: var(--bg-primary);
+      background: var(--panel-bg);
       z-index: 999;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 18px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
+      gap: 16px;
     }
-    .mobile-menu.open {
-      opacity: 1;
-      pointer-events: all;
-      display: flex;
-    }
+    .mobile-menu.open { display: flex; }
     .mobile-menu a {
-      font-family: var(--font-hand);
+      font-family: var(--font-comic);
       font-size: 2rem;
       font-weight: 700;
       color: var(--ink);
       text-decoration: none;
     }
-    .mobile-menu a:hover {
-      color: var(--accent);
-    }
 
     /* ==========================================================================
-       3. CONTAINER & TYPOGRAPHY (HAND-DRAWN EDITORIAL)
+       3. MANGA PAGE GRID SYSTEM (PADAT & DINAMIS ALA KOMIK)
     ========================================================================== */
-    .container {
-      width: min(1180px, 92%);
-      margin: 0 auto;
+    .manga-sheet {
+      width: min(1240px, 95%);
+      margin: 0 auto 24px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
     }
 
-    section {
-      padding: 72px 0;
+    /* Panel Komik Dasar */
+    .manga-panel {
+      background: var(--panel-bg);
+      border: var(--border-manga);
+      box-shadow: var(--shadow-manga);
+      padding: 20px;
       position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+    .manga-panel:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 8px 0px var(--ink);
+    }
+    .manga-panel.soft { background: var(--panel-soft); }
 
-    .section-soft {
-      background: var(--bg-soft);
-      border-top: 1.5px dashed rgba(24, 24, 27, 0.2);
-      border-bottom: 1.5px dashed rgba(24, 24, 27, 0.2);
-    }
-    body[data-theme="dark"] .section-soft {
-      border-color: rgba(255, 255, 255, 0.14);
-    }
-
-    .section-label {
+    /* Nomor Chapter / Panel Pojok */
+    .panel-tag {
       display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      background: var(--accent-soft);
-      border: 1.5px solid var(--ink);
-      border-radius: 999px;
-      padding: 4px 13px;
+      font-family: var(--font-comic);
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      background: var(--ink);
+      color: var(--panel-bg);
+      padding: 2px 10px;
       margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .panel-tag.orange {
+      background: var(--accent);
+      color: #FFFFFF;
+      border: 1.5px solid var(--ink);
     }
 
-    .section-title {
-      font-family: var(--font-hand);
-      font-size: clamp(2.2rem, 4.2vw, 3.2rem);
+    /* Judul Komik */
+    .comic-title {
+      font-family: var(--font-comic);
+      font-size: clamp(1.75rem, 2.8vw, 2.35rem);
       font-weight: 700;
       line-height: 1.05;
       color: var(--ink);
       margin-bottom: 10px;
+    }
+    .comic-title span { color: var(--accent); }
+
+    /* Gelembung Dialog (Speech Bubble) */
+    .speech-bubble {
       position: relative;
-      display: inline-block;
+      background: var(--panel-bg);
+      border: 2px solid var(--ink);
+      border-radius: 18px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--ink);
+      box-shadow: 2px 3px 0px var(--ink);
+      margin-bottom: 14px;
     }
-    .section-title::after {
+    .speech-bubble::after {
       content: '';
-      display: block;
-      width: 65%;
-      height: 4px;
-      background: var(--accent);
-      border-radius: 50% 20% / 10% 40%;
-      margin-top: 4px;
+      position: absolute;
+      bottom: -10px;
+      left: 22px;
+      border-width: 10px 10px 0 0;
+      border-style: solid;
+      border-color: var(--ink) transparent transparent transparent;
     }
 
-    .section-sub {
-      font-size: 0.94rem;
-      color: var(--muted);
-      max-width: 580px;
-      margin-bottom: 32px;
-    }
-
-    /* Reveal Animations */
-    .reveal, .reveal-left {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-    .reveal.visible, .reveal-left.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Hand-Drawn Buttons */
+    /* Tombol Komik */
     .btn {
       font-family: var(--font-main);
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       font-weight: 800;
-      padding: 11px 22px;
-      border: var(--border-sketch);
-      border-radius: var(--radius-sketch);
+      padding: 9px 18px;
+      border: 2.5px solid var(--ink);
       cursor: pointer;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      box-shadow: var(--shadow-sketch);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      gap: 6px;
+      box-shadow: var(--shadow-manga-sm);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    .btn-primary {
-      background: var(--accent);
-      color: #FFFFFF;
-    }
+    .btn-primary { background: var(--accent); color: #FFFFFF; }
     .btn-primary:hover {
-      transform: translate(-3px, -3px);
-      box-shadow: var(--shadow-sketch-lg);
+      transform: translate(-2px, -2px);
       background: var(--accent-dark);
     }
-    .btn-secondary {
-      background: var(--bg-card);
-      color: var(--ink);
-    }
+    .btn-secondary { background: var(--panel-bg); color: var(--ink); }
     .btn-secondary:hover {
-      transform: translate(-3px, -3px);
-      box-shadow: var(--shadow-sketch-lg);
-      background: var(--accent-soft);
+      transform: translate(-2px, -2px);
+      background: var(--yellow);
+      color: #141416;
     }
 
     /* ==========================================================================
-       4. HERO SECTION (REFERENSI CLEAN EDITORIAL + SKETCH ACCENTS)
+       4. PANEL 1 & 2: HERO COVER & CHARACTER CARD (COL 7 + COL 5)
     ========================================================================== */
-    #hero {
-      padding: 68px 0 64px;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      align-items: center;
-      gap: 44px;
-    }
-    .hero-greeting {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--muted);
-      margin-bottom: 6px;
-      display: block;
+    .panel-hero {
+      grid-column: span 7;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      /* Efek Garis Kecepatan Manga (Speedlines) di pojok kanan atas */
+      background-image: repeating-linear-gradient(
+        -35deg,
+        transparent,
+        transparent 14px,
+        rgba(232, 111, 58, 0.06) 14px,
+        rgba(232, 111, 58, 0.06) 16px
+      );
     }
     .hero-name {
-      font-family: var(--font-hand);
-      font-size: clamp(3.4rem, 6.5vw, 5.4rem);
+      font-family: var(--font-comic);
+      font-size: clamp(3rem, 5.5vw, 4.7rem);
       font-weight: 700;
-      line-height: 0.94;
+      line-height: 0.92;
       color: var(--ink);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .hero-name em {
       font-style: normal;
       color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: var(--yellow);
+      text-decoration-thickness: 5px;
     }
-    .hero-subtitle {
-      font-size: 0.96rem;
-      font-weight: 800;
-      color: var(--ink);
-      margin-bottom: 16px;
+    .hero-role-strip {
+      display: inline-block;
+      background: var(--yellow);
+      color: #141416;
+      border: 2px solid #141416;
+      font-size: 0.8rem;
+      font-weight: 900;
+      padding: 3px 12px;
+      margin-bottom: 12px;
+      transform: rotate(-1deg);
     }
     .hero-desc {
-      font-size: 0.94rem;
+      font-size: 0.88rem;
       color: var(--muted);
-      max-width: 520px;
-      margin-bottom: 26px;
-      line-height: 1.75;
+      margin-bottom: 18px;
+      line-height: 1.65;
     }
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+    .hero-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
 
-    /* Hero Right Visual (Sketch Blob + Lamp + Shelf + profile.jpg) */
-    .hero-visual {
-      position: relative;
+    /* Panel Karakter Foto */
+    .panel-character {
+      grid-column: span 5;
+      background: var(--panel-soft);
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      text-align: center;
     }
-    .sketch-blob {
+    .char-frame-wrap {
+      position: relative;
+      width: min(230px, 78%);
+      aspect-ratio: 4/5;
+      margin: 6px auto 12px;
+    }
+    .char-backdrop {
       position: absolute;
-      width: 325px;
-      height: 325px;
+      inset: 0;
       background: var(--accent);
-      border: var(--border-sketch);
-      border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%;
-      z-index: 0;
-      transform: rotate(-6deg);
-      animation: morphBlob 8s ease-in-out infinite;
+      border: 2.5px solid var(--ink);
+      transform: rotate(-4deg) translate(-6px, 6px);
     }
-    @keyframes morphBlob {
-      0%, 100% { border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%; }
-      50% { border-radius: 45% 55% 62% 38% / 48% 62% 38% 52%; }
-    }
-    .hero-img-frame {
+    .char-photo {
       position: relative;
       z-index: 2;
-      width: min(305px, 84%);
-      aspect-ratio: 4/5;
-      background: var(--bg-card);
-      border: 2.5px solid var(--ink);
-      border-radius: 24px 14px 28px 16px / 16px 26px 14px 24px;
-      box-shadow: var(--shadow-sketch-lg);
-      overflow: hidden;
-      animation: floatDoodle 4.5s ease-in-out infinite;
-    }
-    @keyframes floatDoodle {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-9px); }
-    }
-    .hero-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border: 2.5px solid var(--ink);
+      background: var(--panel-bg);
       display: block;
     }
-    .sketch-lamp {
+    .sfx-onomatopoeia {
       position: absolute;
-      top: -36px;
-      left: 10%;
-      z-index: 3;
-      width: 54px;
-      height: 64px;
-    }
-    .sketch-shelf {
-      position: absolute;
-      top: -16px;
-      right: 2%;
-      z-index: 3;
-      width: 96px;
-      height: 72px;
-    }
-    .deco-box {
-      position: absolute;
-      top: 16px;
-      left: 4%;
+      top: -10px;
+      right: -18px;
       z-index: 4;
-      width: 42px;
-      height: 42px;
+      font-family: var(--font-comic);
+      font-size: 1.35rem;
+      font-weight: 700;
       background: var(--yellow);
-      color: #18181B;
-      border: 2px solid #18181B;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 0.85rem;
-      box-shadow: 3px 4px 0px #18181B;
+      color: #141416;
+      border: 2px solid #141416;
+      padding: 1px 10px;
+      transform: rotate(10deg);
+      box-shadow: 2px 3px 0px #141416;
     }
-    .deco-tag {
-      position: absolute;
-      bottom: -14px;
-      right: 6%;
-      z-index: 4;
-      background: var(--bg-card);
+    .char-caption {
+      font-family: var(--font-comic);
+      font-size: 1.15rem;
+      font-weight: 700;
       color: var(--ink);
-      border: var(--border-sketch);
-      border-radius: var(--radius-sketch);
-      padding: 6px 15px;
-      font-size: 0.8rem;
-      font-weight: 800;
-      box-shadow: var(--shadow-sketch);
     }
-    .deco-tag strong {
-      color: var(--accent);
-    }
+    .char-caption span { color: var(--accent); }
 
-    /* Marquee Banner */
-    .sketch-marquee-bar {
-      background: var(--accent);
-      color: #FFFFFF;
-      border-top: var(--border-sketch);
-      border-bottom: var(--border-sketch);
-      padding: 10px 0;
+    /* ==========================================================================
+       5. MARQUEE TICKER KOMIK (COL 12)
+    ========================================================================== */
+    .panel-ticker {
+      grid-column: span 12;
+      background: var(--ink);
+      color: var(--panel-bg);
+      border: var(--border-manga);
+      padding: 8px 0;
       overflow: hidden;
       white-space: nowrap;
     }
-    .sketch-marquee-track {
+    .ticker-track {
       display: inline-flex;
       align-items: center;
-      gap: 24px;
-      animation: scrollMarquee 26s linear infinite;
-      font-size: 0.78rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
+      gap: 22px;
+      animation: scrollMarquee 24s linear infinite;
+      font-family: var(--font-comic);
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
     }
-    .sketch-marquee-track span.sep {
-      width: 7px;
-      height: 7px;
-      background: var(--yellow);
-      border-radius: 50%;
+    .ticker-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
       display: inline-block;
+      transform: rotate(45deg);
     }
     @keyframes scrollMarquee {
       0% { transform: translateX(0); }
@@ -539,656 +462,478 @@
     }
 
     /* ==========================================================================
-       5. ABOUT ME SECTION (SKETCH ILLUSTRATION + TEXT + STATS)
+       6. PANEL ABOUT & STATS (COL 6) + PANEL SKILLS (COL 6)
     ========================================================================== */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.82fr 1.18fr;
-      gap: 48px;
-      align-items: center;
-    }
-    .about-sketch-card {
-      background: var(--accent-soft);
-      border: var(--border-sketch);
-      border-radius: var(--radius-card);
-      padding: 28px;
-      box-shadow: var(--shadow-sketch);
+    .panel-about { grid-column: span 6; }
+    .about-flex {
       display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .about-text p {
-      font-size: 0.94rem;
-      color: var(--muted);
+      gap: 16px;
+      align-items: flex-start;
       margin-bottom: 14px;
-      line-height: 1.75;
     }
-    .about-stats {
+    .about-doodle {
+      flex-shrink: 0;
+      width: 115px;
+      background: var(--panel-soft);
+      border: 2px solid var(--ink);
+      padding: 8px;
+    }
+    .about-p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .stats-mini-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 22px;
+      gap: 8px;
     }
-    .stat-card {
-      background: var(--bg-card);
-      border: var(--border-sketch);
-      border-radius: 16px 20px 16px 18px;
-      padding: 14px 12px;
-      box-shadow: 3px 4px 0px #18181B;
-      transition: transform 0.2s ease;
+    .stat-box {
+      background: var(--panel-soft);
+      border: 2px solid var(--ink);
+      padding: 8px 6px;
+      text-align: center;
     }
-    .stat-card:hover {
-      transform: translateY(-3px);
-    }
-    .stat-num {
-      font-family: var(--font-hand);
-      font-size: 1.9rem;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.05;
-    }
-    .stat-num .acc {
-      color: var(--accent);
-    }
-    .stat-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--muted);
-      margin-top: 3px;
-    }
-
-    /* ==========================================================================
-       6. SKILLS & TECHNOLOGIES (SKETCH ICON TILES)
-    ========================================================================== */
-    .skills-group {
-      margin-bottom: 28px;
-    }
-    .skills-group:last-child {
-      margin-bottom: 0;
-    }
-    .skills-group-title {
-      font-family: var(--font-hand);
+    .stat-box-num {
+      font-family: var(--font-comic);
       font-size: 1.55rem;
       font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .skills-group-title::after {
-      content: '';
-      flex: 1;
-      height: 2px;
-      background: repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 14px);
-    }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
-      gap: 14px;
-    }
-    .skill-card {
-      background: var(--accent-soft);
-      border: var(--border-sketch);
-      border-radius: 16px 20px 16px 18px;
-      padding: 16px 10px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 3px 4px 0px #18181B;
-      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-      cursor: pointer;
-    }
-    .skill-card:hover {
-      transform: translate(-3px, -3px);
-      background: var(--bg-card);
-      box-shadow: 5px 6px 0px var(--accent);
-    }
-    .skill-icon-box {
-      width: 38px;
-      height: 38px;
-      background: var(--bg-card);
-      border: 1.5px solid var(--ink);
-      border-radius: 10px 8px 12px 9px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-hand);
-      font-size: 1.1rem;
-      font-weight: 700;
+      line-height: 1;
       color: var(--ink);
     }
-    .skill-card:hover .skill-icon-box {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-    .skill-name {
-      font-size: 0.78rem;
+    .stat-box-num span { color: var(--accent); }
+    .stat-box-lbl {
+      font-size: 0.66rem;
       font-weight: 800;
-      color: var(--ink);
-      line-height: 1.3;
+      color: var(--muted);
+      margin-top: 2px;
     }
 
-    /* ==========================================================================
-       7. SELECTED WORK / PROJECTS (REFERENSI CARD STYLE)
-    ========================================================================== */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-    }
-    .project-card {
-      background: var(--bg-card);
-      border: var(--border-sketch);
-      border-radius: var(--radius-card);
-      overflow: hidden;
-      box-shadow: var(--shadow-sketch);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .project-card:hover {
-      transform: translate(-4px, -4px);
-      box-shadow: var(--shadow-sketch-lg);
-    }
-    .project-preview {
-      background: var(--accent-soft);
-      padding: 18px 18px 0 18px;
-      border-bottom: var(--border-sketch);
-    }
-    .project-browser {
-      background: var(--bg-card);
-      border: 2px solid var(--ink);
-      border-bottom: none;
-      border-radius: 12px 12px 0 0;
-      padding: 14px;
-      min-height: 112px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .browser-dots {
-      display: flex;
-      gap: 5px;
-      margin-bottom: 10px;
-    }
-    .browser-dots span {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      border: 1.5px solid var(--ink);
-      background: var(--accent-soft);
-    }
-    .browser-dots span:first-child {
-      background: var(--accent);
-    }
-    .project-category-badge {
-      font-size: 0.68rem;
-      font-weight: 900;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      text-transform: uppercase;
-    }
-    .project-num {
-      font-family: var(--font-hand);
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--ink);
-    }
-    .project-body {
-      padding: 20px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .project-title-row {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 8px;
-    }
-    .project-title {
-      font-family: var(--font-hand);
-      font-size: 1.5rem;
-      font-weight: 700;
-      line-height: 1.15;
-      color: var(--ink);
-    }
-    .project-link-arrow {
-      color: var(--accent);
-      font-weight: 900;
-      text-decoration: none;
+    /* Panel Skills */
+    .panel-skills { grid-column: span 6; }
+    .skill-cat-title {
+      font-family: var(--font-comic);
       font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 8px 0 6px;
     }
-    .project-desc {
-      font-size: 0.86rem;
-      color: var(--muted);
-      line-height: 1.65;
-      margin-bottom: 16px;
-      flex: 1;
-    }
-    .project-tags {
+    .skill-chips {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-bottom: 16px;
     }
-    .project-tags span {
-      font-size: 0.72rem;
+    .skill-chip {
+      font-size: 0.74rem;
       font-weight: 800;
-      padding: 3px 10px;
-      background: var(--accent-soft);
+      padding: 4px 10px;
+      background: var(--panel-soft);
+      border: 1.5px solid var(--ink);
       color: var(--ink);
-      border: 1px solid rgba(24, 24, 27, 0.3);
-      border-radius: 999px;
+      box-shadow: 2px 2px 0px var(--ink);
+      transition: transform 0.15s ease, background 0.15s ease;
+      cursor: default;
     }
-    .project-action {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      align-self: flex-start;
-      padding: 8px 16px;
-      border: var(--border-sketch);
-      border-radius: var(--radius-sketch);
+    .skill-chip:hover {
       background: var(--accent);
       color: #FFFFFF;
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 800;
-      box-shadow: 2px 3px 0px #18181B;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-    .project-action:hover {
-      background: var(--accent-dark);
-      transform: translate(-2px, -2px);
+      transform: translate(-1px, -1px);
     }
 
     /* ==========================================================================
-       8. EXPERIENCE & ORGANIZATION (CARDS)
+       7. PANEL SELECTED WORK / PROJECTS (3 PANEL SEJAJAR COL 4 + 4 + 4)
     ========================================================================== */
-    .exp-grid, .org-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 22px;
-    }
-    .exp-card, .org-card {
-      background: var(--bg-card);
-      border: var(--border-sketch);
-      border-radius: var(--radius-card);
-      padding: 24px;
-      box-shadow: var(--shadow-sketch);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .exp-card:hover, .org-card:hover {
-      transform: translate(-3px, -3px);
-      box-shadow: var(--shadow-sketch-lg);
-    }
-    .card-header-flex {
+    .panel-project {
+      grid-column: span 4;
       display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 12px;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .sketch-icon-badge {
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
-      background: var(--accent-soft);
-      border: var(--border-sketch);
-      border-radius: 12px 14px 10px 14px;
+    .proj-top {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      color: var(--ink);
-    }
-    .exp-date, .org-year {
-      font-size: 0.78rem;
-      font-weight: 800;
-      color: var(--accent);
-    }
-    .exp-company, .org-name {
-      font-family: var(--font-hand);
-      font-size: 1.55rem;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.15;
-    }
-    .exp-role, .org-role {
-      font-size: 0.84rem;
-      font-weight: 800;
-      color: var(--accent);
+      border-bottom: 2px dashed var(--ink);
+      padding-bottom: 8px;
       margin-bottom: 10px;
     }
-    .org-badge {
-      display: inline-block;
+    .proj-cat {
       font-size: 0.68rem;
       font-weight: 900;
-      text-transform: uppercase;
+      color: var(--accent);
       letter-spacing: 0.08em;
-      background: var(--yellow);
-      color: #18181B;
-      border: 1.5px solid #18181B;
-      padding: 2px 10px;
-      border-radius: 999px;
-      margin-bottom: 10px;
     }
-    .exp-list, .org-list {
+    .proj-ep {
+      font-family: var(--font-comic);
+      font-size: 1.15rem;
+      font-weight: 700;
+      background: var(--yellow);
+      color: #141416;
+      border: 1.5px solid #141416;
+      padding: 0 8px;
+    }
+    .proj-title {
+      font-family: var(--font-comic);
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .proj-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+      flex: 1;
+    }
+    .proj-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 12px;
+    }
+    .proj-tags span {
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      background: var(--panel-soft);
+      border: 1px solid var(--ink);
+    }
+    .proj-link {
+      align-self: flex-start;
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 6px 14px;
+      background: var(--accent);
+      color: #FFFFFF;
+      border: 2px solid var(--ink);
+      text-decoration: none;
+      box-shadow: 2px 3px 0px var(--ink);
+    }
+    .proj-link:hover { background: var(--accent-dark); }
+
+    /* ==========================================================================
+       8. PANEL EXPERIENCE (COL 5) + PANEL ORGANIZATIONS (COL 7)
+    ========================================================================== */
+    .panel-exp { grid-column: span 5; }
+    .exp-box {
+      background: var(--panel-soft);
+      border: 2px solid var(--ink);
+      padding: 14px;
+    }
+    .exp-period {
+      font-size: 0.74rem;
+      font-weight: 900;
+      color: var(--accent);
+    }
+    .exp-company {
+      font-family: var(--font-comic);
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+    .exp-role {
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .comic-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
     }
-    .exp-list li, .org-list li {
-      font-size: 0.85rem;
+    .comic-list li {
+      font-size: 0.79rem;
       color: var(--muted);
-      padding-left: 16px;
+      padding-left: 14px;
       position: relative;
-      line-height: 1.55;
     }
-    .exp-list li::before, .org-list li::before {
-      content: '•';
+    .comic-list li::before {
+      content: '▸';
       position: absolute;
       left: 0;
       color: var(--accent);
       font-weight: 900;
     }
-    .org-divider {
-      border: none;
-      border-top: 1.5px dashed rgba(24, 24, 27, 0.2);
-      margin: 12px 0;
-    }
 
-    /* ==========================================================================
-       9. MY PROCESS (5 LANGKAH HORIZONTAL ALA REFERENSI)
-    ========================================================================== */
-    .process-grid {
+    .panel-org { grid-column: span 7; }
+    .org-mini-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
     }
-    .process-step {
-      text-align: center;
-      padding: 20px 14px;
-      background: var(--bg-card);
-      border: 1.5px dashed rgba(24, 24, 27, 0.35);
-      border-radius: 18px;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-    .process-step:hover {
-      transform: translateY(-4px);
-      border-style: solid;
-      border-color: var(--ink);
-      box-shadow: var(--shadow-sketch);
-    }
-    .process-circle {
-      width: 52px;
-      height: 52px;
-      margin: 0 auto 12px;
-      background: var(--accent-soft);
-      border: var(--border-sketch);
-      border-radius: 52% 48% 45% 55% / 55% 45% 52% 48%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--ink);
-    }
-    .process-num {
-      font-size: 0.78rem;
-      font-weight: 900;
-      color: var(--accent);
-      margin-bottom: 2px;
-    }
-    .process-name {
-      font-family: var(--font-hand);
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 4px;
-    }
-    .process-desc {
-      font-size: 0.78rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    /* ==========================================================================
-       10. CERTIFICATES & GALLERY SECTION
-    ========================================================================== */
-    .certificates-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .cert-card {
-      background: var(--bg-card);
-      border: var(--border-sketch);
-      border-radius: var(--radius-card);
-      overflow: hidden;
-      box-shadow: var(--shadow-sketch);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    .org-card {
+      background: var(--panel-soft);
+      border: 2px solid var(--ink);
+      padding: 12px;
       display: flex;
       flex-direction: column;
     }
-    .cert-card:hover {
-      transform: translate(-3px, -3px);
-      box-shadow: var(--shadow-sketch-lg);
+    .org-pill {
+      align-self: flex-start;
+      font-size: 0.64rem;
+      font-weight: 900;
+      background: var(--yellow);
+      color: #141416;
+      border: 1.5px solid #141416;
+      padding: 1px 8px;
+      margin-bottom: 6px;
     }
-    .cert-img {
-      width: 100%;
-      aspect-ratio: 16/10;
-      background: var(--accent-soft);
-      border-bottom: var(--border-sketch);
+    .org-name {
+      font-family: var(--font-comic);
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+    .org-role {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    /* ==========================================================================
+       9. PANEL WORKFLOW 5-STEP MANGA STRIP (COL 12)
+    ========================================================================== */
+    .panel-workflow { grid-column: span 12; }
+    .workflow-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    .wf-cell {
+      background: var(--panel-soft);
+      border: 2px solid var(--ink);
+      padding: 12px;
+      position: relative;
+    }
+    .wf-num {
+      font-family: var(--font-comic);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .wf-title {
+      font-family: var(--font-comic);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    .wf-desc {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* ==========================================================================
+       10. PANEL CERTIFICATES (COL 6) + PANEL GALLERY (COL 6)
+    ========================================================================== */
+    .panel-certs { grid-column: span 6; }
+    .cert-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .cert-box {
+      border: 2px solid var(--ink);
+      background: var(--panel-soft);
       overflow: hidden;
-      cursor: pointer;
+      display: flex;
+      flex-direction: column;
     }
-    .cert-img img {
+    .cert-thumb {
+      aspect-ratio: 16/9;
+      border-bottom: 2px solid var(--ink);
+      cursor: pointer;
+      overflow: hidden;
+      background: var(--panel-bg);
+    }
+    .cert-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.35s ease;
+      display: block;
     }
-    .cert-card:hover .cert-img img {
-      transform: scale(1.04);
-    }
-    .cert-body {
-      padding: 16px;
+    .cert-info {
+      padding: 8px 10px;
       flex: 1;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
     }
-    .cert-tag {
-      display: inline-block;
-      align-self: flex-start;
-      font-size: 0.66rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      background: var(--accent-soft);
-      color: var(--accent);
-      border: 1px solid var(--ink);
-      border-radius: 999px;
-      padding: 2px 10px;
-      margin-bottom: 8px;
-    }
-    .cert-title {
-      font-family: var(--font-hand);
-      font-size: 1.35rem;
+    .cert-name {
+      font-family: var(--font-comic);
+      font-size: 1.1rem;
       font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 6px;
-      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 3px;
     }
-    .cert-desc {
-      font-size: 0.82rem;
+    .cert-sub {
+      font-size: 0.72rem;
       color: var(--muted);
-      margin-bottom: 14px;
-      flex: 1;
+      margin-bottom: 6px;
     }
-    .cert-btn {
-      align-self: flex-start;
-      font-size: 0.76rem;
+    .cert-view {
+      font-size: 0.7rem;
       font-weight: 800;
-      color: #FFFFFF;
-      background: var(--accent);
-      border: 1.5px solid var(--ink);
-      border-radius: var(--radius-sketch);
-      padding: 6px 14px;
+      color: var(--accent);
       text-decoration: none;
-      box-shadow: 2px 3px 0px #18181B;
-      transition: background 0.2s ease;
-    }
-    .cert-btn:hover {
-      background: var(--accent-dark);
     }
 
-    /* Gallery */
-    .gallery-grid {
-      columns: 3;
-      column-gap: 18px;
+    /* Gallery Panel */
+    .panel-gallery { grid-column: span 6; }
+    .gallery-comic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
     }
-    .gallery-item {
-      break-inside: avoid;
-      margin-bottom: 18px;
-      border: var(--border-sketch);
-      border-radius: var(--radius-card);
+    .gal-frame {
+      aspect-ratio: 1/1;
+      border: 2px solid var(--ink);
       overflow: hidden;
       cursor: pointer;
-      position: relative;
-      background: var(--accent-soft);
-      box-shadow: var(--shadow-sketch);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      background: var(--panel-soft);
     }
-    .gallery-item:hover {
-      transform: translate(-3px, -3px);
-      box-shadow: var(--shadow-sketch-lg);
-    }
-    .gallery-item img {
+    .gal-frame img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
+      transition: transform 0.25s ease;
     }
-    .gallery-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(232, 111, 58, 0.24);
-      opacity: 0;
-      transition: opacity 0.25s;
+    .gal-frame:hover img { transform: scale(1.06); }
+
+    /* ==========================================================================
+       11. PANEL FINALE / CONTACT FOOTER (COL 12)
+    ========================================================================== */
+    .panel-contact {
+      grid-column: span 12;
+      background: var(--panel-soft);
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 0.8fr;
+      gap: 24px;
+      align-items: center;
     }
-    .gallery-item:hover .gallery-overlay {
-      opacity: 1;
+    .contact-big {
+      font-family: var(--font-comic);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+    .contact-big span { color: var(--accent); }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .contact-links a, .contact-links div {
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .contact-links a:hover { color: var(--accent); }
+    .social-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .social-chip {
+      padding: 6px 12px;
+      background: var(--panel-bg);
+      border: 2px solid var(--ink);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 800;
+      box-shadow: 2px 3px 0px var(--ink);
+    }
+    .social-chip:hover {
+      background: var(--accent);
+      color: #FFFFFF;
     }
 
-    /* Lightbox */
+    /* ==========================================================================
+       12. LIGHTBOX & COMPACT MANGA MUSIC PLAYER
+    ========================================================================== */
     #lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(24, 24, 27, 0.9);
+      background: rgba(20, 20, 22, 0.92);
       z-index: 9996;
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s;
     }
-    #lightbox.open {
-      opacity: 1;
-      pointer-events: all;
-    }
+    #lightbox.open { display: flex; }
     #lightbox img {
       max-width: 90vw;
       max-height: 85vh;
       border: 3px solid #FFFFFF;
-      border-radius: 18px;
     }
     #lightbox-close {
       position: absolute;
-      top: 20px;
-      right: 22px;
-      background: #FFFFFF;
-      color: #18181B;
-      border: 2px solid #18181B;
-      border-radius: 999px;
-      padding: 6px 16px;
-      cursor: pointer;
+      top: 18px;
+      right: 20px;
+      background: var(--yellow);
+      color: #141416;
+      border: 2px solid #141416;
+      padding: 5px 14px;
       font-weight: 900;
-      box-shadow: 3px 4px 0px #18181B;
+      cursor: pointer;
     }
 
-    /* ==========================================================================
-       11. COMPACT SPOTIFY-INSPIRED MUSIC WIDGET (HAND-DRAWN STYLE)
-    ========================================================================== */
     #spotify-widget {
       position: fixed;
-      bottom: 14px;
-      right: 14px;
-      width: 256px;
+      bottom: 12px;
+      right: 12px;
+      width: 245px;
       display: grid;
-      grid-template-columns: 38px minmax(0, 1fr) auto;
+      grid-template-columns: 36px minmax(0, 1fr) auto;
       align-items: center;
       gap: 8px;
-      padding: 7px 10px;
-      border-radius: 16px;
-      background: var(--bg-card);
-      border: var(--border-sketch);
-      box-shadow: 3px 4px 0px #18181B;
+      padding: 6px 9px;
+      background: var(--panel-bg);
+      border: 2.5px solid var(--ink);
+      box-shadow: 3px 4px 0px var(--ink);
       z-index: 9995;
-      transition: transform 0.2s ease;
-    }
-    #spotify-widget:hover {
-      transform: translateY(-2px);
     }
     .spotify-disk {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
+      width: 36px;
+      height: 36px;
       border: 1.5px solid var(--ink);
       overflow: hidden;
-      background: var(--accent-soft);
     }
-    .spotify-disk img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .spotify-info {
-      min-width: 0;
-    }
+    .spotify-disk img { width: 100%; height: 100%; object-fit: cover; }
+    .spotify-info { min-width: 0; }
     .spotify-title {
-      font-size: 0.72rem;
-      font-weight: 800;
+      font-size: 0.7rem;
+      font-weight: 900;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      color: var(--ink);
     }
     .spotify-artist {
-      font-size: 0.62rem;
-      font-weight: 700;
+      font-size: 0.6rem;
+      font-weight: 800;
       color: var(--accent);
     }
-    .spotify-controls {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
+    .spotify-controls { display: flex; gap: 4px; }
     .spotify-btn {
       width: 24px;
       height: 24px;
-      border-radius: 50%;
       border: 1.5px solid var(--ink);
-      background: var(--bg-card);
+      background: var(--panel-soft);
       color: var(--ink);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-    .spotify-btn:hover {
-      background: var(--accent-soft);
     }
     .spotify-btn svg {
       width: 12px;
@@ -1196,729 +941,443 @@
       fill: none;
       stroke: currentColor;
       stroke-width: 2.2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
     }
-    #playPauseBtn {
-      width: 28px;
-      height: 28px;
-      background: var(--accent);
-      color: #FFFFFF;
-    }
-    #playPauseBtn .play-shape {
-      fill: currentColor;
-      stroke: none;
-    }
+    #playPauseBtn { background: var(--accent); color: #FFFFFF; }
+    #playPauseBtn .play-shape { fill: currentColor; stroke: none; }
 
     /* ==========================================================================
-       12. CONTACT & FOOTER (ALA REFERENSI BOTTOM LAYOUT)
-    ========================================================================== */
-    footer {
-      background: var(--accent-soft);
-      border-top: var(--border-sketch);
-      padding: 64px 0 32px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr 0.85fr;
-      gap: 36px;
-      align-items: start;
-      padding-bottom: 36px;
-      border-bottom: 1.5px dashed rgba(24, 24, 27, 0.25);
-    }
-    .footer-headline {
-      font-family: var(--font-hand);
-      font-size: clamp(2.1rem, 3.6vw, 3rem);
-      font-weight: 700;
-      line-height: 1.08;
-      color: var(--ink);
-      margin-bottom: 16px;
-    }
-    .footer-headline span {
-      color: var(--accent);
-    }
-    .footer-contacts {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .footer-contact-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--ink);
-      text-decoration: none;
-    }
-    .footer-contact-row:hover {
-      color: var(--accent);
-    }
-    .footer-icon-box {
-      width: 32px;
-      height: 32px;
-      background: var(--bg-card);
-      border: var(--border-sketch);
-      border-radius: 9px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      flex-shrink: 0;
-      font-weight: 900;
-      font-size: 0.78rem;
-    }
-    .footer-connect-title {
-      font-family: var(--font-hand);
-      font-size: 1.45rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--ink);
-    }
-    .footer-socials {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .social-btn {
-      padding: 7px 14px;
-      background: var(--bg-card);
-      border: var(--border-sketch);
-      border-radius: var(--radius-sketch);
-      color: var(--ink);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 800;
-      box-shadow: 2px 3px 0px #18181B;
-      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
-    }
-    .social-btn:hover {
-      transform: translate(-2px, -2px);
-      background: var(--accent);
-      color: #FFFFFF;
-    }
-    .footer-bottom {
-      padding-top: 24px;
-      text-align: center;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--muted);
-    }
-
-    /* ==========================================================================
-       13. RESPONSIVE BREAKPOINTS
+       13. RESPONSIVE
     ========================================================================== */
     @media (max-width: 960px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
-      .hero-visual { order: -1; }
-      .about-grid { grid-template-columns: 1fr; gap: 28px; }
-      .projects-grid { grid-template-columns: repeat(2, 1fr); }
-      .process-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr; gap: 26px; }
+      .panel-hero, .panel-character, .panel-about, .panel-skills,
+      .panel-project, .panel-exp, .panel-org, .panel-certs, .panel-gallery {
+        grid-column: span 12;
+      }
+      .org-mini-grid { grid-template-columns: 1fr; }
+      .workflow-strip { grid-template-columns: repeat(2, 1fr); }
+      .panel-contact { grid-template-columns: 1fr; gap: 16px; }
     }
-
     @media (max-width: 680px) {
-      section { padding: 52px 0; }
       .nav-menu, .nav-cta { display: none; }
       .hamburger { display: flex; }
-      .about-stats { grid-template-columns: 1fr 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .gallery-grid { columns: 2; }
-      .process-grid { grid-template-columns: 1fr; }
-      #spotify-widget { width: 224px; right: 10px; bottom: 10px; }
+      .about-flex { flex-direction: column; }
+      .stats-mini-grid { grid-template-columns: repeat(2, 1fr); }
+      .workflow-strip { grid-template-columns: 1fr; }
+      .cert-mini-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <!-- ========== SCROLL PROGRESS BAR ========== -->
   <div id="scroll-progress"></div>
 
-  <!-- ========== MOBILE MENU ========== -->
+  <!-- MOBILE MENU -->
   <nav class="mobile-menu" id="mobileMenu">
-    <a href="#hero" onclick="closeMobile()">Home</a>
-    <a href="#about" onclick="closeMobile()">About</a>
-    <a href="#skills" onclick="closeMobile()">Skills</a>
-    <a href="#projects" onclick="closeMobile()">Work</a>
-    <a href="#experience" onclick="closeMobile()">Experience</a>
-    <a href="#organization" onclick="closeMobile()">Organization</a>
-    <a href="#certificates" onclick="closeMobile()">Certificates</a>
-    <a href="#gallery" onclick="closeMobile()">Gallery</a>
-    <a href="#contact" onclick="closeMobile()">Contact</a>
+    <a href="#hero" onclick="closeMobile()">Ch.01 Cover</a>
+    <a href="#about" onclick="closeMobile()">Ch.02 Origin</a>
+    <a href="#projects" onclick="closeMobile()">Ch.03 Works</a>
+    <a href="#experience" onclick="closeMobile()">Ch.04 Guilds</a>
+    <a href="#certificates" onclick="closeMobile()">Ch.05 Archive</a>
+    <a href="#contact" onclick="closeMobile()">Finale</a>
   </nav>
 
-  <!-- ========== NAVBAR ========== -->
+  <!-- MANGA TOP BAR -->
   <header id="navbar">
     <a class="nav-brand" href="#hero">
       <span class="nav-logo">DA<span>.</span></span>
+      <span class="vol-badge">VOL. 2026</span>
     </a>
     <ul class="nav-menu">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Work</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#organization">Organization</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#hero">Ch.01 Cover</a></li>
+      <li><a href="#about">Ch.02 Profile</a></li>
+      <li><a href="#projects">Ch.03 Works</a></li>
+      <li><a href="#experience">Ch.04 Experience</a></li>
+      <li><a href="#certificates">Ch.05 Archive</a></li>
     </ul>
     <div class="nav-actions">
-      <button aria-label="Aktifkan mode gelap" class="theme-toggle" id="themeToggle" title="Ganti tema" type="button">
-        <span aria-hidden="true" class="theme-icon">☾</span>
-      </button>
-      <a class="nav-cta" href="#contact">Let's Talk &rarr;</a>
+      <button aria-label="Ganti tema" class="theme-toggle" id="themeToggle" type="button">☾</button>
+      <a class="nav-cta" href="#contact">Collab! &rarr;</a>
       <div class="hamburger" id="hamburger" onclick="toggleMobile()">
         <span></span><span></span><span></span>
       </div>
     </div>
   </header>
 
-  <!-- ========== HERO SECTION ========== -->
-  <section id="hero">
-    <div class="container hero-grid">
-      <div class="hero-content reveal">
-        <span class="hero-greeting">Hi, I'm</span>
+  <!-- ==========================================================================
+       HALAMAN KOMIK UTAMA (BENTO MANGA GRID)
+  ========================================================================== -->
+  <main class="manga-sheet">
+
+    <!-- PANEL 01: COVER STORY -->
+    <section class="manga-panel panel-hero" id="hero">
+      <div>
+        <span class="panel-tag orange">CHAPTER 01 // PROTAGONIST</span>
+        <div class="speech-bubble">"Yo! Selamat datang di ruang kreatif digitalku!"</div>
         <h1 class="hero-name">Dana <em>Alpaiji</em></h1>
-        <div class="hero-subtitle">Ekonomi Syariah &bull; Digital Innovation &bull; Leadership</div>
+        <div class="hero-role-strip">Ekonomi Syariah &bull; AI Enthusiast &bull; Student Leader</div>
         <p class="hero-desc">
-          Saya adalah mahasiswa Ekonomi Syariah yang senang mengeksplorasi teknologi, Artificial Intelligence, analisis data, dan kepemimpinan. Saya menggabungkan rasa ingin tahu, pengalaman organisasi, dan ide digital untuk membangun sesuatu yang bermanfaat.
+          Mahasiswa Ekonomi Syariah yang mengeksplorasi Artificial Intelligence, analisis data, dan kepemimpinan. Menggabungkan rasa ingin tahu, pengalaman organisasi, dan ide digital untuk membangun solusi yang bermanfaat.
         </p>
-        <div class="hero-buttons">
-          <a class="btn btn-primary" href="#projects">View My Work &rarr;</a>
-          <a class="btn btn-secondary" download="" href="cv.pdf">Download CV &darr;</a>
-        </div>
       </div>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#projects">Baca Karya &rarr;</a>
+        <a class="btn btn-secondary" download="" href="cv.pdf">Download CV &darr;</a>
+      </div>
+    </section>
 
-      <div class="hero-visual reveal">
-        <!-- Hand-Drawn Hanging Lamp -->
-        <svg class="sketch-lamp" viewBox="0 0 60 70" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <line x1="30" y1="0" x2="30" y2="26"/>
-          <path d="M14 44 C14 30, 46 30, 46 44 Z" fill="var(--bg-card)"/>
-          <path d="M24 44 A6 6 0 0 0 36 44" fill="#E86F3A"/>
-          <line x1="20" y1="53" x2="17" y2="59" stroke="#E86F3A"/>
-          <line x1="30" y1="55" x2="30" y2="62" stroke="#E86F3A"/>
-          <line x1="40" y1="53" x2="43" y2="59" stroke="#E86F3A"/>
-        </svg>
+    <!-- PANEL 02: CHARACTER CARD -->
+    <aside class="manga-panel panel-character">
+      <span class="panel-tag">CHARACTER SHEET</span>
+      <div class="char-frame-wrap">
+        <div class="sfx-onomatopoeia">DON!!</div>
+        <div class="char-backdrop"></div>
+        <img alt="Dana Alpaiji" class="char-photo" onerror="this.style.opacity='0.2';" src="profile.jpg"/>
+      </div>
+      <div class="char-caption">LVL. 21 &mdash; GPA <span>3.93 / 4.00</span></div>
+    </aside>
 
-        <!-- Hand-Drawn Bookshelf & Plant -->
-        <svg class="sketch-shelf" viewBox="0 0 100 75" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <line x1="5" y1="60" x2="95" y2="60"/>
-          <rect x="14" y="34" width="10" height="26" rx="2" fill="var(--bg-card)"/>
-          <rect x="25" y="38" width="9" height="22" rx="2" fill="#E86F3A"/>
-          <rect x="36" y="32" width="10" height="28" rx="2" fill="var(--bg-card)"/>
-          <path d="M62 44 L80 44 L77 60 L65 60 Z" fill="#E86F3A"/>
-          <path d="M71 44 C64 34, 58 36, 62 28 C68 32, 71 38, 71 44 Z" fill="var(--bg-card)"/>
-          <path d="M71 44 C78 32, 85 35, 81 26 C75 30, 71 38, 71 44 Z" fill="var(--bg-card)"/>
-        </svg>
-
-        <div class="sketch-blob"></div>
-        <div class="hero-img-frame">
-          <img alt="Dana Alpaiji" class="hero-img" onerror="this.style.opacity='0.2';" src="profile.jpg"/>
-        </div>
-        <div class="deco-box">AI</div>
-        <div class="deco-tag">GPA <strong>3.93</strong> / 4.00</div>
+    <!-- PANEL 03: MANGA TICKER STRIP -->
+    <div class="panel-ticker">
+      <div class="ticker-track">
+        <span>DANA ALPAIJI CREATIVE MANGA EDITION</span> <span class="ticker-dot"></span>
+        <span>ARTIFICIAL INTELLIGENCE</span> <span class="ticker-dot"></span>
+        <span>SHARIA ECONOMICS UNTIRTA</span> <span class="ticker-dot"></span>
+        <span>LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="ticker-dot"></span>
+        <span>DANA ALPAIJI CREATIVE MANGA EDITION</span> <span class="ticker-dot"></span>
+        <span>ARTIFICIAL INTELLIGENCE</span> <span class="ticker-dot"></span>
+        <span>SHARIA ECONOMICS UNTIRTA</span> <span class="ticker-dot"></span>
       </div>
     </div>
-  </section>
 
-  <!-- ========== MARQUEE BANNER ========== -->
-  <div class="sketch-marquee-bar">
-    <div class="sketch-marquee-track">
-      <span>DANA ALPAIJI PORTFOLIO</span> <span class="sep"></span>
-      <span>ARTIFICIAL INTELLIGENCE</span> <span class="sep"></span>
-      <span>SHARIA ECONOMICS UNTIRTA (GPA 3.93/4.00)</span> <span class="sep"></span>
-      <span>YOUNG LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="sep"></span>
-      <span>SUSTAINABLE ECONOMY</span> <span class="sep"></span>
-      <span>DANA ALPAIJI PORTFOLIO</span> <span class="sep"></span>
-      <span>ARTIFICIAL INTELLIGENCE</span> <span class="sep"></span>
-      <span>SHARIA ECONOMICS UNTIRTA (GPA 3.93/4.00)</span> <span class="sep"></span>
-      <span>YOUNG LEADERSHIP &amp; DIGITAL INNOVATION</span> <span class="sep"></span>
-    </div>
-  </div>
-
-  <!-- ========== ABOUT ME SECTION ========== -->
-  <section id="about">
-    <div class="container about-grid">
-      <div class="about-sketch-card reveal">
-        <svg width="240" height="210" viewBox="0 0 260 220" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="22" y="20" width="84" height="96" rx="6" fill="var(--bg-card)"/>
-          <line x1="64" y1="20" x2="64" y2="116"/>
-          <line x1="22" y1="68" x2="106" y2="68"/>
-          <circle cx="148" cy="74" r="24" fill="var(--bg-card)"/>
-          <path d="M126 68 C128 45, 170 45, 172 68 C164 62, 136 62, 126 68 Z" fill="currentColor"/>
-          <path d="M106 168 C108 124, 188 124, 190 168 Z" fill="var(--bg-card)"/>
-          <rect x="128" y="128" width="22" height="24" rx="4" fill="#E86F3A"/>
-          <path d="M150 133 C158 133, 158 145, 150 145"/>
-          <rect x="184" y="144" width="54" height="11" rx="3" fill="var(--bg-card)"/>
-          <rect x="188" y="155" width="50" height="11" rx="3" fill="#E86F3A"/>
-          <rect x="182" y="166" width="56" height="11" rx="3" fill="var(--bg-card)"/>
-          <line x1="16" y1="177" x2="246" y2="177"/>
-        </svg>
-      </div>
-
-      <div class="about-text reveal">
-        <span class="section-label">Profile Overview</span>
-        <h2 class="section-title">About Me</h2>
-        <p>
-          Mahasiswa Program Studi Ekonomi Syariah Universitas Sultan Ageng Tirtayasa dengan IPK <strong>3.93/4.00</strong>. Berpengalaman sebagai Assistant Manager selama hampir dua tahun, sekaligus aktif dalam berbagai organisasi kemahasiswaan dan pengembangan teknologi berbasis Artificial Intelligence.
+    <!-- PANEL 04: ORIGIN STORY & STATS -->
+    <section class="manga-panel panel-about" id="about">
+      <span class="panel-tag">CHAPTER 02 // ORIGIN STORY</span>
+      <h2 class="comic-title">A Little <span>About Me</span></h2>
+      <div class="about-flex">
+        <div class="about-doodle">
+          <!-- Ilustrasi Sketsa Tangan -->
+          <svg width="95" height="85" viewBox="0 0 260 220" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="130" cy="75" r="32" fill="var(--panel-bg)"/>
+            <path d="M100 68 C104 38, 158 38, 162 68 Z" fill="currentColor"/>
+            <path d="M80 185 C84 130, 176 130, 180 185 Z" fill="var(--panel-bg)"/>
+            <rect x="115" y="135" width="30" height="32" rx="5" fill="#E86F3A"/>
+            <line x1="30" y1="190" x2="230" y2="190"/>
+          </svg>
+        </div>
+        <p class="about-p">
+          Mahasiswa S1 Ekonomi Syariah Universitas Sultan Ageng Tirtayasa (IPK <strong>3.93/4.00</strong>). Berpengalaman sebagai Assistant Manager selama hampir dua tahun, serta aktif memimpin organisasi mahasiswa dan pengembangan proyek AI.
         </p>
-        <p>
-          Saya percaya bahwa perpaduan kepemimpinan, ekonomi, dan AI dapat menghasilkan solusi inovatif yang berdampak nyata bagi masyarakat.
-        </p>
-
-        <div class="about-stats">
-          <div class="stat-card">
-            <div class="stat-num"><span class="counter" data-decimal="2" data-target="3.93">0</span><span class="acc">/4.00</span></div>
-            <div class="stat-label">GPA / Indeks Prestasi</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num"><span class="counter" data-decimal="0" data-target="2">0</span><span class="acc">+</span></div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num"><span class="counter" data-decimal="0" data-target="4">0</span><span class="acc">+</span></div>
-            <div class="stat-label">Student Organizations</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num"><span class="counter" data-decimal="0" data-target="10">0</span><span class="acc">+</span></div>
-            <div class="stat-label">AI &amp; Digital Projects</div>
-          </div>
+      </div>
+      <div class="stats-mini-grid">
+        <div class="stat-box">
+          <div class="stat-box-num">3.93<span>/4</span></div>
+          <div class="stat-box-lbl">GPA</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-num">2<span>+</span></div>
+          <div class="stat-box-lbl">Years Exp</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-num">4<span>+</span></div>
+          <div class="stat-box-lbl">Orgs</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-num">10<span>+</span></div>
+          <div class="stat-box-lbl">Projects</div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========== SKILLS & TECHNOLOGIES ========== -->
-  <section class="section-soft" id="skills">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-label">Core Competencies</span>
-        <h2 class="section-title">Skills &amp; Technologies</h2>
-        <p class="section-sub">Perpaduan kemampuan teknis digital dan kepemimpinan strategis.</p>
+    <!-- PANEL 05: ABILITY & SKILL TREE -->
+    <section class="manga-panel panel-skills" id="skills">
+      <span class="panel-tag orange">ABILITY TREE</span>
+      <h2 class="comic-title">Skills &amp; <span>Arsenal</span></h2>
+      <div class="skill-cat-title">// Technical &amp; Digital</div>
+      <div class="skill-chips">
+        <span class="skill-chip">Artificial Intelligence</span>
+        <span class="skill-chip">Prompt Engineering</span>
+        <span class="skill-chip">Web Development</span>
+        <span class="skill-chip">HTML, CSS &amp; JS</span>
+        <span class="skill-chip">Microsoft Excel</span>
+        <span class="skill-chip">Microsoft Word</span>
+        <span class="skill-chip">PowerPoint</span>
+        <span class="skill-chip">Data Analysis</span>
+        <span class="skill-chip">UI/UX Thinking</span>
       </div>
+      <div class="skill-cat-title">// Leadership &amp; Soft Skills</div>
+      <div class="skill-chips">
+        <span class="skill-chip">Leadership</span>
+        <span class="skill-chip">Team Management</span>
+        <span class="skill-chip">Communication</span>
+        <span class="skill-chip">Public Speaking</span>
+        <span class="skill-chip">Problem Solving</span>
+        <span class="skill-chip">Critical Thinking</span>
+        <span class="skill-chip">Time Management</span>
+        <span class="skill-chip">Collaboration</span>
+      </div>
+    </section>
 
-      <div class="skills-group reveal">
-        <div class="skills-group-title">Technical Skills</div>
-        <div class="skills-grid">
-          <div class="skill-card"><div class="skill-icon-box">AI</div><div class="skill-name">Artificial Intelligence</div></div>
-          <div class="skill-card"><div class="skill-icon-box">PE</div><div class="skill-name">Prompt Engineering</div></div>
-          <div class="skill-card"><div class="skill-icon-box">&lt;/&gt;</div><div class="skill-name">Web Development</div></div>
-          <div class="skill-card"><div class="skill-icon-box">JS</div><div class="skill-name">HTML, CSS &amp; JS</div></div>
-          <div class="skill-card"><div class="skill-icon-box">XL</div><div class="skill-name">Microsoft Excel</div></div>
-          <div class="skill-card"><div class="skill-icon-box">WD</div><div class="skill-name">Microsoft Word</div></div>
-          <div class="skill-card"><div class="skill-icon-box">PP</div><div class="skill-name">PowerPoint</div></div>
-          <div class="skill-card"><div class="skill-icon-box">DA</div><div class="skill-name">Data Analysis</div></div>
-          <div class="skill-card"><div class="skill-icon-box">UX</div><div class="skill-name">UI/UX Thinking</div></div>
+    <!-- PANEL 06, 07, 08: SELECTED WORKS (3 EPISODE KOMIK) -->
+    <article class="manga-panel panel-project" id="projects">
+      <div>
+        <div class="proj-top">
+          <span class="proj-cat">WEB DEVELOPMENT</span>
+          <span class="proj-ep">EP. 01</span>
         </div>
+        <h3 class="proj-title">TAMARA — Platform UMKM &amp; Fintech</h3>
+        <p class="proj-desc">Platform digital untuk kebutuhan UMKM &amp; mitra dengan autentikasi pengguna serta dashboard berbasis peran Admin, UMKM, dan Mitra.</p>
       </div>
+      <div>
+        <div class="proj-tags"><span>PHP</span><span>MySQL</span><span>PDO</span><span>Responsive UI</span></div>
+        <a class="proj-link" href="https://tamaraku.my.id/" rel="noopener noreferrer" target="_blank">Buka Project &rarr;</a>
+      </div>
+    </article>
 
-      <div class="skills-group reveal">
-        <div class="skills-group-title">Soft Skills</div>
-        <div class="skills-grid">
-          <div class="skill-card"><div class="skill-icon-box">LD</div><div class="skill-name">Leadership</div></div>
-          <div class="skill-card"><div class="skill-icon-box">TM</div><div class="skill-name">Team Management</div></div>
-          <div class="skill-card"><div class="skill-icon-box">CM</div><div class="skill-name">Communication</div></div>
-          <div class="skill-card"><div class="skill-icon-box">PS</div><div class="skill-name">Public Speaking</div></div>
-          <div class="skill-card"><div class="skill-icon-box">PB</div><div class="skill-name">Problem Solving</div></div>
-          <div class="skill-card"><div class="skill-icon-box">CT</div><div class="skill-name">Critical Thinking</div></div>
-          <div class="skill-card"><div class="skill-icon-box">TG</div><div class="skill-name">Time Management</div></div>
-          <div class="skill-card"><div class="skill-icon-box">CO</div><div class="skill-name">Collaboration</div></div>
+    <article class="manga-panel panel-project">
+      <div>
+        <div class="proj-top">
+          <span class="proj-cat">FINANCIAL TECH</span>
+          <span class="proj-ep">EP. 02</span>
         </div>
+        <h3 class="proj-title">IMPACT ID — Platform Digital</h3>
+        <p class="proj-desc">Pengembangan website IMPACT ID sebagai proyek digital dengan fokus pada penyajian informasi dan pengalaman antarmuka web modern.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ========== SELECTED WORK / PROJECTS ========== -->
-  <section id="projects">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-label">Selected Work</span>
-        <h2 class="section-title">Things I’ve Built</h2>
-        <p class="section-sub">Beberapa karya digital yang dikembangkan, mulai dari platform web hingga pengelolaan keuangan dan organisasi.</p>
+      <div>
+        <div class="proj-tags"><span>Web Dev</span><span>Vercel</span><span>UI/UX</span></div>
+        <a class="proj-link" href="https://impact-id.vercel.app/" rel="noopener noreferrer" target="_blank">Buka Project &rarr;</a>
       </div>
+    </article>
 
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <article class="project-card reveal">
-          <div class="project-preview">
-            <div class="project-browser">
-              <div class="browser-dots"><span></span><span></span><span></span></div>
-              <div style="display:flex; justify-content:space-between; align-items:flex-end;">
-                <span class="project-category-badge">WEB DEVELOPMENT</span>
-                <span class="project-num">#01</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-body">
-            <div class="project-title-row">
-              <h3 class="project-title">TAMARA — Platform UMKM &amp; Fintech</h3>
-              <a class="project-link-arrow" href="https://tamaraku.my.id/" rel="noopener noreferrer" target="_blank">&#8599;</a>
-            </div>
-            <p class="project-desc">Pengembangan platform digital untuk mendukung kebutuhan UMKM dan mitra melalui autentikasi pengguna serta dashboard berdasarkan peran Admin, UMKM, dan Mitra.</p>
-            <div class="project-tags"><span>PHP</span><span>MySQL</span><span>PDO</span><span>Responsive UI</span></div>
-            <a class="project-action" href="https://tamaraku.my.id/" rel="noopener noreferrer" target="_blank">Kunjungi Website &rarr;</a>
-          </div>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="project-card reveal">
-          <div class="project-preview">
-            <div class="project-browser">
-              <div class="browser-dots"><span></span><span></span><span></span></div>
-              <div style="display:flex; justify-content:space-between; align-items:flex-end;">
-                <span class="project-category-badge">FINANCIAL TECHNOLOGY</span>
-                <span class="project-num">#02</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-body">
-            <div class="project-title-row">
-              <h3 class="project-title">IMPACT ID — Platform Digital</h3>
-              <a class="project-link-arrow" href="https://impact-id.vercel.app/" rel="noopener noreferrer" target="_blank">&#8599;</a>
-            </div>
-            <p class="project-desc">Pengembangan website IMPACT ID sebagai salah satu proyek digital, dengan fokus pada penyajian informasi dan pengalaman pengguna melalui antarmuka web.</p>
-            <div class="project-tags"><span>Web Development</span><span>Vercel</span><span>UI/UX</span></div>
-            <a class="project-action" href="https://impact-id.vercel.app/" rel="noopener noreferrer" target="_blank">Kunjungi Website &rarr;</a>
-          </div>
-        </article>
-
-        <!-- Project 3 -->
-        <article class="project-card reveal">
-          <div class="project-preview">
-            <div class="project-browser">
-              <div class="browser-dots"><span></span><span></span><span></span></div>
-              <div style="display:flex; justify-content:space-between; align-items:flex-end;">
-                <span class="project-category-badge">ORGANIZATION WEBSITE</span>
-                <span class="project-num">#03</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-body">
-            <div class="project-title-row">
-              <h3 class="project-title">Website UKM Untirta Digital Creative (UDC)</h3>
-              <a class="project-link-arrow" href="https://web-udc.vercel.app/" rel="noopener noreferrer" target="_blank">&#8599;</a>
-            </div>
-            <p class="project-desc">Website UKM Untirta Digital Creative sebagai media informasi dan publikasi organisasi, memperkenalkan profil, kegiatan, serta program UKM kepada mahasiswa dan pengunjung.</p>
-            <div class="project-tags"><span>UKM</span><span>Organization Website</span><span>Digital Creative</span></div>
-            <a class="project-action" href="https://web-udc.vercel.app/" rel="noopener noreferrer" target="_blank">Kunjungi Website &rarr;</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== EXPERIENCE SECTION ========== -->
-  <section class="section-soft" id="experience">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-label">Career Journey</span>
-        <h2 class="section-title">Experience</h2>
-        <p class="section-sub">Pengalaman nyata yang membentuk kepemimpinan dan eksekusi operasional.</p>
-      </div>
-
-      <div class="exp-grid">
-        <div class="exp-card reveal">
-          <div class="card-header-flex">
-            <div class="sketch-icon-badge">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            </div>
-            <div>
-              <div class="exp-date">Jul 2023 &ndash; Mei 2024</div>
-              <div class="exp-company">PT Orins Multidaya Indonesia</div>
-            </div>
-          </div>
-          <div class="exp-role">Staff Operasional / Assistant Manager</div>
-          <ul class="exp-list">
-            <li>Membantu manajer dalam merencanakan dan mengawasi kegiatan operasional harian.</li>
-            <li>Mengelola dan membimbing tim kerja agar produktif dan disiplin.</li>
-            <li>Memastikan target dan standar perusahaan tercapai secara konsisten.</li>
-            <li>Menangani keluhan pelanggan serta problem solving internal tim.</li>
-            <li>Membuat laporan operasional dan menggantikan tugas manajer ketika diperlukan.</li>
-          </ul>
+    <article class="manga-panel panel-project">
+      <div>
+        <div class="proj-top">
+          <span class="proj-cat">ORGANIZATION WEB</span>
+          <span class="proj-ep">EP. 03</span>
         </div>
+        <h3 class="proj-title">Website UKM Untirta Digital Creative</h3>
+        <p class="proj-desc">Media informasi dan publikasi resmi UKM UDC untuk memperkenalkan profil, kegiatan, serta program kreatif mahasiswa.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ========== ORGANIZATION SECTION ========== -->
-  <section id="organization">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-label">Leadership &amp; Community</span>
-        <h2 class="section-title">Teams &amp; Communities</h2>
-        <p class="section-sub">Aktif berkontribusi dalam berbagai organisasi kampus dan komunitas teknologi.</p>
+      <div>
+        <div class="proj-tags"><span>UKM UDC</span><span>Web App</span><span>Digital Creative</span></div>
+        <a class="proj-link" href="https://web-udc.vercel.app/" rel="noopener noreferrer" target="_blank">Buka Project &rarr;</a>
       </div>
+    </article>
 
-      <div class="org-grid">
-        <div class="org-card reveal">
-          <div class="org-badge">DPM FEB</div>
+    <!-- PANEL 09: WORK EXPERIENCE -->
+    <section class="manga-panel panel-exp" id="experience">
+      <span class="panel-tag">CHAPTER 04 // QUEST LOG</span>
+      <h2 class="comic-title">Work <span>Experience</span></h2>
+      <div class="exp-box">
+        <div class="exp-period">Jul 2023 &ndash; Mei 2024</div>
+        <div class="exp-company">PT Orins Multidaya Indonesia</div>
+        <div class="exp-role">Staff Operasional / Assistant Manager</div>
+        <ul class="comic-list">
+          <li>Merencanakan dan mengawasi kegiatan operasional harian.</li>
+          <li>Mengelola dan membimbing tim agar produktif dan disiplin.</li>
+          <li>Memastikan target dan standar perusahaan tercapai konsisten.</li>
+          <li>Menangani keluhan pelanggan &amp; problem solving internal tim.</li>
+          <li>Membuat laporan operasional dan menggantikan tugas manajer.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PANEL 10: ORGANIZATIONS -->
+    <section class="manga-panel panel-org" id="organization">
+      <span class="panel-tag orange">GUILDS &amp; LEADERSHIP</span>
+      <h2 class="comic-title">Teams &amp; <span>Communities</span></h2>
+      <div class="org-mini-grid">
+        <div class="org-card">
+          <span class="org-pill">DPM FEB (2026–Now)</span>
           <div class="org-name">Dewan Perwakilan Mahasiswa FEB</div>
-          <div class="org-role">Ketua Fraksi Ekonomi Syariah | Anggota Komisi IV</div>
-          <div class="org-year" style="margin-bottom:10px;">2026 &ndash; Sekarang</div>
-          <ul class="org-list">
-            <li>Menjadi jembatan aspirasi mahasiswa dengan birokrasi fakultas.</li>
-            <li>Mengolah data survei dan menyusun rekomendasi kebijakan.</li>
-            <li>Melakukan pengawasan terhadap program kemahasiswaan.</li>
+          <div class="org-role">Ketua Fraksi Ekonomi Syariah | Komisi IV</div>
+          <ul class="comic-list">
+            <li>Jembatan aspirasi mahasiswa &amp; birokrasi fakultas.</li>
+            <li>Olah data survei &amp; rekomendasi kebijakan.</li>
           </ul>
         </div>
 
-        <div class="org-card reveal">
-          <div class="org-badge">HMJ</div>
+        <div class="org-card">
+          <span class="org-pill">HMJ EKOS</span>
           <div class="org-name">HMJ Ekonomi Syariah</div>
-          <div class="org-role">Ketua Pelaksana Sharia Economic Festival (SEF) 2025</div>
-          <ul class="org-list">
-            <li>Memimpin keseluruhan pelaksanaan kegiatan berskala besar.</li>
-            <li>Mengoordinasikan panitia lintas divisi dan sponsor eksternal.</li>
-          </ul>
-          <hr class="org-divider"/>
-          <div class="org-role">Sekretaris Pelaksana Seminar Karya Ilmiah</div>
-          <ul class="org-list">
-            <li>Mengelola administrasi organisasi, surat resmi, dan arsip kegiatan.</li>
+          <div class="org-role">Ketua Pelaksana SEF 2025 &amp; Sekretaris Seminar</div>
+          <ul class="comic-list">
+            <li>Memimpin acara berskala besar &amp; sponsor eksternal.</li>
+            <li>Mengelola administrasi dan arsip resmi.</li>
           </ul>
         </div>
 
-        <div class="org-card reveal">
-          <div class="org-badge">AI DIVISION</div>
-          <div class="org-name">UKM UDC &mdash; Untirta Digital Creative</div>
+        <div class="org-card">
+          <span class="org-pill">AI DIVISION</span>
+          <div class="org-name">UKM UDC Untirta</div>
           <div class="org-role">AI Division Member</div>
-          <ul class="org-list">
-            <li>Aktif sebagai anggota Divisi Artificial Intelligence kampus.</li>
-            <li>Mengembangkan implementasi Generative AI dan Machine Learning.</li>
-            <li>Berkolaborasi dalam proyek AI untuk pendidikan dan produktivitas mahasiswa.</li>
+          <ul class="comic-list">
+            <li>Implementasi Generative AI &amp; Machine Learning.</li>
+            <li>Proyek AI untuk produktivitas mahasiswa.</li>
           </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========== MY PROCESS (5 LANGKAH HORIZONTAL ALA REFERENSI) ========== -->
-  <section class="section-soft" id="process">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-label">Workflow</span>
-        <h2 class="section-title">My Process</h2>
-        <p class="section-sub">Pendekatan terstruktur dari identifikasi masalah hingga evaluasi berbasis data.</p>
-      </div>
-
-      <div class="process-grid">
-        <div class="process-step reveal">
-          <div class="process-circle">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </div>
-          <div class="process-num">01</div>
-          <div class="process-name">Discover</div>
-          <p class="process-desc">Memahami akar masalah dan kebutuhan pengguna secara mendalam.</p>
+    <!-- PANEL 11: 5-STEP WORKFLOW STRIP -->
+    <section class="manga-panel panel-workflow">
+      <span class="panel-tag">BATTLE STRATEGY // MY PROCESS</span>
+      <div class="workflow-strip">
+        <div class="wf-cell">
+          <div class="wf-num">01.</div>
+          <div class="wf-title">Discover</div>
+          <p class="wf-desc">Analisis akar masalah &amp; kebutuhan pengguna.</p>
         </div>
-
-        <div class="process-step reveal">
-          <div class="process-circle">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
-          </div>
-          <div class="process-num">02</div>
-          <div class="process-name">Design</div>
-          <p class="process-desc">Merancang solusi yang sistematis, sederhana, dan fungsional.</p>
+        <div class="wf-cell">
+          <div class="wf-num">02.</div>
+          <div class="wf-title">Design</div>
+          <p class="wf-desc">Rancang arsitektur solusi yang praktis.</p>
         </div>
-
-        <div class="process-step reveal">
-          <div class="process-circle">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <div class="process-num">03</div>
-          <div class="process-name">Develop</div>
-          <p class="process-desc">Membangun aplikasi web, sistem AI, dan alur operasional.</p>
+        <div class="wf-cell">
+          <div class="wf-num">03.</div>
+          <div class="wf-title">Develop</div>
+          <p class="wf-desc">Eksekusi kode web, prompt AI, &amp; sistem.</p>
         </div>
-
-        <div class="process-step reveal">
-          <div class="process-circle">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
-          </div>
-          <div class="process-num">04</div>
-          <div class="process-name">Deploy</div>
-          <p class="process-desc">Menguji kelayakan serta meluncurkan karya ke pengguna.</p>
+        <div class="wf-cell">
+          <div class="wf-num">04.</div>
+          <div class="wf-title">Deploy</div>
+          <p class="wf-desc">Uji kelayakan dan rilis ke publik.</p>
         </div>
-
-        <div class="process-step reveal">
-          <div class="process-circle">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          </div>
-          <div class="process-num">05</div>
-          <div class="process-name">Improve</div>
-          <p class="process-desc">Evaluasi berkelanjutan untuk dampak yang lebih luas.</p>
+        <div class="wf-cell">
+          <div class="wf-num">05.</div>
+          <div class="wf-title">Improve</div>
+          <p class="wf-desc">Evaluasi berbasis data secara berkala.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========== CERTIFICATES SECTION ========== -->
-  <section id="certificates">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-label">Credentials &amp; Honors</span>
-        <h2 class="section-title">Milestones &amp; Certificates</h2>
-        <p class="section-sub">Dokumentasi lisensi, sertifikasi pelatihan, dan pencapaian akademik maupun profesional.</p>
-      </div>
-
-      <div class="certificates-grid">
-        <div class="cert-card reveal">
-          <div class="cert-img" onclick="openLightbox('sertifikat1.png')">
+    <!-- PANEL 12: CERTIFICATES -->
+    <section class="manga-panel panel-certs" id="certificates">
+      <span class="panel-tag">CHAPTER 05 // ACHIEVEMENTS</span>
+      <h2 class="comic-title">Milestones &amp; <span>Certificates</span></h2>
+      <div class="cert-mini-grid">
+        <div class="cert-box">
+          <div class="cert-thumb" onclick="openLightbox('sertifikat1.png')">
             <img alt="Sertifikat 1" onerror="this.style.opacity='0.2';" src="sertifikat1.png"/>
           </div>
-          <div class="cert-body">
-            <span class="cert-tag">SERTIFIKAT 01</span>
-            <div class="cert-title">Sertifikat Ketua Pelaksana</div>
-            <p class="cert-desc">Sertifikasi Ketua Pelaksana SEF 2025.</p>
-            <a class="cert-btn" href="#" onclick="openLightbox('sertifikat1.png'); return false;">Lihat Sertifikat</a>
+          <div class="cert-info">
+            <div>
+              <div class="cert-name">Ketua Pelaksana SEF 2025</div>
+              <div class="cert-sub">Sertifikasi Kepemimpinan Event</div>
+            </div>
+            <a class="cert-view" href="#" onclick="openLightbox('sertifikat1.png'); return false;">Perbesar &rarr;</a>
           </div>
         </div>
 
-        <div class="cert-card reveal">
-          <div class="cert-img" onclick="openLightbox('sertifikat2.png')">
+        <div class="cert-box">
+          <div class="cert-thumb" onclick="openLightbox('sertifikat2.png')">
             <img alt="Sertifikat 2" onerror="this.style.opacity='0.2';" src="sertifikat2.png"/>
           </div>
-          <div class="cert-body">
-            <span class="cert-tag">SERTIFIKAT 02</span>
-            <div class="cert-title">Penghargaan Volunteer BEM FEB</div>
-            <p class="cert-desc">Sertifikat Kepanitiaan PKKMB FEB 2025.</p>
-            <a class="cert-btn" href="#" onclick="openLightbox('sertifikat2.png'); return false;">Lihat Sertifikat</a>
+          <div class="cert-info">
+            <div>
+              <div class="cert-name">Volunteer BEM FEB</div>
+              <div class="cert-sub">Kepanitiaan PKKMB FEB 2025</div>
+            </div>
+            <a class="cert-view" href="#" onclick="openLightbox('sertifikat2.png'); return false;">Perbesar &rarr;</a>
           </div>
         </div>
 
-        <div class="cert-card reveal">
-          <div class="cert-img" onclick="openLightbox('sertifikat3.png')">
+        <div class="cert-box">
+          <div class="cert-thumb" onclick="openLightbox('sertifikat3.png')">
             <img alt="Sertifikat 3" onerror="this.style.opacity='0.2';" src="sertifikat3.png"/>
           </div>
-          <div class="cert-body">
-            <span class="cert-tag">SERTIFIKAT 03</span>
-            <div class="cert-title">Sertifikat Kepengurusan HMJ Ekonomi Syariah 2025</div>
-            <p class="cert-desc">Staff Anggota Divisi Mikat HMJ Ekonomi Syariah 2025.</p>
-            <a class="cert-btn" href="#" onclick="openLightbox('sertifikat3.png'); return false;">Lihat Sertifikat</a>
+          <div class="cert-info">
+            <div>
+              <div class="cert-name">Kepengurusan HMJ 2025</div>
+              <div class="cert-sub">Staff Divisi Mikat Ekonomi Syariah</div>
+            </div>
+            <a class="cert-view" href="#" onclick="openLightbox('sertifikat3.png'); return false;">Perbesar &rarr;</a>
           </div>
         </div>
 
-        <div class="cert-card reveal">
-          <div class="cert-img" onclick="openLightbox('sertifikat4.png')">
+        <div class="cert-box">
+          <div class="cert-thumb" onclick="openLightbox('sertifikat4.png')">
             <img alt="Sertifikat 4" onerror="this.style.opacity='0.2';" src="sertifikat4.png"/>
           </div>
-          <div class="cert-body">
-            <span class="cert-tag">SERTIFIKAT 04</span>
-            <div class="cert-title">Sertifikat Seminar &amp; Workshop</div>
-            <p class="cert-desc">Bukti partisipasi aktif dalam program seminar UKM UDC Untirta.</p>
-            <a class="cert-btn" href="#" onclick="openLightbox('sertifikat4.png'); return false;">Lihat Sertifikat</a>
+          <div class="cert-info">
+            <div>
+              <div class="cert-name">Seminar &amp; Workshop UDC</div>
+              <div class="cert-sub">Partisipasi Aktif UKM UDC Untirta</div>
+            </div>
+            <a class="cert-view" href="#" onclick="openLightbox('sertifikat4.png'); return false;">Perbesar &rarr;</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========== GALLERY SECTION ========== -->
-  <section class="section-soft" id="gallery">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-label">Visual Archive</span>
-        <h2 class="section-title">Little Moments</h2>
-        <p class="section-sub">Dokumentasi perjalanan, kegiatan, dan kolaborasi.</p>
+    <!-- PANEL 13: GALLERY COMIC FRAMES -->
+    <section class="manga-panel panel-gallery" id="gallery">
+      <span class="panel-tag orange">BONUS SCENES // GALLERY</span>
+      <h2 class="comic-title">Little <span>Moments</span></h2>
+      <div class="gallery-comic-grid">
+        <div class="gal-frame" onclick="openLightbox('gallery1.jpg')"><img alt="Gallery 1" onerror="this.parentNode.style.display='none';" src="gallery1.jpg"/></div>
+        <div class="gal-frame" onclick="openLightbox('gallery2.jpg')"><img alt="Gallery 2" onerror="this.parentNode.style.display='none';" src="gallery2.jpg"/></div>
+        <div class="gal-frame" onclick="openLightbox('gallery3.jpg')"><img alt="Gallery 3" onerror="this.parentNode.style.display='none';" src="gallery3.jpg"/></div>
+        <div class="gal-frame" onclick="openLightbox('gallery4.jpg')"><img alt="Gallery 4" onerror="this.parentNode.style.display='none';" src="gallery4.jpg"/></div>
+        <div class="gal-frame" onclick="openLightbox('gallery5.jpg')"><img alt="Gallery 5" onerror="this.parentNode.style.display='none';" src="gallery5.jpg"/></div>
+        <div class="gal-frame" onclick="openLightbox('gallery6.jpg')"><img alt="Gallery 6" onerror="this.parentNode.style.display='none';" src="gallery6.jpg"/></div>
+      </div>
+    </section>
+
+    <!-- PANEL 14: FINALE / CONTACT -->
+    <footer class="manga-panel panel-contact" id="contact">
+      <div>
+        <span class="panel-tag">TO BE CONTINUED...</span>
+        <h2 class="contact-big">Let’s build something <span>meaningful together!</span></h2>
+        <a class="btn btn-primary" download="" href="cv.pdf">Download CV &darr;</a>
       </div>
 
-      <div class="gallery-grid reveal">
-        <div class="gallery-item" onclick="openLightbox('gallery1.jpg')">
-          <img alt="Gallery 1" onerror="this.parentNode.style.display='none';" src="gallery1.jpg"/>
-          <div class="gallery-overlay"></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox('gallery2.jpg')">
-          <img alt="Gallery 2" onerror="this.parentNode.style.display='none';" src="gallery2.jpg"/>
-          <div class="gallery-overlay"></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox('gallery3.jpg')">
-          <img alt="Gallery 3" onerror="this.parentNode.style.display='none';" src="gallery3.jpg"/>
-          <div class="gallery-overlay"></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox('gallery4.jpg')">
-          <img alt="Gallery 4" onerror="this.parentNode.style.display='none';" src="gallery4.jpg"/>
-          <div class="gallery-overlay"></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox('gallery5.jpg')">
-          <img alt="Gallery 5" onerror="this.parentNode.style.display='none';" src="gallery5.jpg"/>
-          <div class="gallery-overlay"></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox('gallery6.jpg')">
-          <img alt="Gallery 6" onerror="this.parentNode.style.display='none';" src="gallery6.jpg"/>
-          <div class="gallery-overlay"></div>
-        </div>
+      <div class="contact-links">
+        <a href="mailto:danaalpaiji@gmail.com">&#9993; danaalpaiji@gmail.com</a>
+        <a href="tel:+6285117751203">&#9742; +62 851-1775-1203</a>
+        <div>&#9873; Serang, Banten, Indonesia</div>
       </div>
-    </div>
-  </section>
 
-  <!-- Lightbox Modal -->
+      <div>
+        <div style="font-family:var(--font-comic); font-size:1.3rem; font-weight:700;">Connect With Me</div>
+        <div class="social-row">
+          <a class="social-chip" href="mailto:danaalpaiji@gmail.com">Email</a>
+          <a class="social-chip" href="https://linkedin.com/in/danaalpaiji" target="_blank">LinkedIn</a>
+          <a class="social-chip" href="tel:+6285117751203">Telepon</a>
+        </div>
+        <p style="font-size:0.72rem; color:var(--muted); margin-top:10px;">&copy; 2026 Dana Alpaiji. Manga Edition.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- LIGHTBOX -->
   <div id="lightbox">
-    <div id="lightbox-close" onclick="closeLightbox()">Tutup</div>
+    <button id="lightbox-close" onclick="closeLightbox()">TUTUP [X]</button>
     <img alt="Preview" id="lightbox-img" src=""/>
   </div>
 
-  <!-- ========== COMPACT MUSIC PLAYER ========== -->
+  <!-- COMPACT MANGA BGM PLAYER -->
   <div aria-label="Pemutar musik" id="spotify-widget">
-    <div class="spotify-disk" id="spotifyDisk">
-      <img alt="Sampul musik" onerror="this.style.display='none';" src="profile.jpg"/>
+    <div class="spotify-disk">
+      <img alt="Cover" onerror="this.style.display='none';" src="profile.jpg"/>
     </div>
     <div class="spotify-info">
       <div class="spotify-title" id="songTitle">Favorite Track 01</div>
-      <div class="spotify-artist" id="songArtist">Dana's Playlist #1</div>
+      <div class="spotify-artist" id="songArtist">Manga BGM #1</div>
     </div>
     <div class="spotify-controls">
-      <button aria-label="Lagu sebelumnya" class="spotify-btn" onclick="prevSong()" title="Lagu sebelumnya">
-        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 5v14M19 6l-9 6 9 6V6Z"/></svg>
+      <button aria-label="Prev" class="spotify-btn" onclick="prevSong()">
+        <svg viewBox="0 0 24 24"><path d="M6 5v14M19 6l-9 6 9 6V6Z"/></svg>
       </button>
-      <button aria-label="Putar atau jeda" class="spotify-btn" id="playPauseBtn" onclick="togglePlayMusic()" title="Putar atau jeda">
-        <span id="playPauseSvg"><svg aria-hidden="true" viewBox="0 0 24 24"><path class="play-shape" d="M8 5.5v13l10-6.5-10-6.5Z"/></svg></span>
+      <button aria-label="Play" class="spotify-btn" id="playPauseBtn" onclick="togglePlayMusic()">
+        <span id="playPauseSvg"><svg viewBox="0 0 24 24"><path class="play-shape" d="M8 5.5v13l10-6.5-10-6.5Z"/></svg></span>
       </button>
-      <button aria-label="Lagu berikutnya" class="spotify-btn" onclick="nextSong()" title="Lagu berikutnya">
-        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 5v14M5 6l9 6-9 6V6Z"/></svg>
+      <button aria-label="Next" class="spotify-btn" onclick="nextSong()">
+        <svg viewBox="0 0 24 24"><path d="M18 5v14M5 6l9 6-9 6V6Z"/></svg>
       </button>
     </div>
     <audio id="audioPlayer" preload="metadata"></audio>
   </div>
 
-  <!-- ========== FOOTER / CONTACT SECTION ========== -->
-  <footer id="contact">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h2 class="footer-headline">Let’s build something<br><span>meaningful together.</span></h2>
-          <a class="btn btn-primary" download="" href="cv.pdf">Download CV &darr;</a>
-        </div>
-
-        <div class="footer-contacts">
-          <a class="footer-contact-row" href="mailto:danaalpaiji@gmail.com">
-            <span class="footer-icon-box">@</span>
-            <span>danaalpaiji@gmail.com</span>
-          </a>
-          <a class="footer-contact-row" href="tel:+6285117751203">
-            <span class="footer-icon-box">Tel</span>
-            <span>+62 851-1775-1203</span>
-          </a>
-          <div class="footer-contact-row">
-            <span class="footer-icon-box">Loc</span>
-            <span>Serang, Banten, Indonesia</span>
-          </div>
-        </div>
-
-        <div>
-          <div class="footer-connect-title">Let's Connect</div>
-          <div class="footer-socials">
-            <a class="social-btn" href="mailto:danaalpaiji@gmail.com">Email</a>
-            <a class="social-btn" href="https://linkedin.com/in/danaalpaiji" target="_blank">LinkedIn</a>
-            <a class="social-btn" href="tel:+6285117751203">Telepon</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        &copy; 2026 Dana Alpaiji. Crafted with Passion, Leadership &amp; Artificial Intelligence.
-      </div>
-    </div>
-  </footer>
-
-  <!-- ==========================================================================
-       14. JAVASCRIPT ENGINE (TANPA PRELOADER)
-  ========================================================================== -->
   <script>
     /* Scroll Progress */
     window.addEventListener('scroll', () => {
@@ -1927,142 +1386,72 @@
     });
 
     /* Mobile Menu */
-    function toggleMobile() {
-      document.getElementById('mobileMenu').classList.toggle('open');
-      document.getElementById('hamburger').classList.toggle('open');
-    }
-    function closeMobile() {
-      document.getElementById('mobileMenu').classList.remove('open');
-      document.getElementById('hamburger').classList.remove('open');
-    }
-
-    /* Scroll Reveal */
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
-    document.querySelectorAll('.reveal, .reveal-left').forEach(el => observer.observe(el));
-
-    /* Animated Counters */
-    function animateCounter(el) {
-      const target = parseFloat(el.dataset.target);
-      const decimals = parseInt(el.dataset.decimal) || 0;
-      const duration = 1200;
-      const start = performance.now();
-      function update(now) {
-        const t = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - t, 3);
-        el.textContent = decimals > 0 ? (eased * target).toFixed(decimals) : Math.round(eased * target);
-        if (t < 1) requestAnimationFrame(update);
-      }
-      requestAnimationFrame(update);
-    }
-    const cObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          animateCounter(e.target);
-          cObserver.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    document.querySelectorAll('.counter').forEach(el => cObserver.observe(el));
+    function toggleMobile() { document.getElementById('mobileMenu').classList.toggle('open'); }
+    function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
 
     /* Lightbox */
     function openLightbox(src) {
       document.getElementById('lightbox-img').src = src;
       document.getElementById('lightbox').classList.add('open');
-      document.body.style.overflow = 'hidden';
     }
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('open');
-      document.body.style.overflow = '';
-    }
+    function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
     document.getElementById('lightbox').addEventListener('click', e => {
       if (e.target === e.currentTarget) closeLightbox();
     });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeLightbox();
-    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-    /* Playlist Music Player */
+    /* BGM Playlist */
     const playlist = [
-      { title: "Favorite Track 01", artist: "Dana's Playlist #1", file: "song1.mp3" },
-      { title: "Favorite Track 02", artist: "Dana's Playlist #2", file: "song2.mp3" },
-      { title: "Favorite Track 03", artist: "Dana's Playlist #3", file: "song3.mp3" }
+      { title: "Favorite Track 01", artist: "Manga BGM #1", file: "song1.mp3" },
+      { title: "Favorite Track 02", artist: "Manga BGM #2", file: "song2.mp3" },
+      { title: "Favorite Track 03", artist: "Manga BGM #3", file: "song3.mp3" }
     ];
     let currentTrack = 0;
     const audioPlayer = document.getElementById('audioPlayer');
     const playPauseSvg = document.getElementById('playPauseSvg');
-    const songTitleEl = document.getElementById('songTitle');
-    const songArtistEl = document.getElementById('songArtist');
 
     function updateMusicButton(playing) {
       playPauseSvg.innerHTML = playing
-        ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" /></svg>'
-        : '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="play-shape" d="M8 5.5v13l10-6.5-10-6.5Z" /></svg>';
+        ? '<svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" /></svg>'
+        : '<svg viewBox="0 0 24 24"><path class="play-shape" d="M8 5.5v13l10-6.5-10-6.5Z" /></svg>';
     }
-    function loadTrack(index) {
-      audioPlayer.src = playlist[index].file;
-      songTitleEl.textContent = playlist[index].title;
-      songArtistEl.textContent = playlist[index].artist;
+    function loadTrack(idx) {
+      audioPlayer.src = playlist[idx].file;
+      document.getElementById('songTitle').textContent = playlist[idx].title;
+      document.getElementById('songArtist').textContent = playlist[idx].artist;
       updateMusicButton(false);
     }
-    loadTrack(currentTrack);
+    loadTrack(0);
     audioPlayer.addEventListener('play', () => updateMusicButton(true));
     audioPlayer.addEventListener('pause', () => updateMusicButton(false));
     audioPlayer.addEventListener('ended', () => nextSong());
 
     function togglePlayMusic() {
-      if (audioPlayer.paused) {
-        audioPlayer.play().catch(err => console.log('Audio error:', err));
-      } else {
-        audioPlayer.pause();
-      }
+      audioPlayer.paused ? audioPlayer.play().catch(()=>{}) : audioPlayer.pause();
     }
     function nextSong() {
       currentTrack = (currentTrack + 1) % playlist.length;
       loadTrack(currentTrack);
-      audioPlayer.play().catch(err => console.log('Audio error:', err));
+      audioPlayer.play().catch(()=>{});
     }
     function prevSong() {
-      if (audioPlayer.currentTime > 3) {
-        audioPlayer.currentTime = 0;
-        return;
-      }
       currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
       loadTrack(currentTrack);
-      audioPlayer.play().catch(err => console.log('Audio error:', err));
+      audioPlayer.play().catch(()=>{});
     }
 
-    /* Active Nav Link */
-    const sections = document.querySelectorAll('section[id], footer[id]');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    window.addEventListener('scroll', () => {
-      let cur = '';
-      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 130) cur = s.id; });
-      navLinks.forEach(l => {
-        l.classList.toggle('active', l.getAttribute('href') === `#${cur}`);
-      });
-    });
-
-    /* Theme Toggle (Light / Dark) */
+    /* Dark / Light Theme */
     (function () {
       const key = 'dana-portfolio-theme';
       const toggle = document.getElementById('themeToggle');
-      const icon = toggle && toggle.querySelector('.theme-icon');
-      function applyTheme(theme) {
-        document.body.setAttribute('data-theme', theme);
-        if (icon) icon.textContent = theme === 'dark' ? '☀' : '☾';
-        if (toggle) toggle.setAttribute('aria-label', theme === 'dark' ? 'Aktifkan mode terang' : 'Aktifkan mode gelap');
+      function applyTheme(t) {
+        document.body.setAttribute('data-theme', t);
+        if (toggle) toggle.textContent = t === 'dark' ? '☀' : '☾';
       }
       let saved = null;
       try { saved = localStorage.getItem(key); } catch (e) {}
       applyTheme(saved === 'dark' ? 'dark' : 'light');
-      if (toggle) toggle.addEventListener('click', function () {
+      if (toggle) toggle.addEventListener('click', () => {
         const next = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         applyTheme(next);
         try { localStorage.setItem(key, next); } catch (e) {}
